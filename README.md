@@ -1,2 +1,2 @@
 # sdk-net
-.NET Core SDK for Openfeed
+.NET SDK for Openfeed
