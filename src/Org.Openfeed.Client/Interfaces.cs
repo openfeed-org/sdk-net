@@ -39,6 +39,9 @@ namespace Org.Openfeed.Client {
     /// disconnected.
     /// </summary>
     public class OpenfeedDisconnectedException : Exception {
+        /// <summary>
+        /// Creates a new instance of <see cref="OpenfeedDisconnectedException"/>.
+        /// </summary>
         public OpenfeedDisconnectedException() : base("Disconnected from the server.") { }
     }
 
@@ -102,11 +105,11 @@ namespace Org.Openfeed.Client {
     /// </summary>
     public interface IOpenfeedClient : IDisposable {
         /// <summary>
-        /// Returns a <see cref="ValueTask{<see cref="IOpenfeedConnection"/>}"/> with the current <see cref="IOpenfeedConnection"/>. The connection represents
+        /// Returns a <see cref="ValueTask{IOpenfeedConnection}"/> with the current <see cref="IOpenfeedConnection"/>. The connection represents
         /// the current TCP connection to the Openfeed Websocket server.
         /// </summary>
         /// <param name="ct"><see cref="CancellationToken"/>.</param>
-        /// <returns><see cref="ValueTask{<see cref="IOpenfeedConnection"/>}"/> with the current <see cref="IOpenfeedConnection"/>.</returns>
+        /// <returns><see cref="ValueTask{IOpenfeedConnection}"/> with the current <see cref="IOpenfeedConnection"/>.</returns>
         ValueTask<IOpenfeedConnection> GetConnectionAsync(CancellationToken ct);
 
         /// <summary>
@@ -140,7 +143,7 @@ namespace Org.Openfeed.Client {
         /// Gets the list of exchanges. In case the <see cref="IOpenfeedConnection"/> gets disconnected it will throw <see cref="OpenfeedDisconnectedException"/>.
         /// </summary>
         /// <param name="ct"><see cref="CancellationToken"/>.</param>
-        /// <returns>The <see cref="IReadOnlyList{<see cref="Exchange"/>}"/></returns>
+        /// <returns>The <see cref="IReadOnlyList{Exchange}"/></returns>
         ValueTask<IReadOnlyList<Exchange>> GetExchangesAsync(CancellationToken ct);
 
         /// <summary>
@@ -192,13 +195,16 @@ namespace Org.Openfeed.Client {
         Task WhenDisconnectedAsync(CancellationToken ct);
     }
 
+    /// <summary>
+    /// Extension methods with shorthands for common Openfeed tasks.
+    /// </summary>
     public static class OpenfeedExtensions {
         /// <summary>
         /// Gets the list of exchanges.
         /// </summary>
         /// <param name="client"><see cref="IOpenfeedClient"/></param>
         /// <param name="ct"><see cref="CancellationToken"/>.</param>
-        /// <returns>The <see cref="IReadOnlyList{<see cref="Exchange"/>}"/></returns>
+        /// <returns>The <see cref="IReadOnlyList{Exchange}"/></returns>
         public static async ValueTask<IReadOnlyList<Exchange>> GetExchangesAsync(this IOpenfeedClient client, CancellationToken ct) {
             for (; ; ) {
                 try {

@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Org.Openfeed.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Org.Openfeed.Client.ContinueOnThreadPool">
+            <summary>
+            When an instance of this struct is awaited it schedules the continuation
+            to run on the tread pool.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.CancellationAwaiter">
+            <summary>
+            Given a <see cref="T:System.Threading.CancellationToken"/> provides a <see cref="F:Org.Openfeed.Client.CancellationAwaiter.Task"/> that's cancelled when the token
+            is cancelled.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedFactory">
+            <summary>
+            Static class for creating instances of <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedFactory.CreateClient(System.Uri,System.String,System.String,Org.Openfeed.Client.OpenfeedListeners)">
+            <summary>
+            Creates a new instance of <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.
+            </summary>
+            <param name="uri">Uri of the server, like ws://openfeed.aws.barchart.com/ws.</param>
+            <param name="username">Username.</param>
+            <param name="password">Password.</param>
+            <param name="listeners">Collection of listeners.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedRequestException">
+            <summary>
+            Exception that will be thrown when a request-response type of request is sent to the server and the response result
+            is not <see cref="F:Org.Openfeed.Result.Success"/>.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedRequestException.Result">
+            <summary>
+            The <see cref="F:Org.Openfeed.Client.OpenfeedRequestException.Result"/> of the failed operation.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedRequestException.#ctor(Org.Openfeed.Status)">
+            <summary>
+            Creates a new instance of the <see cref="T:Org.Openfeed.Client.OpenfeedRequestException"/> based on the <see cref="T:Org.Openfeed.Status"/> of a response
+            message.
+            </summary>
+            <param name="status"><see cref="T:Org.Openfeed.Status"/> of the response message</param>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedRequestException.ThrowOnError(Org.Openfeed.Status)">
+            <summary>
+            Throws an <see cref="T:Org.Openfeed.Client.OpenfeedRequestException"/> in case the <see cref="P:Org.Openfeed.Status.Result"/> is different
+            from <see cref="F:Org.Openfeed.Result.Success"/>.
+            </summary>
+            <param name="status"><see cref="T:Org.Openfeed.Status"/> of the response message.</param>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedDisconnectedException">
+            <summary>
+            Exception that will be thrown when attempting to send a request through a <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> that has been
+            disconnected.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedDisconnectedException.#ctor">
+            <summary>
+            Creates a new instance of <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.Exchange">
+            <summary>
+            Small structure that contains the exchange code and exchange description.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.Exchange.Code">
+            <summary>
+            Exchange code.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.Exchange.Description">
+            <summary>
+            Exchange description.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.Exchange.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Org.Openfeed.Client.Exchange"/> structure based on the exchange code and description.
+            </summary>
+            <param name="code">Exchange code.</param>
+            <param name="description">Exchange description.</param>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedListeners">
+            <summary>
+            A collection of delegates that <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> and <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> will use to notify
+            the client application about the events that are happening.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnConnectFailed">
+            <summary>
+            Function that will be called when a connection to the websocket fails.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnCredentialsRejected">
+            <summary>
+            Function that will be called when the server rejects the credentials with which the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> has been created.
+            The <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> will not attempt any more reconnects after calling this handler.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnConnected">
+            <summary>
+            Function that will be called when the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> is connected to the server.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnDisconnected">
+            <summary>
+            Function that will be called when the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> gets disconnected from the server, either because
+            it was disposed or because the TCP connection broke.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnMessage">
+            <summary>
+            Function that will be called when a message is received from the server.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.IOpenfeedClient">
+            <summary>
+            Instance of the client. The client will automatically connect to the specified serve and if the connection breaks it will automatically reconnect.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.GetConnectionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a <see cref="T:System.Threading.Tasks.ValueTask`1"/> with the current <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>. The connection represents
+            the current TCP connection to the Openfeed Websocket server.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:System.Threading.Tasks.ValueTask`1"/> with the current <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Sends a <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server to which we are currently connected. If the client not currently
+            connected then waits for the connection to be established and then sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/>.
+            If the client gets disconnected then it waits for the reconnect and sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/>.
+            </summary>
+            <param name="service">The <see cref="T:Org.Openfeed.Service"/> to which to subscribe.</param>
+            <param name="subscriptionType"><see cref="T:Org.Openfeed.SubscriptionType"/>.</param>
+            <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+            sent once.</param>
+            <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+            <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+            <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+            <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+            <returns>The ID of the subscription which can be used in a call to <see cref="M:Org.Openfeed.Client.IOpenfeedClient.Unsubscribe(System.Int64)"/> to terminate the subscription.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.Unsubscribe(System.Int64)">
+            <summary>
+            Unsubscribes from the feed for a given <paramref name="subscriptionId"/>.
+            </summary>
+            <param name="subscriptionId">Subscription ID obtained from a call to <see cref="M:Org.Openfeed.Client.IOpenfeedClient.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})"/></param>
+        </member>
+        <member name="T:Org.Openfeed.Client.IOpenfeedConnection">
+            <summary>
+            Represents an instance of a TCP connection to the server. Valid until a disconnect.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetExchangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of exchanges. In case the <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> gets disconnected it will throw <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.IReadOnlyList`1"/></returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetInstrumentAsync(Org.Openfeed.InstrumentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends an <see cref="T:Org.Openfeed.InstrumentRequest"/> and returns an <see cref="T:Org.Openfeed.InstrumentResponse"/> or throws an <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>. The
+            individual <see cref="T:Org.Openfeed.InstrumentDefinition"/> responses will be sent to <see cref="F:Org.Openfeed.Client.OpenfeedListeners.OnMessage"/> delegates.
+            </summary>
+            <param name="request">The request to be sent.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task that will return an <see cref="T:Org.Openfeed.InstrumentResponse"/> or throw an
+            <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/> if the connection disconnects.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetInstrumentReferenceAsync(Org.Openfeed.InstrumentReferenceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends an <see cref="T:Org.Openfeed.InstrumentReferenceRequest"/> and returns the first <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>
+            that the server returns.
+            </summary>
+            <param name="request"><see cref="T:Org.Openfeed.InstrumentReferenceRequest"/></param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task with the first <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/> received or throws an <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/> if the
+            connection gets broken.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Sends a <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server to which we are currently connected. If the connection is no longer
+            connected throws a <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+            <param name="service">The <see cref="T:Org.Openfeed.Service"/> to which to subscribe.</param>
+            <param name="subscriptionType"><see cref="T:Org.Openfeed.SubscriptionType"/>.</param>
+            <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+            sent once.</param>
+            <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+            <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+            <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+            <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+            <returns>The ID of the subscription which can be used in a call to <see cref="M:Org.Openfeed.Client.IOpenfeedConnection.Unsubscribe(System.Int64)"/> to terminate the subscription.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.Unsubscribe(System.Int64)">
+            <summary>
+            Sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server with <see cref="P:Org.Openfeed.SubscriptionRequest.Unsubscribe"/> set to true.
+            </summary>
+            <param name="id">ID of the subscription request returned by the call to <see cref="M:Org.Openfeed.Client.IOpenfeedConnection.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})"/>.</param>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.WhenDisconnectedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the task that will be signalled when the connection instance gets disconnected from the server.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task that will be signalled when the connection instance is disconnected from the server.</returns>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedExtensions">
+            <summary>
+            Extension methods with shorthands for common Openfeed tasks.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetExchangesAsync(Org.Openfeed.Client.IOpenfeedClient,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of exchanges.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/></param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.IReadOnlyList`1"/></returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedConnection,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="connection"><see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</param>
+            <param name="symbol">Symbol for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedConnection,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="connection"><see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</param>
+            <param name="marketId">Market ID for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.</param>
+            <param name="symbol">Symbol for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedClient,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.</param>
+            <param name="marketId">Market ID for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>
+                Specifies that <see langword="null"/> is allowed as an input even if the
+                corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.AllowNullAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>
+                Specifies that <see langword="null"/> is disallowed as an input even if the
+                corresponding type allows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DisallowNullAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>
+                Specifies that a method that will never return under any circumstance.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>
+                Specifies that the method will not return if the associated <see cref="T:System.Boolean"/>
+                parameter is passed the specified value.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>
+                Gets the condition parameter value.
+                Code after the method is considered unreachable by diagnostics if the argument
+                to the associated parameter matches this value.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute"/>
+                class with the specified parameter value.
+            </summary>
+            <param name="parameterValue">
+                The condition parameter value.
+                Code after the method is considered unreachable by diagnostics if the argument
+                to the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>
+                Specifies that an output may be <see langword="null"/> even if the
+                corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>
+                Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, 
+                the parameter may be <see langword="null"/> even if the corresponding type disallows it.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>
+                Gets the return value condition.
+                If the method returns this value, the associated parameter may be <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>
+                 Initializes the attribute with the specified return value condition.
+            </summary>
+            <param name="returnValue">
+                The return value condition.
+                If the method returns this value, the associated parameter may be <see langword="null"/>.
+            </param>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>
+                Specifies that an output is not <see langword="null"/> even if the
+                corresponding type allows it.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.NotNullAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>
+                Specifies that the output will be non-<see langword="null"/> if the
+                named parameter is non-<see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>
+                Gets the associated parameter name.
+                The output will be non-<see langword="null"/> if the argument to the
+                parameter specified is non-<see langword="null"/>.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>
+                Initializes the attribute with the associated parameter name.
+            </summary>
+            <param name="parameterName">
+                The associated parameter name.
+                The output will be non-<see langword="null"/> if the argument to the
+                parameter specified is non-<see langword="null"/>.
+            </param>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>
+                Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>,
+                the parameter will not be <see langword="null"/> even if the corresponding type allows it.
+            </summary>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>
+                Gets the return value condition.
+                If the method returns this value, the associated parameter will not be <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>
+                Initializes the attribute with the specified return value condition.
+            </summary>
+            <param name="returnValue">
+                The return value condition.
+                If the method returns this value, the associated parameter will not be <see langword="null"/>.
+            </param>
+        </member>
+    </members>
+</doc>

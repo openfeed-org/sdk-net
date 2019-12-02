@@ -8,7 +8,7 @@ namespace Org.Openfeed.Client {
     /// When an instance of this struct is awaited it schedules the continuation
     /// to run on the tread pool.
     /// </summary>
-    public struct ContinueOnThreadPool : INotifyCompletion {
+    struct ContinueOnThreadPool : INotifyCompletion {
         private static WaitCallback? _waitCallbackDelegate;
 
         public bool IsCompleted => false;
