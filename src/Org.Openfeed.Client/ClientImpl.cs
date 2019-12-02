@@ -380,16 +380,15 @@ namespace Org.Openfeed.Client {
                     if (receiveTaskTask != null) {
                         if (receiveTaskTask.IsCompleted) {
                             var msg = await receiveTaskTask.ConfigureAwait(false);
+                            await DispatchMessage(msg);
                             receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                             receiveTaskTask = null;
-                            await DispatchMessage(msg);
                         }
                     }
                     else if (receiveTask.IsCompleted) {
                         var msg = await receiveTask.ConfigureAwait(false);
-                        receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
-                        receiveTaskTask = null;
                         await DispatchMessage(msg);
+                        receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                     }
                 }
             }
