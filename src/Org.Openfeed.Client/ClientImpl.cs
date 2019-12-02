@@ -81,7 +81,8 @@ namespace Org.Openfeed.Client {
         private readonly MessageFramer _messageFramer = new MessageFramer();
 
         private object _currentConnectionLock = new object();
-        private TaskCompletionSource<ConnectionImpl> _currentConnection = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
+        private readonly List<TaskCompletionSource<ConnectionImpl>> _currentConnectionWaiters = new List<TaskCompletionSource<ConnectionImpl>>();
+        private ConnectionImpl? _currentConnection;
 
         private enum RequestType {
             InstrumentRequest,
@@ -193,14 +194,21 @@ namespace Org.Openfeed.Client {
                     var disconnected = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
                     var connection = new ConnectionImpl(token, _listeners.OnMessage, disconnected.Task, ct);
                     await _listeners.OnConnected(connection).ConfigureAwait(false);
-                    _currentConnection.SetResult(connection);
 
+                    lock (_currentConnectionLock) {
+                        _currentConnection = connection;
+                        foreach (var x in _currentConnectionWaiters) {
+                            x.SetResult(connection);
+                        }
+                        _currentConnectionWaiters.Clear();
+                    }
                     try {
                         await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
                     }
                     finally {
                         lock (_currentConnectionLock) {
-                            _currentConnection = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
+                            Debug.Assert(_currentConnectionWaiters.Count == 0);
+                            _currentConnection = null;
                         }
 
                         disconnected.SetResult(true);
@@ -214,20 +222,30 @@ namespace Org.Openfeed.Client {
         }
 
         public async ValueTask<IOpenfeedConnection> GetConnectionAsync(CancellationToken ct) {
-            Task<ConnectionImpl> task;
+            ct.ThrowIfCancellationRequested();
+
+            TaskCompletionSource<ConnectionImpl> retSource;
             lock (_currentConnectionLock) {
-                task = _currentConnection.Task;
+                if (_currentConnection != null) {
+                    return _currentConnection;
+                }
+                else {
+                    retSource = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
+                    _currentConnectionWaiters.Add(retSource);
+                }
             }
 
-            if (task.IsCompleted) return await task.ConfigureAwait(false);
-
             using (var caw = new CancellationAwaiter(ct, false)) {
-                await Task.WhenAny(task, caw.Task).ConfigureAwait(false);
+                await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
+            }
+
+            lock (_currentConnectionLock) {
+                _currentConnectionWaiters.Remove(retSource);
             }
 
             ct.ThrowIfCancellationRequested();
 
-            return await task.ConfigureAwait(false);
+            return await retSource.Task.ConfigureAwait(false);
         }
 
         private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new Dictionary<long, CancellationTokenSource>();
@@ -271,7 +289,7 @@ namespace Org.Openfeed.Client {
             return id;
         }
 
-        public void Unsubscribe (long subscriptionId) {
+        public void Unsubscribe(long subscriptionId) {
             CancellationTokenSource cts;
 
             lock (_subscriptions) {
