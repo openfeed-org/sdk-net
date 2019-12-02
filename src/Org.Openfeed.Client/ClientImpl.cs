@@ -132,6 +132,13 @@ namespace Org.Openfeed.Client {
                     break;
                 }
             }
+
+            lock (_currentConnectionLock) {
+                var disp = new ObjectDisposedException("Openfeed Client");
+                foreach (var x in _currentConnectionWaiters) {
+                    x.SetException(disp);
+                }
+            }
         }
 
         private async Task<(bool AuthenticationFailed, string Token)> LoginAsync(ClientWebSocket socket, MessageFramer messageFramer) {
