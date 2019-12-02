@@ -34,7 +34,7 @@ namespace Org.Openfeed.Client.Demo {
             var password = Console.ReadLine();
 
             var client = OpenfeedFactory.CreateClient(new Uri("ws://openfeed.aws.barchart.com/ws"), username, password, listeners);
-            var subId = client.Subscribe(Service.RealTime, SubscriptionType.All, 1, exchanges: new[] { "FX" });
+            var subId = client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: new[] { "MSFT" });
             await Task.Delay(Timeout.Infinite);
         }
     }

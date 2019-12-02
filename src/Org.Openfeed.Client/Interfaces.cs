@@ -51,7 +51,7 @@ namespace Org.Openfeed.Client {
         long Subscribe(Service service, SubscriptionType subscriptionType, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null);
         void Unsubscribe(long id);
 
-        Task Disconnected { get; }
+        Task WhenDisconnectedAsync(CancellationToken ct);
     }
 
     public static class OpenfeedExtensions {

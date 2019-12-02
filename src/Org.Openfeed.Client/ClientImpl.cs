@@ -198,8 +198,7 @@ namespace Org.Openfeed.Client {
                 else {
                     Trace.TraceInformation($"WebSocket connected to {_uri}, logged in.");
 
-                    var disconnected = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
-                    var connection = new ConnectionImpl(token, _listeners.OnMessage, disconnected.Task, ct);
+                    var connection = new ConnectionImpl(token, _listeners.OnMessage, ct);
                     await _listeners.OnConnected(connection).ConfigureAwait(false);
 
                     lock (_currentConnectionLock) {
@@ -217,8 +216,6 @@ namespace Org.Openfeed.Client {
                             Debug.Assert(_currentConnectionWaiters.Count == 0);
                             _currentConnection = null;
                         }
-
-                        disconnected.SetResult(true);
 
                         await _listeners.OnDisconnected().ConfigureAwait(false);
                     }
@@ -262,24 +259,22 @@ namespace Org.Openfeed.Client {
 
             if (combined.IsCancellationRequested) return;
 
-            try {
-                for (; ; ) {
-                    var connection = await GetConnectionAsync(combined).ConfigureAwait(false);
+            for (; ; ) {
+                var connection = await GetConnectionAsync(combined).ConfigureAwait(false);
 
-                    var subscriptionId = connection.Subscribe(service, subscriptionType, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
-                    var disconnected = connection.Disconnected;
-                    using (var caw = new CancellationAwaiter(ct, false)) {
-                        await Task.WhenAny(caw.Task, disconnected);
-                    }
-
-                    if (_disposedSource.IsCancellationRequested) break;
-
-                    if (!disconnected.IsCompleted) {
-                        connection.Unsubscribe(subscriptionId);
-                    }
+                long? subscriptionId = null;
+                try {
+                    subscriptionId = connection.Subscribe(service, subscriptionType, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
+                    await connection.WhenDisconnectedAsync(ct);
                 }
-            }
-            catch (OperationCanceledException) {
+                catch (OperationCanceledException) when (ct.IsCancellationRequested) {
+                    if (subscriptionId != null) {
+                        connection.Unsubscribe(subscriptionId.Value);
+                    }
+                    break;
+                }
+                catch (OpenfeedDisconnectedException) {
+                }
             }
         }
 
@@ -312,15 +307,14 @@ namespace Org.Openfeed.Client {
         private readonly string _token;
         private readonly CancellationToken _disposedToken;
         private readonly Func<OpenfeedGatewayMessage, ValueTask> _onMessage;
-        private readonly Task _disconnectedTask;
+        private readonly List<TaskCompletionSource<bool>> _disconnectWaiters = new List<TaskCompletionSource<bool>>();
 
         private bool _disconnected;
 
-        public ConnectionImpl(string connectionToken, Func<OpenfeedGatewayMessage, ValueTask> onMessage, Task disconnectedTask, CancellationToken cancellationToken) {
+        public ConnectionImpl(string connectionToken, Func<OpenfeedGatewayMessage, ValueTask> onMessage, CancellationToken cancellationToken) {
             _token = connectionToken;
             _disposedToken = cancellationToken;
             _onMessage = onMessage;
-            _disconnectedTask = disconnectedTask;
         }
 
         private readonly object _lock = new object();
@@ -424,6 +418,10 @@ namespace Org.Openfeed.Client {
                     CancelOutstandingRequests(_instrumentReferenceRequests);
 
                     _subscriptions.Clear();
+
+                    foreach (var x in _disconnectWaiters) {
+                        x.SetResult(true);
+                    }
                 }
             }
         }
@@ -628,6 +626,25 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        public Task Disconnected => _disconnectedTask;
+        public async Task WhenDisconnectedAsync(CancellationToken ct) {
+            ct.ThrowIfCancellationRequested();
+
+            TaskCompletionSource<bool> retSource;
+
+            lock (_lock) {
+                if (_disconnected) return;
+                retSource = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            }
+
+            using (var caw = new CancellationAwaiter(ct, false)) {
+                await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
+            }
+
+            lock (_lock) {
+                _disconnectWaiters.Remove(retSource);
+            }
+
+            ct.ThrowIfCancellationRequested();
+        }
     }
 }
