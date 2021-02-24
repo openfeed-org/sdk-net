@@ -260,7 +260,13 @@ namespace Org.Openfeed.Client {
             if (combined.IsCancellationRequested) return;
 
             for (; ; ) {
-                var connection = await GetConnectionAsync(combined).ConfigureAwait(false);
+                IOpenfeedConnection connection;
+                try {
+                    connection = await GetConnectionAsync(combined).ConfigureAwait(false);
+                }
+                catch {
+                    continue;
+                }
 
                 long? subscriptionId = null;
                 try {
@@ -633,6 +639,7 @@ namespace Org.Openfeed.Client {
             lock (_lock) {
                 if (_disconnected) return;
                 retSource = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+                _disconnectWaiters.Add(retSource);
             }
 
             using (var caw = new CancellationAwaiter(ct, false)) {
