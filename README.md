@@ -1,2 +1,2 @@
 # sdk-net
-.NET SDK for Openfeed
+.NET SDK for Barchart OpenFeed
