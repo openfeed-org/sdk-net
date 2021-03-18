@@ -25,7 +25,9 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
         "channelId": 16
     }
 }
-...
+
+// ...
+
 {
     "instrumentDefinition": {
         "marketId": "8262209587480783120",
@@ -53,15 +55,15 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
     }
 }
 
-...
+// ...
 
 {
     "marketSnapshot": {
-        ...
+        // ...
     }
 }
 
-...
+// ...
 
 {
 	"marketUpdate": {
@@ -83,7 +85,7 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
 	}
 }
 
-...
+// ...
 
 {
 	"marketUpdate": {
