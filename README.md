@@ -20,7 +20,7 @@ A good way to learn about using openfeed.net is to clone the repository and poke
 
 There are only two objects that you will need in order to work with Openfeed: a connection client(represented by the IOpenFeedClient interface) and a listener.
 
-The connecton client object will connect to the Openfeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols, exchanges and channels.
+The connecton client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols, exchanges and channels.
 
 The listener object (represented by the OpenfeedListener class) contains five callback delegates that you can wire to your own callback functions in order to process messages coming from the connection.
 
@@ -115,7 +115,7 @@ To create a new IOpenfeedClient object you can use the static OpenfeedFactory cl
 ```C#
 using var client = OpenfeedFactory.CreateClient(new Uri("ws://openfeed.aws.barchart.com/ws"), username, password, listeners);
 ```
-The first argument is the URL of the Openfeed server, which is typically "ws://openfeed.aws.barchart.com/ws". The second argument is the username, the third is the password, and the fourth is the listeners object which we learned to set up in the previous section.
+The first argument is the URL of the OpenFeed server, which is typically "ws://openfeed.aws.barchart.com/ws". The second argument is the username, the third is the password, and the fourth is the listeners object which we learned to set up in the previous section.
 
 As soon as you create this object it will attempt to connect to the Openfeed servers and issue the necessary callbacks to the listener.
 
