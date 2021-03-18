@@ -26,7 +26,7 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
     }
 }
 
-// ...
+...
 
 {
     "instrumentDefinition": {
@@ -55,15 +55,15 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
     }
 }
 
-// ...
+...
 
 {
     "marketSnapshot": {
-        // ...
+        ...
     }
 }
 
-// ...
+...
 
 {
 	"marketUpdate": {
@@ -85,7 +85,7 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
 	}
 }
 
-// ...
+...
 
 {
 	"marketUpdate": {
