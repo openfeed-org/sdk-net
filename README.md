@@ -1,6 +1,6 @@
 # .NET SDK for Barchart OpenFeed
 
-The .NET SDK for Barchart Openfeed is a library that can be used to subscribe to market data messages served by the Barchart [Openfeed](https://openfeed.com/) servers. The documentation about the Openfeed protocol is available [here](https://openfeed-org.github.io/documentation/).
+The .NET SDK for Barchart OpenFeed is a library that can be used to subscribe to market data messages served by the Barchart [OpenFeed](https://openfeed.com/) servers. The documentation about the OpenFeed protocol is available [here](https://openfeed-org.github.io/documentation/).
 
 ## Obtaining the Library
 
