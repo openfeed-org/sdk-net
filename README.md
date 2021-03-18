@@ -147,7 +147,7 @@ public enum SubscriptionType {
 
 ## More Information
 
-To learn more about subscribing to symbols, exchanges and channels, click [here](SUBSCRIPTION_TYPES.md).
+To learn more about subscribing to symbols, exchanges and channels, click [here](SYMBOLS_EXCHANGES_CHANNELS.md).
 
-To learn more about various subscription types, click [here](SYMBOLS_EXCHANGES_CHANNELS.md).
+To learn more about various subscription types, click [here](SUBSCRIPTION_TYPES.md).
 
