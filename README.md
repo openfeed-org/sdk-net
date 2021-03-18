@@ -1,8 +1,22 @@
 # .NET SDK for Barchart OpenFeed
 
-The .NET SDK for Barchart Openfeed is a library that can be used to subscribe to market data messages served by the Barchart Openfeed servers.
+The .NET SDK for Barchart Openfeed is a library that can be used to subscribe to market data messages served by the Barchart [Openfeed](https://openfeed.com/) servers. The documentation about the Openfeed protocol is available [here](https://openfeed-org.github.io/documentation/).
 
 The latest version of the library is 1.0.1.
+
+## Obtaining the Library
+
+The easiest way to get started is to add the openfeed.net package from NuGet.
+
+## This Repository
+
+This repository contains a solution with three projects:
+
+1. Org.Openfeed.Client is the source code of the openfeed.net library.
+2. Org.Openfeed.Client.Demo is the demo project which demonstrates the use of the above library.
+3. Org.Openfeed.Messages is the source code of the project containing the Openfeed message definitions. It has been auto-generated from the Openfeed protocol buffer message definitions.
+
+A good way to learn about using openfeed.net is to clone the repository and poke around the demo source code.
 
 ## Core Concepts
 
@@ -144,6 +158,64 @@ public enum SubscriptionType {
     Ohlc,
 }
 ```
+
+## Putting it all together
+
+Now that we know how to use the listener and client objects, let's put together a little demo that subscribes to all MSFT messages and prints what's happening to the console:
+
+```C#
+using System;
+using System.Threading;
+using Org.Openfeed;
+using Org.Openfeed.Client;
+
+class Program {
+    static void Main() {
+        
+        // Set up the listener
+        
+        var listeners = new OpenfeedListeners();
+        listeners.OnConnected = connection => {
+            Console.WriteLine("Connected.");
+            return default;
+        };
+        listeners.OnDisconnected = () => {
+            Console.WriteLine("Disconnected.");
+            return default;
+        };
+        listeners.OnMessage = msg => {
+            Console.WriteLine(msg.ToString());
+            return default;
+        };
+        listeners.OnConnectFailed = ex => {
+            Console.WriteLine(ex);
+            return default;
+        };
+        listeners.OnCredentialsRejected = () => {
+            Console.WriteLine("Credentials rejected.");
+            return default;
+        };
+
+        // Prompt the user for the username and password
+
+        Console.WriteLine("Username:");
+        var username = Console.ReadLine();
+        Console.WriteLine("Password:");
+        var password = Console.ReadLine();
+
+        // Create a client and subscribe to all MSFT messages
+
+        var client = OpenfeedFactory.CreateClient(new Uri("ws://openfeed.aws.barchart.com/ws"), username, password, listeners);
+        var subId = client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: new[] { "MSFT" });
+        
+        // Sleep forever on this thread while the client we just created calls the listener callbacks
+
+        Thread.Sleep(Timeout.Infinite);
+    }
+}
+```
+
+This program is a simple amalgamation of what we learned before. We first set up a listener and connect the callbacks that simply print everything that's happening to the console. Next, we prompt the user for their credentials, and then finally we create a client, subscibe to all messages for the symbol MSFT, and then pause the thread while the client continues to run on the thread pool.
 
 ## More Information
 
