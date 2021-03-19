@@ -5,6 +5,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
     <Configurations>Debug;Release;Publish</Configurations>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

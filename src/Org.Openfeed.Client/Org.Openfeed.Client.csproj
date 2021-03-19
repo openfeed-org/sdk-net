@@ -15,7 +15,7 @@
     <PackageIcon>Barchart_Logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/openfeed-org/sdk-net</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>openfeed</PackageTags>
+    <PackageTags>OpenFeed</PackageTags>
     <DocumentationFile>C:\p\bc\openfeed.net\src\Org.Openfeed.Client\Org.Openfeed.Client.xml</DocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -42,10 +42,15 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <PropertyGroup>
     <TargetsTriggeredByCompilation>Sign</TargetsTriggeredByCompilation>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <Target Name="Sign" Condition="'$(Configuration)' == 'Publish'">
