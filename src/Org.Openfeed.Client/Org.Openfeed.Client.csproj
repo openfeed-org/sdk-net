@@ -8,14 +8,15 @@
     <PackageId>openfeed.net</PackageId>
     <Authors>Barchart.com, Inc.</Authors>
     <Product>openfeed.net</Product>
+    <Title>.NET SDK for Barchart OpenFeed</Title>
     <Description>.NET SDK for Barchart OpenFeed</Description>
-    <Copyright>Copyright © Barchart.com, Inc.</Copyright>
+    <Copyright>Copyright © 2021 Barchart.com, Inc.</Copyright>
     <Company>Barchart.com, Inc.</Company>
     <PackageProjectUrl>https://github.com/openfeed-org/sdk-net</PackageProjectUrl>
     <PackageIcon>Barchart_Logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/openfeed-org/sdk-net</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>OpenFeed</PackageTags>
+    <PackageTags>OpenFeed;Barchart;barchart.com</PackageTags>
     <DocumentationFile>C:\p\bc\openfeed.net\src\Org.Openfeed.Client\Org.Openfeed.Client.xml</DocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
