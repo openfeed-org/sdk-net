@@ -18,7 +18,7 @@ A good way to learn about using openfeed.net is to clone the repository and poke
 
 ## Core Concepts
 
-There are only two objects that you will need in order to work with Openfeed: a connection client(represented by the IOpenFeedClient interface) and a listener.
+There are only two objects that you will need in order to work with Openfeed: a connection client (represented by the IOpenFeedClient interface) and a listener.
 
 The connecton client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols, exchanges and channels.
 
