@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="../CodeSigningProperties.targets"/>
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -15,9 +16,9 @@
   <PropertyGroup>
     <TargetsTriggeredByCompilation>Sign</TargetsTriggeredByCompilation>
   </PropertyGroup>
-  
+
   <Target Name="Sign" Condition="'$(Configuration)' == 'Publish'">
-    <SignFile CertificateThumbprint="2fd873556fe43f9c0826732949a8e3caa78d9a95" SigningTarget="@(IntermediateAssembly)" TimestampUrl="http://timestamp.digicert.com" />
+    <SignFile CertificateThumbprint="$(CertificateThumbprint)" SigningTarget="@(IntermediateAssembly)" TimestampUrl="$(TimestampUrl)" />
   </Target>
 
 </Project>
