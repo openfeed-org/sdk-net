@@ -23,6 +23,7 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>../Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
     <Configurations>Debug;Release;Publish</Configurations>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -51,7 +52,6 @@
 
   <PropertyGroup>
     <TargetsTriggeredByCompilation>Sign</TargetsTriggeredByCompilation>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <Target Name="Sign" Condition="'$(Configuration)' == 'Publish'">
