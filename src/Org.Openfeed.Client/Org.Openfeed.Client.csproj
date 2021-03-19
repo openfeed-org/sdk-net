@@ -19,6 +19,8 @@
     <DocumentationFile>C:\p\bc\openfeed.net\src\Org.Openfeed.Client\Org.Openfeed.Client.xml</DocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
