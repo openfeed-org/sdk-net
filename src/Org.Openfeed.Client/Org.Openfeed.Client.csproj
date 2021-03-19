@@ -9,7 +9,7 @@
     <Authors>Barchart.com, Inc.</Authors>
     <Product>openfeed.net</Product>
     <Title>.NET SDK for Barchart OpenFeed</Title>
-    <Description>.NET SDK for Barchart OpenFeed</Description>
+    <Description>Provides the ability to subscribe to quotes, trades and book updates per symbol, exchange or channel using the Barchart OpenFeed protocol.</Description>
     <Copyright>Copyright © 2021 Barchart.com, Inc.</Copyright>
     <Company>Barchart.com, Inc.</Company>
     <PackageProjectUrl>https://github.com/openfeed-org/sdk-net</PackageProjectUrl>
