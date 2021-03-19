@@ -8,7 +8,7 @@
     <PackageId>openfeed.net</PackageId>
     <Authors>Barchart.com, Inc.</Authors>
     <Product>openfeed.net</Product>
-    <Description>.NET SDK for Barchart Openfeed</Description>
+    <Description>.NET SDK for Barchart OpenFeed</Description>
     <Copyright>Copyright © Barchart.com, Inc.</Copyright>
     <Company>Barchart.com, Inc.</Company>
     <PackageProjectUrl>https://github.com/openfeed-org/sdk-net</PackageProjectUrl>
@@ -20,7 +20,8 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>../Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
+    <Configurations>Debug;Release;Publish</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +31,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Threading.Channels" Version="4.6.0" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.3" />
   </ItemGroup>
 
@@ -45,4 +45,12 @@
     </None>
   </ItemGroup>
 
+  <PropertyGroup>
+    <TargetsTriggeredByCompilation>Sign</TargetsTriggeredByCompilation>
+  </PropertyGroup>
+
+  <Target Name="Sign" Condition="'$(Configuration)' == 'Publish'">
+    <SignFile CertificateThumbprint="2fd873556fe43f9c0826732949a8e3caa78d9a95" SigningTarget="@(IntermediateAssembly)" TimestampUrl="http://timestamp.digicert.com" />
+  </Target>
+  
 </Project>
