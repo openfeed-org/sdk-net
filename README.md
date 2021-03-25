@@ -4,7 +4,7 @@ The .NET SDK for Barchart OpenFeed is a library that can be used to subscribe to
 
 ## Obtaining the Library
 
-The easiest way to get started is to add the openfeed.net package from [NuGet](https://www.nuget.org/packages/openfeed.net/). The latest version is 1.0.3.
+The easiest way to get started is to add the openfeed.net package from [NuGet](https://www.nuget.org/packages/openfeed.net/). The latest version is 1.0.4.
 
 ## This Repository
 

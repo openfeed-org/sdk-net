@@ -266,6 +266,39 @@
             <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
             <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
         </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayRequest">
+            Openfeed Server request
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayMessage">
+            Openfeed Server Response
+        </member>
+        <member name="T:Org.Openfeed.LoginRequest">
+            Login
+        </member>
+        <member name="T:Org.Openfeed.LogoutRequest">
+            Logout
+        </member>
+        <member name="T:Org.Openfeed.InstrumentRequest">
+            Instrument Definition(s), will stream InstrumentDefinition(s)
+        </member>
+        <member name="T:Org.Openfeed.InstrumentReferenceRequest">
+            Instrument References, returns InstrumentReferenceResponse(s)
+        </member>
+        <member name="T:Org.Openfeed.ExchangeRequest">
+            Exchange Request, returns ExchangeResponse.  Gives available exchanges.
+        </member>
+        <member name="T:Org.Openfeed.SubscriptionRequest">
+            Subscription Request
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.CorrelationId">
+            Client-assigned id for this request.  Response will include same id
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Service">
+            Preferred service (realtime or delayed).
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Types.Request.SnapshotIntervalSeconds">
+            0 = send only current snapshot once, else send at interval seconds 
+        </member>
         <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
             <summary>
                 Specifies that <see langword="null"/> is allowed as an input even if the

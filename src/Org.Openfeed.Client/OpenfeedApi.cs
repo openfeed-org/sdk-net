@@ -12,11 +12,11 @@ using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
 namespace Org.Openfeed {
 
-  /// <summary>Holder for reflection information generated from openfeed_api.proto</summary>
+  // <summary>Holder for reflection information generated from openfeed_api.proto</summary>
   public static partial class OpenfeedApiReflection {
 
     #region Descriptor
-    /// <summary>File descriptor for openfeed_api.proto</summary>
+    // <summary>File descriptor for openfeed_api.proto</summary>
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -162,9 +162,9 @@ namespace Org.Openfeed {
   #endregion
 
   #region Messages
-  /// <summary>
-  //// Openfeed Server request
-  /// </summary>
+  // <summary>
+  /// Openfeed Server request
+  // </summary>
   public sealed partial class OpenfeedGatewayRequest : pb::IMessage<OpenfeedGatewayRequest> {
     private static readonly pb::MessageParser<OpenfeedGatewayRequest> _parser = new pb::MessageParser<OpenfeedGatewayRequest>(() => new OpenfeedGatewayRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -219,7 +219,7 @@ namespace Org.Openfeed {
       return new OpenfeedGatewayRequest(this);
     }
 
-    /// <summary>Field number for the "loginRequest" field.</summary>
+    // <summary>Field number for the "loginRequest" field.</summary>
     public const int LoginRequestFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.LoginRequest LoginRequest {
@@ -230,7 +230,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "logoutRequest" field.</summary>
+    // <summary>Field number for the "logoutRequest" field.</summary>
     public const int LogoutRequestFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.LogoutRequest LogoutRequest {
@@ -241,7 +241,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "subscriptionRequest" field.</summary>
+    // <summary>Field number for the "subscriptionRequest" field.</summary>
     public const int SubscriptionRequestFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.SubscriptionRequest SubscriptionRequest {
@@ -252,7 +252,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentRequest" field.</summary>
+    // <summary>Field number for the "instrumentRequest" field.</summary>
     public const int InstrumentRequestFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentRequest InstrumentRequest {
@@ -263,7 +263,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentReferenceRequest" field.</summary>
+    // <summary>Field number for the "instrumentReferenceRequest" field.</summary>
     public const int InstrumentReferenceRequestFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentReferenceRequest InstrumentReferenceRequest {
@@ -274,7 +274,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchangeRequest" field.</summary>
+    // <summary>Field number for the "exchangeRequest" field.</summary>
     public const int ExchangeRequestFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.ExchangeRequest ExchangeRequest {
@@ -286,7 +286,7 @@ namespace Org.Openfeed {
     }
 
     private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
+    // <summary>Enum of possible cases for the "data" oneof.</summary>
     public enum DataOneofCase {
       None = 0,
       LoginRequest = 1,
@@ -525,9 +525,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Openfeed Server Response
-  /// </summary>
+  // <summary>
+  /// Openfeed Server Response
+  // </summary>
   public sealed partial class OpenfeedGatewayMessage : pb::IMessage<OpenfeedGatewayMessage> {
     private static readonly pb::MessageParser<OpenfeedGatewayMessage> _parser = new pb::MessageParser<OpenfeedGatewayMessage>(() => new OpenfeedGatewayMessage());
     private pb::UnknownFieldSet _unknownFields;
@@ -603,7 +603,7 @@ namespace Org.Openfeed {
       return new OpenfeedGatewayMessage(this);
     }
 
-    /// <summary>Field number for the "loginResponse" field.</summary>
+    // <summary>Field number for the "loginResponse" field.</summary>
     public const int LoginResponseFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.LoginResponse LoginResponse {
@@ -614,7 +614,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "logoutResponse" field.</summary>
+    // <summary>Field number for the "logoutResponse" field.</summary>
     public const int LogoutResponseFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.LogoutResponse LogoutResponse {
@@ -625,7 +625,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentResponse" field.</summary>
+    // <summary>Field number for the "instrumentResponse" field.</summary>
     public const int InstrumentResponseFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentResponse InstrumentResponse {
@@ -636,7 +636,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentReferenceResponse" field.</summary>
+    // <summary>Field number for the "instrumentReferenceResponse" field.</summary>
     public const int InstrumentReferenceResponseFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentReferenceResponse InstrumentReferenceResponse {
@@ -647,7 +647,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "subscriptionResponse" field.</summary>
+    // <summary>Field number for the "subscriptionResponse" field.</summary>
     public const int SubscriptionResponseFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.SubscriptionResponse SubscriptionResponse {
@@ -658,7 +658,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketStatus" field.</summary>
+    // <summary>Field number for the "marketStatus" field.</summary>
     public const int MarketStatusFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketStatus MarketStatus {
@@ -669,7 +669,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "heartBeat" field.</summary>
+    // <summary>Field number for the "heartBeat" field.</summary>
     public const int HeartBeatFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.HeartBeat HeartBeat {
@@ -680,7 +680,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentDefinition" field.</summary>
+    // <summary>Field number for the "instrumentDefinition" field.</summary>
     public const int InstrumentDefinitionFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentDefinition InstrumentDefinition {
@@ -691,7 +691,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSnapshot" field.</summary>
+    // <summary>Field number for the "marketSnapshot" field.</summary>
     public const int MarketSnapshotFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSnapshot MarketSnapshot {
@@ -702,7 +702,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketUpdate" field.</summary>
+    // <summary>Field number for the "marketUpdate" field.</summary>
     public const int MarketUpdateFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketUpdate MarketUpdate {
@@ -713,7 +713,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volumeAtPrice" field.</summary>
+    // <summary>Field number for the "volumeAtPrice" field.</summary>
     public const int VolumeAtPriceFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.VolumeAtPrice VolumeAtPrice {
@@ -724,7 +724,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "ohlc" field.</summary>
+    // <summary>Field number for the "ohlc" field.</summary>
     public const int OhlcFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Ohlc Ohlc {
@@ -735,7 +735,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchangeResponse" field.</summary>
+    // <summary>Field number for the "exchangeResponse" field.</summary>
     public const int ExchangeResponseFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.ExchangeResponse ExchangeResponse {
@@ -747,7 +747,7 @@ namespace Org.Openfeed {
     }
 
     private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
+    // <summary>Enum of possible cases for the "data" oneof.</summary>
     public enum DataOneofCase {
       None = 0,
       LoginResponse = 1,
@@ -1161,11 +1161,11 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /////////////////////
-  /// Serivce Messages
-  ////////////////////
-  /// </summary>
+  // <summary>
+  //////////////
+  // Serivce Messages
+  //////////////
+  // </summary>
   public sealed partial class Status : pb::IMessage<Status> {
     private static readonly pb::MessageParser<Status> _parser = new pb::MessageParser<Status>(() => new Status());
     private pb::UnknownFieldSet _unknownFields;
@@ -1202,7 +1202,7 @@ namespace Org.Openfeed {
       return new Status(this);
     }
 
-    /// <summary>Field number for the "result" field.</summary>
+    // <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::Org.Openfeed.Result result_ = global::Org.Openfeed.Result.UnknownResult;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1213,7 +1213,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "message" field.</summary>
+    // <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 2;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1224,7 +1224,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "service" field.</summary>
+    // <summary>Field number for the "service" field.</summary>
     public const int ServiceFieldNumber = 3;
     private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1351,9 +1351,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Login
-  /// </summary>
+  // <summary>
+  /// Login
+  // </summary>
   public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
     private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -1390,7 +1390,7 @@ namespace Org.Openfeed {
       return new LoginRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1401,7 +1401,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "username" field.</summary>
+    // <summary>Field number for the "username" field.</summary>
     public const int UsernameFieldNumber = 2;
     private string username_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1412,7 +1412,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "password" field.</summary>
+    // <summary>Field number for the "password" field.</summary>
     public const int PasswordFieldNumber = 3;
     private string password_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1575,7 +1575,7 @@ namespace Org.Openfeed {
       return new LoginResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1586,7 +1586,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1597,7 +1597,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 3;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1730,9 +1730,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Logout
-  /// </summary>
+  // <summary>
+  /// Logout
+  // </summary>
   public sealed partial class LogoutRequest : pb::IMessage<LogoutRequest> {
     private static readonly pb::MessageParser<LogoutRequest> _parser = new pb::MessageParser<LogoutRequest>(() => new LogoutRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -1768,7 +1768,7 @@ namespace Org.Openfeed {
       return new LogoutRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1779,7 +1779,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 3;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1925,7 +1925,7 @@ namespace Org.Openfeed {
       return new LogoutResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1936,7 +1936,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2053,9 +2053,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Instrument Definition(s), will stream InstrumentDefinition(s)
-  /// </summary>
+  // <summary>
+  /// Instrument Definition(s), will stream InstrumentDefinition(s)
+  // </summary>
   public sealed partial class InstrumentRequest : pb::IMessage<InstrumentRequest> {
     private static readonly pb::MessageParser<InstrumentRequest> _parser = new pb::MessageParser<InstrumentRequest>(() => new InstrumentRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -2106,7 +2106,7 @@ namespace Org.Openfeed {
       return new InstrumentRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2117,7 +2117,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2128,7 +2128,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
@@ -2139,7 +2139,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketId {
@@ -2150,7 +2150,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
+    // <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Exchange {
@@ -2161,7 +2161,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    // <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ChannelId {
@@ -2173,7 +2173,7 @@ namespace Org.Openfeed {
     }
 
     private object request_;
-    /// <summary>Enum of possible cases for the "request" oneof.</summary>
+    // <summary>Enum of possible cases for the "request" oneof.</summary>
     public enum RequestOneofCase {
       None = 0,
       Symbol = 10,
@@ -2398,7 +2398,7 @@ namespace Org.Openfeed {
       return new InstrumentResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2409,7 +2409,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2420,7 +2420,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfDefinitions" field.</summary>
+    // <summary>Field number for the "numberOfDefinitions" field.</summary>
     public const int NumberOfDefinitionsFieldNumber = 3;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2553,9 +2553,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Instrument References, returns InstrumentReferenceResponse(s)
-  /// </summary>
+  // <summary>
+  /// Instrument References, returns InstrumentReferenceResponse(s)
+  // </summary>
   public sealed partial class InstrumentReferenceRequest : pb::IMessage<InstrumentReferenceRequest> {
     private static readonly pb::MessageParser<InstrumentReferenceRequest> _parser = new pb::MessageParser<InstrumentReferenceRequest>(() => new InstrumentReferenceRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -2606,7 +2606,7 @@ namespace Org.Openfeed {
       return new InstrumentReferenceRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2617,7 +2617,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2628,7 +2628,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
@@ -2639,7 +2639,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketId {
@@ -2650,7 +2650,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
+    // <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Exchange {
@@ -2661,7 +2661,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    // <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ChannelId {
@@ -2673,7 +2673,7 @@ namespace Org.Openfeed {
     }
 
     private object request_;
-    /// <summary>Enum of possible cases for the "request" oneof.</summary>
+    // <summary>Enum of possible cases for the "request" oneof.</summary>
     public enum RequestOneofCase {
       None = 0,
       Symbol = 10,
@@ -2905,7 +2905,7 @@ namespace Org.Openfeed {
       return new InstrumentReferenceResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2916,7 +2916,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2927,7 +2927,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfDefinitions" field.</summary>
+    // <summary>Field number for the "numberOfDefinitions" field.</summary>
     public const int NumberOfDefinitionsFieldNumber = 3;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2938,11 +2938,11 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    // <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 4;
     private int channelId_;
-    /// <summary>
-    /// </summary>
+    // <summary>
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ChannelId {
       get { return channelId_; }
@@ -2951,7 +2951,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 5;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2962,7 +2962,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 6;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2973,7 +2973,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
+    // <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 7;
     private string exchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2984,7 +2984,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "ddfSymbol" field.</summary>
+    // <summary>Field number for the "ddfSymbol" field.</summary>
     public const int DdfSymbolFieldNumber = 8;
     private string ddfSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2995,7 +2995,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "ddfExchange" field.</summary>
+    // <summary>Field number for the "ddfExchange" field.</summary>
     public const int DdfExchangeFieldNumber = 9;
     private string ddfExchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3006,7 +3006,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "ddfBaseCode" field.</summary>
+    // <summary>Field number for the "ddfBaseCode" field.</summary>
     public const int DdfBaseCodeFieldNumber = 10;
     private string ddfBaseCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3251,9 +3251,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
-  /// </summary>
+  // <summary>
+  /// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
+  // </summary>
   public sealed partial class ExchangeRequest : pb::IMessage<ExchangeRequest> {
     private static readonly pb::MessageParser<ExchangeRequest> _parser = new pb::MessageParser<ExchangeRequest>(() => new ExchangeRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -3289,7 +3289,7 @@ namespace Org.Openfeed {
       return new ExchangeRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3300,7 +3300,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3447,7 +3447,7 @@ namespace Org.Openfeed {
       return new ExchangeResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3458,7 +3458,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3469,7 +3469,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchanges" field.</summary>
+    // <summary>Field number for the "exchanges" field.</summary>
     public const int ExchangesFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Org.Openfeed.ExchangeResponse.Types.Exchange> _repeated_exchanges_codec
         = pb::FieldCodec.ForMessage(26, global::Org.Openfeed.ExchangeResponse.Types.Exchange.Parser);
@@ -3593,7 +3593,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the ExchangeResponse message type.</summary>
+    // <summary>Container for nested types declared in the ExchangeResponse message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Exchange : pb::IMessage<Exchange> {
@@ -3631,7 +3631,7 @@ namespace Org.Openfeed {
           return new Exchange(this);
         }
 
-        /// <summary>Field number for the "code" field.</summary>
+        // <summary>Field number for the "code" field.</summary>
         public const int CodeFieldNumber = 1;
         private string code_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3642,7 +3642,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "description" field.</summary>
+        // <summary>Field number for the "description" field.</summary>
         public const int DescriptionFieldNumber = 2;
         private string description_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3758,9 +3758,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Subscription Request
-  /// </summary>
+  // <summary>
+  /// Subscription Request
+  // </summary>
   public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest> {
     private static readonly pb::MessageParser<SubscriptionRequest> _parser = new pb::MessageParser<SubscriptionRequest>(() => new SubscriptionRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -3799,12 +3799,12 @@ namespace Org.Openfeed {
       return new SubscriptionRequest(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
-    /// <summary>
-    //// Client-assigned id for this request.  Response will include same id
-    /// </summary>
+    // <summary>
+    /// Client-assigned id for this request.  Response will include same id
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long CorrelationId {
       get { return correlationId_; }
@@ -3813,7 +3813,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "token" field.</summary>
+    // <summary>Field number for the "token" field.</summary>
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3824,12 +3824,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "service" field.</summary>
+    // <summary>Field number for the "service" field.</summary>
     public const int ServiceFieldNumber = 3;
     private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
-    /// <summary>
-    //// Preferred service (realtime or delayed).
-    /// </summary>
+    // <summary>
+    /// Preferred service (realtime or delayed).
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Service Service {
       get { return service_; }
@@ -3838,7 +3838,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "unsubscribe" field.</summary>
+    // <summary>Field number for the "unsubscribe" field.</summary>
     public const int UnsubscribeFieldNumber = 4;
     private bool unsubscribe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3849,7 +3849,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "requests" field.</summary>
+    // <summary>Field number for the "requests" field.</summary>
     public const int RequestsFieldNumber = 5;
     private static readonly pb::FieldCodec<global::Org.Openfeed.SubscriptionRequest.Types.Request> _repeated_requests_codec
         = pb::FieldCodec.ForMessage(42, global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser);
@@ -3999,7 +3999,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the SubscriptionRequest message type.</summary>
+    // <summary>Container for nested types declared in the SubscriptionRequest message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Request : pb::IMessage<Request> {
@@ -4052,7 +4052,7 @@ namespace Org.Openfeed {
           return new Request(this);
         }
 
-        /// <summary>Field number for the "symbol" field.</summary>
+        // <summary>Field number for the "symbol" field.</summary>
         public const int SymbolFieldNumber = 1;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Symbol {
@@ -4063,7 +4063,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "marketId" field.</summary>
+        // <summary>Field number for the "marketId" field.</summary>
         public const int MarketIdFieldNumber = 2;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public long MarketId {
@@ -4074,7 +4074,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "exchange" field.</summary>
+        // <summary>Field number for the "exchange" field.</summary>
         public const int ExchangeFieldNumber = 3;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string Exchange {
@@ -4085,7 +4085,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "channelId" field.</summary>
+        // <summary>Field number for the "channelId" field.</summary>
         public const int ChannelIdFieldNumber = 4;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int ChannelId {
@@ -4096,7 +4096,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "subscriptionType" field.</summary>
+        // <summary>Field number for the "subscriptionType" field.</summary>
         public const int SubscriptionTypeFieldNumber = 10;
         private static readonly pb::FieldCodec<global::Org.Openfeed.SubscriptionType> _repeated_subscriptionType_codec
             = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Org.Openfeed.SubscriptionType) x);
@@ -4106,12 +4106,12 @@ namespace Org.Openfeed {
           get { return subscriptionType_; }
         }
 
-        /// <summary>Field number for the "snapshotIntervalSeconds" field.</summary>
+        // <summary>Field number for the "snapshotIntervalSeconds" field.</summary>
         public const int SnapshotIntervalSecondsFieldNumber = 11;
         private int snapshotIntervalSeconds_;
-        /// <summary>
-        //// 0 = send only current snapshot once, else send at interval seconds 
-        /// </summary>
+        // <summary>
+        /// 0 = send only current snapshot once, else send at interval seconds 
+        // </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int SnapshotIntervalSeconds {
           get { return snapshotIntervalSeconds_; }
@@ -4121,7 +4121,7 @@ namespace Org.Openfeed {
         }
 
         private object data_;
-        /// <summary>Enum of possible cases for the "data" oneof.</summary>
+        // <summary>Enum of possible cases for the "data" oneof.</summary>
         public enum DataOneofCase {
           None = 0,
           Symbol = 1,
@@ -4349,7 +4349,7 @@ namespace Org.Openfeed {
       return new SubscriptionResponse(this);
     }
 
-    /// <summary>Field number for the "correlationId" field.</summary>
+    // <summary>Field number for the "correlationId" field.</summary>
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4360,7 +4360,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4371,7 +4371,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 3;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4382,7 +4382,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 4;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4393,7 +4393,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
+    // <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 5;
     private string exchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4404,7 +4404,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channelId" field.</summary>
+    // <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 6;
     private int channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4415,7 +4415,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfDefinitions" field.</summary>
+    // <summary>Field number for the "numberOfDefinitions" field.</summary>
     public const int NumberOfDefinitionsFieldNumber = 7;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

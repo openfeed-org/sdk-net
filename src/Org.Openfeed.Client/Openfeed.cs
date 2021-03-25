@@ -11,11 +11,11 @@ using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
 namespace Org.Openfeed {
 
-  /// <summary>Holder for reflection information generated from openfeed.proto</summary>
+  // <summary>Holder for reflection information generated from openfeed.proto</summary>
   public static partial class OpenfeedReflection {
 
     #region Descriptor
-    /// <summary>File descriptor for openfeed.proto</summary>
+    // <summary>File descriptor for openfeed.proto</summary>
     public static pbr::FileDescriptor Descriptor {
       get { return descriptor; }
     }
@@ -419,9 +419,9 @@ namespace Org.Openfeed {
 
   }
   #region Enums
-  /// <summary>
-  //// Book side
-  /// </summary>
+  // <summary>
+  // Book side
+  // </summary>
   public enum BookSide {
     [pbr::OriginalName("UNKNOWN_BOOK_SIDE")] UnknownBookSide = 0,
     [pbr::OriginalName("BID")] Bid = 1,
@@ -451,9 +451,9 @@ namespace Org.Openfeed {
     [pbr::OriginalName("CROSS")] Cross = 19,
     [pbr::OriginalName("POST_CLOSE")] PostClose = 20,
     [pbr::OriginalName("NO_CHANGE")] NoChange = 21,
-    /// <summary>
-    /// Not available for trading.
-    /// </summary>
+    // <summary>
+    // Not available for trading.
+    // </summary>
     [pbr::OriginalName("NAFT")] Naft = 22,
   }
 
@@ -525,10 +525,10 @@ namespace Org.Openfeed {
   #endregion
 
   #region Messages
-  /// <summary>
-  //// A wrapper for Openfeed data.  Will contain exactly one of the supported
-  /// message types
-  /// </summary>
+  // <summary>
+  // A wrapper for Openfeed data.  Will contain exactly one of the supported
+  // message types
+  // </summary>
   public sealed partial class OpenfeedMessage : pb::IMessage<OpenfeedMessage> {
     private static readonly pb::MessageParser<OpenfeedMessage> _parser = new pb::MessageParser<OpenfeedMessage>(() => new OpenfeedMessage());
     private pb::UnknownFieldSet _unknownFields;
@@ -593,12 +593,12 @@ namespace Org.Openfeed {
       return new OpenfeedMessage(this);
     }
 
-    /// <summary>Field number for the "sendingTime" field.</summary>
+    // <summary>Field number for the "sendingTime" field.</summary>
     public const int SendingTimeFieldNumber = 1;
     private long sendingTime_;
-    /// <summary>
-    //// Nanoecond unix epoch at time of message transmission (UTC)
-    /// </summary>
+    // <summary>
+    // Nanoecond unix epoch at time of message transmission (UTC)
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SendingTime {
       get { return sendingTime_; }
@@ -607,13 +607,13 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "totalCount" field.</summary>
+    // <summary>Field number for the "totalCount" field.</summary>
     public const int TotalCountFieldNumber = 2;
     private int totalCount_;
-    /// <summary>
-    //// The total number of markets available on this channel
-    /// at the time the message was sent.  For UDP snapshot and definition feeds.
-    /// </summary>
+    // <summary>
+    // The total number of markets available on this channel
+    // at the time the message was sent.  For UDP snapshot and definition feeds.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TotalCount {
       get { return totalCount_; }
@@ -622,13 +622,13 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "syncSequence" field.</summary>
+    // <summary>Field number for the "syncSequence" field.</summary>
     public const int SyncSequenceFieldNumber = 3;
     private long syncSequence_;
-    /// <summary>
-    //// The most recent packet sequence number sent on the incremental feed
-    /// at the time this message was sent.  For UDP snapshot and definition feeds.
-    /// </summary>
+    // <summary>
+    // The most recent packet sequence number sent on the incremental feed
+    // at the time this message was sent.  For UDP snapshot and definition feeds.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SyncSequence {
       get { return syncSequence_; }
@@ -637,12 +637,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "context" field.</summary>
+    // <summary>Field number for the "context" field.</summary>
     public const int ContextFieldNumber = 4;
     private global::Org.Openfeed.Context context_;
-    /// <summary>
-    /// Feed specific context data
-    /// </summary>
+    // <summary>
+    // Feed specific context data
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Context Context {
       get { return context_; }
@@ -651,7 +651,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channelReset" field.</summary>
+    // <summary>Field number for the "channelReset" field.</summary>
     public const int ChannelResetFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.ChannelReset ChannelReset {
@@ -662,7 +662,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "heartBeat" field.</summary>
+    // <summary>Field number for the "heartBeat" field.</summary>
     public const int HeartBeatFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.HeartBeat HeartBeat {
@@ -673,7 +673,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "adminMessage" field.</summary>
+    // <summary>Field number for the "adminMessage" field.</summary>
     public const int AdminMessageFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.AdminMessage AdminMessage {
@@ -684,7 +684,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentDefinition" field.</summary>
+    // <summary>Field number for the "instrumentDefinition" field.</summary>
     public const int InstrumentDefinitionFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentDefinition InstrumentDefinition {
@@ -695,7 +695,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentGroupStatus" field.</summary>
+    // <summary>Field number for the "instrumentGroupStatus" field.</summary>
     public const int InstrumentGroupStatusFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentGroupStatus InstrumentGroupStatus {
@@ -706,7 +706,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSnapshot" field.</summary>
+    // <summary>Field number for the "marketSnapshot" field.</summary>
     public const int MarketSnapshotFieldNumber = 15;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSnapshot MarketSnapshot {
@@ -717,7 +717,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketUpdate" field.</summary>
+    // <summary>Field number for the "marketUpdate" field.</summary>
     public const int MarketUpdateFieldNumber = 16;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketUpdate MarketUpdate {
@@ -728,7 +728,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketStatus" field.</summary>
+    // <summary>Field number for the "marketStatus" field.</summary>
     public const int MarketStatusFieldNumber = 17;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketStatus MarketStatus {
@@ -740,7 +740,7 @@ namespace Org.Openfeed {
     }
 
     private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
+    // <summary>Enum of possible cases for the "data" oneof.</summary>
     public enum DataOneofCase {
       None = 0,
       ChannelReset = 10,
@@ -1099,9 +1099,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// Channel Reset
-  /// </summary>
+  // <summary>
+  // Channel Reset
+  // </summary>
   public sealed partial class ChannelReset : pb::IMessage<ChannelReset> {
     private static readonly pb::MessageParser<ChannelReset> _parser = new pb::MessageParser<ChannelReset>(() => new ChannelReset());
     private pb::UnknownFieldSet _unknownFields;
@@ -1137,7 +1137,7 @@ namespace Org.Openfeed {
       return new ChannelReset(this);
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 1;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1148,7 +1148,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 2;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1259,9 +1259,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Heart Beat
-  /// </summary>
+  // <summary>
+  // Heart Beat
+  // </summary>
   public sealed partial class HeartBeat : pb::IMessage<HeartBeat> {
     private static readonly pb::MessageParser<HeartBeat> _parser = new pb::MessageParser<HeartBeat>(() => new HeartBeat());
     private pb::UnknownFieldSet _unknownFields;
@@ -1299,12 +1299,12 @@ namespace Org.Openfeed {
       return new HeartBeat(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
-    /// <summary>
-    //// UTC timestamp of transaction, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC timestamp of transaction, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -1313,7 +1313,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
     private string status_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1324,7 +1324,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
+    // <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 3;
     private bool exchange_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1335,7 +1335,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 4;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1478,9 +1478,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// Administrative Message
-  /// </summary>
+  // <summary>
+  // Administrative Message
+  // </summary>
   public sealed partial class AdminMessage : pb::IMessage<AdminMessage> {
     private static readonly pb::MessageParser<AdminMessage> _parser = new pb::MessageParser<AdminMessage>(() => new AdminMessage());
     private pb::UnknownFieldSet _unknownFields;
@@ -1521,12 +1521,12 @@ namespace Org.Openfeed {
       return new AdminMessage(this);
     }
 
-    /// <summary>Field number for the "originationTime" field.</summary>
+    // <summary>Field number for the "originationTime" field.</summary>
     public const int OriginationTimeFieldNumber = 1;
     private long originationTime_;
-    /// <summary>
-    /// Origination time = UTC timestamp nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // Origination time = UTC timestamp nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OriginationTime {
       get { return originationTime_; }
@@ -1535,7 +1535,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "source" field.</summary>
+    // <summary>Field number for the "source" field.</summary>
     public const int SourceFieldNumber = 2;
     private string source_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1546,7 +1546,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "languageCode" field.</summary>
+    // <summary>Field number for the "languageCode" field.</summary>
     public const int LanguageCodeFieldNumber = 3;
     private string languageCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1557,7 +1557,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "headLine" field.</summary>
+    // <summary>Field number for the "headLine" field.</summary>
     public const int HeadLineFieldNumber = 4;
     private string headLine_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1568,7 +1568,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "text" field.</summary>
+    // <summary>Field number for the "text" field.</summary>
     public const int TextFieldNumber = 5;
     private string text_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1579,7 +1579,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "status" field.</summary>
+    // <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 6;
     private global::Org.Openfeed.AdminMessage.Types.Status status_ = global::Org.Openfeed.AdminMessage.Types.Status.Ok;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1590,7 +1590,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 7;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1780,7 +1780,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the AdminMessage message type.</summary>
+    // <summary>Container for nested types declared in the AdminMessage message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public enum Status {
@@ -1792,9 +1792,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Instrument Group Status
-  /// </summary>
+  // <summary>
+  // Instrument Group Status
+  // </summary>
   public sealed partial class InstrumentGroupStatus : pb::IMessage<InstrumentGroupStatus> {
     private static readonly pb::MessageParser<InstrumentGroupStatus> _parser = new pb::MessageParser<InstrumentGroupStatus>(() => new InstrumentGroupStatus());
     private pb::UnknownFieldSet _unknownFields;
@@ -1833,12 +1833,12 @@ namespace Org.Openfeed {
       return new InstrumentGroupStatus(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
-    /// <summary>
-    //// UTC Timestamp of transaction, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp of transaction, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -1847,7 +1847,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentGroupId" field.</summary>
+    // <summary>Field number for the "instrumentGroupId" field.</summary>
     public const int InstrumentGroupIdFieldNumber = 2;
     private string instrumentGroupId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1858,7 +1858,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradingStatus" field.</summary>
+    // <summary>Field number for the "tradingStatus" field.</summary>
     public const int TradingStatusFieldNumber = 3;
     private global::Org.Openfeed.InstrumentTradingStatus tradingStatus_ = global::Org.Openfeed.InstrumentTradingStatus.UnknownTradingStatus;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1869,7 +1869,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 4;
     private int tradeDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1880,7 +1880,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 5;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2039,9 +2039,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Market Status
-  /// </summary>
+  // <summary>
+  // Market Status
+  // </summary>
   public sealed partial class MarketStatus : pb::IMessage<MarketStatus> {
     private static readonly pb::MessageParser<MarketStatus> _parser = new pb::MessageParser<MarketStatus>(() => new MarketStatus());
     private pb::UnknownFieldSet _unknownFields;
@@ -2078,12 +2078,12 @@ namespace Org.Openfeed {
       return new MarketStatus(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
-    /// <summary>
-    //// UTC Timestamp of transaction, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp of transaction, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -2092,7 +2092,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 2;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2103,7 +2103,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketWideStatus" field.</summary>
+    // <summary>Field number for the "marketWideStatus" field.</summary>
     public const int MarketWideStatusFieldNumber = 3;
     private global::Org.Openfeed.MarketWideStatus marketWideStatus_ = global::Org.Openfeed.MarketWideStatus.StatusUnknown;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2230,9 +2230,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Session used in snapshot.
-  /// </summary>
+  // <summary>
+  // Session used in snapshot.
+  // </summary>
   public sealed partial class MarketSession : pb::IMessage<MarketSession> {
     private static readonly pb::MessageParser<MarketSession> _parser = new pb::MessageParser<MarketSession>(() => new MarketSession());
     private pb::UnknownFieldSet _unknownFields;
@@ -2277,12 +2277,12 @@ namespace Org.Openfeed {
       return new MarketSession(this);
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 4;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -2291,12 +2291,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 30;
     private global::Org.Openfeed.Open open_;
-    /// <summary>
-    //// Most recent opening price
-    /// </summary>
+    // <summary>
+    // Most recent opening price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Open Open {
       get { return open_; }
@@ -2305,12 +2305,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 31;
     private global::Org.Openfeed.High high_;
-    /// <summary>
-    //// High price for the trading session
-    /// </summary>
+    // <summary>
+    // High price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.High High {
       get { return high_; }
@@ -2319,12 +2319,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 32;
     private global::Org.Openfeed.Low low_;
-    /// <summary>
-    //// Low price for the trading session
-    /// </summary>
+    // <summary>
+    // Low price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Low Low {
       get { return low_; }
@@ -2333,12 +2333,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "last" field.</summary>
+    // <summary>Field number for the "last" field.</summary>
     public const int LastFieldNumber = 35;
     private global::Org.Openfeed.Last last_;
-    /// <summary>
-    //// Most recent traded price and quantity
-    /// </summary>
+    // <summary>
+    // Most recent traded price and quantity
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Last Last {
       get { return last_; }
@@ -2347,12 +2347,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 38;
     private global::Org.Openfeed.Volume volume_;
-    /// <summary>
-    //// Total traded volume
-    /// </summary>
+    // <summary>
+    // Total traded volume
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Volume Volume {
       get { return volume_; }
@@ -2361,12 +2361,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlement" field.</summary>
+    // <summary>Field number for the "settlement" field.</summary>
     public const int SettlementFieldNumber = 39;
     private global::Org.Openfeed.Settlement settlement_;
-    /// <summary>
-    //// Most recent settlement price
-    /// </summary>
+    // <summary>
+    // Most recent settlement price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Settlement Settlement {
       get { return settlement_; }
@@ -2375,12 +2375,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "prevSettlement" field.</summary>
+    // <summary>Field number for the "prevSettlement" field.</summary>
     public const int PrevSettlementFieldNumber = 44;
     private global::Org.Openfeed.Settlement prevSettlement_;
-    /// <summary>
-    //// Most recent settlement price
-    /// </summary>
+    // <summary>
+    // Most recent settlement price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Settlement PrevSettlement {
       get { return prevSettlement_; }
@@ -2389,12 +2389,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openInterest" field.</summary>
+    // <summary>Field number for the "openInterest" field.</summary>
     public const int OpenInterestFieldNumber = 40;
     private global::Org.Openfeed.OpenInterest openInterest_;
-    /// <summary>
-    //// Most recent open interest
-    /// </summary>
+    // <summary>
+    // Most recent open interest
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.OpenInterest OpenInterest {
       get { return openInterest_; }
@@ -2403,12 +2403,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfTrades" field.</summary>
+    // <summary>Field number for the "numberOfTrades" field.</summary>
     public const int NumberOfTradesFieldNumber = 41;
     private global::Org.Openfeed.NumberOfTrades numberOfTrades_;
-    /// <summary>
-    //// Number of trades
-    /// </summary>
+    // <summary>
+    // Number of trades
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.NumberOfTrades NumberOfTrades {
       get { return numberOfTrades_; }
@@ -2417,12 +2417,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "monetaryValue" field.</summary>
+    // <summary>Field number for the "monetaryValue" field.</summary>
     public const int MonetaryValueFieldNumber = 42;
     private global::Org.Openfeed.MonetaryValue monetaryValue_;
-    /// <summary>
-    //// Monetary value
-    /// </summary>
+    // <summary>
+    // Monetary value
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MonetaryValue MonetaryValue {
       get { return monetaryValue_; }
@@ -2735,9 +2735,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Snapshot for a market
-  /// </summary>
+  // <summary>
+  // Snapshot for a market
+  // </summary>
   public sealed partial class MarketSnapshot : pb::IMessage<MarketSnapshot> {
     private static readonly pb::MessageParser<MarketSnapshot> _parser = new pb::MessageParser<MarketSnapshot>(() => new MarketSnapshot());
     private pb::UnknownFieldSet _unknownFields;
@@ -2807,12 +2807,12 @@ namespace Org.Openfeed {
       return new MarketSnapshot(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
-    /// <summary>
-    //// Unique id identifying the market
-    /// </summary>
+    // <summary>
+    // Unique id identifying the market
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketId {
       get { return marketId_; }
@@ -2821,12 +2821,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 2;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp of transaction, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp of transaction, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -2835,12 +2835,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSequence" field.</summary>
+    // <summary>Field number for the "marketSequence" field.</summary>
     public const int MarketSequenceFieldNumber = 3;
     private long marketSequence_;
-    /// <summary>
-    /// Instrument level sequence number
-    /// </summary>
+    // <summary>
+    // Instrument level sequence number
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketSequence {
       get { return marketSequence_; }
@@ -2849,12 +2849,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 4;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -2863,14 +2863,14 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "totalChunks" field.</summary>
+    // <summary>Field number for the "totalChunks" field.</summary>
     public const int TotalChunksFieldNumber = 5;
     private int totalChunks_;
-    /// <summary>
-    //// A snapshot with market depth may exceed the maximum message size.
-    ///  In that case, the snapshot will be broken up across multiple
-    ///  snapshot messages.
-    /// </summary>
+    // <summary>
+    // A snapshot with market depth may exceed the maximum message size.
+    //  In that case, the snapshot will be broken up across multiple
+    //  snapshot messages.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TotalChunks {
       get { return totalChunks_; }
@@ -2879,7 +2879,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currentChunk" field.</summary>
+    // <summary>Field number for the "currentChunk" field.</summary>
     public const int CurrentChunkFieldNumber = 6;
     private int currentChunk_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2890,12 +2890,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 7;
     private string symbol_ = "";
-    /// <summary>
-    /// Optional symbol identifier
-    /// </summary>
+    // <summary>
+    // Optional symbol identifier
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
       get { return symbol_; }
@@ -2904,13 +2904,13 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priceDenominator" field.</summary>
+    // <summary>Field number for the "priceDenominator" field.</summary>
     public const int PriceDenominatorFieldNumber = 8;
     private int priceDenominator_;
-    /// <summary>
-    //// Divide prices by this value to get real price values.  Optional, use value
-    //// from InstrumentDefinition if not set.
-    /// </summary>
+    // <summary>
+    // Divide prices by this value to get real price values.  Optional, use value
+    // from InstrumentDefinition if not set.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PriceDenominator {
       get { return priceDenominator_; }
@@ -2919,12 +2919,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "service" field.</summary>
+    // <summary>Field number for the "service" field.</summary>
     public const int ServiceFieldNumber = 9;
     private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
-    /// <summary>
-    /// 
-    /// </summary>
+    // <summary>
+    // 
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Service Service {
       get { return service_; }
@@ -2933,12 +2933,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentStatus" field.</summary>
+    // <summary>Field number for the "instrumentStatus" field.</summary>
     public const int InstrumentStatusFieldNumber = 10;
     private global::Org.Openfeed.InstrumentStatus instrumentStatus_;
-    /// <summary>
-    /// 
-    /// </summary>
+    // <summary>
+    // 
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentStatus InstrumentStatus {
       get { return instrumentStatus_; }
@@ -2947,12 +2947,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bbo" field.</summary>
+    // <summary>Field number for the "bbo" field.</summary>
     public const int BboFieldNumber = 11;
     private global::Org.Openfeed.BestBidOffer bbo_;
-    /// <summary>
-    /// Best Bid Offer
-    /// </summary>
+    // <summary>
+    // Best Bid Offer
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.BestBidOffer Bbo {
       get { return bbo_; }
@@ -2961,12 +2961,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "index" field.</summary>
+    // <summary>Field number for the "index" field.</summary>
     public const int IndexFieldNumber = 12;
     private global::Org.Openfeed.IndexValue index_;
-    /// <summary>
-    /// Index Value
-    /// </summary>
+    // <summary>
+    // Index Value
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.IndexValue Index {
       get { return index_; }
@@ -2975,33 +2975,33 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priceLevels" field.</summary>
+    // <summary>Field number for the "priceLevels" field.</summary>
     public const int PriceLevelsFieldNumber = 13;
     private static readonly pb::FieldCodec<global::Org.Openfeed.AddPriceLevel> _repeated_priceLevels_codec
         = pb::FieldCodec.ForMessage(106, global::Org.Openfeed.AddPriceLevel.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.AddPriceLevel> priceLevels_ = new pbc::RepeatedField<global::Org.Openfeed.AddPriceLevel>();
-    /// <summary>
-    /// Price Level Book
-    /// </summary>
+    // <summary>
+    // Price Level Book
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Org.Openfeed.AddPriceLevel> PriceLevels {
       get { return priceLevels_; }
     }
 
-    /// <summary>Field number for the "orders" field.</summary>
+    // <summary>Field number for the "orders" field.</summary>
     public const int OrdersFieldNumber = 14;
     private static readonly pb::FieldCodec<global::Org.Openfeed.AddOrder> _repeated_orders_codec
         = pb::FieldCodec.ForMessage(114, global::Org.Openfeed.AddOrder.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.AddOrder> orders_ = new pbc::RepeatedField<global::Org.Openfeed.AddOrder>();
-    /// <summary>
-    /// Order Book
-    /// </summary>
+    // <summary>
+    // Order Book
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Org.Openfeed.AddOrder> Orders {
       get { return orders_; }
     }
 
-    /// <summary>Field number for the "news" field.</summary>
+    // <summary>Field number for the "news" field.</summary>
     public const int NewsFieldNumber = 15;
     private global::Org.Openfeed.News news_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3012,12 +3012,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 30;
     private global::Org.Openfeed.Open open_;
-    /// <summary>
-    //// Most recent opening price
-    /// </summary>
+    // <summary>
+    // Most recent opening price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Open Open {
       get { return open_; }
@@ -3026,12 +3026,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 31;
     private global::Org.Openfeed.High high_;
-    /// <summary>
-    //// High price for the trading session
-    /// </summary>
+    // <summary>
+    // High price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.High High {
       get { return high_; }
@@ -3040,12 +3040,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 32;
     private global::Org.Openfeed.Low low_;
-    /// <summary>
-    //// Low price for the trading session
-    /// </summary>
+    // <summary>
+    // Low price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Low Low {
       get { return low_; }
@@ -3054,12 +3054,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "close" field.</summary>
+    // <summary>Field number for the "close" field.</summary>
     public const int CloseFieldNumber = 33;
     private global::Org.Openfeed.Close close_;
-    /// <summary>
-    //// Most recent closing price
-    /// </summary>
+    // <summary>
+    // Most recent closing price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Close Close {
       get { return close_; }
@@ -3068,12 +3068,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "prevClose" field.</summary>
+    // <summary>Field number for the "prevClose" field.</summary>
     public const int PrevCloseFieldNumber = 34;
     private global::Org.Openfeed.PrevClose prevClose_;
-    /// <summary>
-    //// Previous closing price
-    /// </summary>
+    // <summary>
+    // Previous closing price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.PrevClose PrevClose {
       get { return prevClose_; }
@@ -3082,12 +3082,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "last" field.</summary>
+    // <summary>Field number for the "last" field.</summary>
     public const int LastFieldNumber = 35;
     private global::Org.Openfeed.Last last_;
-    /// <summary>
-    //// Most recent traded price and quantity
-    /// </summary>
+    // <summary>
+    // Most recent traded price and quantity
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Last Last {
       get { return last_; }
@@ -3096,12 +3096,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "yearHigh" field.</summary>
+    // <summary>Field number for the "yearHigh" field.</summary>
     public const int YearHighFieldNumber = 36;
     private global::Org.Openfeed.YearHigh yearHigh_;
-    /// <summary>
-    //// Year high price
-    /// </summary>
+    // <summary>
+    // Year high price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.YearHigh YearHigh {
       get { return yearHigh_; }
@@ -3110,12 +3110,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "yearLow" field.</summary>
+    // <summary>Field number for the "yearLow" field.</summary>
     public const int YearLowFieldNumber = 37;
     private global::Org.Openfeed.YearLow yearLow_;
-    /// <summary>
-    //// Year low price
-    /// </summary>
+    // <summary>
+    // Year low price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.YearLow YearLow {
       get { return yearLow_; }
@@ -3124,12 +3124,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 38;
     private global::Org.Openfeed.Volume volume_;
-    /// <summary>
-    //// Total traded volume
-    /// </summary>
+    // <summary>
+    // Total traded volume
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Volume Volume {
       get { return volume_; }
@@ -3138,12 +3138,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlement" field.</summary>
+    // <summary>Field number for the "settlement" field.</summary>
     public const int SettlementFieldNumber = 39;
     private global::Org.Openfeed.Settlement settlement_;
-    /// <summary>
-    //// Most recent settlement price
-    /// </summary>
+    // <summary>
+    // Most recent settlement price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Settlement Settlement {
       get { return settlement_; }
@@ -3152,12 +3152,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openInterest" field.</summary>
+    // <summary>Field number for the "openInterest" field.</summary>
     public const int OpenInterestFieldNumber = 40;
     private global::Org.Openfeed.OpenInterest openInterest_;
-    /// <summary>
-    //// Most recent open interest
-    /// </summary>
+    // <summary>
+    // Most recent open interest
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.OpenInterest OpenInterest {
       get { return openInterest_; }
@@ -3166,12 +3166,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vwap" field.</summary>
+    // <summary>Field number for the "vwap" field.</summary>
     public const int VwapFieldNumber = 41;
     private global::Org.Openfeed.Vwap vwap_;
-    /// <summary>
-    //// Most recent volume weighted average price
-    /// </summary>
+    // <summary>
+    // Most recent volume weighted average price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Vwap Vwap {
       get { return vwap_; }
@@ -3180,7 +3180,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
+    // <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
     public const int DividendsIncomeDistributionsFieldNumber = 42;
     private global::Org.Openfeed.DividendsIncomeDistributions dividendsIncomeDistributions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3191,7 +3191,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfTrades" field.</summary>
+    // <summary>Field number for the "numberOfTrades" field.</summary>
     public const int NumberOfTradesFieldNumber = 43;
     private global::Org.Openfeed.NumberOfTrades numberOfTrades_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3202,7 +3202,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "monetaryValue" field.</summary>
+    // <summary>Field number for the "monetaryValue" field.</summary>
     public const int MonetaryValueFieldNumber = 44;
     private global::Org.Openfeed.MonetaryValue monetaryValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3213,7 +3213,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "capitalDistributions" field.</summary>
+    // <summary>Field number for the "capitalDistributions" field.</summary>
     public const int CapitalDistributionsFieldNumber = 45;
     private global::Org.Openfeed.CapitalDistributions capitalDistributions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3224,7 +3224,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sharesOutstanding" field.</summary>
+    // <summary>Field number for the "sharesOutstanding" field.</summary>
     public const int SharesOutstandingFieldNumber = 46;
     private global::Org.Openfeed.SharesOutstanding sharesOutstanding_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3235,7 +3235,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "netAssetValue" field.</summary>
+    // <summary>Field number for the "netAssetValue" field.</summary>
     public const int NetAssetValueFieldNumber = 47;
     private global::Org.Openfeed.NetAssetValue netAssetValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3246,12 +3246,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "previousSession" field.</summary>
+    // <summary>Field number for the "previousSession" field.</summary>
     public const int PreviousSessionFieldNumber = 48;
     private global::Org.Openfeed.MarketSession previousSession_;
-    /// <summary>
-    //// Previous session.
-    /// </summary>
+    // <summary>
+    // Previous session.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSession PreviousSession {
       get { return previousSession_; }
@@ -3260,12 +3260,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tSession" field.</summary>
+    // <summary>Field number for the "tSession" field.</summary>
     public const int TSessionFieldNumber = 49;
     private global::Org.Openfeed.MarketSession tSession_;
-    /// <summary>
-    //// 'T' session.
-    /// </summary>
+    // <summary>
+    // 'T' session.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSession TSession {
       get { return tSession_; }
@@ -3274,12 +3274,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volumeAtPrice" field.</summary>
+    // <summary>Field number for the "volumeAtPrice" field.</summary>
     public const int VolumeAtPriceFieldNumber = 50;
     private global::Org.Openfeed.VolumeAtPrice volumeAtPrice_;
-    /// <summary>
-    //// Volume at price. Used by the market state/ JERQ.
-    /// </summary>
+    // <summary>
+    // Volume at price. Used by the market state/ JERQ.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.VolumeAtPrice VolumeAtPrice {
       get { return volumeAtPrice_; }
@@ -4068,9 +4068,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// Used by market state to return snapshot.
-  /// </summary>
+  // <summary>
+  // Used by market state to return snapshot.
+  // </summary>
   public sealed partial class MarketSnapshotResponse : pb::IMessage<MarketSnapshotResponse> {
     private static readonly pb::MessageParser<MarketSnapshotResponse> _parser = new pb::MessageParser<MarketSnapshotResponse>(() => new MarketSnapshotResponse());
     private pb::UnknownFieldSet _unknownFields;
@@ -4107,7 +4107,7 @@ namespace Org.Openfeed {
       return new MarketSnapshotResponse(this);
     }
 
-    /// <summary>Field number for the "result" field.</summary>
+    // <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
     private global::Org.Openfeed.SnapshotRequestResult result_ = global::Org.Openfeed.SnapshotRequestResult.SnapshotRequestUnknownResult;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4118,7 +4118,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "message" field.</summary>
+    // <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 2;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4129,7 +4129,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSnapshot" field.</summary>
+    // <summary>Field number for the "marketSnapshot" field.</summary>
     public const int MarketSnapshotFieldNumber = 3;
     private global::Org.Openfeed.MarketSnapshot marketSnapshot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4262,10 +4262,10 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  ///
-  /// Market Update for an instrument
-  /// </summary>
+  // <summary>
+  //
+  // Market Update for an instrument
+  // </summary>
   public sealed partial class MarketUpdate : pb::IMessage<MarketUpdate> {
     private static readonly pb::MessageParser<MarketUpdate> _parser = new pb::MessageParser<MarketUpdate>(() => new MarketUpdate());
     private pb::UnknownFieldSet _unknownFields;
@@ -4396,12 +4396,12 @@ namespace Org.Openfeed {
       return new MarketUpdate(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
-    /// <summary>
-    //// Unique id identifying the market
-    /// </summary>
+    // <summary>
+    // Unique id identifying the market
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketId {
       get { return marketId_; }
@@ -4410,12 +4410,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 2;
     private string symbol_ = "";
-    /// <summary>
-    /// Optional symbol identifier
-    /// </summary>
+    // <summary>
+    // Optional symbol identifier
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
       get { return symbol_; }
@@ -4424,13 +4424,13 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 3;
     private long transactionTime_;
-    /// <summary>
-    //// UTC Timestamp of transaction, nano seconds since Unix epoch
-    //// This is usually the execution venue timestamp.
-    /// </summary>
+    // <summary>
+    // UTC Timestamp of transaction, nano seconds since Unix epoch
+    // This is usually the execution venue timestamp.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -4439,12 +4439,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "distributionTime" field.</summary>
+    // <summary>Field number for the "distributionTime" field.</summary>
     public const int DistributionTimeFieldNumber = 4;
     private long distributionTime_;
-    /// <summary>
-    //// Distribution time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // Distribution time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DistributionTime {
       get { return distributionTime_; }
@@ -4453,12 +4453,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSequence" field.</summary>
+    // <summary>Field number for the "marketSequence" field.</summary>
     public const int MarketSequenceFieldNumber = 5;
     private long marketSequence_;
-    /// <summary>
-    //// Market level sequencing number
-    /// </summary>
+    // <summary>
+    // Market level sequencing number
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long MarketSequence {
       get { return marketSequence_; }
@@ -4467,12 +4467,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sourceSequence" field.</summary>
+    // <summary>Field number for the "sourceSequence" field.</summary>
     public const int SourceSequenceFieldNumber = 6;
     private long sourceSequence_;
-    /// <summary>
-    //// Data source sequence number
-    /// </summary>
+    // <summary>
+    // Data source sequence number
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long SourceSequence {
       get { return sourceSequence_; }
@@ -4481,12 +4481,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "originatorId" field.</summary>
+    // <summary>Field number for the "originatorId" field.</summary>
     public const int OriginatorIdFieldNumber = 7;
     private pb::ByteString originatorId_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Market participant/originator
-    /// </summary>
+    // <summary>
+    // Market participant/originator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OriginatorId {
       get { return originatorId_; }
@@ -4495,13 +4495,13 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priceDenominator" field.</summary>
+    // <summary>Field number for the "priceDenominator" field.</summary>
     public const int PriceDenominatorFieldNumber = 9;
     private int priceDenominator_;
-    /// <summary>
-    //// Divide prices by this value to get real price values.  Optional, use value
-    //// from InstrumentDefinition if not set.
-    /// </summary>
+    // <summary>
+    // Divide prices by this value to get real price values.  Optional, use value
+    // from InstrumentDefinition if not set.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PriceDenominator {
       get { return priceDenominator_; }
@@ -4510,12 +4510,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "context" field.</summary>
+    // <summary>Field number for the "context" field.</summary>
     public const int ContextFieldNumber = 10;
     private global::Org.Openfeed.Context context_;
-    /// <summary>
-    /// Feed specific context data set as required.
-    /// </summary>
+    // <summary>
+    // Feed specific context data set as required.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Context Context {
       get { return context_; }
@@ -4524,12 +4524,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "session" field.</summary>
+    // <summary>Field number for the "session" field.</summary>
     public const int SessionFieldNumber = 11;
     private global::Org.Openfeed.MarketSession session_;
-    /// <summary>
-    //// Current session. This is used to 'enhance' updates from the translator in the Market State
-    /// </summary>
+    // <summary>
+    // Current session. This is used to 'enhance' updates from the translator in the Market State
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSession Session {
       get { return session_; }
@@ -4538,12 +4538,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tSession" field.</summary>
+    // <summary>Field number for the "tSession" field.</summary>
     public const int TSessionFieldNumber = 12;
     private global::Org.Openfeed.MarketSession tSession_;
-    /// <summary>
-    //// 'T' session. This is used to 'enhance' updates from the translator in the Market State
-    /// </summary>
+    // <summary>
+    // 'T' session. This is used to 'enhance' updates from the translator in the Market State
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSession TSession {
       get { return tSession_; }
@@ -4552,12 +4552,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "previousSession" field.</summary>
+    // <summary>Field number for the "previousSession" field.</summary>
     public const int PreviousSessionFieldNumber = 13;
     private global::Org.Openfeed.MarketSession previousSession_;
-    /// <summary>
-    //// Previous session. This is used to 'enhance' updates from the translator in the Market State
-    /// </summary>
+    // <summary>
+    // Previous session. This is used to 'enhance' updates from the translator in the Market State
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSession PreviousSession {
       get { return previousSession_; }
@@ -4566,12 +4566,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "regional" field.</summary>
+    // <summary>Field number for the "regional" field.</summary>
     public const int RegionalFieldNumber = 14;
     private bool regional_;
-    /// <summary>
-    //// True if message applies to regional/participant member
-    /// </summary>
+    // <summary>
+    // True if message applies to regional/participant member
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Regional {
       get { return regional_; }
@@ -4580,7 +4580,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "news" field.</summary>
+    // <summary>Field number for the "news" field.</summary>
     public const int NewsFieldNumber = 20;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.News News {
@@ -4591,7 +4591,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "clearBook" field.</summary>
+    // <summary>Field number for the "clearBook" field.</summary>
     public const int ClearBookFieldNumber = 21;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.ClearBook ClearBook {
@@ -4602,7 +4602,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentStatus" field.</summary>
+    // <summary>Field number for the "instrumentStatus" field.</summary>
     public const int InstrumentStatusFieldNumber = 22;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentStatus InstrumentStatus {
@@ -4613,7 +4613,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bbo" field.</summary>
+    // <summary>Field number for the "bbo" field.</summary>
     public const int BboFieldNumber = 23;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.BestBidOffer Bbo {
@@ -4624,7 +4624,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "depthPriceLevel" field.</summary>
+    // <summary>Field number for the "depthPriceLevel" field.</summary>
     public const int DepthPriceLevelFieldNumber = 24;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.DepthPriceLevel DepthPriceLevel {
@@ -4635,7 +4635,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "depthOrder" field.</summary>
+    // <summary>Field number for the "depthOrder" field.</summary>
     public const int DepthOrderFieldNumber = 25;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.DepthOrder DepthOrder {
@@ -4646,7 +4646,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "index" field.</summary>
+    // <summary>Field number for the "index" field.</summary>
     public const int IndexFieldNumber = 26;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.IndexValue Index {
@@ -4657,7 +4657,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "trades" field.</summary>
+    // <summary>Field number for the "trades" field.</summary>
     public const int TradesFieldNumber = 27;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Trades Trades {
@@ -4668,7 +4668,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 28;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Open Open {
@@ -4679,7 +4679,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 29;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.High High {
@@ -4690,7 +4690,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 30;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Low Low {
@@ -4701,7 +4701,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "close" field.</summary>
+    // <summary>Field number for the "close" field.</summary>
     public const int CloseFieldNumber = 31;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Close Close {
@@ -4712,7 +4712,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "prevClose" field.</summary>
+    // <summary>Field number for the "prevClose" field.</summary>
     public const int PrevCloseFieldNumber = 32;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.PrevClose PrevClose {
@@ -4723,7 +4723,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "last" field.</summary>
+    // <summary>Field number for the "last" field.</summary>
     public const int LastFieldNumber = 33;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Last Last {
@@ -4734,7 +4734,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "yearHigh" field.</summary>
+    // <summary>Field number for the "yearHigh" field.</summary>
     public const int YearHighFieldNumber = 34;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.YearHigh YearHigh {
@@ -4745,7 +4745,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "yearLow" field.</summary>
+    // <summary>Field number for the "yearLow" field.</summary>
     public const int YearLowFieldNumber = 35;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.YearLow YearLow {
@@ -4756,7 +4756,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 36;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Volume Volume {
@@ -4767,7 +4767,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlement" field.</summary>
+    // <summary>Field number for the "settlement" field.</summary>
     public const int SettlementFieldNumber = 37;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Settlement Settlement {
@@ -4778,7 +4778,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openInterest" field.</summary>
+    // <summary>Field number for the "openInterest" field.</summary>
     public const int OpenInterestFieldNumber = 38;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.OpenInterest OpenInterest {
@@ -4789,7 +4789,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vwap" field.</summary>
+    // <summary>Field number for the "vwap" field.</summary>
     public const int VwapFieldNumber = 39;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Vwap Vwap {
@@ -4800,7 +4800,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
+    // <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
     public const int DividendsIncomeDistributionsFieldNumber = 40;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.DividendsIncomeDistributions DividendsIncomeDistributions {
@@ -4811,7 +4811,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberOfTrades" field.</summary>
+    // <summary>Field number for the "numberOfTrades" field.</summary>
     public const int NumberOfTradesFieldNumber = 41;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.NumberOfTrades NumberOfTrades {
@@ -4822,7 +4822,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "monetaryValue" field.</summary>
+    // <summary>Field number for the "monetaryValue" field.</summary>
     public const int MonetaryValueFieldNumber = 42;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MonetaryValue MonetaryValue {
@@ -4833,7 +4833,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "capitalDistributions" field.</summary>
+    // <summary>Field number for the "capitalDistributions" field.</summary>
     public const int CapitalDistributionsFieldNumber = 43;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.CapitalDistributions CapitalDistributions {
@@ -4844,7 +4844,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sharesOutstanding" field.</summary>
+    // <summary>Field number for the "sharesOutstanding" field.</summary>
     public const int SharesOutstandingFieldNumber = 44;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.SharesOutstanding SharesOutstanding {
@@ -4855,7 +4855,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "netAssetValue" field.</summary>
+    // <summary>Field number for the "netAssetValue" field.</summary>
     public const int NetAssetValueFieldNumber = 45;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.NetAssetValue NetAssetValue {
@@ -4866,7 +4866,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketSummary" field.</summary>
+    // <summary>Field number for the "marketSummary" field.</summary>
     public const int MarketSummaryFieldNumber = 46;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.MarketSummary MarketSummary {
@@ -4878,7 +4878,7 @@ namespace Org.Openfeed {
     }
 
     private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
+    // <summary>Enum of possible cases for the "data" oneof.</summary>
     public enum DataOneofCase {
       None = 0,
       News = 20,
@@ -5874,9 +5874,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Depth Price Level
-  /// </summary>
+  // <summary>
+  // Depth Price Level
+  // </summary>
   public sealed partial class DepthPriceLevel : pb::IMessage<DepthPriceLevel> {
     private static readonly pb::MessageParser<DepthPriceLevel> _parser = new pb::MessageParser<DepthPriceLevel>(() => new DepthPriceLevel());
     private pb::UnknownFieldSet _unknownFields;
@@ -5911,7 +5911,7 @@ namespace Org.Openfeed {
       return new DepthPriceLevel(this);
     }
 
-    /// <summary>Field number for the "levels" field.</summary>
+    // <summary>Field number for the "levels" field.</summary>
     public const int LevelsFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Org.Openfeed.DepthPriceLevel.Types.Entry> _repeated_levels_codec
         = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.DepthPriceLevel.Types.Entry.Parser);
@@ -5997,7 +5997,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the DepthPriceLevel message type.</summary>
+    // <summary>Container for nested types declared in the DepthPriceLevel message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Entry : pb::IMessage<Entry> {
@@ -6045,7 +6045,7 @@ namespace Org.Openfeed {
           return new Entry(this);
         }
 
-        /// <summary>Field number for the "addPriceLevel" field.</summary>
+        // <summary>Field number for the "addPriceLevel" field.</summary>
         public const int AddPriceLevelFieldNumber = 1;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.AddPriceLevel AddPriceLevel {
@@ -6056,7 +6056,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "deletePriceLevel" field.</summary>
+        // <summary>Field number for the "deletePriceLevel" field.</summary>
         public const int DeletePriceLevelFieldNumber = 2;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.DeletePriceLevel DeletePriceLevel {
@@ -6067,7 +6067,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "modifyPriceLevel" field.</summary>
+        // <summary>Field number for the "modifyPriceLevel" field.</summary>
         public const int ModifyPriceLevelFieldNumber = 3;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.ModifyPriceLevel ModifyPriceLevel {
@@ -6079,7 +6079,7 @@ namespace Org.Openfeed {
         }
 
         private object data_;
-        /// <summary>Enum of possible cases for the "data" oneof.</summary>
+        // <summary>Enum of possible cases for the "data" oneof.</summary>
         public enum DataOneofCase {
           None = 0,
           AddPriceLevel = 1,
@@ -6248,9 +6248,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Depth By Order
-  /// </summary>
+  // <summary>
+  // Depth By Order
+  // </summary>
   public sealed partial class DepthOrder : pb::IMessage<DepthOrder> {
     private static readonly pb::MessageParser<DepthOrder> _parser = new pb::MessageParser<DepthOrder>(() => new DepthOrder());
     private pb::UnknownFieldSet _unknownFields;
@@ -6285,7 +6285,7 @@ namespace Org.Openfeed {
       return new DepthOrder(this);
     }
 
-    /// <summary>Field number for the "orders" field.</summary>
+    // <summary>Field number for the "orders" field.</summary>
     public const int OrdersFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Org.Openfeed.DepthOrder.Types.Entry> _repeated_orders_codec
         = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.DepthOrder.Types.Entry.Parser);
@@ -6371,7 +6371,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the DepthOrder message type.</summary>
+    // <summary>Container for nested types declared in the DepthOrder message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Entry : pb::IMessage<Entry> {
@@ -6419,7 +6419,7 @@ namespace Org.Openfeed {
           return new Entry(this);
         }
 
-        /// <summary>Field number for the "addOrder" field.</summary>
+        // <summary>Field number for the "addOrder" field.</summary>
         public const int AddOrderFieldNumber = 1;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.AddOrder AddOrder {
@@ -6430,7 +6430,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "deleteOrder" field.</summary>
+        // <summary>Field number for the "deleteOrder" field.</summary>
         public const int DeleteOrderFieldNumber = 2;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.DeleteOrder DeleteOrder {
@@ -6441,7 +6441,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "modifyOrder" field.</summary>
+        // <summary>Field number for the "modifyOrder" field.</summary>
         public const int ModifyOrderFieldNumber = 3;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.ModifyOrder ModifyOrder {
@@ -6453,7 +6453,7 @@ namespace Org.Openfeed {
         }
 
         private object data_;
-        /// <summary>Enum of possible cases for the "data" oneof.</summary>
+        // <summary>Enum of possible cases for the "data" oneof.</summary>
         public enum DataOneofCase {
           None = 0,
           AddOrder = 1,
@@ -6622,9 +6622,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// News or informational message
-  /// </summary>
+  // <summary>
+  // News or informational message
+  // </summary>
   public sealed partial class News : pb::IMessage<News> {
     private static readonly pb::MessageParser<News> _parser = new pb::MessageParser<News>(() => new News());
     private pb::UnknownFieldSet _unknownFields;
@@ -6664,12 +6664,12 @@ namespace Org.Openfeed {
       return new News(this);
     }
 
-    /// <summary>Field number for the "originationTime" field.</summary>
+    // <summary>Field number for the "originationTime" field.</summary>
     public const int OriginationTimeFieldNumber = 1;
     private long originationTime_;
-    /// <summary>
-    /// Origination time = UTC timestamp nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // Origination time = UTC timestamp nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OriginationTime {
       get { return originationTime_; }
@@ -6678,7 +6678,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "source" field.</summary>
+    // <summary>Field number for the "source" field.</summary>
     public const int SourceFieldNumber = 2;
     private string source_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6689,7 +6689,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "languageCode" field.</summary>
+    // <summary>Field number for the "languageCode" field.</summary>
     public const int LanguageCodeFieldNumber = 3;
     private string languageCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6700,7 +6700,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "headLine" field.</summary>
+    // <summary>Field number for the "headLine" field.</summary>
     public const int HeadLineFieldNumber = 4;
     private string headLine_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6711,7 +6711,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "text" field.</summary>
+    // <summary>Field number for the "text" field.</summary>
     public const int TextFieldNumber = 5;
     private string text_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6722,7 +6722,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbols" field.</summary>
+    // <summary>Field number for the "symbols" field.</summary>
     public const int SymbolsFieldNumber = 6;
     private static readonly pb::FieldCodec<string> _repeated_symbols_codec
         = pb::FieldCodec.ForString(50);
@@ -6889,9 +6889,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Clear all data from the order books that are configured for this market.
-  /// </summary>
+  // <summary>
+  // Clear all data from the order books that are configured for this market.
+  // </summary>
   public sealed partial class ClearBook : pb::IMessage<ClearBook> {
     private static readonly pb::MessageParser<ClearBook> _parser = new pb::MessageParser<ClearBook>(() => new ClearBook());
     private pb::UnknownFieldSet _unknownFields;
@@ -6927,7 +6927,7 @@ namespace Org.Openfeed {
       return new ClearBook(this);
     }
 
-    /// <summary>Field number for the "reserved" field.</summary>
+    // <summary>Field number for the "reserved" field.</summary>
     public const int ReservedFieldNumber = 1;
     private int reserved_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6938,7 +6938,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 2;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7049,10 +7049,10 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  ///
-  /// Instrument Status
-  /// </summary>
+  // <summary>
+  //
+  // Instrument Status
+  // </summary>
   public sealed partial class InstrumentStatus : pb::IMessage<InstrumentStatus> {
     private static readonly pb::MessageParser<InstrumentStatus> _parser = new pb::MessageParser<InstrumentStatus>(() => new InstrumentStatus());
     private pb::UnknownFieldSet _unknownFields;
@@ -7092,12 +7092,12 @@ namespace Org.Openfeed {
       return new InstrumentStatus(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -7106,7 +7106,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradingStatus" field.</summary>
+    // <summary>Field number for the "tradingStatus" field.</summary>
     public const int TradingStatusFieldNumber = 10;
     private global::Org.Openfeed.InstrumentTradingStatus tradingStatus_ = global::Org.Openfeed.InstrumentTradingStatus.UnknownTradingStatus;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7117,12 +7117,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openingTime" field.</summary>
+    // <summary>Field number for the "openingTime" field.</summary>
     public const int OpeningTimeFieldNumber = 11;
     private long openingTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OpeningTime {
       get { return openingTime_; }
@@ -7131,7 +7131,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "note" field.</summary>
+    // <summary>Field number for the "note" field.</summary>
     public const int NoteFieldNumber = 12;
     private string note_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7142,12 +7142,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 13;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -7156,7 +7156,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "regulationSHOShortSalePriceTest" field.</summary>
+    // <summary>Field number for the "regulationSHOShortSalePriceTest" field.</summary>
     public const int RegulationSHOShortSalePriceTestFieldNumber = 14;
     private global::Org.Openfeed.RegulationSHOShortSalePriceTest regulationSHOShortSalePriceTest_ = global::Org.Openfeed.RegulationSHOShortSalePriceTest.UnknownPriceTest;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7331,11 +7331,11 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Best Bid and Offer.
-  //// If a side is not present, then that side has been deleted.
-  //// By default this value is the NBBO, if regional/participant quote then regional = true
-  /// </summary>
+  // <summary>
+  // Best Bid and Offer.
+  // If a side is not present, then that side has been deleted.
+  // By default this value is the NBBO, if regional/participant quote then regional = true
+  // </summary>
   public sealed partial class BestBidOffer : pb::IMessage<BestBidOffer> {
     private static readonly pb::MessageParser<BestBidOffer> _parser = new pb::MessageParser<BestBidOffer>(() => new BestBidOffer());
     private pb::UnknownFieldSet _unknownFields;
@@ -7382,12 +7382,12 @@ namespace Org.Openfeed {
       return new BestBidOffer(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -7396,12 +7396,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bidPrice" field.</summary>
+    // <summary>Field number for the "bidPrice" field.</summary>
     public const int BidPriceFieldNumber = 10;
     private long bidPrice_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BidPrice {
       get { return bidPrice_; }
@@ -7410,12 +7410,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bidQuantity" field.</summary>
+    // <summary>Field number for the "bidQuantity" field.</summary>
     public const int BidQuantityFieldNumber = 11;
     private long bidQuantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long BidQuantity {
       get { return bidQuantity_; }
@@ -7424,7 +7424,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bidOrderCount" field.</summary>
+    // <summary>Field number for the "bidOrderCount" field.</summary>
     public const int BidOrderCountFieldNumber = 12;
     private int bidOrderCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7435,14 +7435,14 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bidOriginator" field.</summary>
+    // <summary>Field number for the "bidOriginator" field.</summary>
     public const int BidOriginatorFieldNumber = 13;
     private pb::ByteString bidOriginator_ = pb::ByteString.Empty;
-    /// <summary>
-    //// Liquidity provider information
-    /// For Forex: BANK:CITY
-    /// For Equities: EXCHANGE_MIC
-    /// </summary>
+    // <summary>
+    // Liquidity provider information
+    // For Forex: BANK:CITY
+    // For Equities: EXCHANGE_MIC
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString BidOriginator {
       get { return bidOriginator_; }
@@ -7451,7 +7451,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bidQuoteCondition" field.</summary>
+    // <summary>Field number for the "bidQuoteCondition" field.</summary>
     public const int BidQuoteConditionFieldNumber = 14;
     private pb::ByteString bidQuoteCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7462,12 +7462,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offerPrice" field.</summary>
+    // <summary>Field number for the "offerPrice" field.</summary>
     public const int OfferPriceFieldNumber = 20;
     private long offerPrice_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OfferPrice {
       get { return offerPrice_; }
@@ -7476,12 +7476,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offerQuantity" field.</summary>
+    // <summary>Field number for the "offerQuantity" field.</summary>
     public const int OfferQuantityFieldNumber = 21;
     private long offerQuantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long OfferQuantity {
       get { return offerQuantity_; }
@@ -7490,7 +7490,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offerOrderCount" field.</summary>
+    // <summary>Field number for the "offerOrderCount" field.</summary>
     public const int OfferOrderCountFieldNumber = 22;
     private int offerOrderCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7501,14 +7501,14 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offerOriginator" field.</summary>
+    // <summary>Field number for the "offerOriginator" field.</summary>
     public const int OfferOriginatorFieldNumber = 23;
     private pb::ByteString offerOriginator_ = pb::ByteString.Empty;
-    /// <summary>
-    //// Liquidity provider information
-    /// For Forex: BANK:CITY
-    /// For Equities: EXCHANGE_MIC
-    /// </summary>
+    // <summary>
+    // Liquidity provider information
+    // For Forex: BANK:CITY
+    // For Equities: EXCHANGE_MIC
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OfferOriginator {
       get { return offerOriginator_; }
@@ -7517,7 +7517,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offerQuoteCondition" field.</summary>
+    // <summary>Field number for the "offerQuoteCondition" field.</summary>
     public const int OfferQuoteConditionFieldNumber = 24;
     private pb::ByteString offerQuoteCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7528,7 +7528,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quoteCondition" field.</summary>
+    // <summary>Field number for the "quoteCondition" field.</summary>
     public const int QuoteConditionFieldNumber = 30;
     private pb::ByteString quoteCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7539,12 +7539,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "regional" field.</summary>
+    // <summary>Field number for the "regional" field.</summary>
     public const int RegionalFieldNumber = 32;
     private bool regional_;
-    /// <summary>
-    //// True if regional/participant member quote
-    /// </summary>
+    // <summary>
+    // True if regional/participant member quote
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Regional {
       get { return regional_; }
@@ -7829,9 +7829,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Insert a new price level, pushing existing levels down
-  /// </summary>
+  // <summary>
+  // Insert a new price level, pushing existing levels down
+  // </summary>
   public sealed partial class AddPriceLevel : pb::IMessage<AddPriceLevel> {
     private static readonly pb::MessageParser<AddPriceLevel> _parser = new pb::MessageParser<AddPriceLevel>(() => new AddPriceLevel());
     private pb::UnknownFieldSet _unknownFields;
@@ -7872,12 +7872,12 @@ namespace Org.Openfeed {
       return new AddPriceLevel(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -7886,12 +7886,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
+    // <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 10;
     private int level_;
-    /// <summary>
-    //// price level index, starting at 1
-    /// </summary>
+    // <summary>
+    // price level index, starting at 1
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Level {
       get { return level_; }
@@ -7900,7 +7900,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7911,12 +7911,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 12;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -7925,12 +7925,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 13;
     private long quantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Quantity {
       get { return quantity_; }
@@ -7939,7 +7939,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "orderCount" field.</summary>
+    // <summary>Field number for the "orderCount" field.</summary>
     public const int OrderCountFieldNumber = 14;
     private int orderCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7950,7 +7950,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "impliedQuantity" field.</summary>
+    // <summary>Field number for the "impliedQuantity" field.</summary>
     public const int ImpliedQuantityFieldNumber = 15;
     private long impliedQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8141,9 +8141,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Delete an existing price level, pulling existing levels up
-  /// </summary>
+  // <summary>
+  // Delete an existing price level, pulling existing levels up
+  // </summary>
   public sealed partial class DeletePriceLevel : pb::IMessage<DeletePriceLevel> {
     private static readonly pb::MessageParser<DeletePriceLevel> _parser = new pb::MessageParser<DeletePriceLevel>(() => new DeletePriceLevel());
     private pb::UnknownFieldSet _unknownFields;
@@ -8180,12 +8180,12 @@ namespace Org.Openfeed {
       return new DeletePriceLevel(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -8194,12 +8194,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
+    // <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 10;
     private int level_;
-    /// <summary>
-    //// price level index, starting at 1
-    /// </summary>
+    // <summary>
+    // price level index, starting at 1
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Level {
       get { return level_; }
@@ -8208,7 +8208,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8335,10 +8335,10 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Modify the quantity or orderCount of an existing price level.
-  //// The price itself will not change.
-  /// </summary>
+  // <summary>
+  // Modify the quantity or orderCount of an existing price level.
+  // The price itself will not change.
+  // </summary>
   public sealed partial class ModifyPriceLevel : pb::IMessage<ModifyPriceLevel> {
     private static readonly pb::MessageParser<ModifyPriceLevel> _parser = new pb::MessageParser<ModifyPriceLevel>(() => new ModifyPriceLevel());
     private pb::UnknownFieldSet _unknownFields;
@@ -8379,12 +8379,12 @@ namespace Org.Openfeed {
       return new ModifyPriceLevel(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -8393,12 +8393,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "level" field.</summary>
+    // <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 10;
     private int level_;
-    /// <summary>
-    //// price level index, starting at 1
-    /// </summary>
+    // <summary>
+    // price level index, starting at 1
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Level {
       get { return level_; }
@@ -8407,7 +8407,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8418,12 +8418,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 12;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -8432,12 +8432,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 13;
     private long quantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Quantity {
       get { return quantity_; }
@@ -8446,7 +8446,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "orderCount" field.</summary>
+    // <summary>Field number for the "orderCount" field.</summary>
     public const int OrderCountFieldNumber = 14;
     private int orderCount_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8457,7 +8457,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "impliedQuantity" field.</summary>
+    // <summary>Field number for the "impliedQuantity" field.</summary>
     public const int ImpliedQuantityFieldNumber = 15;
     private long impliedQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8648,9 +8648,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// Add an order to the order book.  Indexed by orderId, which is unique per channel
-  /// </summary>
+  // <summary>
+  // Add an order to the order book.  Indexed by orderId, which is unique per channel
+  // </summary>
   public sealed partial class AddOrder : pb::IMessage<AddOrder> {
     private static readonly pb::MessageParser<AddOrder> _parser = new pb::MessageParser<AddOrder>(() => new AddOrder());
     private pb::UnknownFieldSet _unknownFields;
@@ -8691,7 +8691,7 @@ namespace Org.Openfeed {
       return new AddOrder(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8702,7 +8702,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "orderId" field.</summary>
+    // <summary>Field number for the "orderId" field.</summary>
     public const int OrderIdFieldNumber = 10;
     private long orderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8713,7 +8713,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8724,7 +8724,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 12;
     private long price_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8735,7 +8735,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 13;
     private long quantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8746,7 +8746,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "isImplied" field.</summary>
+    // <summary>Field number for the "isImplied" field.</summary>
     public const int IsImpliedFieldNumber = 14;
     private bool isImplied_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8757,7 +8757,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priority" field.</summary>
+    // <summary>Field number for the "priority" field.</summary>
     public const int PriorityFieldNumber = 15;
     private long priority_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8948,9 +8948,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Delete an order from the order book. Indexed by orderId, which is unique per channel
-  /// </summary>
+  // <summary>
+  // Delete an order from the order book. Indexed by orderId, which is unique per channel
+  // </summary>
   public sealed partial class DeleteOrder : pb::IMessage<DeleteOrder> {
     private static readonly pb::MessageParser<DeleteOrder> _parser = new pb::MessageParser<DeleteOrder>(() => new DeleteOrder());
     private pb::UnknownFieldSet _unknownFields;
@@ -8987,7 +8987,7 @@ namespace Org.Openfeed {
       return new DeleteOrder(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8998,7 +8998,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "orderId" field.</summary>
+    // <summary>Field number for the "orderId" field.</summary>
     public const int OrderIdFieldNumber = 10;
     private long orderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9009,7 +9009,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9136,9 +9136,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Modify the price or quantity of an order.  The side and implied flag cannot change 
-  /// </summary>
+  // <summary>
+  // Modify the price or quantity of an order.  The side and implied flag cannot change 
+  // </summary>
   public sealed partial class ModifyOrder : pb::IMessage<ModifyOrder> {
     private static readonly pb::MessageParser<ModifyOrder> _parser = new pb::MessageParser<ModifyOrder>(() => new ModifyOrder());
     private pb::UnknownFieldSet _unknownFields;
@@ -9179,7 +9179,7 @@ namespace Org.Openfeed {
       return new ModifyOrder(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9190,7 +9190,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "orderId" field.</summary>
+    // <summary>Field number for the "orderId" field.</summary>
     public const int OrderIdFieldNumber = 10;
     private long orderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9201,7 +9201,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 11;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9212,7 +9212,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 12;
     private long price_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9223,7 +9223,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 13;
     private long quantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9234,7 +9234,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "isImplied" field.</summary>
+    // <summary>Field number for the "isImplied" field.</summary>
     public const int IsImpliedFieldNumber = 14;
     private bool isImplied_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9245,7 +9245,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priority" field.</summary>
+    // <summary>Field number for the "priority" field.</summary>
     public const int PriorityFieldNumber = 15;
     private long priority_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9436,9 +9436,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// For non-tradable index products
-  /// </summary>
+  // <summary>
+  // For non-tradable index products
+  // </summary>
   public sealed partial class IndexValue : pb::IMessage<IndexValue> {
     private static readonly pb::MessageParser<IndexValue> _parser = new pb::MessageParser<IndexValue>(() => new IndexValue());
     private pb::UnknownFieldSet _unknownFields;
@@ -9484,12 +9484,12 @@ namespace Org.Openfeed {
       return new IndexValue(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -9498,12 +9498,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -9512,7 +9512,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "last" field.</summary>
+    // <summary>Field number for the "last" field.</summary>
     public const int LastFieldNumber = 11;
     private long last_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9523,7 +9523,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 12;
     private long volume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9534,7 +9534,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 13;
     private long open_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9545,7 +9545,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlementOpen" field.</summary>
+    // <summary>Field number for the "settlementOpen" field.</summary>
     public const int SettlementOpenFieldNumber = 14;
     private long settlementOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9556,7 +9556,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "specialOpen" field.</summary>
+    // <summary>Field number for the "specialOpen" field.</summary>
     public const int SpecialOpenFieldNumber = 15;
     private long specialOpen_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9567,7 +9567,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 16;
     private long high_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9578,7 +9578,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 17;
     private long low_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9589,7 +9589,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "close" field.</summary>
+    // <summary>Field number for the "close" field.</summary>
     public const int CloseFieldNumber = 18;
     private long close_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9600,7 +9600,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bid" field.</summary>
+    // <summary>Field number for the "bid" field.</summary>
     public const int BidFieldNumber = 19;
     private long bid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9611,7 +9611,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "offer" field.</summary>
+    // <summary>Field number for the "offer" field.</summary>
     public const int OfferFieldNumber = 20;
     private long offer_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9882,9 +9882,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Trades
-  /// </summary>
+  // <summary>
+  // Trades
+  // </summary>
   public sealed partial class Trades : pb::IMessage<Trades> {
     private static readonly pb::MessageParser<Trades> _parser = new pb::MessageParser<Trades>(() => new Trades());
     private pb::UnknownFieldSet _unknownFields;
@@ -9919,7 +9919,7 @@ namespace Org.Openfeed {
       return new Trades(this);
     }
 
-    /// <summary>Field number for the "trades" field.</summary>
+    // <summary>Field number for the "trades" field.</summary>
     public const int Trades_FieldNumber = 1;
     private static readonly pb::FieldCodec<global::Org.Openfeed.Trades.Types.Entry> _repeated_trades_codec
         = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.Trades.Types.Entry.Parser);
@@ -10005,7 +10005,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the Trades message type.</summary>
+    // <summary>Container for nested types declared in the Trades message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class Entry : pb::IMessage<Entry> {
@@ -10053,7 +10053,7 @@ namespace Org.Openfeed {
           return new Entry(this);
         }
 
-        /// <summary>Field number for the "trade" field.</summary>
+        // <summary>Field number for the "trade" field.</summary>
         public const int TradeFieldNumber = 1;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.Trade Trade {
@@ -10064,7 +10064,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "tradeCorrection" field.</summary>
+        // <summary>Field number for the "tradeCorrection" field.</summary>
         public const int TradeCorrectionFieldNumber = 2;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.TradeCorrection TradeCorrection {
@@ -10075,7 +10075,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "tradeCancel" field.</summary>
+        // <summary>Field number for the "tradeCancel" field.</summary>
         public const int TradeCancelFieldNumber = 3;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Org.Openfeed.TradeCancel TradeCancel {
@@ -10087,7 +10087,7 @@ namespace Org.Openfeed {
         }
 
         private object data_;
-        /// <summary>Enum of possible cases for the "data" oneof.</summary>
+        // <summary>Enum of possible cases for the "data" oneof.</summary>
         public enum DataOneofCase {
           None = 0,
           Trade = 1,
@@ -10256,9 +10256,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// A live trade.  When received, update the "last" field
-  /// </summary>
+  // <summary>
+  // A live trade.  When received, update the "last" field
+  // </summary>
   public sealed partial class Trade : pb::IMessage<Trade> {
     private static readonly pb::MessageParser<Trade> _parser = new pb::MessageParser<Trade>(() => new Trade());
     private pb::UnknownFieldSet _unknownFields;
@@ -10317,12 +10317,12 @@ namespace Org.Openfeed {
       return new Trade(this);
     }
 
-    /// <summary>Field number for the "originatorId" field.</summary>
+    // <summary>Field number for the "originatorId" field.</summary>
     public const int OriginatorIdFieldNumber = 8;
     private pb::ByteString originatorId_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Market participant/originator
-    /// </summary>
+    // <summary>
+    // Market participant/originator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OriginatorId {
       get { return originatorId_; }
@@ -10331,12 +10331,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
-    /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -10345,12 +10345,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 10;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -10359,12 +10359,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 11;
     private long quantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Quantity {
       get { return quantity_; }
@@ -10373,7 +10373,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeId" field.</summary>
+    // <summary>Field number for the "tradeId" field.</summary>
     public const int TradeIdFieldNumber = 12;
     private pb::ByteString tradeId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10384,12 +10384,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 13;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
-    /// <summary>
-    //// The side of the aggressing order that caused the trade
-    /// </summary>
+    // <summary>
+    // The side of the aggressing order that caused the trade
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.BookSide Side {
       get { return side_; }
@@ -10398,12 +10398,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 14;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -10412,7 +10412,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "buyerId" field.</summary>
+    // <summary>Field number for the "buyerId" field.</summary>
     public const int BuyerIdFieldNumber = 15;
     private pb::ByteString buyerId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10423,7 +10423,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sellerId" field.</summary>
+    // <summary>Field number for the "sellerId" field.</summary>
     public const int SellerIdFieldNumber = 16;
     private pb::ByteString sellerId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10434,7 +10434,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openingTrade" field.</summary>
+    // <summary>Field number for the "openingTrade" field.</summary>
     public const int OpeningTradeFieldNumber = 17;
     private bool openingTrade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10445,7 +10445,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "systemPriced" field.</summary>
+    // <summary>Field number for the "systemPriced" field.</summary>
     public const int SystemPricedFieldNumber = 18;
     private bool systemPriced_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10456,7 +10456,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketOnClose" field.</summary>
+    // <summary>Field number for the "marketOnClose" field.</summary>
     public const int MarketOnCloseFieldNumber = 19;
     private bool marketOnClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10467,7 +10467,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "oddLot" field.</summary>
+    // <summary>Field number for the "oddLot" field.</summary>
     public const int OddLotFieldNumber = 20;
     private bool oddLot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10478,7 +10478,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlementTerms" field.</summary>
+    // <summary>Field number for the "settlementTerms" field.</summary>
     public const int SettlementTermsFieldNumber = 21;
     private global::Org.Openfeed.SettlementTerms settlementTerms_ = global::Org.Openfeed.SettlementTerms.UnknownSettlementTerms;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10489,7 +10489,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "crossType" field.</summary>
+    // <summary>Field number for the "crossType" field.</summary>
     public const int CrossTypeFieldNumber = 22;
     private global::Org.Openfeed.CrossType crossType_ = global::Org.Openfeed.CrossType.UnknownCrossType;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10500,7 +10500,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "byPass" field.</summary>
+    // <summary>Field number for the "byPass" field.</summary>
     public const int ByPassFieldNumber = 23;
     private bool byPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10511,7 +10511,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "lastPrice" field.</summary>
+    // <summary>Field number for the "lastPrice" field.</summary>
     public const int LastPriceFieldNumber = 24;
     private long lastPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10522,7 +10522,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "saleCondition" field.</summary>
+    // <summary>Field number for the "saleCondition" field.</summary>
     public const int SaleConditionFieldNumber = 25;
     private pb::ByteString saleCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10533,7 +10533,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 26;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10544,12 +10544,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "doesNotUpdateLast" field.</summary>
+    // <summary>Field number for the "doesNotUpdateLast" field.</summary>
     public const int DoesNotUpdateLastFieldNumber = 27;
     private bool doesNotUpdateLast_;
-    /// <summary>
-    /// Does not update Last
-    /// </summary>
+    // <summary>
+    // Does not update Last
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool DoesNotUpdateLast {
       get { return doesNotUpdateLast_; }
@@ -10558,12 +10558,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "doesNotUpdateVolume" field.</summary>
+    // <summary>Field number for the "doesNotUpdateVolume" field.</summary>
     public const int DoesNotUpdateVolumeFieldNumber = 28;
     private bool doesNotUpdateVolume_;
-    /// <summary>
-    /// Does not update Volume
-    /// </summary>
+    // <summary>
+    // Does not update Volume
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool DoesNotUpdateVolume {
       get { return doesNotUpdateVolume_; }
@@ -10572,7 +10572,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "session" field.</summary>
+    // <summary>Field number for the "session" field.</summary>
     public const int SessionFieldNumber = 30;
     private string session_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10583,12 +10583,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "blockTrade" field.</summary>
+    // <summary>Field number for the "blockTrade" field.</summary>
     public const int BlockTradeFieldNumber = 31;
     private bool blockTrade_;
-    /// <summary>
-    /// Is this a block trade.
-    /// </summary>
+    // <summary>
+    // Is this a block trade.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool BlockTrade {
       get { return blockTrade_; }
@@ -10597,12 +10597,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "distributionTime" field.</summary>
+    // <summary>Field number for the "distributionTime" field.</summary>
     public const int DistributionTimeFieldNumber = 32;
     private long distributionTime_;
-    /// <summary>
-    //// Distribution time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // Distribution time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DistributionTime {
       get { return distributionTime_; }
@@ -10611,12 +10611,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime2" field.</summary>
+    // <summary>Field number for the "transactionTime2" field.</summary>
     public const int TransactionTime2FieldNumber = 33;
     private long transactionTime2_;
-    /// <summary>
-    //// time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime2 {
       get { return transactionTime2_; }
@@ -11093,9 +11093,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  ////  Trade Correction
-  /// </summary>
+  // <summary>
+  //  Trade Correction
+  // </summary>
   public sealed partial class TradeCorrection : pb::IMessage<TradeCorrection> {
     private static readonly pb::MessageParser<TradeCorrection> _parser = new pb::MessageParser<TradeCorrection>(() => new TradeCorrection());
     private pb::UnknownFieldSet _unknownFields;
@@ -11150,12 +11150,12 @@ namespace Org.Openfeed {
       return new TradeCorrection(this);
     }
 
-    /// <summary>Field number for the "originatorId" field.</summary>
+    // <summary>Field number for the "originatorId" field.</summary>
     public const int OriginatorIdFieldNumber = 8;
     private pb::ByteString originatorId_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Market participant/originator
-    /// </summary>
+    // <summary>
+    // Market participant/originator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OriginatorId {
       get { return originatorId_; }
@@ -11164,7 +11164,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11175,12 +11175,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 10;
     private long price_;
-    /// <summary>
-    /// Corrected Price
-    /// </summary>
+    // <summary>
+    // Corrected Price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -11189,12 +11189,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 11;
     private long quantity_;
-    /// <summary>
-    /// Corrected Quantity
-    /// </summary>
+    // <summary>
+    // Corrected Quantity
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Quantity {
       get { return quantity_; }
@@ -11203,7 +11203,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeId" field.</summary>
+    // <summary>Field number for the "tradeId" field.</summary>
     public const int TradeIdFieldNumber = 12;
     private pb::ByteString tradeId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11214,7 +11214,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "side" field.</summary>
+    // <summary>Field number for the "side" field.</summary>
     public const int SideFieldNumber = 13;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11225,12 +11225,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 14;
     private int tradeDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -11239,7 +11239,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "buyerId" field.</summary>
+    // <summary>Field number for the "buyerId" field.</summary>
     public const int BuyerIdFieldNumber = 15;
     private pb::ByteString buyerId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11250,7 +11250,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sellerId" field.</summary>
+    // <summary>Field number for the "sellerId" field.</summary>
     public const int SellerIdFieldNumber = 16;
     private pb::ByteString sellerId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11261,7 +11261,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openingTrade" field.</summary>
+    // <summary>Field number for the "openingTrade" field.</summary>
     public const int OpeningTradeFieldNumber = 17;
     private bool openingTrade_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11272,7 +11272,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "systemPriced" field.</summary>
+    // <summary>Field number for the "systemPriced" field.</summary>
     public const int SystemPricedFieldNumber = 18;
     private bool systemPriced_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11283,7 +11283,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "marketOnClose" field.</summary>
+    // <summary>Field number for the "marketOnClose" field.</summary>
     public const int MarketOnCloseFieldNumber = 19;
     private bool marketOnClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11294,7 +11294,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "oddLot" field.</summary>
+    // <summary>Field number for the "oddLot" field.</summary>
     public const int OddLotFieldNumber = 20;
     private bool oddLot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11305,7 +11305,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlementTerms" field.</summary>
+    // <summary>Field number for the "settlementTerms" field.</summary>
     public const int SettlementTermsFieldNumber = 21;
     private global::Org.Openfeed.SettlementTerms settlementTerms_ = global::Org.Openfeed.SettlementTerms.UnknownSettlementTerms;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11316,7 +11316,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "crossType" field.</summary>
+    // <summary>Field number for the "crossType" field.</summary>
     public const int CrossTypeFieldNumber = 22;
     private global::Org.Openfeed.CrossType crossType_ = global::Org.Openfeed.CrossType.UnknownCrossType;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11327,7 +11327,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "byPass" field.</summary>
+    // <summary>Field number for the "byPass" field.</summary>
     public const int ByPassFieldNumber = 23;
     private bool byPass_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11338,7 +11338,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "originalTradeId" field.</summary>
+    // <summary>Field number for the "originalTradeId" field.</summary>
     public const int OriginalTradeIdFieldNumber = 24;
     private pb::ByteString originalTradeId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11349,7 +11349,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "saleCondition" field.</summary>
+    // <summary>Field number for the "saleCondition" field.</summary>
     public const int SaleConditionFieldNumber = 25;
     private pb::ByteString saleCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11360,7 +11360,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 26;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11371,12 +11371,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "distributionTime" field.</summary>
+    // <summary>Field number for the "distributionTime" field.</summary>
     public const int DistributionTimeFieldNumber = 27;
     private long distributionTime_;
-    /// <summary>
-    //// Distribution time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // Distribution time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DistributionTime {
       get { return distributionTime_; }
@@ -11385,12 +11385,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime2" field.</summary>
+    // <summary>Field number for the "transactionTime2" field.</summary>
     public const int TransactionTime2FieldNumber = 28;
     private long transactionTime2_;
-    /// <summary>
-    //// time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime2 {
       get { return transactionTime2_; }
@@ -11803,10 +11803,10 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  ///
-  /// Trade Cancel/Break
-  /// </summary>
+  // <summary>
+  //
+  // Trade Cancel/Break
+  // </summary>
   public sealed partial class TradeCancel : pb::IMessage<TradeCancel> {
     private static readonly pb::MessageParser<TradeCancel> _parser = new pb::MessageParser<TradeCancel>(() => new TradeCancel());
     private pb::UnknownFieldSet _unknownFields;
@@ -11849,12 +11849,12 @@ namespace Org.Openfeed {
       return new TradeCancel(this);
     }
 
-    /// <summary>Field number for the "originatorId" field.</summary>
+    // <summary>Field number for the "originatorId" field.</summary>
     public const int OriginatorIdFieldNumber = 8;
     private pb::ByteString originatorId_ = pb::ByteString.Empty;
-    /// <summary>
-    /// Market participant/originator
-    /// </summary>
+    // <summary>
+    // Market participant/originator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString OriginatorId {
       get { return originatorId_; }
@@ -11863,7 +11863,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11874,7 +11874,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "correctedTradePrice" field.</summary>
+    // <summary>Field number for the "correctedTradePrice" field.</summary>
     public const int CorrectedTradePriceFieldNumber = 10;
     private long correctedTradePrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11885,7 +11885,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "correctedTradeQuantity" field.</summary>
+    // <summary>Field number for the "correctedTradeQuantity" field.</summary>
     public const int CorrectedTradeQuantityFieldNumber = 11;
     private long correctedTradeQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11896,7 +11896,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeId" field.</summary>
+    // <summary>Field number for the "tradeId" field.</summary>
     public const int TradeIdFieldNumber = 12;
     private pb::ByteString tradeId_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11907,7 +11907,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "saleCondition" field.</summary>
+    // <summary>Field number for the "saleCondition" field.</summary>
     public const int SaleConditionFieldNumber = 13;
     private pb::ByteString saleCondition_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11918,7 +11918,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 14;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11929,12 +11929,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "distributionTime" field.</summary>
+    // <summary>Field number for the "distributionTime" field.</summary>
     public const int DistributionTimeFieldNumber = 15;
     private long distributionTime_;
-    /// <summary>
-    //// Distribution time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // Distribution time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long DistributionTime {
       get { return distributionTime_; }
@@ -11943,12 +11943,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime2" field.</summary>
+    // <summary>Field number for the "transactionTime2" field.</summary>
     public const int TransactionTime2FieldNumber = 16;
     private long transactionTime2_;
-    /// <summary>
-    //// time in nano seconds since epoch.
-    /// </summary>
+    // <summary>
+    // time in nano seconds since epoch.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime2 {
       get { return transactionTime2_; }
@@ -12207,7 +12207,7 @@ namespace Org.Openfeed {
       return new Open(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12218,12 +12218,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -12232,12 +12232,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -12246,7 +12246,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "OpenCloseSettlementFlag" field.</summary>
+    // <summary>Field number for the "OpenCloseSettlementFlag" field.</summary>
     public const int OpenCloseSettlementFlagFieldNumber = 12;
     private global::Org.Openfeed.OpenCloseSettlementFlag openCloseSettlementFlag_ = global::Org.Openfeed.OpenCloseSettlementFlag.Unknown;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12257,7 +12257,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 13;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12453,7 +12453,7 @@ namespace Org.Openfeed {
       return new High(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12464,12 +12464,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -12478,12 +12478,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -12492,7 +12492,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 12;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12672,7 +12672,7 @@ namespace Org.Openfeed {
       return new Low(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12683,12 +12683,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -12697,12 +12697,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -12711,7 +12711,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 12;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12891,7 +12891,7 @@ namespace Org.Openfeed {
       return new Close(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12902,12 +12902,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -12916,12 +12916,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -12930,7 +12930,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 12;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13110,7 +13110,7 @@ namespace Org.Openfeed {
       return new PrevClose(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13121,12 +13121,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -13135,12 +13135,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -13149,7 +13149,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 12;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13331,7 +13331,7 @@ namespace Org.Openfeed {
       return new Last(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13342,12 +13342,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -13356,12 +13356,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -13370,12 +13370,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "quantity" field.</summary>
+    // <summary>Field number for the "quantity" field.</summary>
     public const int QuantityFieldNumber = 12;
     private long quantity_;
-    /// <summary>
-    //// Divide by quantityDenominator
-    /// </summary>
+    // <summary>
+    // Divide by quantityDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Quantity {
       get { return quantity_; }
@@ -13384,7 +13384,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 13;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13395,7 +13395,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "session" field.</summary>
+    // <summary>Field number for the "session" field.</summary>
     public const int SessionFieldNumber = 30;
     private string session_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13570,9 +13570,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// 52 week
-  /// </summary>
+  // <summary>
+  // 52 week
+  // </summary>
   public sealed partial class YearHigh : pb::IMessage<YearHigh> {
     private static readonly pb::MessageParser<YearHigh> _parser = new pb::MessageParser<YearHigh>(() => new YearHigh());
     private pb::UnknownFieldSet _unknownFields;
@@ -13609,7 +13609,7 @@ namespace Org.Openfeed {
       return new YearHigh(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13620,12 +13620,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 10;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -13634,7 +13634,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 11;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13761,9 +13761,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// 52 week
-  /// </summary>
+  // <summary>
+  // 52 week
+  // </summary>
   public sealed partial class YearLow : pb::IMessage<YearLow> {
     private static readonly pb::MessageParser<YearLow> _parser = new pb::MessageParser<YearLow>(() => new YearLow());
     private pb::UnknownFieldSet _unknownFields;
@@ -13800,7 +13800,7 @@ namespace Org.Openfeed {
       return new YearLow(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13811,12 +13811,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 10;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -13825,7 +13825,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 11;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13952,9 +13952,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Total volume traded
-  /// </summary>
+  // <summary>
+  // Total volume traded
+  // </summary>
   public sealed partial class Volume : pb::IMessage<Volume> {
     private static readonly pb::MessageParser<Volume> _parser = new pb::MessageParser<Volume>(() => new Volume());
     private pb::UnknownFieldSet _unknownFields;
@@ -13991,7 +13991,7 @@ namespace Org.Openfeed {
       return new Volume(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14002,12 +14002,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -14016,12 +14016,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int Volume_FieldNumber = 11;
     private long volume_;
-    /// <summary>
-    /// Total volume traded.
-    /// </summary>
+    // <summary>
+    // Total volume traded.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Volume_ {
       get { return volume_; }
@@ -14146,9 +14146,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Total number of trades
-  /// </summary>
+  // <summary>
+  // Total number of trades
+  // </summary>
   public sealed partial class NumberOfTrades : pb::IMessage<NumberOfTrades> {
     private static readonly pb::MessageParser<NumberOfTrades> _parser = new pb::MessageParser<NumberOfTrades>(() => new NumberOfTrades());
     private pb::UnknownFieldSet _unknownFields;
@@ -14185,7 +14185,7 @@ namespace Org.Openfeed {
       return new NumberOfTrades(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14196,12 +14196,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -14210,7 +14210,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "numberTrades" field.</summary>
+    // <summary>Field number for the "numberTrades" field.</summary>
     public const int NumberTradesFieldNumber = 11;
     private long numberTrades_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14337,9 +14337,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Total monetary value of trades
-  /// </summary>
+  // <summary>
+  // Total monetary value of trades
+  // </summary>
   public sealed partial class MonetaryValue : pb::IMessage<MonetaryValue> {
     private static readonly pb::MessageParser<MonetaryValue> _parser = new pb::MessageParser<MonetaryValue>(() => new MonetaryValue());
     private pb::UnknownFieldSet _unknownFields;
@@ -14377,7 +14377,7 @@ namespace Org.Openfeed {
       return new MonetaryValue(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14388,12 +14388,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -14402,12 +14402,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "value" field.</summary>
+    // <summary>Field number for the "value" field.</summary>
     public const int ValueFieldNumber = 11;
     private long value_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Value {
       get { return value_; }
@@ -14416,7 +14416,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "valueCurrencyCode" field.</summary>
+    // <summary>Field number for the "valueCurrencyCode" field.</summary>
     public const int ValueCurrencyCodeFieldNumber = 12;
     private string valueCurrencyCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14559,9 +14559,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  ///// Settlement value for futures and options markets.
-  /// </summary>
+  // <summary>
+  // Settlement value for futures and options markets.
+  // </summary>
   public sealed partial class Settlement : pb::IMessage<Settlement> {
     private static readonly pb::MessageParser<Settlement> _parser = new pb::MessageParser<Settlement>(() => new Settlement());
     private pb::UnknownFieldSet _unknownFields;
@@ -14603,7 +14603,7 @@ namespace Org.Openfeed {
       return new Settlement(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14614,12 +14614,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -14628,12 +14628,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "price" field.</summary>
+    // <summary>Field number for the "price" field.</summary>
     public const int PriceFieldNumber = 11;
     private long price_;
-    /// <summary>
-    //// Divide by priceDenominator
-    /// </summary>
+    // <summary>
+    // Divide by priceDenominator
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Price {
       get { return price_; }
@@ -14642,7 +14642,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "preliminarySettle" field.</summary>
+    // <summary>Field number for the "preliminarySettle" field.</summary>
     public const int PreliminarySettleFieldNumber = 12;
     private bool preliminarySettle_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14653,7 +14653,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currency" field.</summary>
+    // <summary>Field number for the "currency" field.</summary>
     public const int CurrencyFieldNumber = 13;
     private string currency_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14664,7 +14664,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlementSource" field.</summary>
+    // <summary>Field number for the "settlementSource" field.</summary>
     public const int SettlementSourceFieldNumber = 14;
     private global::Org.Openfeed.SettlementSource settlementSource_ = global::Org.Openfeed.SettlementSource.UnknownSettlementSource;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14675,12 +14675,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "session" field.</summary>
+    // <summary>Field number for the "session" field.</summary>
     public const int SessionFieldNumber = 15;
     private string session_ = "";
-    /// <summary>
-    //// Used by CME ITC.
-    /// </summary>
+    // <summary>
+    // Used by CME ITC.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Session {
       get { return session_; }
@@ -14689,12 +14689,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "reserved" field.</summary>
+    // <summary>Field number for the "reserved" field.</summary>
     public const int ReservedFieldNumber = 127;
     private bool reserved_;
-    /// <summary>
-    //// Reserved
-    /// </summary>
+    // <summary>
+    // Reserved
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Reserved {
       get { return reserved_; }
@@ -14899,9 +14899,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Open interest
-  /// </summary>
+  // <summary>
+  // Open interest
+  // </summary>
   public sealed partial class OpenInterest : pb::IMessage<OpenInterest> {
     private static readonly pb::MessageParser<OpenInterest> _parser = new pb::MessageParser<OpenInterest>(() => new OpenInterest());
     private pb::UnknownFieldSet _unknownFields;
@@ -14938,7 +14938,7 @@ namespace Org.Openfeed {
       return new OpenInterest(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14949,12 +14949,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -14963,7 +14963,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 11;
     private long volume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15090,9 +15090,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Volume Weighted Average Price
-  /// </summary>
+  // <summary>
+  // Volume Weighted Average Price
+  // </summary>
   public sealed partial class Vwap : pb::IMessage<Vwap> {
     private static readonly pb::MessageParser<Vwap> _parser = new pb::MessageParser<Vwap>(() => new Vwap());
     private pb::UnknownFieldSet _unknownFields;
@@ -15129,7 +15129,7 @@ namespace Org.Openfeed {
       return new Vwap(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 9;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15140,12 +15140,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -15154,7 +15154,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vwap" field.</summary>
+    // <summary>Field number for the "vwap" field.</summary>
     public const int Vwap_FieldNumber = 11;
     private long vwap_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15281,9 +15281,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Dividends and Income Distributions
-  /// </summary>
+  // <summary>
+  // Dividends and Income Distributions
+  // </summary>
   public sealed partial class DividendsIncomeDistributions : pb::IMessage<DividendsIncomeDistributions> {
     private static readonly pb::MessageParser<DividendsIncomeDistributions> _parser = new pb::MessageParser<DividendsIncomeDistributions>(() => new DividendsIncomeDistributions());
     private pb::UnknownFieldSet _unknownFields;
@@ -15335,7 +15335,7 @@ namespace Org.Openfeed {
       return new DividendsIncomeDistributions(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 6;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15346,7 +15346,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentType" field.</summary>
+    // <summary>Field number for the "instrumentType" field.</summary>
     public const int InstrumentTypeFieldNumber = 7;
     private string instrumentType_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15357,12 +15357,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "corporateAction" field.</summary>
+    // <summary>Field number for the "corporateAction" field.</summary>
     public const int CorporateActionFieldNumber = 8;
     private string corporateAction_ = "";
-    /// <summary>
-    /// Corporate Action
-    /// </summary>
+    // <summary>
+    // Corporate Action
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CorporateAction {
       get { return corporateAction_; }
@@ -15371,12 +15371,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "distributionType" field.</summary>
+    // <summary>Field number for the "distributionType" field.</summary>
     public const int DistributionTypeFieldNumber = 9;
     private string distributionType_ = "";
-    /// <summary>
-    /// Distribution Type
-    /// </summary>
+    // <summary>
+    // Distribution Type
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DistributionType {
       get { return distributionType_; }
@@ -15385,12 +15385,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "payableDate" field.</summary>
+    // <summary>Field number for the "payableDate" field.</summary>
     public const int PayableDateFieldNumber = 10;
     private int payableDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PayableDate {
       get { return payableDate_; }
@@ -15399,7 +15399,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "recordDate" field.</summary>
+    // <summary>Field number for the "recordDate" field.</summary>
     public const int RecordDateFieldNumber = 11;
     private int recordDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15410,7 +15410,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exDividendDate" field.</summary>
+    // <summary>Field number for the "exDividendDate" field.</summary>
     public const int ExDividendDateFieldNumber = 12;
     private int exDividendDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15421,12 +15421,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "amount" field.</summary>
+    // <summary>Field number for the "amount" field.</summary>
     public const int AmountFieldNumber = 13;
     private long amount_;
-    /// <summary>
-    /// Cash amount of distribution
-    /// </summary>
+    // <summary>
+    // Cash amount of distribution
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Amount {
       get { return amount_; }
@@ -15435,7 +15435,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currencyCode" field.</summary>
+    // <summary>Field number for the "currencyCode" field.</summary>
     public const int CurrencyCodeFieldNumber = 14;
     private string currencyCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15446,7 +15446,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "notes" field.</summary>
+    // <summary>Field number for the "notes" field.</summary>
     public const int NotesFieldNumber = 15;
     private static readonly pb::FieldCodec<string> _repeated_notes_codec
         = pb::FieldCodec.ForString(122);
@@ -15456,11 +15456,11 @@ namespace Org.Openfeed {
       get { return notes_; }
     }
 
-    /// <summary>Field number for the "totalCashDistribution" field.</summary>
+    // <summary>Field number for the "totalCashDistribution" field.</summary>
     public const int TotalCashDistributionFieldNumber = 16;
     private long totalCashDistribution_;
-    /// <summary>
-    /// </summary>
+    // <summary>
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TotalCashDistribution {
       get { return totalCashDistribution_; }
@@ -15469,7 +15469,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "nonQualifiedCashDistribution" field.</summary>
+    // <summary>Field number for the "nonQualifiedCashDistribution" field.</summary>
     public const int NonQualifiedCashDistributionFieldNumber = 17;
     private long nonQualifiedCashDistribution_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15480,7 +15480,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "qualifiedCashDistribution" field.</summary>
+    // <summary>Field number for the "qualifiedCashDistribution" field.</summary>
     public const int QualifiedCashDistributionFieldNumber = 18;
     private long qualifiedCashDistribution_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15491,7 +15491,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "taxFreeCashDistribution" field.</summary>
+    // <summary>Field number for the "taxFreeCashDistribution" field.</summary>
     public const int TaxFreeCashDistributionFieldNumber = 19;
     private long taxFreeCashDistribution_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15502,7 +15502,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "ordinaryForeignTaxCredit" field.</summary>
+    // <summary>Field number for the "ordinaryForeignTaxCredit" field.</summary>
     public const int OrdinaryForeignTaxCreditFieldNumber = 20;
     private long ordinaryForeignTaxCredit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15513,7 +15513,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "qualifiedForeignTaxCredit" field.</summary>
+    // <summary>Field number for the "qualifiedForeignTaxCredit" field.</summary>
     public const int QualifiedForeignTaxCreditFieldNumber = 21;
     private long qualifiedForeignTaxCredit_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15524,7 +15524,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "stockDividendRatio" field.</summary>
+    // <summary>Field number for the "stockDividendRatio" field.</summary>
     public const int StockDividendRatioFieldNumber = 22;
     private long stockDividendRatio_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15535,11 +15535,11 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "reinvestDate" field.</summary>
+    // <summary>Field number for the "reinvestDate" field.</summary>
     public const int ReinvestDateFieldNumber = 23;
     private int reinvestDate_;
-    /// <summary>
-    /// </summary>
+    // <summary>
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ReinvestDate {
       get { return reinvestDate_; }
@@ -15897,9 +15897,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Capital Distributions
-  /// </summary>
+  // <summary>
+  // Capital Distributions
+  // </summary>
   public sealed partial class CapitalDistributions : pb::IMessage<CapitalDistributions> {
     private static readonly pb::MessageParser<CapitalDistributions> _parser = new pb::MessageParser<CapitalDistributions>(() => new CapitalDistributions());
     private pb::UnknownFieldSet _unknownFields;
@@ -15946,7 +15946,7 @@ namespace Org.Openfeed {
       return new CapitalDistributions(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 8;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15957,7 +15957,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentType" field.</summary>
+    // <summary>Field number for the "instrumentType" field.</summary>
     public const int InstrumentTypeFieldNumber = 9;
     private string instrumentType_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15968,12 +15968,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "corporateAction" field.</summary>
+    // <summary>Field number for the "corporateAction" field.</summary>
     public const int CorporateActionFieldNumber = 10;
     private string corporateAction_ = "";
-    /// <summary>
-    /// Corporate Action
-    /// </summary>
+    // <summary>
+    // Corporate Action
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CorporateAction {
       get { return corporateAction_; }
@@ -15982,12 +15982,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "payableDate" field.</summary>
+    // <summary>Field number for the "payableDate" field.</summary>
     public const int PayableDateFieldNumber = 11;
     private int payableDate_;
-    /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int PayableDate {
       get { return payableDate_; }
@@ -15996,7 +15996,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "recordDate" field.</summary>
+    // <summary>Field number for the "recordDate" field.</summary>
     public const int RecordDateFieldNumber = 12;
     private int recordDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16007,7 +16007,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "exDate" field.</summary>
+    // <summary>Field number for the "exDate" field.</summary>
     public const int ExDateFieldNumber = 13;
     private int exDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16018,12 +16018,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "shortTermCapitalGain" field.</summary>
+    // <summary>Field number for the "shortTermCapitalGain" field.</summary>
     public const int ShortTermCapitalGainFieldNumber = 14;
     private long shortTermCapitalGain_;
-    /// <summary>
-    /// Distributions
-    /// </summary>
+    // <summary>
+    // Distributions
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long ShortTermCapitalGain {
       get { return shortTermCapitalGain_; }
@@ -16032,7 +16032,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "longTermCapitalGain" field.</summary>
+    // <summary>Field number for the "longTermCapitalGain" field.</summary>
     public const int LongTermCapitalGainFieldNumber = 15;
     private long longTermCapitalGain_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16043,7 +16043,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "unallocatedDistributions" field.</summary>
+    // <summary>Field number for the "unallocatedDistributions" field.</summary>
     public const int UnallocatedDistributionsFieldNumber = 16;
     private long unallocatedDistributions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16054,7 +16054,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "returnOfCapital" field.</summary>
+    // <summary>Field number for the "returnOfCapital" field.</summary>
     public const int ReturnOfCapitalFieldNumber = 17;
     private long returnOfCapital_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16065,7 +16065,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "currencyCode" field.</summary>
+    // <summary>Field number for the "currencyCode" field.</summary>
     public const int CurrencyCodeFieldNumber = 18;
     private string currencyCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16076,7 +16076,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "notes" field.</summary>
+    // <summary>Field number for the "notes" field.</summary>
     public const int NotesFieldNumber = 19;
     private static readonly pb::FieldCodec<string> _repeated_notes_codec
         = pb::FieldCodec.ForString(154);
@@ -16086,11 +16086,11 @@ namespace Org.Openfeed {
       get { return notes_; }
     }
 
-    /// <summary>Field number for the "reinvestDate" field.</summary>
+    // <summary>Field number for the "reinvestDate" field.</summary>
     public const int ReinvestDateFieldNumber = 20;
     private int reinvestDate_;
-    /// <summary>
-    /// </summary>
+    // <summary>
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ReinvestDate {
       get { return reinvestDate_; }
@@ -16368,8 +16368,8 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// </summary>
+  // <summary>
+  // </summary>
   public sealed partial class SharesOutstanding : pb::IMessage<SharesOutstanding> {
     private static readonly pb::MessageParser<SharesOutstanding> _parser = new pb::MessageParser<SharesOutstanding>(() => new SharesOutstanding());
     private pb::UnknownFieldSet _unknownFields;
@@ -16405,7 +16405,7 @@ namespace Org.Openfeed {
       return new SharesOutstanding(this);
     }
 
-    /// <summary>Field number for the "sharesOutstanding" field.</summary>
+    // <summary>Field number for the "sharesOutstanding" field.</summary>
     public const int SharesOutstanding_FieldNumber = 1;
     private long sharesOutstanding_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16416,7 +16416,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 2;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16527,8 +16527,8 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// </summary>
+  // <summary>
+  // </summary>
   public sealed partial class NetAssetValue : pb::IMessage<NetAssetValue> {
     private static readonly pb::MessageParser<NetAssetValue> _parser = new pb::MessageParser<NetAssetValue>(() => new NetAssetValue());
     private pb::UnknownFieldSet _unknownFields;
@@ -16564,7 +16564,7 @@ namespace Org.Openfeed {
       return new NetAssetValue(this);
     }
 
-    /// <summary>Field number for the "netAssetValue" field.</summary>
+    // <summary>Field number for the "netAssetValue" field.</summary>
     public const int NetAssetValue_FieldNumber = 1;
     private long netAssetValue_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16575,7 +16575,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 2;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16686,9 +16686,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Intra and EOD Market Summary
-  /// </summary>
+  // <summary>
+  // Intra and EOD Market Summary
+  // </summary>
   public sealed partial class MarketSummary : pb::IMessage<MarketSummary> {
     private static readonly pb::MessageParser<MarketSummary> _parser = new pb::MessageParser<MarketSummary>(() => new MarketSummary());
     private pb::UnknownFieldSet _unknownFields;
@@ -16741,7 +16741,7 @@ namespace Org.Openfeed {
       return new MarketSummary(this);
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16752,12 +16752,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradingDate" field.</summary>
+    // <summary>Field number for the "tradingDate" field.</summary>
     public const int TradingDateFieldNumber = 2;
     private int tradingDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradingDate {
       get { return tradingDate_; }
@@ -16766,7 +16766,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "startOfDay" field.</summary>
+    // <summary>Field number for the "startOfDay" field.</summary>
     public const int StartOfDayFieldNumber = 3;
     private bool startOfDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16777,7 +16777,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "endOfDay" field.</summary>
+    // <summary>Field number for the "endOfDay" field.</summary>
     public const int EndOfDayFieldNumber = 4;
     private bool endOfDay_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16788,7 +16788,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "clear" field.</summary>
+    // <summary>Field number for the "clear" field.</summary>
     public const int ClearFieldNumber = 5;
     private global::Org.Openfeed.MarketSummary.Types.ClearSet clear_ = global::Org.Openfeed.MarketSummary.Types.ClearSet.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16799,11 +16799,11 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "instrumentStatus" field.</summary>
+    // <summary>Field number for the "instrumentStatus" field.</summary>
     public const int InstrumentStatusFieldNumber = 9;
     private global::Org.Openfeed.InstrumentStatus instrumentStatus_;
-    /// <summary>
-    /// </summary>
+    // <summary>
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentStatus InstrumentStatus {
       get { return instrumentStatus_; }
@@ -16812,7 +16812,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "bbo" field.</summary>
+    // <summary>Field number for the "bbo" field.</summary>
     public const int BboFieldNumber = 10;
     private global::Org.Openfeed.BestBidOffer bbo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16823,7 +16823,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 11;
     private global::Org.Openfeed.Open open_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16834,7 +16834,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 12;
     private global::Org.Openfeed.High high_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16845,7 +16845,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 13;
     private global::Org.Openfeed.Low low_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16856,7 +16856,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "close" field.</summary>
+    // <summary>Field number for the "close" field.</summary>
     public const int CloseFieldNumber = 14;
     private global::Org.Openfeed.Close close_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16867,7 +16867,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "prevClose" field.</summary>
+    // <summary>Field number for the "prevClose" field.</summary>
     public const int PrevCloseFieldNumber = 15;
     private global::Org.Openfeed.PrevClose prevClose_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16878,7 +16878,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "last" field.</summary>
+    // <summary>Field number for the "last" field.</summary>
     public const int LastFieldNumber = 16;
     private global::Org.Openfeed.Last last_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16889,7 +16889,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
+    // <summary>Field number for the "volume" field.</summary>
     public const int VolumeFieldNumber = 17;
     private global::Org.Openfeed.Volume volume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16900,7 +16900,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "settlement" field.</summary>
+    // <summary>Field number for the "settlement" field.</summary>
     public const int SettlementFieldNumber = 18;
     private global::Org.Openfeed.Settlement settlement_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16911,7 +16911,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "openInterest" field.</summary>
+    // <summary>Field number for the "openInterest" field.</summary>
     public const int OpenInterestFieldNumber = 19;
     private global::Org.Openfeed.OpenInterest openInterest_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16922,7 +16922,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vwap" field.</summary>
+    // <summary>Field number for the "vwap" field.</summary>
     public const int VwapFieldNumber = 20;
     private global::Org.Openfeed.Vwap vwap_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16933,12 +16933,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "session" field.</summary>
+    // <summary>Field number for the "session" field.</summary>
     public const int SessionFieldNumber = 21;
     private string session_ = "";
-    /// <summary>
-    //// Used by CME ITC.
-    /// </summary>
+    // <summary>
+    // Used by CME ITC.
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Session {
       get { return session_; }
@@ -16947,7 +16947,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "summaryType" field.</summary>
+    // <summary>Field number for the "summaryType" field.</summary>
     public const int SummaryTypeFieldNumber = 22;
     private global::Org.Openfeed.MarketSummary.Types.SummaryType summaryType_ = global::Org.Openfeed.MarketSummary.Types.SummaryType.ExchangeRefresh;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17401,12 +17401,12 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the MarketSummary message type.</summary>
+    // <summary>Container for nested types declared in the MarketSummary message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      /// <summary>
-      /// Clears sets of fields
-      /// </summary>
+      // <summary>
+      // Clears sets of fields
+      // </summary>
       public enum ClearSet {
         [pbr::OriginalName("NONE")] None = 0,
         [pbr::OriginalName("ALL")] All = 1,
@@ -17414,29 +17414,29 @@ namespace Org.Openfeed {
         [pbr::OriginalName("CUSTOM_1")] Custom1 = 3,
       }
 
-      /// <summary>
-      //// Used to differntiate various ddf messages.
-      /// </summary>
+      // <summary>
+      // Used to differntiate various ddf messages.
+      // </summary>
       public enum SummaryType {
-        /// <summary>
-        /// DDF 2/1 Exchange refresh
-        /// </summary>
+        // <summary>
+        // DDF 2/1 Exchange refresh
+        // </summary>
         [pbr::OriginalName("EXCHANGE_REFRESH")] ExchangeRefresh = 0,
-        /// <summary>
-        /// DDF 2/6 Live Prices refresh
-        /// </summary>
+        // <summary>
+        // DDF 2/6 Live Prices refresh
+        // </summary>
         [pbr::OriginalName("REFRESH_LIVE_PRICE")] RefreshLivePrice = 1,
-        /// <summary>
-        /// DDF 3/C end-of-day commodity prices
-        /// </summary>
+        // <summary>
+        // DDF 3/C end-of-day commodity prices
+        // </summary>
         [pbr::OriginalName("EOD_COMMODITY_PRICES")] EodCommodityPrices = 2,
-        /// <summary>
-        /// DDF 3/S end-of-day stock and forex prices and volume
-        /// </summary>
+        // <summary>
+        // DDF 3/S end-of-day stock and forex prices and volume
+        // </summary>
         [pbr::OriginalName("EOD_STOCK_FOREX_PRICES")] EodStockForexPrices = 3,
-        /// <summary>
-        /// DDF 3/I end-of-day commodity volume and open interest message
-        /// </summary>
+        // <summary>
+        // DDF 3/I end-of-day commodity volume and open interest message
+        // </summary>
         [pbr::OriginalName("EOD_COMMODITY_STATS")] EodCommodityStats = 4,
       }
 
@@ -17480,7 +17480,7 @@ namespace Org.Openfeed {
       return new Context(this);
     }
 
-    /// <summary>Field number for the "data" field.</summary>
+    // <summary>Field number for the "data" field.</summary>
     public const int DataFieldNumber = 1;
     private static readonly pb::FieldCodec<global::Org.Openfeed.ContextData> _repeated_data_codec
         = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.ContextData.Parser);
@@ -17490,7 +17490,7 @@ namespace Org.Openfeed {
       get { return data_; }
     }
 
-    /// <summary>Field number for the "tracePoints" field.</summary>
+    // <summary>Field number for the "tracePoints" field.</summary>
     public const int TracePointsFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Org.Openfeed.TracePoint> _repeated_tracePoints_codec
         = pb::FieldCodec.ForMessage(18, global::Org.Openfeed.TracePoint.Parser);
@@ -17644,7 +17644,7 @@ namespace Org.Openfeed {
       return new ContextData(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
+    // <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17655,7 +17655,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vstring" field.</summary>
+    // <summary>Field number for the "vstring" field.</summary>
     public const int VstringFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Vstring {
@@ -17666,7 +17666,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vbytes" field.</summary>
+    // <summary>Field number for the "vbytes" field.</summary>
     public const int VbytesFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString Vbytes {
@@ -17677,7 +17677,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vbool" field.</summary>
+    // <summary>Field number for the "vbool" field.</summary>
     public const int VboolFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Vbool {
@@ -17688,7 +17688,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vsint32" field.</summary>
+    // <summary>Field number for the "vsint32" field.</summary>
     public const int Vsint32FieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Vsint32 {
@@ -17699,7 +17699,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vsint64" field.</summary>
+    // <summary>Field number for the "vsint64" field.</summary>
     public const int Vsint64FieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Vsint64 {
@@ -17710,7 +17710,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vfloat" field.</summary>
+    // <summary>Field number for the "vfloat" field.</summary>
     public const int VfloatFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public float Vfloat {
@@ -17721,7 +17721,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "vdouble" field.</summary>
+    // <summary>Field number for the "vdouble" field.</summary>
     public const int VdoubleFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double Vdouble {
@@ -17733,7 +17733,7 @@ namespace Org.Openfeed {
     }
 
     private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
+    // <summary>Enum of possible cases for the "data" oneof.</summary>
     public enum DataOneofCase {
       None = 0,
       Vstring = 5,
@@ -17957,9 +17957,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// Tracing
-  /// </summary>
+  // <summary>
+  // Tracing
+  // </summary>
   public sealed partial class TracePoint : pb::IMessage<TracePoint> {
     private static readonly pb::MessageParser<TracePoint> _parser = new pb::MessageParser<TracePoint>(() => new TracePoint());
     private pb::UnknownFieldSet _unknownFields;
@@ -17997,7 +17997,7 @@ namespace Org.Openfeed {
       return new TracePoint(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
+    // <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private string id_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18008,7 +18008,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "componentId" field.</summary>
+    // <summary>Field number for the "componentId" field.</summary>
     public const int ComponentIdFieldNumber = 2;
     private string componentId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18019,7 +18019,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "timestampNs" field.</summary>
+    // <summary>Field number for the "timestampNs" field.</summary>
     public const int TimestampNsFieldNumber = 3;
     private long timestampNs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18030,7 +18030,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "componentLatencyNs" field.</summary>
+    // <summary>Field number for the "componentLatencyNs" field.</summary>
     public const int ComponentLatencyNsFieldNumber = 4;
     private int componentLatencyNs_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18173,9 +18173,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  /// TCP replay request.
-  /// </summary>
+  // <summary>
+  // TCP replay request.
+  // </summary>
   public sealed partial class TCPHistoricalReplayRequest : pb::IMessage<TCPHistoricalReplayRequest> {
     private static readonly pb::MessageParser<TCPHistoricalReplayRequest> _parser = new pb::MessageParser<TCPHistoricalReplayRequest>(() => new TCPHistoricalReplayRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -18214,7 +18214,7 @@ namespace Org.Openfeed {
       return new TCPHistoricalReplayRequest(this);
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 1;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18225,7 +18225,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "resetNumber" field.</summary>
+    // <summary>Field number for the "resetNumber" field.</summary>
     public const int ResetNumberFieldNumber = 2;
     private int resetNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18236,7 +18236,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "sequence" field.</summary>
+    // <summary>Field number for the "sequence" field.</summary>
     public const int SequenceFieldNumber = 3;
     private long sequence_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18247,7 +18247,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "count" field.</summary>
+    // <summary>Field number for the "count" field.</summary>
     public const int CountFieldNumber = 4;
     private int count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18258,7 +18258,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    // <summary>Field number for the "requestId" field.</summary>
     public const int RequestIdFieldNumber = 5;
     private string requestId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18417,9 +18417,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Request for the snapshot to the Market state.
-  /// </summary>
+  // <summary>
+  // Request for the snapshot to the Market state.
+  // </summary>
   public sealed partial class SnapshotRequest : pb::IMessage<SnapshotRequest> {
     private static readonly pb::MessageParser<SnapshotRequest> _parser = new pb::MessageParser<SnapshotRequest>(() => new SnapshotRequest());
     private pb::UnknownFieldSet _unknownFields;
@@ -18457,7 +18457,7 @@ namespace Org.Openfeed {
       return new SnapshotRequest(this);
     }
 
-    /// <summary>Field number for the "channel" field.</summary>
+    // <summary>Field number for the "channel" field.</summary>
     public const int ChannelFieldNumber = 1;
     private int channel_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18468,7 +18468,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "resetNumber" field.</summary>
+    // <summary>Field number for the "resetNumber" field.</summary>
     public const int ResetNumberFieldNumber = 2;
     private int resetNumber_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18479,7 +18479,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    // <summary>Field number for the "requestId" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private string requestId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18490,7 +18490,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "snapshotRequestTypes" field.</summary>
+    // <summary>Field number for the "snapshotRequestTypes" field.</summary>
     public const int SnapshotRequestTypesFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Org.Openfeed.SnapshotRequest.Types.SnapshotRequestType> _repeated_snapshotRequestTypes_codec
         = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::Org.Openfeed.SnapshotRequest.Types.SnapshotRequestType) x);
@@ -18625,7 +18625,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the SnapshotRequest message type.</summary>
+    // <summary>Container for nested types declared in the SnapshotRequest message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public enum SnapshotRequestType {
@@ -18640,10 +18640,10 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// The VolumeAtPrice class encapsulates all of the trades throughout the day,
-  //// and organizes a table of volume at prices.
-  /// </summary>
+  // <summary>
+  // The VolumeAtPrice class encapsulates all of the trades throughout the day,
+  // and organizes a table of volume at prices.
+  // </summary>
   public sealed partial class VolumeAtPrice : pb::IMessage<VolumeAtPrice> {
     private static readonly pb::MessageParser<VolumeAtPrice> _parser = new pb::MessageParser<VolumeAtPrice>(() => new VolumeAtPrice());
     private pb::UnknownFieldSet _unknownFields;
@@ -18685,7 +18685,7 @@ namespace Org.Openfeed {
       return new VolumeAtPrice(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18696,7 +18696,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 2;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18707,12 +18707,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "transactionTime" field.</summary>
+    // <summary>Field number for the "transactionTime" field.</summary>
     public const int TransactionTimeFieldNumber = 3;
     private long transactionTime_;
-    /// <summary>
-    //// UTC Timestamp of transaction, nano seconds since Unix epoch
-    /// </summary>
+    // <summary>
+    // UTC Timestamp of transaction, nano seconds since Unix epoch
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TransactionTime {
       get { return transactionTime_; }
@@ -18721,7 +18721,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "lastPrice" field.</summary>
+    // <summary>Field number for the "lastPrice" field.</summary>
     public const int LastPriceFieldNumber = 4;
     private long lastPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18732,7 +18732,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "lastQuantity" field.</summary>
+    // <summary>Field number for the "lastQuantity" field.</summary>
     public const int LastQuantityFieldNumber = 5;
     private long lastQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18743,7 +18743,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "lastCumulativeVolume" field.</summary>
+    // <summary>Field number for the "lastCumulativeVolume" field.</summary>
     public const int LastCumulativeVolumeFieldNumber = 6;
     private long lastCumulativeVolume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18754,12 +18754,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "tradeDate" field.</summary>
+    // <summary>Field number for the "tradeDate" field.</summary>
     public const int TradeDateFieldNumber = 7;
     private int tradeDate_;
-    /// <summary>
-    //// Date only, format 2012-07-04 -> 20120704
-    /// </summary>
+    // <summary>
+    // Date only, format 2012-07-04 -> 20120704
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int TradeDate {
       get { return tradeDate_; }
@@ -18768,7 +18768,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "priceVolumes" field.</summary>
+    // <summary>Field number for the "priceVolumes" field.</summary>
     public const int PriceVolumesFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Org.Openfeed.VolumeAtPrice.Types.PriceLevelVolume> _repeated_priceVolumes_codec
         = pb::FieldCodec.ForMessage(66, global::Org.Openfeed.VolumeAtPrice.Types.PriceLevelVolume.Parser);
@@ -18966,7 +18966,7 @@ namespace Org.Openfeed {
     }
 
     #region Nested types
-    /// <summary>Container for nested types declared in the VolumeAtPrice message type.</summary>
+    // <summary>Container for nested types declared in the VolumeAtPrice message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       public sealed partial class PriceLevelVolume : pb::IMessage<PriceLevelVolume> {
@@ -19004,7 +19004,7 @@ namespace Org.Openfeed {
           return new PriceLevelVolume(this);
         }
 
-        /// <summary>Field number for the "price" field.</summary>
+        // <summary>Field number for the "price" field.</summary>
         public const int PriceFieldNumber = 1;
         private long price_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19015,7 +19015,7 @@ namespace Org.Openfeed {
           }
         }
 
-        /// <summary>Field number for the "volume" field.</summary>
+        // <summary>Field number for the "volume" field.</summary>
         public const int VolumeFieldNumber = 2;
         private long volume_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19131,9 +19131,9 @@ namespace Org.Openfeed {
 
   }
 
-  /// <summary>
-  //// Open,High,Low,Close
-  /// </summary>
+  // <summary>
+  // Open,High,Low,Close
+  // </summary>
   public sealed partial class Ohlc : pb::IMessage<Ohlc> {
     private static readonly pb::MessageParser<Ohlc> _parser = new pb::MessageParser<Ohlc>(() => new Ohlc());
     private pb::UnknownFieldSet _unknownFields;
@@ -19173,7 +19173,7 @@ namespace Org.Openfeed {
       return new Ohlc(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    // <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19184,7 +19184,7 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "symbol" field.</summary>
+    // <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 2;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19195,12 +19195,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
+    // <summary>Field number for the "open" field.</summary>
     public const int OpenFieldNumber = 3;
     private global::Org.Openfeed.Open open_;
-    /// <summary>
-    //// Most recent opening price
-    /// </summary>
+    // <summary>
+    // Most recent opening price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Open Open {
       get { return open_; }
@@ -19209,12 +19209,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "high" field.</summary>
+    // <summary>Field number for the "high" field.</summary>
     public const int HighFieldNumber = 4;
     private global::Org.Openfeed.High high_;
-    /// <summary>
-    //// High price for the trading session
-    /// </summary>
+    // <summary>
+    // High price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.High High {
       get { return high_; }
@@ -19223,12 +19223,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "low" field.</summary>
+    // <summary>Field number for the "low" field.</summary>
     public const int LowFieldNumber = 5;
     private global::Org.Openfeed.Low low_;
-    /// <summary>
-    //// Low price for the trading session
-    /// </summary>
+    // <summary>
+    // Low price for the trading session
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Low Low {
       get { return low_; }
@@ -19237,12 +19237,12 @@ namespace Org.Openfeed {
       }
     }
 
-    /// <summary>Field number for the "close" field.</summary>
+    // <summary>Field number for the "close" field.</summary>
     public const int CloseFieldNumber = 6;
     private global::Org.Openfeed.Close close_;
-    /// <summary>
-    //// Most recent closing price
-    /// </summary>
+    // <summary>
+    // Most recent closing price
+    // </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.Close Close {
       get { return close_; }
