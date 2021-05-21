@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using Org.Openfeed;
 using Org.Openfeed.Client;
@@ -14,8 +15,12 @@ class Program {
             Console.WriteLine("Disconnected.");
             return default;
         };
-        listeners.OnMessage = msg => {
-            Console.WriteLine(msg.ToString());
+        listeners.OnMessageWithMetadata = (msg, definition, symbols) => {
+            Console.WriteLine("------------------------------------------------------------------------");
+            Console.WriteLine("Symbols: " + (symbols.Length > 0 ? symbols.Aggregate((a, b) => a + ", " + b) : ""));
+            Console.WriteLine("Instrument: " + definition);
+            Console.WriteLine("Message: " + msg.ToString());
+
             return default;
         };
         listeners.OnConnectFailed = ex => {
@@ -23,17 +28,36 @@ class Program {
             return default;
         };
         listeners.OnCredentialsRejected = () => {
-            Console.WriteLine("Credentials rejected.");
+            Console.Error.WriteLine("Credentials rejected.");
+            Environment.Exit(1);
             return default;
         };
 
-        Console.WriteLine("Username:");
+        Console.Write("Username: ");
         var username = Console.ReadLine();
-        Console.WriteLine("Password:");
+        
+        Console.Write("Password: ");
         var password = Console.ReadLine();
 
+        Console.Write("Symbol, /exchange or channel (examples: MSFT, /CME, 22): ");
+        var topic = Console.ReadLine();
+
+        string[] symbols = null, exchanges = null;
+        int[] channels = null;
+
+        if (int.TryParse(topic, out var channel)) {
+            channels = new[] { channel };
+        }
+        else if (topic.StartsWith('/')) {
+            exchanges = new[] { topic[1..].Trim() };
+        }
+        else {
+            symbols = new[] { topic };
+        }
+
         var client = OpenfeedFactory.CreateClient(new Uri("ws://openfeed.aws.barchart.com/ws"), username, password, listeners);
-        var subId = client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: new[] { "MSFT" });
+        
+        client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: symbols, channels: channels, exchanges: exchanges);
 
         Thread.Sleep(Timeout.Infinite);
     }

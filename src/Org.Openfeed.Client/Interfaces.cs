@@ -72,6 +72,28 @@ namespace Org.Openfeed.Client {
     /// the client application about the events that are happening.
     /// </summary>
     public sealed class OpenfeedListeners {
+        private readonly Dictionary<long, (InstrumentDefinition?, string[]?)> _instrumentDefinitions = new Dictionary<long, (InstrumentDefinition?, string[]?)>();
+        private readonly Dictionary<string, InstrumentDefinition> _instrumentsBySymbol = new Dictionary<string, InstrumentDefinition>();
+
+        /// <summary>
+        /// Constructs a new instance of <see cref="OpenfeedListeners"/>.
+        /// </summary>
+        public OpenfeedListeners() {
+            OnMessage = OnAddDetails;
+        }
+
+
+        /// <summary>
+        /// Returns the <see cref="InstrumentDefinition"/> based on the Openfeed symbol.
+        /// </summary>
+        /// <param name="symbol">Openfeed symbol.</param>
+        /// <returns><see cref="InstrumentDefinition"/>  or null.</returns>
+        public InstrumentDefinition? TryGetInstrumentFromSymbol(string symbol) {
+            lock (_instrumentsBySymbol) {
+                return _instrumentsBySymbol.TryGetValue(symbol, out var def) ? def : null;
+            }
+        }
+
         /// <summary>
         /// Function that will be called when a connection to the websocket fails.
         /// </summary>
@@ -95,9 +117,65 @@ namespace Org.Openfeed.Client {
         public Func<ValueTask> OnDisconnected = () => default;
 
         /// <summary>
-        /// Function that will be called when a message is received from the server.
+        /// Function that will be called when a message is received from the server. By default this just adds the instrument definition
+        /// and forwards the call to <see cref="OnMessageWithMetadata"/>.
         /// </summary>
         public Func<OpenfeedGatewayMessage, ValueTask> OnMessage = msg => default;
+
+        /// <summary>
+        /// The standard handler for OnMessage looks up the <see cref="InstrumentDefinition"/> and then calls this dialog.
+        /// </summary>
+        public Func<OpenfeedGatewayMessage, InstrumentDefinition?, string[], ValueTask> OnMessageWithMetadata = (msg, def, symbols) => default;
+
+        private ValueTask OnAddDetails(OpenfeedGatewayMessage msg) {
+            (InstrumentDefinition?, string[]?) GetInstrumentDefinition(long marketId) =>
+                _instrumentDefinitions.TryGetValue(marketId, out var def) ? def : (null, null);
+
+            InstrumentDefinition? def = null;
+            string[]? symbols = null;
+            switch (msg.DataCase) {
+                case OpenfeedGatewayMessage.DataOneofCase.SubscriptionResponse: {
+                    if (msg.SubscriptionResponse.Symbol != null && msg.SubscriptionResponse.MarketId != 0) {
+                        (def, symbols) = GetInstrumentDefinition(msg.SubscriptionResponse.MarketId);
+                        if (symbols == null) {
+                            symbols = new string[1];
+                            symbols[0] = msg.SubscriptionResponse.Symbol;
+                        }
+                        else {
+                            if (Array.IndexOf(symbols, msg.SubscriptionResponse.Symbol) < 0) {
+                                Array.Resize(ref symbols, symbols.Length + 1);
+                                symbols[symbols.Length - 1] = msg.SubscriptionResponse.Symbol;
+                            }
+                        }
+                        _instrumentDefinitions[msg.SubscriptionResponse.MarketId] = (def, symbols);
+                    }
+
+                    break;
+                }
+                case OpenfeedGatewayMessage.DataOneofCase.InstrumentDefinition: {
+                    (def, symbols) = GetInstrumentDefinition(msg.InstrumentDefinition.MarketId);
+                    _instrumentDefinitions[msg.InstrumentDefinition.MarketId] = (msg.InstrumentDefinition, symbols);
+                    lock(_instrumentsBySymbol) {
+                        _instrumentsBySymbol[msg.InstrumentDefinition.Symbol] = msg.InstrumentDefinition;
+                    }
+                    break;
+                }
+                case OpenfeedGatewayMessage.DataOneofCase.MarketSnapshot: {
+                    (def, symbols) = GetInstrumentDefinition(msg.MarketSnapshot.MarketId);
+                    break;
+                }
+                case OpenfeedGatewayMessage.DataOneofCase.MarketUpdate: {
+                    (def, symbols) = GetInstrumentDefinition(msg.MarketUpdate.MarketId);
+                    break;
+                }
+                case OpenfeedGatewayMessage.DataOneofCase.Ohlc: {
+                    (def, symbols) = GetInstrumentDefinition(msg.Ohlc.MarketId);
+                    break;
+                }
+            }
+
+            return OnMessageWithMetadata(msg, def, symbols ?? Array.Empty<string>());
+        }
     }
 
     /// <summary>
