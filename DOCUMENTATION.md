@@ -14,11 +14,12 @@ The listener object, represented by the OpenfeedListener class is dead-simple, j
 
 ```C#
 public sealed class OpenfeedListeners {
-    public Func<Exception, ValueTask> OnConnectFailed = ex => default;
-    public Func<ValueTask> OnCredentialsRejected = () => default;
-    public Func<IOpenfeedConnection, ValueTask> OnConnected = connecton => default;
-    public Func<ValueTask> OnDisconnected = () => default;
-    public Func<OpenfeedGatewayMessage, ValueTask> OnMessage = msg => default;
+    public Func<Exception, ValueTask> OnConnectFailed;
+    public Func<ValueTask> OnCredentialsRejected;
+    public Func<IOpenfeedConnection, ValueTask> OnConnected;
+    public Func<ValueTask> OnDisconnected;
+    public Func<OpenfeedGatewayMessage, ValueTask> OnMessage;
+    public Func<OpenfeedGatewayMessage, InstrumentDefinition?, string[], ValueTask> OnMessageWithMetadata;
 }
 ```
 
@@ -61,6 +62,10 @@ The OnConnectFailed callback will be called when a connection attempt to the Ope
 The last callback we wired is OnCredentialsRejected, which will be called if you attempt to connect with wrong credentials. This is a terminal state - if you receive this callbacks no other callbacks will be called and no other connection attempts will be made. The only sensible thing to do in this case is to dispose the connection client object and then create a new one with the correct credentials.
 
 It is OK not to implement all these callbacks as they all have an existing null implementation.
+
+An alternative to the OnMessage callback is the OnMessageWithMetadata callback. In addition to the received message as the parameter, it also gives you the instrument definition and the list of symbols you've used to subscribe to the symbol referenced in the received message, if any.
+
+The default implementation of the OnMessage callback is the one that tags the received message with that additional information and calls OnMessageWithMetadata. If you point the OnMessage callback to a different function the OnMessageWithMetadata callback will not be called.
 
 ### Asynchronous Handlers
 

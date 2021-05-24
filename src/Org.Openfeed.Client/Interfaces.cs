@@ -120,7 +120,7 @@ namespace Org.Openfeed.Client {
         /// Function that will be called when a message is received from the server. By default this just adds the instrument definition
         /// and forwards the call to <see cref="OnMessageWithMetadata"/>.
         /// </summary>
-        public Func<OpenfeedGatewayMessage, ValueTask> OnMessage = msg => default;
+        public Func<OpenfeedGatewayMessage, ValueTask> OnMessage;
 
         /// <summary>
         /// The standard handler for OnMessage looks up the <see cref="InstrumentDefinition"/> and then calls this dialog.
