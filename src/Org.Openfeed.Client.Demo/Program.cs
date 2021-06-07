@@ -39,16 +39,12 @@ class Program {
         Console.Write("Password: ");
         var password = Console.ReadLine();
 
-        Console.Write("Symbol, /exchange or channel (examples: MSFT, /CME, 22): ");
+        Console.Write("Symbol or /exchange (examples: MSFT, /CME): ");
         var topic = Console.ReadLine();
 
         string[] symbols = null, exchanges = null;
-        int[] channels = null;
 
-        if (int.TryParse(topic, out var channel)) {
-            channels = new[] { channel };
-        }
-        else if (topic.StartsWith('/')) {
+        if (topic.StartsWith('/')) {
             exchanges = new[] { topic[1..].Trim() };
         }
         else {
@@ -57,7 +53,7 @@ class Program {
 
         var client = OpenfeedFactory.CreateClient(new Uri("ws://openfeed.aws.barchart.com/ws"), username, password, listeners);
         
-        client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: symbols, channels: channels, exchanges: exchanges);
+        client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: symbols, exchanges: exchanges);
 
         Thread.Sleep(Timeout.Infinite);
     }

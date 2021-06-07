@@ -4,7 +4,7 @@
 
 There are only two objects that you will need in order to work with Openfeed: a connection client (represented by the IOpenFeedClient interface) and a listener.
 
-The connecton client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols, exchanges and channels.
+The connecton client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols and exchanges.
 
 The listener object (represented by the OpenfeedListener class) contains five callback delegates that you can wire to your own callback functions in order to process messages coming from the connection.
 
@@ -206,7 +206,7 @@ This program is a simple amalgamation of what we learned before. We first set up
 
 ## More Information
 
-To learn more about subscribing to symbols, exchanges and channels, click [here](SYMBOLS_EXCHANGES_CHANNELS.md).
+To learn more about subscribing to symbols and exchanges click [here](SYMBOLS_EXCHANGES.md).
 
 To learn more about various subscription types, click [here](SUBSCRIPTION_TYPES.md).
 
