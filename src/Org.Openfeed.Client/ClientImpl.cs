@@ -410,9 +410,6 @@ namespace Org.Openfeed.Client {
                     }
                 }
             }
-            catch (Exception e) {
-                throw;
-            }
             finally {
                 Exception ex = new OpenfeedDisconnectedException();
 
