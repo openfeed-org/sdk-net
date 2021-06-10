@@ -72,6 +72,10 @@ namespace Org.Openfeed.Client {
         }
     }
 
+    enum ConnectAgain {
+        ConnectAgain, CredentialsRejected, DuplicateLoginKickedOut
+    }
+
     class Client : IOpenfeedClient {
         private readonly Uri _uri;
         private readonly string _username, _password;
@@ -107,11 +111,13 @@ namespace Org.Openfeed.Client {
             var ct = _disposedSource.Token;
 
             for (; ; ) {
-                try {
-                    bool authenticationFailed = await ConnectAndShuffleMessages().ConfigureAwait(false);
+                if (ct.IsCancellationRequested) break;
 
-                    if (authenticationFailed) {
-                        Trace.TraceInformation($"Authentication failed.");
+                try {
+                    var connectAgain = await ConnectAndShuffleMessages().ConfigureAwait(false);
+
+                    if (connectAgain != ConnectAgain.ConnectAgain) {
+                        Trace.TraceInformation($"Terminating the connect loop: " + connectAgain);
                         break;
                     }
                 }
@@ -167,7 +173,7 @@ namespace Org.Openfeed.Client {
         }
 
         // Returns true if the login failed.
-        private async Task<bool> ConnectAndShuffleMessages() {
+        private async Task<ConnectAgain> ConnectAndShuffleMessages() {
             var ct = _disposedSource.Token;
 
             using (var socket = new ClientWebSocket()) {
@@ -185,7 +191,7 @@ namespace Org.Openfeed.Client {
                 catch (Exception e) {
                     Trace.TraceWarning($"WebSocket connection to {_uri} failed with exception: {e.ToString()}");
                     await _listeners.OnConnectFailed(e);
-                    return false;
+                    return ConnectAgain.ConnectAgain;
                 }
 
                 Trace.TraceInformation($"WebSocket connected to {_uri}, logging in...");
@@ -193,7 +199,7 @@ namespace Org.Openfeed.Client {
                 if (loginFailed) {
                     Trace.TraceError($"WebSocket connected to {_uri}, log in failed.");
                     await _listeners.OnCredentialsRejected().ConfigureAwait(false);
-                    return true;
+                    return ConnectAgain.CredentialsRejected;
                 }
                 else {
                     Trace.TraceInformation($"WebSocket connected to {_uri}, logged in.");
@@ -208,8 +214,9 @@ namespace Org.Openfeed.Client {
                         }
                         _currentConnectionWaiters.Clear();
                     }
+                    
                     try {
-                        await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
+                        return await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
                     }
                     finally {
                         lock (_currentConnectionLock) {
@@ -219,8 +226,6 @@ namespace Org.Openfeed.Client {
 
                         await _listeners.OnDisconnected().ConfigureAwait(false);
                     }
-
-                    return false;
                 }
             }
         }
@@ -350,7 +355,7 @@ namespace Org.Openfeed.Client {
 
         // communication
 
-        public async Task RunSocketLoop (ClientWebSocket socket, MessageFramer messageFramer) {
+        public async Task<ConnectAgain> RunSocketLoop (ClientWebSocket socket, MessageFramer messageFramer) {
             var requests = new List<OpenfeedGatewayRequest>();
 
             var receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
@@ -387,6 +392,10 @@ namespace Org.Openfeed.Client {
                         if (receiveTaskTask.IsCompleted) {
                             var msg = await receiveTaskTask.ConfigureAwait(false);
                             await DispatchMessage(msg);
+                            if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse) {
+                                return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                            }
+
                             receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                             receiveTaskTask = null;
                         }
@@ -394,9 +403,15 @@ namespace Org.Openfeed.Client {
                     else if (receiveTask.IsCompleted) {
                         var msg = await receiveTask.ConfigureAwait(false);
                         await DispatchMessage(msg);
+                        if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse) {
+                            return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                        }
                         receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                     }
                 }
+            }
+            catch (Exception e) {
+                throw;
             }
             finally {
                 Exception ex = new OpenfeedDisconnectedException();
@@ -404,7 +419,7 @@ namespace Org.Openfeed.Client {
                 lock (_lock) {
                     _disconnected = true;
 
-                    void CancelOutstandingRequests<T> (Dictionary<long, RequestData<T>> dict) {
+                    void CancelOutstandingRequests<T>(Dictionary<long, RequestData<T>> dict) {
                         foreach (var data in dict.Values) {
                             data.CancellationRegistration.Dispose();
                             if (_disposedToken.IsCancellationRequested) {
@@ -431,7 +446,7 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        private async ValueTask<bool> DispatchMessage(OpenfeedGatewayMessage msg) {
+        private async ValueTask DispatchMessage(OpenfeedGatewayMessage msg) {
             void DispatchResponseResult<T> (long correlationId, T response, Dictionary<long, RequestData<T>> dict) {
                 lock (_lock) {
                     if (dict.TryGetValue(correlationId, out var data)) {
@@ -444,13 +459,14 @@ namespace Org.Openfeed.Client {
 
             switch (msg.DataCase) {
                 case OpenfeedGatewayMessage.DataOneofCase.HeartBeat: {
-                    return true;
+                    break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentResponse: {
                     await _onMessage(msg).ConfigureAwait(false);
                     var resp = msg.InstrumentResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentRequests);
-                    return true;
+
+                    break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentReferenceResponse: {
                     await _onMessage(msg).ConfigureAwait(false);
@@ -458,22 +474,19 @@ namespace Org.Openfeed.Client {
                     var resp = msg.InstrumentReferenceResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentReferenceRequests);
 
-                    return true;
+                    break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.ExchangeResponse: {
                     await _onMessage(msg).ConfigureAwait(false);
 
                     var resp = msg.ExchangeResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _exchangeRequests);
-                    
-                    return true;
-                }
-                case OpenfeedGatewayMessage.DataOneofCase.LogoutResponse: {
-                    return false;
+
+                    break;
                 }
                 default: {
                     await _onMessage(msg).ConfigureAwait(false);
-                    return true;
+                    break;
                 }
             }
         }

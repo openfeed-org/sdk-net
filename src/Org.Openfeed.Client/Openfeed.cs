@@ -4713,6 +4713,7 @@ namespace Org.Openfeed {
   /// <summary>
   ///
   /// Market Update for an instrument
+  ///
   /// </summary>
   public sealed partial class MarketUpdate : pb::IMessage<MarketUpdate> {
     private static readonly pb::MessageParser<MarketUpdate> _parser = new pb::MessageParser<MarketUpdate>(() => new MarketUpdate());
@@ -7578,6 +7579,7 @@ namespace Org.Openfeed {
   /// <summary>
   ///
   /// Instrument Status
+  ///
   /// </summary>
   public sealed partial class InstrumentStatus : pb::IMessage<InstrumentStatus> {
     private static readonly pb::MessageParser<InstrumentStatus> _parser = new pb::MessageParser<InstrumentStatus>(() => new InstrumentStatus());
@@ -12422,6 +12424,7 @@ namespace Org.Openfeed {
   /// <summary>
   ///
   /// Trade Cancel/Break
+  ///
   /// </summary>
   public sealed partial class TradeCancel : pb::IMessage<TradeCancel> {
     private static readonly pb::MessageParser<TradeCancel> _parser = new pb::MessageParser<TradeCancel>(() => new TradeCancel());
@@ -16520,6 +16523,7 @@ namespace Org.Openfeed {
     public const int TotalCashDistributionFieldNumber = 16;
     private long totalCashDistribution_;
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long TotalCashDistribution {
@@ -16599,6 +16603,7 @@ namespace Org.Openfeed {
     public const int ReinvestDateFieldNumber = 23;
     private int reinvestDate_;
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ReinvestDate {
@@ -17150,6 +17155,7 @@ namespace Org.Openfeed {
     public const int ReinvestDateFieldNumber = 20;
     private int reinvestDate_;
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ReinvestDate {
@@ -17429,6 +17435,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
+  ///
   /// </summary>
   public sealed partial class SharesOutstanding : pb::IMessage<SharesOutstanding> {
     private static readonly pb::MessageParser<SharesOutstanding> _parser = new pb::MessageParser<SharesOutstanding>(() => new SharesOutstanding());
@@ -17588,6 +17595,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
+  ///
   /// </summary>
   public sealed partial class NetAssetValue : pb::IMessage<NetAssetValue> {
     private static readonly pb::MessageParser<NetAssetValue> _parser = new pb::MessageParser<NetAssetValue>(() => new NetAssetValue());
@@ -17864,6 +17872,7 @@ namespace Org.Openfeed {
     public const int InstrumentStatusFieldNumber = 9;
     private global::Org.Openfeed.InstrumentStatus instrumentStatus_;
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Org.Openfeed.InstrumentStatus InstrumentStatus {

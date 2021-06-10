@@ -100,19 +100,19 @@ namespace Org.Openfeed {
             "cmcub3BlbmZlZWQuU3RhdHVzEg4KBnN5bWJvbBgDIAEoCRIQCghtYXJrZXRJ",
             "ZBgEIAEoEhIQCghleGNoYW5nZRgFIAEoCRIRCgljaGFubmVsSWQYBiABKBES",
             "GwoTbnVtYmVyT2ZEZWZpbml0aW9ucxgHIAEoERI4ChBzdWJzY3JpcHRpb25U",
-            "eXBlGAggASgOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUqyQIK",
-            "BlJlc3VsdBISCg5VTktOT1dOX1JFU1VMVBAAEgsKB1NVQ0NFU1MQARISCg5J",
-            "TlZBTElEX1NZTUJPTBB0EhUKEUlOVkFMSURfTUFSS0VUX0lEEHUSFAoQSU5W",
-            "QUxJRF9FWENIQU5HRRB2EhYKEklOVkFMSURfQ0hBTk5FTF9JRBB3EhUKEU1B",
-            "TEZPUk1FRF9NRVNTQUdFEHgSFgoSVU5FWFBFQ1RFRF9NRVNTQUdFEHkSEgoO",
-            "Tk9UX1NVQlNDUklCRUQQehIaChZEVVBMSUNBVEVfU1VCU0NSSVBUSU9OEHsS",
-            "FwoTSU5WQUxJRF9DUkVERU5USUFMUxB8EhsKF0lOU1VGRklDSUVOVF9QUklW",
-            "SUxFR0VTEH0SGwoXQVVUSEVOVElDQVRJT05fUkVRVUlSRUQQfhITCg9HRU5F",
-            "UklDX0ZBSUxVUkUQfyqhAQoQU3Vic2NyaXB0aW9uVHlwZRIHCgNBTEwQABIJ",
-            "CgVRVU9URRABEhUKEVFVT1RFX1BBUlRJQ0lQQU5UEAISDwoLREVQVEhfUFJJ",
-            "Q0UQAxIPCgtERVBUSF9PUkRFUhAEEgoKBlRSQURFUxAFEhQKEENVTUxBVElW",
-            "RV9WT0xVTUUQBhIICgRPSExDEAcSFAoQT0hMQ19OT05fUkVHVUxBUhAIQgdI",
-            "AVABoAEBYgZwcm90bzM="));
+            "eXBlGAggASgOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUq3gIK",
+            "BlJlc3VsdBISCg5VTktOT1dOX1JFU1VMVBAAEgsKB1NVQ0NFU1MQARITCg9E",
+            "VVBMSUNBVEVfTE9HSU4QcxISCg5JTlZBTElEX1NZTUJPTBB0EhUKEUlOVkFM",
+            "SURfTUFSS0VUX0lEEHUSFAoQSU5WQUxJRF9FWENIQU5HRRB2EhYKEklOVkFM",
+            "SURfQ0hBTk5FTF9JRBB3EhUKEU1BTEZPUk1FRF9NRVNTQUdFEHgSFgoSVU5F",
+            "WFBFQ1RFRF9NRVNTQUdFEHkSEgoOTk9UX1NVQlNDUklCRUQQehIaChZEVVBM",
+            "SUNBVEVfU1VCU0NSSVBUSU9OEHsSFwoTSU5WQUxJRF9DUkVERU5USUFMUxB8",
+            "EhsKF0lOU1VGRklDSUVOVF9QUklWSUxFR0VTEH0SGwoXQVVUSEVOVElDQVRJ",
+            "T05fUkVRVUlSRUQQfhITCg9HRU5FUklDX0ZBSUxVUkUQfyqhAQoQU3Vic2Ny",
+            "aXB0aW9uVHlwZRIHCgNBTEwQABIJCgVRVU9URRABEhUKEVFVT1RFX1BBUlRJ",
+            "Q0lQQU5UEAISDwoLREVQVEhfUFJJQ0UQAxIPCgtERVBUSF9PUkRFUhAEEgoK",
+            "BlRSQURFUxAFEhQKEENVTUxBVElWRV9WT0xVTUUQBhIICgRPSExDEAcSFAoQ",
+            "T0hMQ19OT05fUkVHVUxBUhAIQgdIAVABoAEBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Org.Openfeed.OpenfeedInstrumentReflection.Descriptor, global::Org.Openfeed.OpenfeedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -140,6 +140,7 @@ namespace Org.Openfeed {
   public enum Result {
     [pbr::OriginalName("UNKNOWN_RESULT")] UnknownResult = 0,
     [pbr::OriginalName("SUCCESS")] Success = 1,
+    [pbr::OriginalName("DUPLICATE_LOGIN")] DuplicateLogin = 115,
     [pbr::OriginalName("INVALID_SYMBOL")] InvalidSymbol = 116,
     [pbr::OriginalName("INVALID_MARKET_ID")] InvalidMarketId = 117,
     [pbr::OriginalName("INVALID_EXCHANGE")] InvalidExchange = 118,
@@ -1208,9 +1209,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  ///
   /// Serivce Messages
-  ///
   /// </summary>
   public sealed partial class Status : pb::IMessage<Status> {
     private static readonly pb::MessageParser<Status> _parser = new pb::MessageParser<Status>(() => new Status());
@@ -2485,6 +2484,7 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 4;
     private string symbol_ = "";
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Symbol {
@@ -3103,6 +3103,7 @@ namespace Org.Openfeed {
     public const int ChannelIdFieldNumber = 4;
     private int channelId_;
     /// <summary>
+    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ChannelId {

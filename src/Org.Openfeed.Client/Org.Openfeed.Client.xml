@@ -908,6 +908,7 @@
              <summary>
             
              Market Update for an instrument
+            
              </summary>
         </member>
         <member name="F:Org.Openfeed.MarketUpdate.MarketIdFieldNumber">
@@ -1195,6 +1196,7 @@
              <summary>
             
              Instrument Status
+            
              </summary>
         </member>
         <member name="F:Org.Openfeed.InstrumentStatus.TransactionTimeFieldNumber">
@@ -1833,6 +1835,7 @@
              <summary>
             
              Trade Cancel/Break
+            
              </summary>
         </member>
         <member name="F:Org.Openfeed.TradeCancel.OriginatorIdFieldNumber">
@@ -2331,8 +2334,9 @@
             <summary>Field number for the "totalCashDistribution" field.</summary>
         </member>
         <member name="P:Org.Openfeed.DividendsIncomeDistributions.TotalCashDistribution">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.DividendsIncomeDistributions.NonQualifiedCashDistributionFieldNumber">
             <summary>Field number for the "nonQualifiedCashDistribution" field.</summary>
@@ -2356,8 +2360,9 @@
             <summary>Field number for the "reinvestDate" field.</summary>
         </member>
         <member name="P:Org.Openfeed.DividendsIncomeDistributions.ReinvestDate">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="T:Org.Openfeed.CapitalDistributions">
             <summary>
@@ -2419,12 +2424,14 @@
             <summary>Field number for the "reinvestDate" field.</summary>
         </member>
         <member name="P:Org.Openfeed.CapitalDistributions.ReinvestDate">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="T:Org.Openfeed.SharesOutstanding">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.SharesOutstanding.SharesOutstanding_FieldNumber">
             <summary>Field number for the "sharesOutstanding" field.</summary>
@@ -2433,8 +2440,9 @@
             <summary>Field number for the "transactionTime" field.</summary>
         </member>
         <member name="T:Org.Openfeed.NetAssetValue">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.NetAssetValue.NetAssetValue_FieldNumber">
             <summary>Field number for the "netAssetValue" field.</summary>
@@ -2471,8 +2479,9 @@
             <summary>Field number for the "instrumentStatus" field.</summary>
         </member>
         <member name="P:Org.Openfeed.MarketSummary.InstrumentStatus">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.MarketSummary.BboFieldNumber">
             <summary>Field number for the "bbo" field.</summary>
@@ -2876,11 +2885,9 @@
             <summary>Enum of possible cases for the "data" oneof.</summary>
         </member>
         <member name="T:Org.Openfeed.Status">
-             <summary>
-            
-             Serivce Messages
-            
-             </summary>
+            <summary>
+            Serivce Messages
+            </summary>
         </member>
         <member name="F:Org.Openfeed.Status.ResultFieldNumber">
             <summary>Field number for the "result" field.</summary>
@@ -2970,8 +2977,9 @@
             <summary>Field number for the "symbol" field.</summary>
         </member>
         <member name="P:Org.Openfeed.InstrumentResponse.Symbol">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.InstrumentResponse.MarketIdFieldNumber">
             <summary>Field number for the "marketId" field.</summary>
@@ -3021,8 +3029,9 @@
             <summary>Field number for the "channelId" field.</summary>
         </member>
         <member name="P:Org.Openfeed.InstrumentReferenceResponse.ChannelId">
-            <summary>
-            </summary>
+             <summary>
+            
+             </summary>
         </member>
         <member name="F:Org.Openfeed.InstrumentReferenceResponse.MarketIdFieldNumber">
             <summary>Field number for the "marketId" field.</summary>
