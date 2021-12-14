@@ -95,42 +95,43 @@ namespace Org.Openfeed {
             "eXBlGAogAygOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUSHwoX",
             "c25hcHNob3RJbnRlcnZhbFNlY29uZHMYCyABKBESSQoOaW5zdHJ1bWVudFR5",
             "cGUYDCADKA4yMS5vcmcub3BlbmZlZWQuSW5zdHJ1bWVudERlZmluaXRpb24u",
-            "SW5zdHJ1bWVudFR5cGVCBgoEZGF0YSLxAQoUU3Vic2NyaXB0aW9uUmVzcG9u",
+            "SW5zdHJ1bWVudFR5cGVCBgoEZGF0YSKGAgoUU3Vic2NyaXB0aW9uUmVzcG9u",
             "c2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5v",
             "cmcub3BlbmZlZWQuU3RhdHVzEg4KBnN5bWJvbBgDIAEoCRIQCghtYXJrZXRJ",
             "ZBgEIAEoEhIQCghleGNoYW5nZRgFIAEoCRIRCgljaGFubmVsSWQYBiABKBES",
             "GwoTbnVtYmVyT2ZEZWZpbml0aW9ucxgHIAEoERI4ChBzdWJzY3JpcHRpb25U",
-            "eXBlGAggASgOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUq3gIK",
-            "BlJlc3VsdBISCg5VTktOT1dOX1JFU1VMVBAAEgsKB1NVQ0NFU1MQARITCg9E",
-            "VVBMSUNBVEVfTE9HSU4QcxISCg5JTlZBTElEX1NZTUJPTBB0EhUKEUlOVkFM",
-            "SURfTUFSS0VUX0lEEHUSFAoQSU5WQUxJRF9FWENIQU5HRRB2EhYKEklOVkFM",
-            "SURfQ0hBTk5FTF9JRBB3EhUKEU1BTEZPUk1FRF9NRVNTQUdFEHgSFgoSVU5F",
-            "WFBFQ1RFRF9NRVNTQUdFEHkSEgoOTk9UX1NVQlNDUklCRUQQehIaChZEVVBM",
-            "SUNBVEVfU1VCU0NSSVBUSU9OEHsSFwoTSU5WQUxJRF9DUkVERU5USUFMUxB8",
-            "EhsKF0lOU1VGRklDSUVOVF9QUklWSUxFR0VTEH0SGwoXQVVUSEVOVElDQVRJ",
-            "T05fUkVRVUlSRUQQfhITCg9HRU5FUklDX0ZBSUxVUkUQfyqhAQoQU3Vic2Ny",
-            "aXB0aW9uVHlwZRIHCgNBTEwQABIJCgVRVU9URRABEhUKEVFVT1RFX1BBUlRJ",
-            "Q0lQQU5UEAISDwoLREVQVEhfUFJJQ0UQAxIPCgtERVBUSF9PUkRFUhAEEgoK",
-            "BlRSQURFUxAFEhQKEENVTUxBVElWRV9WT0xVTUUQBhIICgRPSExDEAcSFAoQ",
-            "T0hMQ19OT05fUkVHVUxBUhAIQgdIAVABoAEBYgZwcm90bzM="));
+            "eXBlGAggASgOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUSEwoL",
+            "dW5zdWJzY3JpYmUYCSABKAgq3gIKBlJlc3VsdBISCg5VTktOT1dOX1JFU1VM",
+            "VBAAEgsKB1NVQ0NFU1MQARITCg9EVVBMSUNBVEVfTE9HSU4QcxISCg5JTlZB",
+            "TElEX1NZTUJPTBB0EhUKEUlOVkFMSURfTUFSS0VUX0lEEHUSFAoQSU5WQUxJ",
+            "RF9FWENIQU5HRRB2EhYKEklOVkFMSURfQ0hBTk5FTF9JRBB3EhUKEU1BTEZP",
+            "Uk1FRF9NRVNTQUdFEHgSFgoSVU5FWFBFQ1RFRF9NRVNTQUdFEHkSEgoOTk9U",
+            "X1NVQlNDUklCRUQQehIaChZEVVBMSUNBVEVfU1VCU0NSSVBUSU9OEHsSFwoT",
+            "SU5WQUxJRF9DUkVERU5USUFMUxB8EhsKF0lOU1VGRklDSUVOVF9QUklWSUxF",
+            "R0VTEH0SGwoXQVVUSEVOVElDQVRJT05fUkVRVUlSRUQQfhITCg9HRU5FUklD",
+            "X0ZBSUxVUkUQfyqhAQoQU3Vic2NyaXB0aW9uVHlwZRIHCgNBTEwQABIJCgVR",
+            "VU9URRABEhUKEVFVT1RFX1BBUlRJQ0lQQU5UEAISDwoLREVQVEhfUFJJQ0UQ",
+            "AxIPCgtERVBUSF9PUkRFUhAEEgoKBlRSQURFUxAFEhQKEENVTUxBVElWRV9W",
+            "T0xVTUUQBhIICgRPSExDEAcSFAoQT0hMQ19OT05fUkVHVUxBUhAIQgdIAVAB",
+            "oAEBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Org.Openfeed.OpenfeedInstrumentReflection.Descriptor, global::Org.Openfeed.OpenfeedReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayRequest), global::Org.Openfeed.OpenfeedGatewayRequest.Parser, new[]{ "LoginRequest", "LogoutRequest", "SubscriptionRequest", "InstrumentRequest", "InstrumentReferenceRequest", "ExchangeRequest" }, new[]{ "Data" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayMessage), global::Org.Openfeed.OpenfeedGatewayMessage.Parser, new[]{ "LoginResponse", "LogoutResponse", "InstrumentResponse", "InstrumentReferenceResponse", "SubscriptionResponse", "MarketStatus", "HeartBeat", "InstrumentDefinition", "MarketSnapshot", "MarketUpdate", "VolumeAtPrice", "Ohlc", "ExchangeResponse", "InstrumentAction" }, new[]{ "Data" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.Status), global::Org.Openfeed.Status.Parser, new[]{ "Result", "Message", "Service" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginResponse), global::Org.Openfeed.LoginResponse.Parser, new[]{ "CorrelationId", "Status", "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutRequest), global::Org.Openfeed.LogoutRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutResponse), global::Org.Openfeed.LogoutResponse.Parser, new[]{ "CorrelationId", "Status" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentRequest), global::Org.Openfeed.InstrumentRequest.Parser, new[]{ "CorrelationId", "Token", "Symbol", "MarketId", "Exchange", "ChannelId" }, new[]{ "Request" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentResponse), global::Org.Openfeed.InstrumentResponse.Parser, new[]{ "CorrelationId", "Status", "NumberOfDefinitions", "Symbol", "MarketId", "Exchange", "ChannelId" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentReferenceRequest), global::Org.Openfeed.InstrumentReferenceRequest.Parser, new[]{ "CorrelationId", "Token", "Symbol", "MarketId", "Exchange", "ChannelId" }, new[]{ "Request" }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentReferenceResponse), global::Org.Openfeed.InstrumentReferenceResponse.Parser, new[]{ "CorrelationId", "Status", "NumberOfDefinitions", "ChannelId", "MarketId", "Symbol", "Exchange", "DdfSymbol", "DdfExchange", "DdfBaseCode", "ExchangeSymbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeRequest), global::Org.Openfeed.ExchangeRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse), global::Org.Openfeed.ExchangeResponse.Parser, new[]{ "CorrelationId", "Status", "Exchanges" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse.Types.Exchange), global::Org.Openfeed.ExchangeResponse.Types.Exchange.Parser, new[]{ "Code", "Description", "Aliases" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest), global::Org.Openfeed.SubscriptionRequest.Parser, new[]{ "CorrelationId", "Token", "Service", "Unsubscribe", "Requests" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest.Types.Request), global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser, new[]{ "Symbol", "MarketId", "Exchange", "ChannelId", "SubscriptionType", "SnapshotIntervalSeconds", "InstrumentType" }, new[]{ "Data" }, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionResponse), global::Org.Openfeed.SubscriptionResponse.Parser, new[]{ "CorrelationId", "Status", "Symbol", "MarketId", "Exchange", "ChannelId", "NumberOfDefinitions", "SubscriptionType" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayRequest), global::Org.Openfeed.OpenfeedGatewayRequest.Parser, new[]{ "LoginRequest", "LogoutRequest", "SubscriptionRequest", "InstrumentRequest", "InstrumentReferenceRequest", "ExchangeRequest" }, new[]{ "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayMessage), global::Org.Openfeed.OpenfeedGatewayMessage.Parser, new[]{ "LoginResponse", "LogoutResponse", "InstrumentResponse", "InstrumentReferenceResponse", "SubscriptionResponse", "MarketStatus", "HeartBeat", "InstrumentDefinition", "MarketSnapshot", "MarketUpdate", "VolumeAtPrice", "Ohlc", "ExchangeResponse", "InstrumentAction" }, new[]{ "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.Status), global::Org.Openfeed.Status.Parser, new[]{ "Result", "Message", "Service" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginResponse), global::Org.Openfeed.LoginResponse.Parser, new[]{ "CorrelationId", "Status", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutRequest), global::Org.Openfeed.LogoutRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutResponse), global::Org.Openfeed.LogoutResponse.Parser, new[]{ "CorrelationId", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentRequest), global::Org.Openfeed.InstrumentRequest.Parser, new[]{ "CorrelationId", "Token", "Symbol", "MarketId", "Exchange", "ChannelId" }, new[]{ "Request" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentResponse), global::Org.Openfeed.InstrumentResponse.Parser, new[]{ "CorrelationId", "Status", "NumberOfDefinitions", "Symbol", "MarketId", "Exchange", "ChannelId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentReferenceRequest), global::Org.Openfeed.InstrumentReferenceRequest.Parser, new[]{ "CorrelationId", "Token", "Symbol", "MarketId", "Exchange", "ChannelId" }, new[]{ "Request" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentReferenceResponse), global::Org.Openfeed.InstrumentReferenceResponse.Parser, new[]{ "CorrelationId", "Status", "NumberOfDefinitions", "ChannelId", "MarketId", "Symbol", "Exchange", "DdfSymbol", "DdfExchange", "DdfBaseCode", "ExchangeSymbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeRequest), global::Org.Openfeed.ExchangeRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse), global::Org.Openfeed.ExchangeResponse.Parser, new[]{ "CorrelationId", "Status", "Exchanges" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse.Types.Exchange), global::Org.Openfeed.ExchangeResponse.Types.Exchange.Parser, new[]{ "Code", "Description", "Aliases" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest), global::Org.Openfeed.SubscriptionRequest.Parser, new[]{ "CorrelationId", "Token", "Service", "Unsubscribe", "Requests" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest.Types.Request), global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser, new[]{ "Symbol", "MarketId", "Exchange", "ChannelId", "SubscriptionType", "SnapshotIntervalSeconds", "InstrumentType" }, new[]{ "Data" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionResponse), global::Org.Openfeed.SubscriptionResponse.Parser, new[]{ "CorrelationId", "Status", "Symbol", "MarketId", "Exchange", "ChannelId", "NumberOfDefinitions", "SubscriptionType", "Unsubscribe" }, null, null, null, null)
           }));
     }
     #endregion
@@ -171,25 +172,33 @@ namespace Org.Openfeed {
 
   #region Messages
   /// <summary>
-  /// Openfeed Server request
+  //// Openfeed Server request
   /// </summary>
-  public sealed partial class OpenfeedGatewayRequest : pb::IMessage<OpenfeedGatewayRequest> {
+  public sealed partial class OpenfeedGatewayRequest : pb::IMessage<OpenfeedGatewayRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<OpenfeedGatewayRequest> _parser = new pb::MessageParser<OpenfeedGatewayRequest>(() => new OpenfeedGatewayRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<OpenfeedGatewayRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayRequest() {
       OnConstruction();
     }
@@ -197,6 +206,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayRequest(OpenfeedGatewayRequest other) : this() {
       switch (other.DataCase) {
         case DataOneofCase.LoginRequest:
@@ -223,6 +233,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayRequest Clone() {
       return new OpenfeedGatewayRequest(this);
     }
@@ -230,6 +241,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "loginRequest" field.</summary>
     public const int LoginRequestFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.LoginRequest LoginRequest {
       get { return dataCase_ == DataOneofCase.LoginRequest ? (global::Org.Openfeed.LoginRequest) data_ : null; }
       set {
@@ -241,6 +253,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "logoutRequest" field.</summary>
     public const int LogoutRequestFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.LogoutRequest LogoutRequest {
       get { return dataCase_ == DataOneofCase.LogoutRequest ? (global::Org.Openfeed.LogoutRequest) data_ : null; }
       set {
@@ -252,6 +265,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "subscriptionRequest" field.</summary>
     public const int SubscriptionRequestFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.SubscriptionRequest SubscriptionRequest {
       get { return dataCase_ == DataOneofCase.SubscriptionRequest ? (global::Org.Openfeed.SubscriptionRequest) data_ : null; }
       set {
@@ -263,6 +277,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentRequest" field.</summary>
     public const int InstrumentRequestFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentRequest InstrumentRequest {
       get { return dataCase_ == DataOneofCase.InstrumentRequest ? (global::Org.Openfeed.InstrumentRequest) data_ : null; }
       set {
@@ -274,6 +289,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentReferenceRequest" field.</summary>
     public const int InstrumentReferenceRequestFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentReferenceRequest InstrumentReferenceRequest {
       get { return dataCase_ == DataOneofCase.InstrumentReferenceRequest ? (global::Org.Openfeed.InstrumentReferenceRequest) data_ : null; }
       set {
@@ -285,6 +301,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "exchangeRequest" field.</summary>
     public const int ExchangeRequestFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.ExchangeRequest ExchangeRequest {
       get { return dataCase_ == DataOneofCase.ExchangeRequest ? (global::Org.Openfeed.ExchangeRequest) data_ : null; }
       set {
@@ -306,22 +323,26 @@ namespace Org.Openfeed {
     }
     private DataOneofCase dataCase_ = DataOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataOneofCase DataCase {
       get { return dataCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearData() {
       dataCase_ = DataOneofCase.None;
       data_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as OpenfeedGatewayRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(OpenfeedGatewayRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -340,6 +361,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (dataCase_ == DataOneofCase.LoginRequest) hash ^= LoginRequest.GetHashCode();
@@ -356,12 +378,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (dataCase_ == DataOneofCase.LoginRequest) {
         output.WriteRawTag(10);
         output.WriteMessage(LoginRequest);
@@ -389,9 +416,45 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (dataCase_ == DataOneofCase.LoginRequest) {
+        output.WriteRawTag(10);
+        output.WriteMessage(LoginRequest);
+      }
+      if (dataCase_ == DataOneofCase.LogoutRequest) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LogoutRequest);
+      }
+      if (dataCase_ == DataOneofCase.SubscriptionRequest) {
+        output.WriteRawTag(26);
+        output.WriteMessage(SubscriptionRequest);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentRequest) {
+        output.WriteRawTag(34);
+        output.WriteMessage(InstrumentRequest);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentReferenceRequest) {
+        output.WriteRawTag(42);
+        output.WriteMessage(InstrumentReferenceRequest);
+      }
+      if (dataCase_ == DataOneofCase.ExchangeRequest) {
+        output.WriteRawTag(50);
+        output.WriteMessage(ExchangeRequest);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (dataCase_ == DataOneofCase.LoginRequest) {
@@ -419,6 +482,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(OpenfeedGatewayRequest other) {
       if (other == null) {
         return;
@@ -466,7 +530,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -529,30 +597,108 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Org.Openfeed.LoginRequest subBuilder = new global::Org.Openfeed.LoginRequest();
+            if (dataCase_ == DataOneofCase.LoginRequest) {
+              subBuilder.MergeFrom(LoginRequest);
+            }
+            input.ReadMessage(subBuilder);
+            LoginRequest = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Org.Openfeed.LogoutRequest subBuilder = new global::Org.Openfeed.LogoutRequest();
+            if (dataCase_ == DataOneofCase.LogoutRequest) {
+              subBuilder.MergeFrom(LogoutRequest);
+            }
+            input.ReadMessage(subBuilder);
+            LogoutRequest = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Org.Openfeed.SubscriptionRequest subBuilder = new global::Org.Openfeed.SubscriptionRequest();
+            if (dataCase_ == DataOneofCase.SubscriptionRequest) {
+              subBuilder.MergeFrom(SubscriptionRequest);
+            }
+            input.ReadMessage(subBuilder);
+            SubscriptionRequest = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Org.Openfeed.InstrumentRequest subBuilder = new global::Org.Openfeed.InstrumentRequest();
+            if (dataCase_ == DataOneofCase.InstrumentRequest) {
+              subBuilder.MergeFrom(InstrumentRequest);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentRequest = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Org.Openfeed.InstrumentReferenceRequest subBuilder = new global::Org.Openfeed.InstrumentReferenceRequest();
+            if (dataCase_ == DataOneofCase.InstrumentReferenceRequest) {
+              subBuilder.MergeFrom(InstrumentReferenceRequest);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentReferenceRequest = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Org.Openfeed.ExchangeRequest subBuilder = new global::Org.Openfeed.ExchangeRequest();
+            if (dataCase_ == DataOneofCase.ExchangeRequest) {
+              subBuilder.MergeFrom(ExchangeRequest);
+            }
+            input.ReadMessage(subBuilder);
+            ExchangeRequest = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
-  /// Openfeed Server Response
+  //// Openfeed Server Response
   /// </summary>
-  public sealed partial class OpenfeedGatewayMessage : pb::IMessage<OpenfeedGatewayMessage> {
+  public sealed partial class OpenfeedGatewayMessage : pb::IMessage<OpenfeedGatewayMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<OpenfeedGatewayMessage> _parser = new pb::MessageParser<OpenfeedGatewayMessage>(() => new OpenfeedGatewayMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<OpenfeedGatewayMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayMessage() {
       OnConstruction();
     }
@@ -560,6 +706,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayMessage(OpenfeedGatewayMessage other) : this() {
       switch (other.DataCase) {
         case DataOneofCase.LoginResponse:
@@ -610,6 +757,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public OpenfeedGatewayMessage Clone() {
       return new OpenfeedGatewayMessage(this);
     }
@@ -617,6 +765,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "loginResponse" field.</summary>
     public const int LoginResponseFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.LoginResponse LoginResponse {
       get { return dataCase_ == DataOneofCase.LoginResponse ? (global::Org.Openfeed.LoginResponse) data_ : null; }
       set {
@@ -628,6 +777,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "logoutResponse" field.</summary>
     public const int LogoutResponseFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.LogoutResponse LogoutResponse {
       get { return dataCase_ == DataOneofCase.LogoutResponse ? (global::Org.Openfeed.LogoutResponse) data_ : null; }
       set {
@@ -639,6 +789,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentResponse" field.</summary>
     public const int InstrumentResponseFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentResponse InstrumentResponse {
       get { return dataCase_ == DataOneofCase.InstrumentResponse ? (global::Org.Openfeed.InstrumentResponse) data_ : null; }
       set {
@@ -650,6 +801,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentReferenceResponse" field.</summary>
     public const int InstrumentReferenceResponseFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentReferenceResponse InstrumentReferenceResponse {
       get { return dataCase_ == DataOneofCase.InstrumentReferenceResponse ? (global::Org.Openfeed.InstrumentReferenceResponse) data_ : null; }
       set {
@@ -661,6 +813,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "subscriptionResponse" field.</summary>
     public const int SubscriptionResponseFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.SubscriptionResponse SubscriptionResponse {
       get { return dataCase_ == DataOneofCase.SubscriptionResponse ? (global::Org.Openfeed.SubscriptionResponse) data_ : null; }
       set {
@@ -672,6 +825,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "marketStatus" field.</summary>
     public const int MarketStatusFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.MarketStatus MarketStatus {
       get { return dataCase_ == DataOneofCase.MarketStatus ? (global::Org.Openfeed.MarketStatus) data_ : null; }
       set {
@@ -683,6 +837,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "heartBeat" field.</summary>
     public const int HeartBeatFieldNumber = 7;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.HeartBeat HeartBeat {
       get { return dataCase_ == DataOneofCase.HeartBeat ? (global::Org.Openfeed.HeartBeat) data_ : null; }
       set {
@@ -694,6 +849,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentDefinition" field.</summary>
     public const int InstrumentDefinitionFieldNumber = 8;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition InstrumentDefinition {
       get { return dataCase_ == DataOneofCase.InstrumentDefinition ? (global::Org.Openfeed.InstrumentDefinition) data_ : null; }
       set {
@@ -705,6 +861,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "marketSnapshot" field.</summary>
     public const int MarketSnapshotFieldNumber = 9;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.MarketSnapshot MarketSnapshot {
       get { return dataCase_ == DataOneofCase.MarketSnapshot ? (global::Org.Openfeed.MarketSnapshot) data_ : null; }
       set {
@@ -716,6 +873,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "marketUpdate" field.</summary>
     public const int MarketUpdateFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.MarketUpdate MarketUpdate {
       get { return dataCase_ == DataOneofCase.MarketUpdate ? (global::Org.Openfeed.MarketUpdate) data_ : null; }
       set {
@@ -727,6 +885,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "volumeAtPrice" field.</summary>
     public const int VolumeAtPriceFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.VolumeAtPrice VolumeAtPrice {
       get { return dataCase_ == DataOneofCase.VolumeAtPrice ? (global::Org.Openfeed.VolumeAtPrice) data_ : null; }
       set {
@@ -738,6 +897,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "ohlc" field.</summary>
     public const int OhlcFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Ohlc Ohlc {
       get { return dataCase_ == DataOneofCase.Ohlc ? (global::Org.Openfeed.Ohlc) data_ : null; }
       set {
@@ -749,6 +909,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "exchangeResponse" field.</summary>
     public const int ExchangeResponseFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.ExchangeResponse ExchangeResponse {
       get { return dataCase_ == DataOneofCase.ExchangeResponse ? (global::Org.Openfeed.ExchangeResponse) data_ : null; }
       set {
@@ -760,6 +921,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "instrumentAction" field.</summary>
     public const int InstrumentActionFieldNumber = 14;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentAction InstrumentAction {
       get { return dataCase_ == DataOneofCase.InstrumentAction ? (global::Org.Openfeed.InstrumentAction) data_ : null; }
       set {
@@ -789,22 +951,26 @@ namespace Org.Openfeed {
     }
     private DataOneofCase dataCase_ = DataOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DataOneofCase DataCase {
       get { return dataCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearData() {
       dataCase_ = DataOneofCase.None;
       data_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as OpenfeedGatewayMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(OpenfeedGatewayMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -831,6 +997,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (dataCase_ == DataOneofCase.LoginResponse) hash ^= LoginResponse.GetHashCode();
@@ -855,12 +1022,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (dataCase_ == DataOneofCase.LoginResponse) {
         output.WriteRawTag(10);
         output.WriteMessage(LoginResponse);
@@ -920,9 +1092,77 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (dataCase_ == DataOneofCase.LoginResponse) {
+        output.WriteRawTag(10);
+        output.WriteMessage(LoginResponse);
+      }
+      if (dataCase_ == DataOneofCase.LogoutResponse) {
+        output.WriteRawTag(18);
+        output.WriteMessage(LogoutResponse);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentResponse) {
+        output.WriteRawTag(26);
+        output.WriteMessage(InstrumentResponse);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentReferenceResponse) {
+        output.WriteRawTag(34);
+        output.WriteMessage(InstrumentReferenceResponse);
+      }
+      if (dataCase_ == DataOneofCase.SubscriptionResponse) {
+        output.WriteRawTag(42);
+        output.WriteMessage(SubscriptionResponse);
+      }
+      if (dataCase_ == DataOneofCase.MarketStatus) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MarketStatus);
+      }
+      if (dataCase_ == DataOneofCase.HeartBeat) {
+        output.WriteRawTag(58);
+        output.WriteMessage(HeartBeat);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentDefinition) {
+        output.WriteRawTag(66);
+        output.WriteMessage(InstrumentDefinition);
+      }
+      if (dataCase_ == DataOneofCase.MarketSnapshot) {
+        output.WriteRawTag(74);
+        output.WriteMessage(MarketSnapshot);
+      }
+      if (dataCase_ == DataOneofCase.MarketUpdate) {
+        output.WriteRawTag(82);
+        output.WriteMessage(MarketUpdate);
+      }
+      if (dataCase_ == DataOneofCase.VolumeAtPrice) {
+        output.WriteRawTag(90);
+        output.WriteMessage(VolumeAtPrice);
+      }
+      if (dataCase_ == DataOneofCase.Ohlc) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Ohlc);
+      }
+      if (dataCase_ == DataOneofCase.ExchangeResponse) {
+        output.WriteRawTag(106);
+        output.WriteMessage(ExchangeResponse);
+      }
+      if (dataCase_ == DataOneofCase.InstrumentAction) {
+        output.WriteRawTag(114);
+        output.WriteMessage(InstrumentAction);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (dataCase_ == DataOneofCase.LoginResponse) {
@@ -974,6 +1214,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(OpenfeedGatewayMessage other) {
       if (other == null) {
         return;
@@ -1069,7 +1310,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1204,30 +1449,182 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Org.Openfeed.LoginResponse subBuilder = new global::Org.Openfeed.LoginResponse();
+            if (dataCase_ == DataOneofCase.LoginResponse) {
+              subBuilder.MergeFrom(LoginResponse);
+            }
+            input.ReadMessage(subBuilder);
+            LoginResponse = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Org.Openfeed.LogoutResponse subBuilder = new global::Org.Openfeed.LogoutResponse();
+            if (dataCase_ == DataOneofCase.LogoutResponse) {
+              subBuilder.MergeFrom(LogoutResponse);
+            }
+            input.ReadMessage(subBuilder);
+            LogoutResponse = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Org.Openfeed.InstrumentResponse subBuilder = new global::Org.Openfeed.InstrumentResponse();
+            if (dataCase_ == DataOneofCase.InstrumentResponse) {
+              subBuilder.MergeFrom(InstrumentResponse);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentResponse = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Org.Openfeed.InstrumentReferenceResponse subBuilder = new global::Org.Openfeed.InstrumentReferenceResponse();
+            if (dataCase_ == DataOneofCase.InstrumentReferenceResponse) {
+              subBuilder.MergeFrom(InstrumentReferenceResponse);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentReferenceResponse = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Org.Openfeed.SubscriptionResponse subBuilder = new global::Org.Openfeed.SubscriptionResponse();
+            if (dataCase_ == DataOneofCase.SubscriptionResponse) {
+              subBuilder.MergeFrom(SubscriptionResponse);
+            }
+            input.ReadMessage(subBuilder);
+            SubscriptionResponse = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Org.Openfeed.MarketStatus subBuilder = new global::Org.Openfeed.MarketStatus();
+            if (dataCase_ == DataOneofCase.MarketStatus) {
+              subBuilder.MergeFrom(MarketStatus);
+            }
+            input.ReadMessage(subBuilder);
+            MarketStatus = subBuilder;
+            break;
+          }
+          case 58: {
+            global::Org.Openfeed.HeartBeat subBuilder = new global::Org.Openfeed.HeartBeat();
+            if (dataCase_ == DataOneofCase.HeartBeat) {
+              subBuilder.MergeFrom(HeartBeat);
+            }
+            input.ReadMessage(subBuilder);
+            HeartBeat = subBuilder;
+            break;
+          }
+          case 66: {
+            global::Org.Openfeed.InstrumentDefinition subBuilder = new global::Org.Openfeed.InstrumentDefinition();
+            if (dataCase_ == DataOneofCase.InstrumentDefinition) {
+              subBuilder.MergeFrom(InstrumentDefinition);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentDefinition = subBuilder;
+            break;
+          }
+          case 74: {
+            global::Org.Openfeed.MarketSnapshot subBuilder = new global::Org.Openfeed.MarketSnapshot();
+            if (dataCase_ == DataOneofCase.MarketSnapshot) {
+              subBuilder.MergeFrom(MarketSnapshot);
+            }
+            input.ReadMessage(subBuilder);
+            MarketSnapshot = subBuilder;
+            break;
+          }
+          case 82: {
+            global::Org.Openfeed.MarketUpdate subBuilder = new global::Org.Openfeed.MarketUpdate();
+            if (dataCase_ == DataOneofCase.MarketUpdate) {
+              subBuilder.MergeFrom(MarketUpdate);
+            }
+            input.ReadMessage(subBuilder);
+            MarketUpdate = subBuilder;
+            break;
+          }
+          case 90: {
+            global::Org.Openfeed.VolumeAtPrice subBuilder = new global::Org.Openfeed.VolumeAtPrice();
+            if (dataCase_ == DataOneofCase.VolumeAtPrice) {
+              subBuilder.MergeFrom(VolumeAtPrice);
+            }
+            input.ReadMessage(subBuilder);
+            VolumeAtPrice = subBuilder;
+            break;
+          }
+          case 98: {
+            global::Org.Openfeed.Ohlc subBuilder = new global::Org.Openfeed.Ohlc();
+            if (dataCase_ == DataOneofCase.Ohlc) {
+              subBuilder.MergeFrom(Ohlc);
+            }
+            input.ReadMessage(subBuilder);
+            Ohlc = subBuilder;
+            break;
+          }
+          case 106: {
+            global::Org.Openfeed.ExchangeResponse subBuilder = new global::Org.Openfeed.ExchangeResponse();
+            if (dataCase_ == DataOneofCase.ExchangeResponse) {
+              subBuilder.MergeFrom(ExchangeResponse);
+            }
+            input.ReadMessage(subBuilder);
+            ExchangeResponse = subBuilder;
+            break;
+          }
+          case 114: {
+            global::Org.Openfeed.InstrumentAction subBuilder = new global::Org.Openfeed.InstrumentAction();
+            if (dataCase_ == DataOneofCase.InstrumentAction) {
+              subBuilder.MergeFrom(InstrumentAction);
+            }
+            input.ReadMessage(subBuilder);
+            InstrumentAction = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
   /// <summary>
+  /////////////////////
   /// Serivce Messages
+  ////////////////////
   /// </summary>
-  public sealed partial class Status : pb::IMessage<Status> {
+  public sealed partial class Status : pb::IMessage<Status>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<Status> _parser = new pb::MessageParser<Status>(() => new Status());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<Status> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Status() {
       OnConstruction();
     }
@@ -1235,6 +1632,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Status(Status other) : this() {
       result_ = other.result_;
       message_ = other.message_;
@@ -1243,14 +1641,16 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public Status Clone() {
       return new Status(this);
     }
 
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
-    private global::Org.Openfeed.Result result_ = 0;
+    private global::Org.Openfeed.Result result_ = global::Org.Openfeed.Result.UnknownResult;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Result Result {
       get { return result_; }
       set {
@@ -1262,6 +1662,7 @@ namespace Org.Openfeed {
     public const int MessageFieldNumber = 2;
     private string message_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Message {
       get { return message_; }
       set {
@@ -1271,8 +1672,9 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "service" field.</summary>
     public const int ServiceFieldNumber = 3;
-    private global::Org.Openfeed.Service service_ = 0;
+    private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Service Service {
       get { return service_; }
       set {
@@ -1281,11 +1683,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as Status);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(Status other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1300,11 +1704,12 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Result != 0) hash ^= Result.GetHashCode();
+      if (Result != global::Org.Openfeed.Result.UnknownResult) hash ^= Result.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (Service != 0) hash ^= Service.GetHashCode();
+      if (Service != global::Org.Openfeed.Service.UnknownService) hash ^= Service.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1312,13 +1717,18 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Result != 0) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Result != global::Org.Openfeed.Result.UnknownResult) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Result);
       }
@@ -1326,25 +1736,49 @@ namespace Org.Openfeed {
         output.WriteRawTag(18);
         output.WriteString(Message);
       }
-      if (Service != 0) {
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Service);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Result != global::Org.Openfeed.Result.UnknownResult) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Result);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Service);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Result != 0) {
+      if (Result != global::Org.Openfeed.Result.UnknownResult) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Result);
       }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
-      if (Service != 0) {
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Service);
       }
       if (_unknownFields != null) {
@@ -1354,24 +1788,29 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(Status other) {
       if (other == null) {
         return;
       }
-      if (other.Result != 0) {
+      if (other.Result != global::Org.Openfeed.Result.UnknownResult) {
         Result = other.Result;
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
       }
-      if (other.Service != 0) {
+      if (other.Service != global::Org.Openfeed.Service.UnknownService) {
         Service = other.Service;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1379,7 +1818,7 @@ namespace Org.Openfeed {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            result_ = (global::Org.Openfeed.Result) input.ReadEnum();
+            Result = (global::Org.Openfeed.Result) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1387,35 +1826,71 @@ namespace Org.Openfeed {
             break;
           }
           case 24: {
-            service_ = (global::Org.Openfeed.Service) input.ReadEnum();
+            Service = (global::Org.Openfeed.Service) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Result = (global::Org.Openfeed.Result) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
+          case 24: {
+            Service = (global::Org.Openfeed.Service) input.ReadEnum();
             break;
           }
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
-  /// Login
+  //// Login
   /// </summary>
-  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
+  public sealed partial class LoginRequest : pb::IMessage<LoginRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginRequest() {
       OnConstruction();
     }
@@ -1423,6 +1898,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginRequest(LoginRequest other) : this() {
       correlationId_ = other.correlationId_;
       username_ = other.username_;
@@ -1431,6 +1907,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginRequest Clone() {
       return new LoginRequest(this);
     }
@@ -1439,6 +1916,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -1450,6 +1928,7 @@ namespace Org.Openfeed {
     public const int UsernameFieldNumber = 2;
     private string username_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Username {
       get { return username_; }
       set {
@@ -1461,6 +1940,7 @@ namespace Org.Openfeed {
     public const int PasswordFieldNumber = 3;
     private string password_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Password {
       get { return password_; }
       set {
@@ -1469,11 +1949,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LoginRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LoginRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1488,6 +1970,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -1500,12 +1983,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -1521,9 +2009,33 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Password);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -1542,6 +2054,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LoginRequest other) {
       if (other == null) {
         return;
@@ -1559,7 +2072,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1580,27 +2097,63 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            Username = input.ReadString();
+            break;
+          }
+          case 26: {
+            Password = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
+  public sealed partial class LoginResponse : pb::IMessage<LoginResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginResponse() {
       OnConstruction();
     }
@@ -1608,6 +2161,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginResponse(LoginResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -1616,6 +2170,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LoginResponse Clone() {
       return new LoginResponse(this);
     }
@@ -1624,6 +2179,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -1635,6 +2191,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -1646,6 +2203,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 3;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -1654,11 +2212,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LoginResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LoginResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1673,6 +2233,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -1685,12 +2246,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -1706,9 +2272,33 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Token);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -1727,6 +2317,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LoginResponse other) {
       if (other == null) {
         return;
@@ -1736,7 +2327,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -1747,7 +2338,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1760,9 +2355,39 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
+            break;
+          }
+          case 26: {
+            Token = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
             break;
           }
           case 26: {
@@ -1772,29 +2397,38 @@ namespace Org.Openfeed {
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
-  /// Logout
+  //// Logout
   /// </summary>
-  public sealed partial class LogoutRequest : pb::IMessage<LogoutRequest> {
+  public sealed partial class LogoutRequest : pb::IMessage<LogoutRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LogoutRequest> _parser = new pb::MessageParser<LogoutRequest>(() => new LogoutRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LogoutRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutRequest() {
       OnConstruction();
     }
@@ -1802,6 +2436,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutRequest(LogoutRequest other) : this() {
       correlationId_ = other.correlationId_;
       token_ = other.token_;
@@ -1809,6 +2444,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutRequest Clone() {
       return new LogoutRequest(this);
     }
@@ -1817,6 +2453,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -1828,6 +2465,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 3;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -1836,11 +2474,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LogoutRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LogoutRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1854,6 +2494,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -1865,12 +2506,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -1882,9 +2528,29 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Token);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -1900,6 +2566,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LogoutRequest other) {
       if (other == null) {
         return;
@@ -1914,7 +2581,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1931,27 +2602,59 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 26: {
+            Token = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class LogoutResponse : pb::IMessage<LogoutResponse> {
+  public sealed partial class LogoutResponse : pb::IMessage<LogoutResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<LogoutResponse> _parser = new pb::MessageParser<LogoutResponse>(() => new LogoutResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<LogoutResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutResponse() {
       OnConstruction();
     }
@@ -1959,6 +2662,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutResponse(LogoutResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -1966,6 +2670,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public LogoutResponse Clone() {
       return new LogoutResponse(this);
     }
@@ -1974,6 +2679,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -1985,6 +2691,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -1993,11 +2700,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as LogoutResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(LogoutResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2011,6 +2720,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -2022,12 +2732,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -2039,9 +2754,29 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -2057,6 +2792,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(LogoutResponse other) {
       if (other == null) {
         return;
@@ -2066,7 +2802,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -2074,7 +2810,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2087,37 +2827,72 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
             break;
           }
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
-  /// Instrument Definition(s), will stream InstrumentDefinition(s)
+  //// Instrument Definition(s), will stream InstrumentDefinition(s)
   /// </summary>
-  public sealed partial class InstrumentRequest : pb::IMessage<InstrumentRequest> {
+  public sealed partial class InstrumentRequest : pb::IMessage<InstrumentRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<InstrumentRequest> _parser = new pb::MessageParser<InstrumentRequest>(() => new InstrumentRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InstrumentRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentRequest() {
       OnConstruction();
     }
@@ -2125,6 +2900,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentRequest(InstrumentRequest other) : this() {
       correlationId_ = other.correlationId_;
       token_ = other.token_;
@@ -2147,6 +2923,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentRequest Clone() {
       return new InstrumentRequest(this);
     }
@@ -2155,6 +2932,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -2166,6 +2944,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -2176,6 +2955,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return requestCase_ == RequestOneofCase.Symbol ? (string) request_ : ""; }
       set {
@@ -2187,6 +2967,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return requestCase_ == RequestOneofCase.MarketId ? (long) request_ : 0L; }
       set {
@@ -2198,6 +2979,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Exchange {
       get { return requestCase_ == RequestOneofCase.Exchange ? (string) request_ : ""; }
       set {
@@ -2209,6 +2991,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ChannelId {
       get { return requestCase_ == RequestOneofCase.ChannelId ? (int) request_ : 0; }
       set {
@@ -2228,22 +3011,26 @@ namespace Org.Openfeed {
     }
     private RequestOneofCase requestCase_ = RequestOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestOneofCase RequestCase {
       get { return requestCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearRequest() {
       requestCase_ = RequestOneofCase.None;
       request_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InstrumentRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InstrumentRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2262,6 +3049,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -2278,12 +3066,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -2311,9 +3104,45 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Token);
+      }
+      if (requestCase_ == RequestOneofCase.Symbol) {
+        output.WriteRawTag(82);
+        output.WriteString(Symbol);
+      }
+      if (requestCase_ == RequestOneofCase.MarketId) {
+        output.WriteRawTag(88);
+        output.WriteSInt64(MarketId);
+      }
+      if (requestCase_ == RequestOneofCase.Exchange) {
+        output.WriteRawTag(98);
+        output.WriteString(Exchange);
+      }
+      if (requestCase_ == RequestOneofCase.ChannelId) {
+        output.WriteRawTag(104);
+        output.WriteSInt32(ChannelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -2341,6 +3170,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InstrumentRequest other) {
       if (other == null) {
         return;
@@ -2370,7 +3200,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2403,27 +3237,75 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            Token = input.ReadString();
+            break;
+          }
+          case 82: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 88: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 98: {
+            Exchange = input.ReadString();
+            break;
+          }
+          case 104: {
+            ChannelId = input.ReadSInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class InstrumentResponse : pb::IMessage<InstrumentResponse> {
+  public sealed partial class InstrumentResponse : pb::IMessage<InstrumentResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<InstrumentResponse> _parser = new pb::MessageParser<InstrumentResponse>(() => new InstrumentResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InstrumentResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentResponse() {
       OnConstruction();
     }
@@ -2431,6 +3313,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentResponse(InstrumentResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -2443,6 +3326,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentResponse Clone() {
       return new InstrumentResponse(this);
     }
@@ -2451,6 +3335,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -2462,6 +3347,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -2473,6 +3359,7 @@ namespace Org.Openfeed {
     public const int NumberOfDefinitionsFieldNumber = 3;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int NumberOfDefinitions {
       get { return numberOfDefinitions_; }
       set {
@@ -2484,9 +3371,9 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 4;
     private string symbol_ = "";
     /// <summary>
-    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return symbol_; }
       set {
@@ -2498,6 +3385,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 5;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return marketId_; }
       set {
@@ -2509,6 +3397,7 @@ namespace Org.Openfeed {
     public const int ExchangeFieldNumber = 6;
     private string exchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Exchange {
       get { return exchange_; }
       set {
@@ -2520,6 +3409,7 @@ namespace Org.Openfeed {
     public const int ChannelIdFieldNumber = 7;
     private int channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ChannelId {
       get { return channelId_; }
       set {
@@ -2528,11 +3418,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InstrumentResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InstrumentResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2551,6 +3443,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -2567,12 +3460,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -2604,9 +3502,49 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      if (NumberOfDefinitions != 0) {
+        output.WriteRawTag(24);
+        output.WriteSInt32(NumberOfDefinitions);
+      }
+      if (Symbol.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Symbol);
+      }
+      if (MarketId != 0L) {
+        output.WriteRawTag(40);
+        output.WriteSInt64(MarketId);
+      }
+      if (Exchange.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Exchange);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteSInt32(ChannelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -2637,6 +3575,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InstrumentResponse other) {
       if (other == null) {
         return;
@@ -2646,7 +3585,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -2669,7 +3608,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -2682,9 +3625,55 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
+            break;
+          }
+          case 24: {
+            NumberOfDefinitions = input.ReadSInt32();
+            break;
+          }
+          case 34: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 40: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 50: {
+            Exchange = input.ReadString();
+            break;
+          }
+          case 56: {
+            ChannelId = input.ReadSInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
             break;
           }
           case 24: {
@@ -2710,29 +3699,38 @@ namespace Org.Openfeed {
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
-  /// Instrument References, returns InstrumentReferenceResponse(s)
+  //// Instrument References, returns InstrumentReferenceResponse(s)
   /// </summary>
-  public sealed partial class InstrumentReferenceRequest : pb::IMessage<InstrumentReferenceRequest> {
+  public sealed partial class InstrumentReferenceRequest : pb::IMessage<InstrumentReferenceRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<InstrumentReferenceRequest> _parser = new pb::MessageParser<InstrumentReferenceRequest>(() => new InstrumentReferenceRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InstrumentReferenceRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceRequest() {
       OnConstruction();
     }
@@ -2740,6 +3738,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceRequest(InstrumentReferenceRequest other) : this() {
       correlationId_ = other.correlationId_;
       token_ = other.token_;
@@ -2762,6 +3761,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceRequest Clone() {
       return new InstrumentReferenceRequest(this);
     }
@@ -2770,6 +3770,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -2781,6 +3782,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -2791,6 +3793,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "symbol" field.</summary>
     public const int SymbolFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return requestCase_ == RequestOneofCase.Symbol ? (string) request_ : ""; }
       set {
@@ -2802,6 +3805,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "marketId" field.</summary>
     public const int MarketIdFieldNumber = 11;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return requestCase_ == RequestOneofCase.MarketId ? (long) request_ : 0L; }
       set {
@@ -2813,6 +3817,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "exchange" field.</summary>
     public const int ExchangeFieldNumber = 12;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Exchange {
       get { return requestCase_ == RequestOneofCase.Exchange ? (string) request_ : ""; }
       set {
@@ -2824,6 +3829,7 @@ namespace Org.Openfeed {
     /// <summary>Field number for the "channelId" field.</summary>
     public const int ChannelIdFieldNumber = 13;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ChannelId {
       get { return requestCase_ == RequestOneofCase.ChannelId ? (int) request_ : 0; }
       set {
@@ -2843,22 +3849,26 @@ namespace Org.Openfeed {
     }
     private RequestOneofCase requestCase_ = RequestOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public RequestOneofCase RequestCase {
       get { return requestCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearRequest() {
       requestCase_ = RequestOneofCase.None;
       request_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InstrumentReferenceRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InstrumentReferenceRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2877,6 +3887,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -2893,12 +3904,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -2926,9 +3942,45 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Token);
+      }
+      if (requestCase_ == RequestOneofCase.Symbol) {
+        output.WriteRawTag(82);
+        output.WriteString(Symbol);
+      }
+      if (requestCase_ == RequestOneofCase.MarketId) {
+        output.WriteRawTag(88);
+        output.WriteSInt64(MarketId);
+      }
+      if (requestCase_ == RequestOneofCase.Exchange) {
+        output.WriteRawTag(98);
+        output.WriteString(Exchange);
+      }
+      if (requestCase_ == RequestOneofCase.ChannelId) {
+        output.WriteRawTag(104);
+        output.WriteSInt32(ChannelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -2956,6 +4008,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InstrumentReferenceRequest other) {
       if (other == null) {
         return;
@@ -2985,7 +4038,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3018,27 +4075,75 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            Token = input.ReadString();
+            break;
+          }
+          case 82: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 88: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 98: {
+            Exchange = input.ReadString();
+            break;
+          }
+          case 104: {
+            ChannelId = input.ReadSInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class InstrumentReferenceResponse : pb::IMessage<InstrumentReferenceResponse> {
+  public sealed partial class InstrumentReferenceResponse : pb::IMessage<InstrumentReferenceResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<InstrumentReferenceResponse> _parser = new pb::MessageParser<InstrumentReferenceResponse>(() => new InstrumentReferenceResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InstrumentReferenceResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceResponse() {
       OnConstruction();
     }
@@ -3046,6 +4151,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceResponse(InstrumentReferenceResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -3062,6 +4168,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentReferenceResponse Clone() {
       return new InstrumentReferenceResponse(this);
     }
@@ -3070,6 +4177,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -3081,6 +4189,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -3092,6 +4201,7 @@ namespace Org.Openfeed {
     public const int NumberOfDefinitionsFieldNumber = 3;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int NumberOfDefinitions {
       get { return numberOfDefinitions_; }
       set {
@@ -3103,9 +4213,9 @@ namespace Org.Openfeed {
     public const int ChannelIdFieldNumber = 4;
     private int channelId_;
     /// <summary>
-    ///
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ChannelId {
       get { return channelId_; }
       set {
@@ -3117,6 +4227,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 5;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return marketId_; }
       set {
@@ -3128,6 +4239,7 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 6;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return symbol_; }
       set {
@@ -3139,6 +4251,7 @@ namespace Org.Openfeed {
     public const int ExchangeFieldNumber = 7;
     private string exchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Exchange {
       get { return exchange_; }
       set {
@@ -3150,6 +4263,7 @@ namespace Org.Openfeed {
     public const int DdfSymbolFieldNumber = 8;
     private string ddfSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DdfSymbol {
       get { return ddfSymbol_; }
       set {
@@ -3161,6 +4275,7 @@ namespace Org.Openfeed {
     public const int DdfExchangeFieldNumber = 9;
     private string ddfExchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DdfExchange {
       get { return ddfExchange_; }
       set {
@@ -3172,6 +4287,7 @@ namespace Org.Openfeed {
     public const int DdfBaseCodeFieldNumber = 10;
     private string ddfBaseCode_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string DdfBaseCode {
       get { return ddfBaseCode_; }
       set {
@@ -3183,6 +4299,7 @@ namespace Org.Openfeed {
     public const int ExchangeSymbolFieldNumber = 11;
     private string exchangeSymbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExchangeSymbol {
       get { return exchangeSymbol_; }
       set {
@@ -3191,11 +4308,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InstrumentReferenceResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InstrumentReferenceResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3218,6 +4337,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -3238,12 +4358,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -3291,9 +4416,65 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      if (NumberOfDefinitions != 0) {
+        output.WriteRawTag(24);
+        output.WriteSInt32(NumberOfDefinitions);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(32);
+        output.WriteSInt32(ChannelId);
+      }
+      if (MarketId != 0L) {
+        output.WriteRawTag(40);
+        output.WriteSInt64(MarketId);
+      }
+      if (Symbol.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Symbol);
+      }
+      if (Exchange.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Exchange);
+      }
+      if (DdfSymbol.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(DdfSymbol);
+      }
+      if (DdfExchange.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(DdfExchange);
+      }
+      if (DdfBaseCode.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(DdfBaseCode);
+      }
+      if (ExchangeSymbol.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(ExchangeSymbol);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -3336,6 +4517,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InstrumentReferenceResponse other) {
       if (other == null) {
         return;
@@ -3345,7 +4527,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -3380,7 +4562,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3393,9 +4579,71 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
+            break;
+          }
+          case 24: {
+            NumberOfDefinitions = input.ReadSInt32();
+            break;
+          }
+          case 32: {
+            ChannelId = input.ReadSInt32();
+            break;
+          }
+          case 40: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 50: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 58: {
+            Exchange = input.ReadString();
+            break;
+          }
+          case 66: {
+            DdfSymbol = input.ReadString();
+            break;
+          }
+          case 74: {
+            DdfExchange = input.ReadString();
+            break;
+          }
+          case 82: {
+            DdfBaseCode = input.ReadString();
+            break;
+          }
+          case 90: {
+            ExchangeSymbol = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
             break;
           }
           case 24: {
@@ -3437,29 +4685,38 @@ namespace Org.Openfeed {
         }
       }
     }
+    #endif
 
   }
 
   /// <summary>
-  /// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
+  //// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
   /// </summary>
-  public sealed partial class ExchangeRequest : pb::IMessage<ExchangeRequest> {
+  public sealed partial class ExchangeRequest : pb::IMessage<ExchangeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ExchangeRequest> _parser = new pb::MessageParser<ExchangeRequest>(() => new ExchangeRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ExchangeRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeRequest() {
       OnConstruction();
     }
@@ -3467,6 +4724,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeRequest(ExchangeRequest other) : this() {
       correlationId_ = other.correlationId_;
       token_ = other.token_;
@@ -3474,6 +4732,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeRequest Clone() {
       return new ExchangeRequest(this);
     }
@@ -3482,6 +4741,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -3493,6 +4753,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -3501,11 +4762,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ExchangeRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ExchangeRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3519,6 +4782,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -3530,12 +4794,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -3547,9 +4816,29 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Token);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -3565,6 +4854,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ExchangeRequest other) {
       if (other == null) {
         return;
@@ -3579,7 +4869,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3596,27 +4890,59 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            Token = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
   }
 
-  public sealed partial class ExchangeResponse : pb::IMessage<ExchangeResponse> {
+  public sealed partial class ExchangeResponse : pb::IMessage<ExchangeResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<ExchangeResponse> _parser = new pb::MessageParser<ExchangeResponse>(() => new ExchangeResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ExchangeResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeResponse() {
       OnConstruction();
     }
@@ -3624,6 +4950,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeResponse(ExchangeResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -3632,6 +4959,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ExchangeResponse Clone() {
       return new ExchangeResponse(this);
     }
@@ -3640,6 +4968,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -3651,6 +4980,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -3664,16 +4994,19 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(26, global::Org.Openfeed.ExchangeResponse.Types.Exchange.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.ExchangeResponse.Types.Exchange> exchanges_ = new pbc::RepeatedField<global::Org.Openfeed.ExchangeResponse.Types.Exchange>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Org.Openfeed.ExchangeResponse.Types.Exchange> Exchanges {
       get { return exchanges_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as ExchangeResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(ExchangeResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3688,6 +5021,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -3700,12 +5034,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -3718,9 +5057,30 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      exchanges_.WriteTo(ref output, _repeated_exchanges_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -3737,6 +5097,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(ExchangeResponse other) {
       if (other == null) {
         return;
@@ -3746,7 +5107,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -3755,7 +5116,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -3768,9 +5133,9 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
             break;
           }
           case 26: {
@@ -3779,29 +5144,69 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
+            break;
+          }
+          case 26: {
+            exchanges_.AddEntriesFrom(ref input, _repeated_exchanges_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the ExchangeResponse message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
-      public sealed partial class Exchange : pb::IMessage<Exchange> {
+      public sealed partial class Exchange : pb::IMessage<Exchange>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Exchange> _parser = new pb::MessageParser<Exchange>(() => new Exchange());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Exchange> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.ExchangeResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Exchange() {
           OnConstruction();
         }
@@ -3809,6 +5214,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Exchange(Exchange other) : this() {
           code_ = other.code_;
           description_ = other.description_;
@@ -3817,6 +5223,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Exchange Clone() {
           return new Exchange(this);
         }
@@ -3825,6 +5232,7 @@ namespace Org.Openfeed {
         public const int CodeFieldNumber = 1;
         private string code_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Code {
           get { return code_; }
           set {
@@ -3836,6 +5244,7 @@ namespace Org.Openfeed {
         public const int DescriptionFieldNumber = 2;
         private string description_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Description {
           get { return description_; }
           set {
@@ -3849,16 +5258,19 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForString(26);
         private readonly pbc::RepeatedField<string> aliases_ = new pbc::RepeatedField<string>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<string> Aliases {
           get { return aliases_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Exchange);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Exchange other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3873,6 +5285,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Code.Length != 0) hash ^= Code.GetHashCode();
@@ -3885,12 +5298,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (Code.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(Code);
@@ -3903,9 +5321,30 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Code.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Code);
+          }
+          if (Description.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Description);
+          }
+          aliases_.WriteTo(ref output, _repeated_aliases_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Code.Length != 0) {
@@ -3922,6 +5361,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Exchange other) {
           if (other == null) {
             return;
@@ -3937,7 +5377,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -3958,7 +5402,35 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Code = input.ReadString();
+                break;
+              }
+              case 18: {
+                Description = input.ReadString();
+                break;
+              }
+              case 26: {
+                aliases_.AddEntriesFrom(ref input, _repeated_aliases_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
@@ -3968,25 +5440,33 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Subscription Request
+  //// Subscription Request
   /// </summary>
-  public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest> {
+  public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<SubscriptionRequest> _parser = new pb::MessageParser<SubscriptionRequest>(() => new SubscriptionRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SubscriptionRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionRequest() {
       OnConstruction();
     }
@@ -3994,6 +5474,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionRequest(SubscriptionRequest other) : this() {
       correlationId_ = other.correlationId_;
       token_ = other.token_;
@@ -4004,6 +5485,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionRequest Clone() {
       return new SubscriptionRequest(this);
     }
@@ -4012,9 +5494,10 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     /// <summary>
-    /// Client-assigned id for this request.  Response will include same id
+    //// Client-assigned id for this request.  Response will include same id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -4026,6 +5509,7 @@ namespace Org.Openfeed {
     public const int TokenFieldNumber = 2;
     private string token_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Token {
       get { return token_; }
       set {
@@ -4035,11 +5519,12 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "service" field.</summary>
     public const int ServiceFieldNumber = 3;
-    private global::Org.Openfeed.Service service_ = 0;
+    private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
     /// <summary>
-    /// Preferred service (realtime or delayed).
+    //// Preferred service (realtime or delayed).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Service Service {
       get { return service_; }
       set {
@@ -4051,6 +5536,7 @@ namespace Org.Openfeed {
     public const int UnsubscribeFieldNumber = 4;
     private bool unsubscribe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Unsubscribe {
       get { return unsubscribe_; }
       set {
@@ -4064,16 +5550,19 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(42, global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.SubscriptionRequest.Types.Request> requests_ = new pbc::RepeatedField<global::Org.Openfeed.SubscriptionRequest.Types.Request>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Org.Openfeed.SubscriptionRequest.Types.Request> Requests {
       get { return requests_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SubscriptionRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SubscriptionRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4090,11 +5579,12 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
       if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (Service != 0) hash ^= Service.GetHashCode();
+      if (Service != global::Org.Openfeed.Service.UnknownService) hash ^= Service.GetHashCode();
       if (Unsubscribe != false) hash ^= Unsubscribe.GetHashCode();
       hash ^= requests_.GetHashCode();
       if (_unknownFields != null) {
@@ -4104,12 +5594,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -4118,7 +5613,7 @@ namespace Org.Openfeed {
         output.WriteRawTag(18);
         output.WriteString(Token);
       }
-      if (Service != 0) {
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Service);
       }
@@ -4130,9 +5625,38 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Token);
+      }
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Service);
+      }
+      if (Unsubscribe != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(Unsubscribe);
+      }
+      requests_.WriteTo(ref output, _repeated_requests_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -4141,7 +5665,7 @@ namespace Org.Openfeed {
       if (Token.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
-      if (Service != 0) {
+      if (Service != global::Org.Openfeed.Service.UnknownService) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Service);
       }
       if (Unsubscribe != false) {
@@ -4155,6 +5679,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SubscriptionRequest other) {
       if (other == null) {
         return;
@@ -4165,7 +5690,7 @@ namespace Org.Openfeed {
       if (other.Token.Length != 0) {
         Token = other.Token;
       }
-      if (other.Service != 0) {
+      if (other.Service != global::Org.Openfeed.Service.UnknownService) {
         Service = other.Service;
       }
       if (other.Unsubscribe != false) {
@@ -4176,7 +5701,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -4192,7 +5721,7 @@ namespace Org.Openfeed {
             break;
           }
           case 24: {
-            service_ = (global::Org.Openfeed.Service) input.ReadEnum();
+            Service = (global::Org.Openfeed.Service) input.ReadEnum();
             break;
           }
           case 32: {
@@ -4205,29 +5734,74 @@ namespace Org.Openfeed {
           }
         }
       }
+    #endif
     }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            Token = input.ReadString();
+            break;
+          }
+          case 24: {
+            Service = (global::Org.Openfeed.Service) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            Unsubscribe = input.ReadBool();
+            break;
+          }
+          case 42: {
+            requests_.AddEntriesFrom(ref input, _repeated_requests_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the SubscriptionRequest message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
-      public sealed partial class Request : pb::IMessage<Request> {
+      public sealed partial class Request : pb::IMessage<Request>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Request> _parser = new pb::MessageParser<Request>(() => new Request());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Request> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.SubscriptionRequest.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Request() {
           OnConstruction();
         }
@@ -4235,6 +5809,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Request(Request other) : this() {
           subscriptionType_ = other.subscriptionType_.Clone();
           snapshotIntervalSeconds_ = other.snapshotIntervalSeconds_;
@@ -4258,6 +5833,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Request Clone() {
           return new Request(this);
         }
@@ -4265,6 +5841,7 @@ namespace Org.Openfeed {
         /// <summary>Field number for the "symbol" field.</summary>
         public const int SymbolFieldNumber = 1;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Symbol {
           get { return dataCase_ == DataOneofCase.Symbol ? (string) data_ : ""; }
           set {
@@ -4276,6 +5853,7 @@ namespace Org.Openfeed {
         /// <summary>Field number for the "marketId" field.</summary>
         public const int MarketIdFieldNumber = 2;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long MarketId {
           get { return dataCase_ == DataOneofCase.MarketId ? (long) data_ : 0L; }
           set {
@@ -4287,6 +5865,7 @@ namespace Org.Openfeed {
         /// <summary>Field number for the "exchange" field.</summary>
         public const int ExchangeFieldNumber = 3;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Exchange {
           get { return dataCase_ == DataOneofCase.Exchange ? (string) data_ : ""; }
           set {
@@ -4298,6 +5877,7 @@ namespace Org.Openfeed {
         /// <summary>Field number for the "channelId" field.</summary>
         public const int ChannelIdFieldNumber = 4;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int ChannelId {
           get { return dataCase_ == DataOneofCase.ChannelId ? (int) data_ : 0; }
           set {
@@ -4312,6 +5892,7 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForEnum(82, x => (int) x, x => (global::Org.Openfeed.SubscriptionType) x);
         private readonly pbc::RepeatedField<global::Org.Openfeed.SubscriptionType> subscriptionType_ = new pbc::RepeatedField<global::Org.Openfeed.SubscriptionType>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Org.Openfeed.SubscriptionType> SubscriptionType {
           get { return subscriptionType_; }
         }
@@ -4320,9 +5901,10 @@ namespace Org.Openfeed {
         public const int SnapshotIntervalSecondsFieldNumber = 11;
         private int snapshotIntervalSeconds_;
         /// <summary>
-        /// 0 = send only current snapshot once, else send at interval seconds 
+        //// 0 = send only current snapshot once, else send at interval seconds 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int SnapshotIntervalSeconds {
           get { return snapshotIntervalSeconds_; }
           set {
@@ -4336,9 +5918,10 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForEnum(98, x => (int) x, x => (global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType) x);
         private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType> instrumentType_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType>();
         /// <summary>
-        /// Spreads and Options must be explicitly requested.
+        //// Spreads and Options must be explicitly requested.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType> InstrumentType {
           get { return instrumentType_; }
         }
@@ -4354,22 +5937,26 @@ namespace Org.Openfeed {
         }
         private DataOneofCase dataCase_ = DataOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public DataOneofCase DataCase {
           get { return dataCase_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void ClearData() {
           dataCase_ = DataOneofCase.None;
           data_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Request);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Request other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4389,6 +5976,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (dataCase_ == DataOneofCase.Symbol) hash ^= Symbol.GetHashCode();
@@ -4406,12 +5994,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (dataCase_ == DataOneofCase.Symbol) {
             output.WriteRawTag(10);
             output.WriteString(Symbol);
@@ -4437,9 +6030,43 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (dataCase_ == DataOneofCase.Symbol) {
+            output.WriteRawTag(10);
+            output.WriteString(Symbol);
+          }
+          if (dataCase_ == DataOneofCase.MarketId) {
+            output.WriteRawTag(16);
+            output.WriteSInt64(MarketId);
+          }
+          if (dataCase_ == DataOneofCase.Exchange) {
+            output.WriteRawTag(26);
+            output.WriteString(Exchange);
+          }
+          if (dataCase_ == DataOneofCase.ChannelId) {
+            output.WriteRawTag(32);
+            output.WriteSInt32(ChannelId);
+          }
+          subscriptionType_.WriteTo(ref output, _repeated_subscriptionType_codec);
+          if (SnapshotIntervalSeconds != 0) {
+            output.WriteRawTag(88);
+            output.WriteSInt32(SnapshotIntervalSeconds);
+          }
+          instrumentType_.WriteTo(ref output, _repeated_instrumentType_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (dataCase_ == DataOneofCase.Symbol) {
@@ -4466,6 +6093,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Request other) {
           if (other == null) {
             return;
@@ -4494,7 +6122,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -4533,7 +6165,53 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Symbol = input.ReadString();
+                break;
+              }
+              case 16: {
+                MarketId = input.ReadSInt64();
+                break;
+              }
+              case 26: {
+                Exchange = input.ReadString();
+                break;
+              }
+              case 32: {
+                ChannelId = input.ReadSInt32();
+                break;
+              }
+              case 82:
+              case 80: {
+                subscriptionType_.AddEntriesFrom(ref input, _repeated_subscriptionType_codec);
+                break;
+              }
+              case 88: {
+                SnapshotIntervalSeconds = input.ReadSInt32();
+                break;
+              }
+              case 98:
+              case 96: {
+                instrumentType_.AddEntriesFrom(ref input, _repeated_instrumentType_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
@@ -4542,23 +6220,31 @@ namespace Org.Openfeed {
 
   }
 
-  public sealed partial class SubscriptionResponse : pb::IMessage<SubscriptionResponse> {
+  public sealed partial class SubscriptionResponse : pb::IMessage<SubscriptionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<SubscriptionResponse> _parser = new pb::MessageParser<SubscriptionResponse>(() => new SubscriptionResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<SubscriptionResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionResponse() {
       OnConstruction();
     }
@@ -4566,6 +6252,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionResponse(SubscriptionResponse other) : this() {
       correlationId_ = other.correlationId_;
       status_ = other.status_ != null ? other.status_.Clone() : null;
@@ -4575,10 +6262,12 @@ namespace Org.Openfeed {
       channelId_ = other.channelId_;
       numberOfDefinitions_ = other.numberOfDefinitions_;
       subscriptionType_ = other.subscriptionType_;
+      unsubscribe_ = other.unsubscribe_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public SubscriptionResponse Clone() {
       return new SubscriptionResponse(this);
     }
@@ -4587,6 +6276,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long CorrelationId {
       get { return correlationId_; }
       set {
@@ -4598,6 +6288,7 @@ namespace Org.Openfeed {
     public const int StatusFieldNumber = 2;
     private global::Org.Openfeed.Status status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.Status Status {
       get { return status_; }
       set {
@@ -4609,6 +6300,7 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 3;
     private string symbol_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return symbol_; }
       set {
@@ -4620,6 +6312,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 4;
     private long marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return marketId_; }
       set {
@@ -4631,6 +6324,7 @@ namespace Org.Openfeed {
     public const int ExchangeFieldNumber = 5;
     private string exchange_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Exchange {
       get { return exchange_; }
       set {
@@ -4642,6 +6336,7 @@ namespace Org.Openfeed {
     public const int ChannelIdFieldNumber = 6;
     private int channelId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int ChannelId {
       get { return channelId_; }
       set {
@@ -4653,6 +6348,7 @@ namespace Org.Openfeed {
     public const int NumberOfDefinitionsFieldNumber = 7;
     private int numberOfDefinitions_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int NumberOfDefinitions {
       get { return numberOfDefinitions_; }
       set {
@@ -4662,8 +6358,9 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "subscriptionType" field.</summary>
     public const int SubscriptionTypeFieldNumber = 8;
-    private global::Org.Openfeed.SubscriptionType subscriptionType_ = 0;
+    private global::Org.Openfeed.SubscriptionType subscriptionType_ = global::Org.Openfeed.SubscriptionType.All;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.SubscriptionType SubscriptionType {
       get { return subscriptionType_; }
       set {
@@ -4671,12 +6368,26 @@ namespace Org.Openfeed {
       }
     }
 
+    /// <summary>Field number for the "unsubscribe" field.</summary>
+    public const int UnsubscribeFieldNumber = 9;
+    private bool unsubscribe_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unsubscribe {
+      get { return unsubscribe_; }
+      set {
+        unsubscribe_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as SubscriptionResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(SubscriptionResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4692,10 +6403,12 @@ namespace Org.Openfeed {
       if (ChannelId != other.ChannelId) return false;
       if (NumberOfDefinitions != other.NumberOfDefinitions) return false;
       if (SubscriptionType != other.SubscriptionType) return false;
+      if (Unsubscribe != other.Unsubscribe) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
@@ -4705,7 +6418,8 @@ namespace Org.Openfeed {
       if (Exchange.Length != 0) hash ^= Exchange.GetHashCode();
       if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
       if (NumberOfDefinitions != 0) hash ^= NumberOfDefinitions.GetHashCode();
-      if (SubscriptionType != 0) hash ^= SubscriptionType.GetHashCode();
+      if (SubscriptionType != global::Org.Openfeed.SubscriptionType.All) hash ^= SubscriptionType.GetHashCode();
+      if (Unsubscribe != false) hash ^= Unsubscribe.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4713,12 +6427,17 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (CorrelationId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(CorrelationId);
@@ -4747,16 +6466,68 @@ namespace Org.Openfeed {
         output.WriteRawTag(56);
         output.WriteSInt32(NumberOfDefinitions);
       }
-      if (SubscriptionType != 0) {
+      if (SubscriptionType != global::Org.Openfeed.SubscriptionType.All) {
         output.WriteRawTag(64);
         output.WriteEnum((int) SubscriptionType);
+      }
+      if (Unsubscribe != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unsubscribe);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CorrelationId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(CorrelationId);
+      }
+      if (status_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Status);
+      }
+      if (Symbol.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Symbol);
+      }
+      if (MarketId != 0L) {
+        output.WriteRawTag(32);
+        output.WriteSInt64(MarketId);
+      }
+      if (Exchange.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Exchange);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(48);
+        output.WriteSInt32(ChannelId);
+      }
+      if (NumberOfDefinitions != 0) {
+        output.WriteRawTag(56);
+        output.WriteSInt32(NumberOfDefinitions);
+      }
+      if (SubscriptionType != global::Org.Openfeed.SubscriptionType.All) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) SubscriptionType);
+      }
+      if (Unsubscribe != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unsubscribe);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (CorrelationId != 0L) {
@@ -4780,8 +6551,11 @@ namespace Org.Openfeed {
       if (NumberOfDefinitions != 0) {
         size += 1 + pb::CodedOutputStream.ComputeSInt32Size(NumberOfDefinitions);
       }
-      if (SubscriptionType != 0) {
+      if (SubscriptionType != global::Org.Openfeed.SubscriptionType.All) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SubscriptionType);
+      }
+      if (Unsubscribe != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4790,6 +6564,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SubscriptionResponse other) {
       if (other == null) {
         return;
@@ -4799,7 +6574,7 @@ namespace Org.Openfeed {
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          status_ = new global::Org.Openfeed.Status();
+          Status = new global::Org.Openfeed.Status();
         }
         Status.MergeFrom(other.Status);
       }
@@ -4818,14 +6593,21 @@ namespace Org.Openfeed {
       if (other.NumberOfDefinitions != 0) {
         NumberOfDefinitions = other.NumberOfDefinitions;
       }
-      if (other.SubscriptionType != 0) {
+      if (other.SubscriptionType != global::Org.Openfeed.SubscriptionType.All) {
         SubscriptionType = other.SubscriptionType;
+      }
+      if (other.Unsubscribe != false) {
+        Unsubscribe = other.Unsubscribe;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -4838,9 +6620,9 @@ namespace Org.Openfeed {
           }
           case 18: {
             if (status_ == null) {
-              status_ = new global::Org.Openfeed.Status();
+              Status = new global::Org.Openfeed.Status();
             }
-            input.ReadMessage(status_);
+            input.ReadMessage(Status);
             break;
           }
           case 26: {
@@ -4864,12 +6646,71 @@ namespace Org.Openfeed {
             break;
           }
           case 64: {
-            subscriptionType_ = (global::Org.Openfeed.SubscriptionType) input.ReadEnum();
+            SubscriptionType = (global::Org.Openfeed.SubscriptionType) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            Unsubscribe = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CorrelationId = input.ReadSInt64();
+            break;
+          }
+          case 18: {
+            if (status_ == null) {
+              Status = new global::Org.Openfeed.Status();
+            }
+            input.ReadMessage(Status);
+            break;
+          }
+          case 26: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 32: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 42: {
+            Exchange = input.ReadString();
+            break;
+          }
+          case 48: {
+            ChannelId = input.ReadSInt32();
+            break;
+          }
+          case 56: {
+            NumberOfDefinitions = input.ReadSInt32();
+            break;
+          }
+          case 64: {
+            SubscriptionType = (global::Org.Openfeed.SubscriptionType) input.ReadEnum();
+            break;
+          }
+          case 72: {
+            Unsubscribe = input.ReadBool();
             break;
           }
         }
       }
     }
+    #endif
 
   }
 

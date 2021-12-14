@@ -104,39 +104,47 @@ namespace Org.Openfeed {
             "SVRJT05fREFURRASQgdIAVABoAEBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition), global::Org.Openfeed.InstrumentDefinition.Parser, new[]{ "MarketId", "InstrumentType", "SupportBookTypes", "BookDepth", "VendorId", "Symbol", "Description", "CfiCode", "CurrencyCode", "ExchangeCode", "MinimumPriceIncrement", "ContractPointValue", "Schedule", "Calendar", "RecordCreateTime", "RecordUpdateTime", "TimeZoneName", "InstrumentGroup", "SymbolExpiration", "State", "Channel", "UnderlyingMarketId", "PriceFormat", "OptionStrikePriceFormat", "PriceDenominator", "QuantityDenominator", "IsTradable", "TransactionTime", "AuxiliaryData", "Symbols", "OptionStrike", "OptionType", "OptionStyle", "OptionStrikeDenominator", "SpreadCode", "SpreadLeg", "UserDefinedSpread", "MarketTier", "FinancialStatusIndicator", "Isin", "CurrencyPair", "ExchangeSendsVolume", "ExchangeSendsHigh", "ExchangeSendsLow", "ExchangeSendsOpen", "ConsolidatedFeedInstrument", "OpenOutcryInstrument", "SyntheticAmericanOptionInstrument", "BarchartExchangeCode", "BarchartBaseCode", "VolumeDenominator", "BidOfferQuantityDenominator", "PrimaryListingMarketParticipantId", "SubscriptionSymbol" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.BookType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle), typeof(global::Org.Openfeed.InstrumentDefinition.Types.State), typeof(global::Org.Openfeed.InstrumentDefinition.Types.EventType) }, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Schedule), global::Org.Openfeed.InstrumentDefinition.Types.Schedule.Parser, new[]{ "Sessions" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan), global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan.Parser, new[]{ "TimeStart", "TimeFinish" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Calendar), global::Org.Openfeed.InstrumentDefinition.Types.Calendar.Parser, new[]{ "Events" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Event), global::Org.Openfeed.InstrumentDefinition.Types.Event.Parser, new[]{ "Type", "Date" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg), global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.Parser, new[]{ "MarketId", "Ratio", "Symbol" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate), global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate.Parser, new[]{ "Year", "Month", "Day" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Symbol), global::Org.Openfeed.InstrumentDefinition.Types.Symbol.Parser, new[]{ "Vendor", "Symbol_" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat), global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Parser, new[]{ "IsFractional", "Denominator", "SubDenominator", "SubFormat" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair), global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair.Parser, new[]{ "Currency1", "Currency2" }, null, null, null)})
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition), global::Org.Openfeed.InstrumentDefinition.Parser, new[]{ "MarketId", "InstrumentType", "SupportBookTypes", "BookDepth", "VendorId", "Symbol", "Description", "CfiCode", "CurrencyCode", "ExchangeCode", "MinimumPriceIncrement", "ContractPointValue", "Schedule", "Calendar", "RecordCreateTime", "RecordUpdateTime", "TimeZoneName", "InstrumentGroup", "SymbolExpiration", "State", "Channel", "UnderlyingMarketId", "PriceFormat", "OptionStrikePriceFormat", "PriceDenominator", "QuantityDenominator", "IsTradable", "TransactionTime", "AuxiliaryData", "Symbols", "OptionStrike", "OptionType", "OptionStyle", "OptionStrikeDenominator", "SpreadCode", "SpreadLeg", "UserDefinedSpread", "MarketTier", "FinancialStatusIndicator", "Isin", "CurrencyPair", "ExchangeSendsVolume", "ExchangeSendsHigh", "ExchangeSendsLow", "ExchangeSendsOpen", "ConsolidatedFeedInstrument", "OpenOutcryInstrument", "SyntheticAmericanOptionInstrument", "BarchartExchangeCode", "BarchartBaseCode", "VolumeDenominator", "BidOfferQuantityDenominator", "PrimaryListingMarketParticipantId", "SubscriptionSymbol" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.BookType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle), typeof(global::Org.Openfeed.InstrumentDefinition.Types.State), typeof(global::Org.Openfeed.InstrumentDefinition.Types.EventType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Schedule), global::Org.Openfeed.InstrumentDefinition.Types.Schedule.Parser, new[]{ "Sessions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan), global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan.Parser, new[]{ "TimeStart", "TimeFinish" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Calendar), global::Org.Openfeed.InstrumentDefinition.Types.Calendar.Parser, new[]{ "Events" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Event), global::Org.Openfeed.InstrumentDefinition.Types.Event.Parser, new[]{ "Type", "Date" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg), global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.Parser, new[]{ "MarketId", "Ratio", "Symbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate), global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate.Parser, new[]{ "Year", "Month", "Day" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Symbol), global::Org.Openfeed.InstrumentDefinition.Types.Symbol.Parser, new[]{ "Vendor", "Symbol_" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat), global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Parser, new[]{ "IsFractional", "Denominator", "SubDenominator", "SubFormat" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair), global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair.Parser, new[]{ "Currency1", "Currency2" }, null, null, null, null)})
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class InstrumentDefinition : pb::IMessage<InstrumentDefinition> {
+  public sealed partial class InstrumentDefinition : pb::IMessage<InstrumentDefinition>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
     private static readonly pb::MessageParser<InstrumentDefinition> _parser = new pb::MessageParser<InstrumentDefinition>(() => new InstrumentDefinition());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<InstrumentDefinition> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Org.Openfeed.OpenfeedInstrumentReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentDefinition() {
       OnConstruction();
     }
@@ -144,6 +152,7 @@ namespace Org.Openfeed {
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentDefinition(InstrumentDefinition other) : this() {
       marketId_ = other.marketId_;
       instrumentType_ = other.instrumentType_;
@@ -203,6 +212,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InstrumentDefinition Clone() {
       return new InstrumentDefinition(this);
     }
@@ -211,9 +221,10 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     /// <summary>
-    /// Unique ID used in the data feed.
+    //// Unique ID used in the data feed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long MarketId {
       get { return marketId_; }
       set {
@@ -223,11 +234,12 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "instrumentType" field.</summary>
     public const int InstrumentTypeFieldNumber = 2;
-    private global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType instrumentType_ = 0;
+    private global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType instrumentType_ = global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType;
     /// <summary>
-    /// Instrument type as enum...
+    //// Instrument type as enum...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType InstrumentType {
       get { return instrumentType_; }
       set {
@@ -241,9 +253,10 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::Org.Openfeed.InstrumentDefinition.Types.BookType) x);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.BookType> supportBookTypes_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.BookType>();
     /// <summary>
-    /// Supported Book Types
+    //// Supported Book Types
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.BookType> SupportBookTypes {
       get { return supportBookTypes_; }
     }
@@ -252,9 +265,10 @@ namespace Org.Openfeed {
     public const int BookDepthFieldNumber = 4;
     private int bookDepth_;
     /// <summary>
-    /// Maximum depth of market-by-price order book
+    //// Maximum depth of market-by-price order book
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int BookDepth {
       get { return bookDepth_; }
       set {
@@ -266,9 +280,10 @@ namespace Org.Openfeed {
     public const int VendorIdFieldNumber = 5;
     private string vendorId_ = "";
     /// <summary>
-    /// The name of the market data vendor
+    //// The name of the market data vendor
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string VendorId {
       get { return vendorId_; }
       set {
@@ -280,11 +295,12 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 6;
     private string symbol_ = "";
     /// <summary>
-    /// Human readable market symbol, assigned by the exchange or venue.
+    //// Human readable market symbol, assigned by the exchange or venue.
     /// Not necessarily unique as the exchange or vendor could assign the same symbol to different
     /// instruments, for example if the instruments trade on different exchanges.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Symbol {
       get { return symbol_; }
       set {
@@ -296,9 +312,10 @@ namespace Org.Openfeed {
     public const int DescriptionFieldNumber = 7;
     private string description_ = "";
     /// <summary>
-    /// Human readable market description.
+    //// Human readable market description.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Description {
       get { return description_; }
       set {
@@ -310,9 +327,10 @@ namespace Org.Openfeed {
     public const int CfiCodeFieldNumber = 8;
     private string cfiCode_ = "";
     /// <summary>
-    /// Market CFI code: http://en.wikipedia.org/wiki/ISO_10962
+    //// Market CFI code: http://en.wikipedia.org/wiki/ISO_10962
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CfiCode {
       get { return cfiCode_; }
       set {
@@ -324,9 +342,10 @@ namespace Org.Openfeed {
     public const int CurrencyCodeFieldNumber = 9;
     private string currencyCode_ = "";
     /// <summary>
-    /// Market currency code: http://en.wikipedia.org/wiki/ISO_4217
+    //// Market currency code: http://en.wikipedia.org/wiki/ISO_4217
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string CurrencyCode {
       get { return currencyCode_; }
       set {
@@ -342,6 +361,7 @@ namespace Org.Openfeed {
     /// For inter-exchange spreads, use the leg MICs separated by a hyphen
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string ExchangeCode {
       get { return exchangeCode_; }
       set {
@@ -353,9 +373,10 @@ namespace Org.Openfeed {
     public const int MinimumPriceIncrementFieldNumber = 11;
     private float minimumPriceIncrement_;
     /// <summary>
-    /// Minimum price increment in market currency.
+    //// Minimum price increment in market currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float MinimumPriceIncrement {
       get { return minimumPriceIncrement_; }
       set {
@@ -367,9 +388,10 @@ namespace Org.Openfeed {
     public const int ContractPointValueFieldNumber = 12;
     private float contractPointValue_;
     /// <summary>
-    /// Contract point value in market currency.
+    //// Contract point value in market currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float ContractPointValue {
       get { return contractPointValue_; }
       set {
@@ -381,9 +403,10 @@ namespace Org.Openfeed {
     public const int ScheduleFieldNumber = 13;
     private global::Org.Openfeed.InstrumentDefinition.Types.Schedule schedule_;
     /// <summary>
-    /// Trading schedule for a typical week
+    //// Trading schedule for a typical week
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.Schedule Schedule {
       get { return schedule_; }
       set {
@@ -395,9 +418,10 @@ namespace Org.Openfeed {
     public const int CalendarFieldNumber = 14;
     private global::Org.Openfeed.InstrumentDefinition.Types.Calendar calendar_;
     /// <summary>
-    /// Trading calendar (expiration, notice days, holidays?, etc)
+    //// Trading calendar (expiration, notice days, holidays?, etc)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.Calendar Calendar {
       get { return calendar_; }
       set {
@@ -409,9 +433,10 @@ namespace Org.Openfeed {
     public const int RecordCreateTimeFieldNumber = 15;
     private long recordCreateTime_;
     /// <summary>
-    /// UTC Timestamp of creation, nano seconds since Unix epoch
+    //// UTC Timestamp of creation, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long RecordCreateTime {
       get { return recordCreateTime_; }
       set {
@@ -423,9 +448,10 @@ namespace Org.Openfeed {
     public const int RecordUpdateTimeFieldNumber = 16;
     private long recordUpdateTime_;
     /// <summary>
-    /// UTC Timestamp of update, nano seconds since Unix epoch
+    //// UTC Timestamp of update, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long RecordUpdateTime {
       get { return recordUpdateTime_; }
       set {
@@ -437,12 +463,13 @@ namespace Org.Openfeed {
     public const int TimeZoneNameFieldNumber = 17;
     private string timeZoneName_ = "";
     /// <summary>
-    /// Market time zone TZ database name.
+    //// Market time zone TZ database name.
     /// Permanent. Can be resolved into timeZoneOffset for given date/time.
     /// See http://joda-time.sourceforge.net/timezones.html
     /// See http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string TimeZoneName {
       get { return timeZoneName_; }
       set {
@@ -454,9 +481,10 @@ namespace Org.Openfeed {
     public const int InstrumentGroupFieldNumber = 18;
     private string instrumentGroup_ = "";
     /// <summary>
-    /// Identifies a logical grouping of instruments. By product, for example.
+    //// Identifies a logical grouping of instruments. By product, for example.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string InstrumentGroup {
       get { return instrumentGroup_; }
       set {
@@ -468,9 +496,10 @@ namespace Org.Openfeed {
     public const int SymbolExpirationFieldNumber = 19;
     private global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate symbolExpiration_;
     /// <summary>
-    /// The Date of expiration for futures and options.
+    //// The Date of expiration for futures and options.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate SymbolExpiration {
       get { return symbolExpiration_; }
       set {
@@ -480,14 +509,15 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "state" field.</summary>
     public const int StateFieldNumber = 20;
-    private global::Org.Openfeed.InstrumentDefinition.Types.State state_ = 0;
+    private global::Org.Openfeed.InstrumentDefinition.Types.State state_ = global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState;
     /// <summary>
-    /// active: can have market state updates, can have historical data
+    //// active: can have market state updates, can have historical data
     /// passive: can NOT have market state updates, but can have historical data
     /// normally "active" means newly listed or currently non expired markets
     /// normally "passive" means expired options, de-listed equities, etc.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.State State {
       get { return state_; }
       set {
@@ -499,9 +529,10 @@ namespace Org.Openfeed {
     public const int ChannelFieldNumber = 21;
     private int channel_;
     /// <summary>
-    /// The channel that updates for this instrument will appear on.
+    //// The channel that updates for this instrument will appear on.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Channel {
       get { return channel_; }
       set {
@@ -513,10 +544,11 @@ namespace Org.Openfeed {
     public const int UnderlyingMarketIdFieldNumber = 22;
     private long underlyingMarketId_;
     /// <summary>
-    /// The marketId of the underlying asset.
+    //// The marketId of the underlying asset.
     /// Used by Futures and Options when the underlying instrument is defined by the vendor
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long UnderlyingMarketId {
       get { return underlyingMarketId_; }
       set {
@@ -528,9 +560,10 @@ namespace Org.Openfeed {
     public const int PriceFormatFieldNumber = 23;
     private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat priceFormat_;
     /// <summary>
-    /// Display format
+    //// Display format
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat PriceFormat {
       get { return priceFormat_; }
       set {
@@ -542,9 +575,10 @@ namespace Org.Openfeed {
     public const int OptionStrikePriceFormatFieldNumber = 24;
     private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat optionStrikePriceFormat_;
     /// <summary>
-    /// Strike price display format
+    //// Strike price display format
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat OptionStrikePriceFormat {
       get { return optionStrikePriceFormat_; }
       set {
@@ -556,9 +590,10 @@ namespace Org.Openfeed {
     public const int PriceDenominatorFieldNumber = 28;
     private int priceDenominator_;
     /// <summary>
-    /// Divide prices by this value to get real price values
+    //// Divide prices by this value to get real price values
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int PriceDenominator {
       get { return priceDenominator_; }
       set {
@@ -570,9 +605,10 @@ namespace Org.Openfeed {
     public const int QuantityDenominatorFieldNumber = 29;
     private int quantityDenominator_;
     /// <summary>
-    /// Divide trade quantities by this value to get real quantities 
+    //// Divide trade quantities by this value to get real quantities 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int QuantityDenominator {
       get { return quantityDenominator_; }
       set {
@@ -584,9 +620,10 @@ namespace Org.Openfeed {
     public const int IsTradableFieldNumber = 30;
     private bool isTradable_;
     /// <summary>
-    /// true if this is a tradable instrument
+    //// true if this is a tradable instrument
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool IsTradable {
       get { return isTradable_; }
       set {
@@ -598,9 +635,10 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 50;
     private long transactionTime_;
     /// <summary>
-    /// UTC timestamp of transaction, nano seconds since Unix epoch
+    //// UTC timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long TransactionTime {
       get { return transactionTime_; }
       set {
@@ -612,9 +650,10 @@ namespace Org.Openfeed {
     public const int AuxiliaryDataFieldNumber = 99;
     private pb::ByteString auxiliaryData_ = pb::ByteString.Empty;
     /// <summary>
-    /// For internal use only.   Ignore
+    //// For internal use only.   Ignore
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString AuxiliaryData {
       get { return auxiliaryData_; }
       set {
@@ -628,12 +667,13 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(802, global::Org.Openfeed.InstrumentDefinition.Types.Symbol.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Symbol> symbols_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Symbol>();
     /// <summary>
-    /// List of alternate symbols for this instrument.  A single instrument
+    //// List of alternate symbols for this instrument.  A single instrument
     /// may be provided by many different market data vendors, each with
     /// their own unique symbology. Allows this instrument to be tagged
     /// with as many vendor symbols as necessary.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Symbol> Symbols {
       get { return symbols_; }
     }
@@ -642,10 +682,11 @@ namespace Org.Openfeed {
     public const int OptionStrikeFieldNumber = 200;
     private long optionStrike_;
     /// <summary>
-    /// Option strike price in market currency.  Multiply by
-    /// factorOptionsStrike to get actual strike
+    //// Option strike price in market currency.  Multiply by
+    //// factorOptionsStrike to get actual strike
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long OptionStrike {
       get { return optionStrike_; }
       set {
@@ -655,11 +696,12 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "optionType" field.</summary>
     public const int OptionTypeFieldNumber = 202;
-    private global::Org.Openfeed.InstrumentDefinition.Types.OptionType optionType_ = 0;
+    private global::Org.Openfeed.InstrumentDefinition.Types.OptionType optionType_ = global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType;
     /// <summary>
-    /// Option type: call vs put.
+    //// Option type: call vs put.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.OptionType OptionType {
       get { return optionType_; }
       set {
@@ -669,11 +711,12 @@ namespace Org.Openfeed {
 
     /// <summary>Field number for the "optionStyle" field.</summary>
     public const int OptionStyleFieldNumber = 203;
-    private global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle optionStyle_ = 0;
+    private global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle optionStyle_ = global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle;
     /// <summary>
-    /// Option style : American vs European.
+    //// Option style : American vs European.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle OptionStyle {
       get { return optionStyle_; }
       set {
@@ -685,9 +728,10 @@ namespace Org.Openfeed {
     public const int OptionStrikeDenominatorFieldNumber = 204;
     private int optionStrikeDenominator_;
     /// <summary>
-    /// Divide optionStrike by this value to get real strike price
+    //// Divide optionStrike by this value to get real strike price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int OptionStrikeDenominator {
       get { return optionStrikeDenominator_; }
       set {
@@ -699,9 +743,10 @@ namespace Org.Openfeed {
     public const int SpreadCodeFieldNumber = 210;
     private string spreadCode_ = "";
     /// <summary>
-    /// Spread type, can be vendor specific
+    //// Spread type, can be vendor specific
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SpreadCode {
       get { return spreadCode_; }
       set {
@@ -715,9 +760,10 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(1690, global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg> spreadLeg_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg>();
     /// <summary>
-    /// Ordered list of underlying legs in a spread.
+    //// Ordered list of underlying legs in a spread.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg> SpreadLeg {
       get { return spreadLeg_; }
     }
@@ -726,9 +772,10 @@ namespace Org.Openfeed {
     public const int UserDefinedSpreadFieldNumber = 212;
     private bool userDefinedSpread_;
     /// <summary>
-    /// true if user defined spread
+    //// true if user defined spread
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool UserDefinedSpread {
       get { return userDefinedSpread_; }
       set {
@@ -740,9 +787,10 @@ namespace Org.Openfeed {
     public const int MarketTierFieldNumber = 213;
     private string marketTier_ = "";
     /// <summary>
-    /// Listing market classification
+    //// Listing market classification
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string MarketTier {
       get { return marketTier_; }
       set {
@@ -754,9 +802,10 @@ namespace Org.Openfeed {
     public const int FinancialStatusIndicatorFieldNumber = 214;
     private string financialStatusIndicator_ = "";
     /// <summary>
-    /// Current financial status of the issuer
+    //// Current financial status of the issuer
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string FinancialStatusIndicator {
       get { return financialStatusIndicator_; }
       set {
@@ -768,9 +817,10 @@ namespace Org.Openfeed {
     public const int IsinFieldNumber = 215;
     private string isin_ = "";
     /// <summary>
-    /// ISIN: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+    //// ISIN: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Isin {
       get { return isin_; }
       set {
@@ -782,9 +832,10 @@ namespace Org.Openfeed {
     public const int CurrencyPairFieldNumber = 216;
     private global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair currencyPair_;
     /// <summary>
-    /// Break out of currency pair
+    //// Break out of currency pair
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair CurrencyPair {
       get { return currencyPair_; }
       set {
@@ -796,9 +847,10 @@ namespace Org.Openfeed {
     public const int ExchangeSendsVolumeFieldNumber = 217;
     private bool exchangeSendsVolume_;
     /// <summary>
-    /// true if exchange sends volume.
+    //// true if exchange sends volume.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ExchangeSendsVolume {
       get { return exchangeSendsVolume_; }
       set {
@@ -810,9 +862,10 @@ namespace Org.Openfeed {
     public const int ExchangeSendsHighFieldNumber = 218;
     private bool exchangeSendsHigh_;
     /// <summary>
-    /// true if exchange sends high.
+    //// true if exchange sends high.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ExchangeSendsHigh {
       get { return exchangeSendsHigh_; }
       set {
@@ -824,9 +877,10 @@ namespace Org.Openfeed {
     public const int ExchangeSendsLowFieldNumber = 219;
     private bool exchangeSendsLow_;
     /// <summary>
-    /// true if exchange sends low.
+    //// true if exchange sends low.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ExchangeSendsLow {
       get { return exchangeSendsLow_; }
       set {
@@ -838,9 +892,10 @@ namespace Org.Openfeed {
     public const int ExchangeSendsOpenFieldNumber = 220;
     private bool exchangeSendsOpen_;
     /// <summary>
-    /// true if exchange sends open.
+    //// true if exchange sends open.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ExchangeSendsOpen {
       get { return exchangeSendsOpen_; }
       set {
@@ -852,9 +907,10 @@ namespace Org.Openfeed {
     public const int ConsolidatedFeedInstrumentFieldNumber = 221;
     private bool consolidatedFeedInstrument_;
     /// <summary>
-    /// true if this instrument represents consolidated NBBO.
+    //// true if this instrument represents consolidated NBBO.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool ConsolidatedFeedInstrument {
       get { return consolidatedFeedInstrument_; }
       set {
@@ -866,9 +922,10 @@ namespace Org.Openfeed {
     public const int OpenOutcryInstrumentFieldNumber = 222;
     private bool openOutcryInstrument_;
     /// <summary>
-    /// true if this instrument represents Pit symbol.
+    //// true if this instrument represents Pit symbol.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool OpenOutcryInstrument {
       get { return openOutcryInstrument_; }
       set {
@@ -880,9 +937,10 @@ namespace Org.Openfeed {
     public const int SyntheticAmericanOptionInstrumentFieldNumber = 223;
     private bool syntheticAmericanOptionInstrument_;
     /// <summary>
-    /// true if this instrument generated FX option.
+    //// true if this instrument generated FX option.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool SyntheticAmericanOptionInstrument {
       get { return syntheticAmericanOptionInstrument_; }
       set {
@@ -894,9 +952,10 @@ namespace Org.Openfeed {
     public const int BarchartExchangeCodeFieldNumber = 224;
     private string barchartExchangeCode_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BarchartExchangeCode {
       get { return barchartExchangeCode_; }
       set {
@@ -908,9 +967,10 @@ namespace Org.Openfeed {
     public const int BarchartBaseCodeFieldNumber = 225;
     private string barchartBaseCode_ = "";
     /// <summary>
-    /// 
+    //// 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string BarchartBaseCode {
       get { return barchartBaseCode_; }
       set {
@@ -922,9 +982,10 @@ namespace Org.Openfeed {
     public const int VolumeDenominatorFieldNumber = 226;
     private int volumeDenominator_;
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int VolumeDenominator {
       get { return volumeDenominator_; }
       set {
@@ -936,9 +997,10 @@ namespace Org.Openfeed {
     public const int BidOfferQuantityDenominatorFieldNumber = 227;
     private int bidOfferQuantityDenominator_;
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int BidOfferQuantityDenominator {
       get { return bidOfferQuantityDenominator_; }
       set {
@@ -950,9 +1012,10 @@ namespace Org.Openfeed {
     public const int PrimaryListingMarketParticipantIdFieldNumber = 228;
     private string primaryListingMarketParticipantId_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PrimaryListingMarketParticipantId {
       get { return primaryListingMarketParticipantId_; }
       set {
@@ -964,9 +1027,10 @@ namespace Org.Openfeed {
     public const int SubscriptionSymbolFieldNumber = 229;
     private string subscriptionSymbol_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string SubscriptionSymbol {
       get { return subscriptionSymbol_; }
       set {
@@ -975,11 +1039,13 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
       return Equals(other as InstrumentDefinition);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Equals(InstrumentDefinition other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1045,10 +1111,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
       if (MarketId != 0L) hash ^= MarketId.GetHashCode();
-      if (InstrumentType != 0) hash ^= InstrumentType.GetHashCode();
+      if (InstrumentType != global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType) hash ^= InstrumentType.GetHashCode();
       hash ^= supportBookTypes_.GetHashCode();
       if (BookDepth != 0) hash ^= BookDepth.GetHashCode();
       if (VendorId.Length != 0) hash ^= VendorId.GetHashCode();
@@ -1066,7 +1133,7 @@ namespace Org.Openfeed {
       if (TimeZoneName.Length != 0) hash ^= TimeZoneName.GetHashCode();
       if (InstrumentGroup.Length != 0) hash ^= InstrumentGroup.GetHashCode();
       if (symbolExpiration_ != null) hash ^= SymbolExpiration.GetHashCode();
-      if (State != 0) hash ^= State.GetHashCode();
+      if (State != global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState) hash ^= State.GetHashCode();
       if (Channel != 0) hash ^= Channel.GetHashCode();
       if (UnderlyingMarketId != 0L) hash ^= UnderlyingMarketId.GetHashCode();
       if (priceFormat_ != null) hash ^= PriceFormat.GetHashCode();
@@ -1078,8 +1145,8 @@ namespace Org.Openfeed {
       if (AuxiliaryData.Length != 0) hash ^= AuxiliaryData.GetHashCode();
       hash ^= symbols_.GetHashCode();
       if (OptionStrike != 0L) hash ^= OptionStrike.GetHashCode();
-      if (OptionType != 0) hash ^= OptionType.GetHashCode();
-      if (OptionStyle != 0) hash ^= OptionStyle.GetHashCode();
+      if (OptionType != global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType) hash ^= OptionType.GetHashCode();
+      if (OptionStyle != global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle) hash ^= OptionStyle.GetHashCode();
       if (OptionStrikeDenominator != 0) hash ^= OptionStrikeDenominator.GetHashCode();
       if (SpreadCode.Length != 0) hash ^= SpreadCode.GetHashCode();
       hash ^= spreadLeg_.GetHashCode();
@@ -1108,17 +1175,22 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
       if (MarketId != 0L) {
         output.WriteRawTag(8);
         output.WriteSInt64(MarketId);
       }
-      if (InstrumentType != 0) {
+      if (InstrumentType != global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType) {
         output.WriteRawTag(16);
         output.WriteEnum((int) InstrumentType);
       }
@@ -1187,7 +1259,7 @@ namespace Org.Openfeed {
         output.WriteRawTag(154, 1);
         output.WriteMessage(SymbolExpiration);
       }
-      if (State != 0) {
+      if (State != global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState) {
         output.WriteRawTag(160, 1);
         output.WriteEnum((int) State);
       }
@@ -1232,11 +1304,11 @@ namespace Org.Openfeed {
         output.WriteRawTag(192, 12);
         output.WriteSInt64(OptionStrike);
       }
-      if (OptionType != 0) {
+      if (OptionType != global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType) {
         output.WriteRawTag(208, 12);
         output.WriteEnum((int) OptionType);
       }
-      if (OptionStyle != 0) {
+      if (OptionStyle != global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle) {
         output.WriteRawTag(216, 12);
         output.WriteEnum((int) OptionStyle);
       }
@@ -1324,15 +1396,234 @@ namespace Org.Openfeed {
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
+    #endif
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MarketId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteSInt64(MarketId);
+      }
+      if (InstrumentType != global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) InstrumentType);
+      }
+      supportBookTypes_.WriteTo(ref output, _repeated_supportBookTypes_codec);
+      if (BookDepth != 0) {
+        output.WriteRawTag(32);
+        output.WriteSInt32(BookDepth);
+      }
+      if (VendorId.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(VendorId);
+      }
+      if (Symbol.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Symbol);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Description);
+      }
+      if (CfiCode.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(CfiCode);
+      }
+      if (CurrencyCode.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(CurrencyCode);
+      }
+      if (ExchangeCode.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(ExchangeCode);
+      }
+      if (MinimumPriceIncrement != 0F) {
+        output.WriteRawTag(93);
+        output.WriteFloat(MinimumPriceIncrement);
+      }
+      if (ContractPointValue != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(ContractPointValue);
+      }
+      if (schedule_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Schedule);
+      }
+      if (calendar_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Calendar);
+      }
+      if (RecordCreateTime != 0L) {
+        output.WriteRawTag(120);
+        output.WriteSInt64(RecordCreateTime);
+      }
+      if (RecordUpdateTime != 0L) {
+        output.WriteRawTag(128, 1);
+        output.WriteSInt64(RecordUpdateTime);
+      }
+      if (TimeZoneName.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(TimeZoneName);
+      }
+      if (InstrumentGroup.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(InstrumentGroup);
+      }
+      if (symbolExpiration_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(SymbolExpiration);
+      }
+      if (State != global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState) {
+        output.WriteRawTag(160, 1);
+        output.WriteEnum((int) State);
+      }
+      if (Channel != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteSInt32(Channel);
+      }
+      if (UnderlyingMarketId != 0L) {
+        output.WriteRawTag(176, 1);
+        output.WriteSInt64(UnderlyingMarketId);
+      }
+      if (priceFormat_ != null) {
+        output.WriteRawTag(186, 1);
+        output.WriteMessage(PriceFormat);
+      }
+      if (optionStrikePriceFormat_ != null) {
+        output.WriteRawTag(194, 1);
+        output.WriteMessage(OptionStrikePriceFormat);
+      }
+      if (PriceDenominator != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteSInt32(PriceDenominator);
+      }
+      if (QuantityDenominator != 0) {
+        output.WriteRawTag(232, 1);
+        output.WriteSInt32(QuantityDenominator);
+      }
+      if (IsTradable != false) {
+        output.WriteRawTag(240, 1);
+        output.WriteBool(IsTradable);
+      }
+      if (TransactionTime != 0L) {
+        output.WriteRawTag(144, 3);
+        output.WriteSInt64(TransactionTime);
+      }
+      if (AuxiliaryData.Length != 0) {
+        output.WriteRawTag(154, 6);
+        output.WriteBytes(AuxiliaryData);
+      }
+      symbols_.WriteTo(ref output, _repeated_symbols_codec);
+      if (OptionStrike != 0L) {
+        output.WriteRawTag(192, 12);
+        output.WriteSInt64(OptionStrike);
+      }
+      if (OptionType != global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType) {
+        output.WriteRawTag(208, 12);
+        output.WriteEnum((int) OptionType);
+      }
+      if (OptionStyle != global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle) {
+        output.WriteRawTag(216, 12);
+        output.WriteEnum((int) OptionStyle);
+      }
+      if (OptionStrikeDenominator != 0) {
+        output.WriteRawTag(224, 12);
+        output.WriteSInt32(OptionStrikeDenominator);
+      }
+      if (SpreadCode.Length != 0) {
+        output.WriteRawTag(146, 13);
+        output.WriteString(SpreadCode);
+      }
+      spreadLeg_.WriteTo(ref output, _repeated_spreadLeg_codec);
+      if (UserDefinedSpread != false) {
+        output.WriteRawTag(160, 13);
+        output.WriteBool(UserDefinedSpread);
+      }
+      if (MarketTier.Length != 0) {
+        output.WriteRawTag(170, 13);
+        output.WriteString(MarketTier);
+      }
+      if (FinancialStatusIndicator.Length != 0) {
+        output.WriteRawTag(178, 13);
+        output.WriteString(FinancialStatusIndicator);
+      }
+      if (Isin.Length != 0) {
+        output.WriteRawTag(186, 13);
+        output.WriteString(Isin);
+      }
+      if (currencyPair_ != null) {
+        output.WriteRawTag(194, 13);
+        output.WriteMessage(CurrencyPair);
+      }
+      if (ExchangeSendsVolume != false) {
+        output.WriteRawTag(200, 13);
+        output.WriteBool(ExchangeSendsVolume);
+      }
+      if (ExchangeSendsHigh != false) {
+        output.WriteRawTag(208, 13);
+        output.WriteBool(ExchangeSendsHigh);
+      }
+      if (ExchangeSendsLow != false) {
+        output.WriteRawTag(216, 13);
+        output.WriteBool(ExchangeSendsLow);
+      }
+      if (ExchangeSendsOpen != false) {
+        output.WriteRawTag(224, 13);
+        output.WriteBool(ExchangeSendsOpen);
+      }
+      if (ConsolidatedFeedInstrument != false) {
+        output.WriteRawTag(232, 13);
+        output.WriteBool(ConsolidatedFeedInstrument);
+      }
+      if (OpenOutcryInstrument != false) {
+        output.WriteRawTag(240, 13);
+        output.WriteBool(OpenOutcryInstrument);
+      }
+      if (SyntheticAmericanOptionInstrument != false) {
+        output.WriteRawTag(248, 13);
+        output.WriteBool(SyntheticAmericanOptionInstrument);
+      }
+      if (BarchartExchangeCode.Length != 0) {
+        output.WriteRawTag(130, 14);
+        output.WriteString(BarchartExchangeCode);
+      }
+      if (BarchartBaseCode.Length != 0) {
+        output.WriteRawTag(138, 14);
+        output.WriteString(BarchartBaseCode);
+      }
+      if (VolumeDenominator != 0) {
+        output.WriteRawTag(144, 14);
+        output.WriteSInt32(VolumeDenominator);
+      }
+      if (BidOfferQuantityDenominator != 0) {
+        output.WriteRawTag(152, 14);
+        output.WriteSInt32(BidOfferQuantityDenominator);
+      }
+      if (PrimaryListingMarketParticipantId.Length != 0) {
+        output.WriteRawTag(162, 14);
+        output.WriteString(PrimaryListingMarketParticipantId);
+      }
+      if (SubscriptionSymbol.Length != 0) {
+        output.WriteRawTag(170, 14);
+        output.WriteString(SubscriptionSymbol);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
       if (MarketId != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeSInt64Size(MarketId);
       }
-      if (InstrumentType != 0) {
+      if (InstrumentType != global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InstrumentType);
       }
       size += supportBookTypes_.CalculateSize(_repeated_supportBookTypes_codec);
@@ -1384,7 +1675,7 @@ namespace Org.Openfeed {
       if (symbolExpiration_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(SymbolExpiration);
       }
-      if (State != 0) {
+      if (State != global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
       if (Channel != 0) {
@@ -1418,10 +1709,10 @@ namespace Org.Openfeed {
       if (OptionStrike != 0L) {
         size += 2 + pb::CodedOutputStream.ComputeSInt64Size(OptionStrike);
       }
-      if (OptionType != 0) {
+      if (OptionType != global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OptionType);
       }
-      if (OptionStyle != 0) {
+      if (OptionStyle != global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) OptionStyle);
       }
       if (OptionStrikeDenominator != 0) {
@@ -1492,6 +1783,7 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(InstrumentDefinition other) {
       if (other == null) {
         return;
@@ -1499,7 +1791,7 @@ namespace Org.Openfeed {
       if (other.MarketId != 0L) {
         MarketId = other.MarketId;
       }
-      if (other.InstrumentType != 0) {
+      if (other.InstrumentType != global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType) {
         InstrumentType = other.InstrumentType;
       }
       supportBookTypes_.Add(other.supportBookTypes_);
@@ -1532,13 +1824,13 @@ namespace Org.Openfeed {
       }
       if (other.schedule_ != null) {
         if (schedule_ == null) {
-          schedule_ = new global::Org.Openfeed.InstrumentDefinition.Types.Schedule();
+          Schedule = new global::Org.Openfeed.InstrumentDefinition.Types.Schedule();
         }
         Schedule.MergeFrom(other.Schedule);
       }
       if (other.calendar_ != null) {
         if (calendar_ == null) {
-          calendar_ = new global::Org.Openfeed.InstrumentDefinition.Types.Calendar();
+          Calendar = new global::Org.Openfeed.InstrumentDefinition.Types.Calendar();
         }
         Calendar.MergeFrom(other.Calendar);
       }
@@ -1556,11 +1848,11 @@ namespace Org.Openfeed {
       }
       if (other.symbolExpiration_ != null) {
         if (symbolExpiration_ == null) {
-          symbolExpiration_ = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
+          SymbolExpiration = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
         }
         SymbolExpiration.MergeFrom(other.SymbolExpiration);
       }
-      if (other.State != 0) {
+      if (other.State != global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState) {
         State = other.State;
       }
       if (other.Channel != 0) {
@@ -1571,13 +1863,13 @@ namespace Org.Openfeed {
       }
       if (other.priceFormat_ != null) {
         if (priceFormat_ == null) {
-          priceFormat_ = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+          PriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
         }
         PriceFormat.MergeFrom(other.PriceFormat);
       }
       if (other.optionStrikePriceFormat_ != null) {
         if (optionStrikePriceFormat_ == null) {
-          optionStrikePriceFormat_ = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+          OptionStrikePriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
         }
         OptionStrikePriceFormat.MergeFrom(other.OptionStrikePriceFormat);
       }
@@ -1600,10 +1892,10 @@ namespace Org.Openfeed {
       if (other.OptionStrike != 0L) {
         OptionStrike = other.OptionStrike;
       }
-      if (other.OptionType != 0) {
+      if (other.OptionType != global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType) {
         OptionType = other.OptionType;
       }
-      if (other.OptionStyle != 0) {
+      if (other.OptionStyle != global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle) {
         OptionStyle = other.OptionStyle;
       }
       if (other.OptionStrikeDenominator != 0) {
@@ -1627,7 +1919,7 @@ namespace Org.Openfeed {
       }
       if (other.currencyPair_ != null) {
         if (currencyPair_ == null) {
-          currencyPair_ = new global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair();
+          CurrencyPair = new global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair();
         }
         CurrencyPair.MergeFrom(other.CurrencyPair);
       }
@@ -1674,7 +1966,11 @@ namespace Org.Openfeed {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
@@ -1686,7 +1982,7 @@ namespace Org.Openfeed {
             break;
           }
           case 16: {
-            instrumentType_ = (global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType) input.ReadEnum();
+            InstrumentType = (global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType) input.ReadEnum();
             break;
           }
           case 26:
@@ -1732,16 +2028,16 @@ namespace Org.Openfeed {
           }
           case 106: {
             if (schedule_ == null) {
-              schedule_ = new global::Org.Openfeed.InstrumentDefinition.Types.Schedule();
+              Schedule = new global::Org.Openfeed.InstrumentDefinition.Types.Schedule();
             }
-            input.ReadMessage(schedule_);
+            input.ReadMessage(Schedule);
             break;
           }
           case 114: {
             if (calendar_ == null) {
-              calendar_ = new global::Org.Openfeed.InstrumentDefinition.Types.Calendar();
+              Calendar = new global::Org.Openfeed.InstrumentDefinition.Types.Calendar();
             }
-            input.ReadMessage(calendar_);
+            input.ReadMessage(Calendar);
             break;
           }
           case 120: {
@@ -1762,13 +2058,13 @@ namespace Org.Openfeed {
           }
           case 154: {
             if (symbolExpiration_ == null) {
-              symbolExpiration_ = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
+              SymbolExpiration = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
             }
-            input.ReadMessage(symbolExpiration_);
+            input.ReadMessage(SymbolExpiration);
             break;
           }
           case 160: {
-            state_ = (global::Org.Openfeed.InstrumentDefinition.Types.State) input.ReadEnum();
+            State = (global::Org.Openfeed.InstrumentDefinition.Types.State) input.ReadEnum();
             break;
           }
           case 168: {
@@ -1781,16 +2077,16 @@ namespace Org.Openfeed {
           }
           case 186: {
             if (priceFormat_ == null) {
-              priceFormat_ = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+              PriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
             }
-            input.ReadMessage(priceFormat_);
+            input.ReadMessage(PriceFormat);
             break;
           }
           case 194: {
             if (optionStrikePriceFormat_ == null) {
-              optionStrikePriceFormat_ = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+              OptionStrikePriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
             }
-            input.ReadMessage(optionStrikePriceFormat_);
+            input.ReadMessage(OptionStrikePriceFormat);
             break;
           }
           case 224: {
@@ -1822,11 +2118,11 @@ namespace Org.Openfeed {
             break;
           }
           case 1616: {
-            optionType_ = (global::Org.Openfeed.InstrumentDefinition.Types.OptionType) input.ReadEnum();
+            OptionType = (global::Org.Openfeed.InstrumentDefinition.Types.OptionType) input.ReadEnum();
             break;
           }
           case 1624: {
-            optionStyle_ = (global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle) input.ReadEnum();
+            OptionStyle = (global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle) input.ReadEnum();
             break;
           }
           case 1632: {
@@ -1859,9 +2155,259 @@ namespace Org.Openfeed {
           }
           case 1730: {
             if (currencyPair_ == null) {
-              currencyPair_ = new global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair();
+              CurrencyPair = new global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair();
             }
-            input.ReadMessage(currencyPair_);
+            input.ReadMessage(CurrencyPair);
+            break;
+          }
+          case 1736: {
+            ExchangeSendsVolume = input.ReadBool();
+            break;
+          }
+          case 1744: {
+            ExchangeSendsHigh = input.ReadBool();
+            break;
+          }
+          case 1752: {
+            ExchangeSendsLow = input.ReadBool();
+            break;
+          }
+          case 1760: {
+            ExchangeSendsOpen = input.ReadBool();
+            break;
+          }
+          case 1768: {
+            ConsolidatedFeedInstrument = input.ReadBool();
+            break;
+          }
+          case 1776: {
+            OpenOutcryInstrument = input.ReadBool();
+            break;
+          }
+          case 1784: {
+            SyntheticAmericanOptionInstrument = input.ReadBool();
+            break;
+          }
+          case 1794: {
+            BarchartExchangeCode = input.ReadString();
+            break;
+          }
+          case 1802: {
+            BarchartBaseCode = input.ReadString();
+            break;
+          }
+          case 1808: {
+            VolumeDenominator = input.ReadSInt32();
+            break;
+          }
+          case 1816: {
+            BidOfferQuantityDenominator = input.ReadSInt32();
+            break;
+          }
+          case 1826: {
+            PrimaryListingMarketParticipantId = input.ReadString();
+            break;
+          }
+          case 1834: {
+            SubscriptionSymbol = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            MarketId = input.ReadSInt64();
+            break;
+          }
+          case 16: {
+            InstrumentType = (global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType) input.ReadEnum();
+            break;
+          }
+          case 26:
+          case 24: {
+            supportBookTypes_.AddEntriesFrom(ref input, _repeated_supportBookTypes_codec);
+            break;
+          }
+          case 32: {
+            BookDepth = input.ReadSInt32();
+            break;
+          }
+          case 42: {
+            VendorId = input.ReadString();
+            break;
+          }
+          case 50: {
+            Symbol = input.ReadString();
+            break;
+          }
+          case 58: {
+            Description = input.ReadString();
+            break;
+          }
+          case 66: {
+            CfiCode = input.ReadString();
+            break;
+          }
+          case 74: {
+            CurrencyCode = input.ReadString();
+            break;
+          }
+          case 82: {
+            ExchangeCode = input.ReadString();
+            break;
+          }
+          case 93: {
+            MinimumPriceIncrement = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            ContractPointValue = input.ReadFloat();
+            break;
+          }
+          case 106: {
+            if (schedule_ == null) {
+              Schedule = new global::Org.Openfeed.InstrumentDefinition.Types.Schedule();
+            }
+            input.ReadMessage(Schedule);
+            break;
+          }
+          case 114: {
+            if (calendar_ == null) {
+              Calendar = new global::Org.Openfeed.InstrumentDefinition.Types.Calendar();
+            }
+            input.ReadMessage(Calendar);
+            break;
+          }
+          case 120: {
+            RecordCreateTime = input.ReadSInt64();
+            break;
+          }
+          case 128: {
+            RecordUpdateTime = input.ReadSInt64();
+            break;
+          }
+          case 138: {
+            TimeZoneName = input.ReadString();
+            break;
+          }
+          case 146: {
+            InstrumentGroup = input.ReadString();
+            break;
+          }
+          case 154: {
+            if (symbolExpiration_ == null) {
+              SymbolExpiration = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
+            }
+            input.ReadMessage(SymbolExpiration);
+            break;
+          }
+          case 160: {
+            State = (global::Org.Openfeed.InstrumentDefinition.Types.State) input.ReadEnum();
+            break;
+          }
+          case 168: {
+            Channel = input.ReadSInt32();
+            break;
+          }
+          case 176: {
+            UnderlyingMarketId = input.ReadSInt64();
+            break;
+          }
+          case 186: {
+            if (priceFormat_ == null) {
+              PriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+            }
+            input.ReadMessage(PriceFormat);
+            break;
+          }
+          case 194: {
+            if (optionStrikePriceFormat_ == null) {
+              OptionStrikePriceFormat = new global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat();
+            }
+            input.ReadMessage(OptionStrikePriceFormat);
+            break;
+          }
+          case 224: {
+            PriceDenominator = input.ReadSInt32();
+            break;
+          }
+          case 232: {
+            QuantityDenominator = input.ReadSInt32();
+            break;
+          }
+          case 240: {
+            IsTradable = input.ReadBool();
+            break;
+          }
+          case 400: {
+            TransactionTime = input.ReadSInt64();
+            break;
+          }
+          case 794: {
+            AuxiliaryData = input.ReadBytes();
+            break;
+          }
+          case 802: {
+            symbols_.AddEntriesFrom(ref input, _repeated_symbols_codec);
+            break;
+          }
+          case 1600: {
+            OptionStrike = input.ReadSInt64();
+            break;
+          }
+          case 1616: {
+            OptionType = (global::Org.Openfeed.InstrumentDefinition.Types.OptionType) input.ReadEnum();
+            break;
+          }
+          case 1624: {
+            OptionStyle = (global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle) input.ReadEnum();
+            break;
+          }
+          case 1632: {
+            OptionStrikeDenominator = input.ReadSInt32();
+            break;
+          }
+          case 1682: {
+            SpreadCode = input.ReadString();
+            break;
+          }
+          case 1690: {
+            spreadLeg_.AddEntriesFrom(ref input, _repeated_spreadLeg_codec);
+            break;
+          }
+          case 1696: {
+            UserDefinedSpread = input.ReadBool();
+            break;
+          }
+          case 1706: {
+            MarketTier = input.ReadString();
+            break;
+          }
+          case 1714: {
+            FinancialStatusIndicator = input.ReadString();
+            break;
+          }
+          case 1722: {
+            Isin = input.ReadString();
+            break;
+          }
+          case 1730: {
+            if (currencyPair_ == null) {
+              CurrencyPair = new global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair();
+            }
+            input.ReadMessage(CurrencyPair);
             break;
           }
           case 1736: {
@@ -1919,10 +2465,12 @@ namespace Org.Openfeed {
         }
       }
     }
+    #endif
 
     #region Nested types
     /// <summary>Container for nested types declared in the InstrumentDefinition message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
       /// #############################################
@@ -1940,7 +2488,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Market depth implementation type
+      //// Market depth implementation type
       /// </summary>
       public enum BookType {
         [pbr::OriginalName("UNKNOWN_BOOK_TYPE")] UnknownBookType = 0,
@@ -1959,7 +2507,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Option type.
+      //// Option type.
       /// </summary>
       public enum OptionType {
         [pbr::OriginalName("UNKNOWN_OPTION_TYPE")] UnknownOptionType = 0,
@@ -1968,7 +2516,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Option style.
+      //// Option style.
       /// </summary>
       public enum OptionStyle {
         [pbr::OriginalName("UNKNOWN_OPTIONS_STYLE")] UnknownOptionsStyle = 0,
@@ -2005,25 +2553,33 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Typical trading week schedule
+      //// Typical trading week schedule
       /// </summary>
-      public sealed partial class Schedule : pb::IMessage<Schedule> {
+      public sealed partial class Schedule : pb::IMessage<Schedule>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Schedule> _parser = new pb::MessageParser<Schedule>(() => new Schedule());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Schedule> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Schedule() {
           OnConstruction();
         }
@@ -2031,12 +2587,14 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Schedule(Schedule other) : this() {
           sessions_ = other.sessions_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Schedule Clone() {
           return new Schedule(this);
         }
@@ -2047,16 +2605,19 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan.Parser);
         private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan> sessions_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan> Sessions {
           get { return sessions_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Schedule);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Schedule other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2069,6 +2630,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= sessions_.GetHashCode();
@@ -2079,19 +2641,37 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           sessions_.WriteTo(output, _repeated_sessions_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          sessions_.WriteTo(ref output, _repeated_sessions_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += sessions_.CalculateSize(_repeated_sessions_codec);
@@ -2102,6 +2682,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Schedule other) {
           if (other == null) {
             return;
@@ -2111,7 +2692,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2124,31 +2709,59 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                sessions_.AddEntriesFrom(ref input, _repeated_sessions_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
       /// <summary>
-      /// Trading session
+      //// Trading session
       /// Times are in nanos since midnight UTC on the Sunday starting a given trading week
       /// </summary>
-      public sealed partial class TimeSpan : pb::IMessage<TimeSpan> {
+      public sealed partial class TimeSpan : pb::IMessage<TimeSpan>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<TimeSpan> _parser = new pb::MessageParser<TimeSpan>(() => new TimeSpan());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<TimeSpan> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TimeSpan() {
           OnConstruction();
         }
@@ -2156,6 +2769,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TimeSpan(TimeSpan other) : this() {
           timeStart_ = other.timeStart_;
           timeFinish_ = other.timeFinish_;
@@ -2163,6 +2777,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TimeSpan Clone() {
           return new TimeSpan(this);
         }
@@ -2171,6 +2786,7 @@ namespace Org.Openfeed {
         public const int TimeStartFieldNumber = 1;
         private long timeStart_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long TimeStart {
           get { return timeStart_; }
           set {
@@ -2182,6 +2798,7 @@ namespace Org.Openfeed {
         public const int TimeFinishFieldNumber = 2;
         private long timeFinish_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long TimeFinish {
           get { return timeFinish_; }
           set {
@@ -2190,11 +2807,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as TimeSpan);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(TimeSpan other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2208,6 +2827,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (TimeStart != 0L) hash ^= TimeStart.GetHashCode();
@@ -2219,12 +2839,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (TimeStart != 0L) {
             output.WriteRawTag(8);
             output.WriteSInt64(TimeStart);
@@ -2236,9 +2861,29 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (TimeStart != 0L) {
+            output.WriteRawTag(8);
+            output.WriteSInt64(TimeStart);
+          }
+          if (TimeFinish != 0L) {
+            output.WriteRawTag(16);
+            output.WriteSInt64(TimeFinish);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (TimeStart != 0L) {
@@ -2254,6 +2899,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(TimeSpan other) {
           if (other == null) {
             return;
@@ -2268,7 +2914,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2285,27 +2935,59 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                TimeStart = input.ReadSInt64();
+                break;
+              }
+              case 16: {
+                TimeFinish = input.ReadSInt64();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
-      public sealed partial class Calendar : pb::IMessage<Calendar> {
+      public sealed partial class Calendar : pb::IMessage<Calendar>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Calendar> _parser = new pb::MessageParser<Calendar>(() => new Calendar());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Calendar> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Calendar() {
           OnConstruction();
         }
@@ -2313,12 +2995,14 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Calendar(Calendar other) : this() {
           events_ = other.events_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Calendar Clone() {
           return new Calendar(this);
         }
@@ -2329,16 +3013,19 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForMessage(10, global::Org.Openfeed.InstrumentDefinition.Types.Event.Parser);
         private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Event> events_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Event>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Event> Events {
           get { return events_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Calendar);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Calendar other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2351,6 +3038,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= events_.GetHashCode();
@@ -2361,19 +3049,37 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           events_.WriteTo(output, _repeated_events_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          events_.WriteTo(ref output, _repeated_events_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           size += events_.CalculateSize(_repeated_events_codec);
@@ -2384,6 +3090,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Calendar other) {
           if (other == null) {
             return;
@@ -2393,7 +3100,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2406,27 +3117,55 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                events_.AddEntriesFrom(ref input, _repeated_events_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
-      public sealed partial class Event : pb::IMessage<Event> {
+      public sealed partial class Event : pb::IMessage<Event>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Event> _parser = new pb::MessageParser<Event>(() => new Event());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Event> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Event() {
           OnConstruction();
         }
@@ -2434,6 +3173,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Event(Event other) : this() {
           type_ = other.type_;
           date_ = other.date_;
@@ -2441,14 +3181,16 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Event Clone() {
           return new Event(this);
         }
 
         /// <summary>Field number for the "type" field.</summary>
         public const int TypeFieldNumber = 1;
-        private global::Org.Openfeed.InstrumentDefinition.Types.EventType type_ = 0;
+        private global::Org.Openfeed.InstrumentDefinition.Types.EventType type_ = global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Org.Openfeed.InstrumentDefinition.Types.EventType Type {
           get { return type_; }
           set {
@@ -2460,6 +3202,7 @@ namespace Org.Openfeed {
         public const int DateFieldNumber = 2;
         private long date_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long Date {
           get { return date_; }
           set {
@@ -2468,11 +3211,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Event);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Event other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2486,9 +3231,10 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Type != 0) hash ^= Type.GetHashCode();
+          if (Type != global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType) hash ^= Type.GetHashCode();
           if (Date != 0L) hash ^= Date.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -2497,13 +3243,18 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (Type != 0) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Type != global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType) {
             output.WriteRawTag(8);
             output.WriteEnum((int) Type);
           }
@@ -2514,12 +3265,32 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Type != global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Type);
+          }
+          if (Date != 0L) {
+            output.WriteRawTag(16);
+            output.WriteSInt64(Date);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Type != 0) {
+          if (Type != global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
           }
           if (Date != 0L) {
@@ -2532,11 +3303,12 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Event other) {
           if (other == null) {
             return;
           }
-          if (other.Type != 0) {
+          if (other.Type != global::Org.Openfeed.InstrumentDefinition.Types.EventType.UnknownEventType) {
             Type = other.Type;
           }
           if (other.Date != 0L) {
@@ -2546,7 +3318,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2554,7 +3330,30 @@ namespace Org.Openfeed {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 8: {
-                type_ = (global::Org.Openfeed.InstrumentDefinition.Types.EventType) input.ReadEnum();
+                Type = (global::Org.Openfeed.InstrumentDefinition.Types.EventType) input.ReadEnum();
+                break;
+              }
+              case 16: {
+                Date = input.ReadSInt64();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Type = (global::Org.Openfeed.InstrumentDefinition.Types.EventType) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -2564,26 +3363,35 @@ namespace Org.Openfeed {
             }
           }
         }
+        #endif
 
       }
 
-      public sealed partial class SpreadLeg : pb::IMessage<SpreadLeg> {
+      public sealed partial class SpreadLeg : pb::IMessage<SpreadLeg>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<SpreadLeg> _parser = new pb::MessageParser<SpreadLeg>(() => new SpreadLeg());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SpreadLeg> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SpreadLeg() {
           OnConstruction();
         }
@@ -2591,6 +3399,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SpreadLeg(SpreadLeg other) : this() {
           marketId_ = other.marketId_;
           ratio_ = other.ratio_;
@@ -2599,6 +3408,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SpreadLeg Clone() {
           return new SpreadLeg(this);
         }
@@ -2610,6 +3420,7 @@ namespace Org.Openfeed {
         /// The marketId of the leg
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long MarketId {
           get { return marketId_; }
           set {
@@ -2627,6 +3438,7 @@ namespace Org.Openfeed {
         /// and use this field as only the absolute value
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Ratio {
           get { return ratio_; }
           set {
@@ -2642,6 +3454,7 @@ namespace Org.Openfeed {
         /// for the leg.  It is not included here to reduce duplication.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Symbol {
           get { return symbol_; }
           set {
@@ -2650,11 +3463,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as SpreadLeg);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(SpreadLeg other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2669,6 +3484,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (MarketId != 0L) hash ^= MarketId.GetHashCode();
@@ -2681,12 +3497,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (MarketId != 0L) {
             output.WriteRawTag(8);
             output.WriteSInt64(MarketId);
@@ -2702,9 +3523,33 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (MarketId != 0L) {
+            output.WriteRawTag(8);
+            output.WriteSInt64(MarketId);
+          }
+          if (Ratio != 0) {
+            output.WriteRawTag(16);
+            output.WriteSInt32(Ratio);
+          }
+          if (Symbol.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(Symbol);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (MarketId != 0L) {
@@ -2723,6 +3568,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(SpreadLeg other) {
           if (other == null) {
             return;
@@ -2740,7 +3586,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2761,30 +3611,66 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                MarketId = input.ReadSInt64();
+                break;
+              }
+              case 16: {
+                Ratio = input.ReadSInt32();
+                break;
+              }
+              case 26: {
+                Symbol = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
       /// <summary>
-      /// Date and time with time zone.
+      //// Date and time with time zone.
       /// </summary>
-      public sealed partial class MaturityDate : pb::IMessage<MaturityDate> {
+      public sealed partial class MaturityDate : pb::IMessage<MaturityDate>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<MaturityDate> _parser = new pb::MessageParser<MaturityDate>(() => new MaturityDate());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MaturityDate> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaturityDate() {
           OnConstruction();
         }
@@ -2792,6 +3678,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaturityDate(MaturityDate other) : this() {
           year_ = other.year_;
           month_ = other.month_;
@@ -2800,6 +3687,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MaturityDate Clone() {
           return new MaturityDate(this);
         }
@@ -2811,6 +3699,7 @@ namespace Org.Openfeed {
         /// Year of century.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Year {
           get { return year_; }
           set {
@@ -2825,6 +3714,7 @@ namespace Org.Openfeed {
         /// Month of year.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Month {
           get { return month_; }
           set {
@@ -2839,6 +3729,7 @@ namespace Org.Openfeed {
         /// Day of month.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Day {
           get { return day_; }
           set {
@@ -2847,11 +3738,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as MaturityDate);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(MaturityDate other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -2866,6 +3759,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Year != 0) hash ^= Year.GetHashCode();
@@ -2878,12 +3772,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (Year != 0) {
             output.WriteRawTag(8);
             output.WriteSInt32(Year);
@@ -2899,9 +3798,33 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Year != 0) {
+            output.WriteRawTag(8);
+            output.WriteSInt32(Year);
+          }
+          if (Month != 0) {
+            output.WriteRawTag(16);
+            output.WriteSInt32(Month);
+          }
+          if (Day != 0) {
+            output.WriteRawTag(24);
+            output.WriteSInt32(Day);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Year != 0) {
@@ -2920,6 +3843,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(MaturityDate other) {
           if (other == null) {
             return;
@@ -2937,7 +3861,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -2958,30 +3886,66 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Year = input.ReadSInt32();
+                break;
+              }
+              case 16: {
+                Month = input.ReadSInt32();
+                break;
+              }
+              case 24: {
+                Day = input.ReadSInt32();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
       /// <summary>
-      /// A vendor's symbol for an instrument
+      //// A vendor's symbol for an instrument
       /// </summary>
-      public sealed partial class Symbol : pb::IMessage<Symbol> {
+      public sealed partial class Symbol : pb::IMessage<Symbol>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<Symbol> _parser = new pb::MessageParser<Symbol>(() => new Symbol());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Symbol> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Symbol() {
           OnConstruction();
         }
@@ -2989,6 +3953,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Symbol(Symbol other) : this() {
           vendor_ = other.vendor_;
           symbol_ = other.symbol_;
@@ -2996,6 +3961,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Symbol Clone() {
           return new Symbol(this);
         }
@@ -3007,6 +3973,7 @@ namespace Org.Openfeed {
         /// The vendor that provides this symbol.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Vendor {
           get { return vendor_; }
           set {
@@ -3021,6 +3988,7 @@ namespace Org.Openfeed {
         /// The symbol assigned by the vendor.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Symbol_ {
           get { return symbol_; }
           set {
@@ -3029,11 +3997,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as Symbol);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(Symbol other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3047,6 +4017,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Vendor.Length != 0) hash ^= Vendor.GetHashCode();
@@ -3058,12 +4029,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (Vendor.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(Vendor);
@@ -3075,9 +4051,29 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Vendor.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Vendor);
+          }
+          if (Symbol_.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Symbol_);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Vendor.Length != 0) {
@@ -3093,6 +4089,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(Symbol other) {
           if (other == null) {
             return;
@@ -3107,7 +4104,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -3124,30 +4125,62 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Vendor = input.ReadString();
+                break;
+              }
+              case 18: {
+                Symbol_ = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 
       /// <summary>
-      /// Recommended display format for prices.
+      //// Recommended display format for prices.
       /// </summary>
-      public sealed partial class PriceFormat : pb::IMessage<PriceFormat> {
+      public sealed partial class PriceFormat : pb::IMessage<PriceFormat>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<PriceFormat> _parser = new pb::MessageParser<PriceFormat>(() => new PriceFormat());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<PriceFormat> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PriceFormat() {
           OnConstruction();
         }
@@ -3155,6 +4188,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PriceFormat(PriceFormat other) : this() {
           isFractional_ = other.isFractional_;
           denominator_ = other.denominator_;
@@ -3164,6 +4198,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public PriceFormat Clone() {
           return new PriceFormat(this);
         }
@@ -3172,6 +4207,7 @@ namespace Org.Openfeed {
         public const int IsFractionalFieldNumber = 1;
         private bool isFractional_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool IsFractional {
           get { return isFractional_; }
           set {
@@ -3183,6 +4219,7 @@ namespace Org.Openfeed {
         public const int DenominatorFieldNumber = 2;
         private int denominator_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int Denominator {
           get { return denominator_; }
           set {
@@ -3194,6 +4231,7 @@ namespace Org.Openfeed {
         public const int SubDenominatorFieldNumber = 4;
         private int subDenominator_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int SubDenominator {
           get { return subDenominator_; }
           set {
@@ -3203,8 +4241,9 @@ namespace Org.Openfeed {
 
         /// <summary>Field number for the "subFormat" field.</summary>
         public const int SubFormatFieldNumber = 6;
-        private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat subFormat_ = 0;
+        private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat subFormat_ = global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat SubFormat {
           get { return subFormat_; }
           set {
@@ -3213,11 +4252,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as PriceFormat);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(PriceFormat other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3233,12 +4274,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (IsFractional != false) hash ^= IsFractional.GetHashCode();
           if (Denominator != 0) hash ^= Denominator.GetHashCode();
           if (SubDenominator != 0) hash ^= SubDenominator.GetHashCode();
-          if (SubFormat != 0) hash ^= SubFormat.GetHashCode();
+          if (SubFormat != global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat) hash ^= SubFormat.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -3246,12 +4288,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (IsFractional != false) {
             output.WriteRawTag(8);
             output.WriteBool(IsFractional);
@@ -3264,16 +4311,44 @@ namespace Org.Openfeed {
             output.WriteRawTag(32);
             output.WriteSInt32(SubDenominator);
           }
-          if (SubFormat != 0) {
+          if (SubFormat != global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat) {
             output.WriteRawTag(48);
             output.WriteEnum((int) SubFormat);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (IsFractional != false) {
+            output.WriteRawTag(8);
+            output.WriteBool(IsFractional);
+          }
+          if (Denominator != 0) {
+            output.WriteRawTag(16);
+            output.WriteSInt32(Denominator);
+          }
+          if (SubDenominator != 0) {
+            output.WriteRawTag(32);
+            output.WriteSInt32(SubDenominator);
+          }
+          if (SubFormat != global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat) {
+            output.WriteRawTag(48);
+            output.WriteEnum((int) SubFormat);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (IsFractional != false) {
@@ -3285,7 +4360,7 @@ namespace Org.Openfeed {
           if (SubDenominator != 0) {
             size += 1 + pb::CodedOutputStream.ComputeSInt32Size(SubDenominator);
           }
-          if (SubFormat != 0) {
+          if (SubFormat != global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SubFormat);
           }
           if (_unknownFields != null) {
@@ -3295,6 +4370,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(PriceFormat other) {
           if (other == null) {
             return;
@@ -3308,14 +4384,18 @@ namespace Org.Openfeed {
           if (other.SubDenominator != 0) {
             SubDenominator = other.SubDenominator;
           }
-          if (other.SubFormat != 0) {
+          if (other.SubFormat != global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat.Flat) {
             SubFormat = other.SubFormat;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -3335,16 +4415,49 @@ namespace Org.Openfeed {
                 break;
               }
               case 48: {
-                subFormat_ = (global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat) input.ReadEnum();
+                SubFormat = (global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                IsFractional = input.ReadBool();
+                break;
+              }
+              case 16: {
+                Denominator = input.ReadSInt32();
+                break;
+              }
+              case 32: {
+                SubDenominator = input.ReadSInt32();
+                break;
+              }
+              case 48: {
+                SubFormat = (global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types.SubFormat) input.ReadEnum();
                 break;
               }
             }
           }
         }
+        #endif
 
         #region Nested types
         /// <summary>Container for nested types declared in the PriceFormat message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           public enum SubFormat {
             [pbr::OriginalName("FLAT")] Flat = 0,
@@ -3358,25 +4471,33 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Currency Pair
+      //// Currency Pair
       /// </summary>
-      public sealed partial class CurrencyPair : pb::IMessage<CurrencyPair> {
+      public sealed partial class CurrencyPair : pb::IMessage<CurrencyPair>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
         private static readonly pb::MessageParser<CurrencyPair> _parser = new pb::MessageParser<CurrencyPair>(() => new CurrencyPair());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<CurrencyPair> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Org.Openfeed.InstrumentDefinition.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CurrencyPair() {
           OnConstruction();
         }
@@ -3384,6 +4505,7 @@ namespace Org.Openfeed {
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CurrencyPair(CurrencyPair other) : this() {
           currency1_ = other.currency1_;
           currency2_ = other.currency2_;
@@ -3391,6 +4513,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public CurrencyPair Clone() {
           return new CurrencyPair(this);
         }
@@ -3399,6 +4522,7 @@ namespace Org.Openfeed {
         public const int Currency1FieldNumber = 1;
         private string currency1_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Currency1 {
           get { return currency1_; }
           set {
@@ -3410,6 +4534,7 @@ namespace Org.Openfeed {
         public const int Currency2FieldNumber = 2;
         private string currency2_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Currency2 {
           get { return currency2_; }
           set {
@@ -3418,11 +4543,13 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
           return Equals(other as CurrencyPair);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Equals(CurrencyPair other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -3436,6 +4563,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
           if (Currency1.Length != 0) hash ^= Currency1.GetHashCode();
@@ -3447,12 +4575,17 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
           if (Currency1.Length != 0) {
             output.WriteRawTag(10);
             output.WriteString(Currency1);
@@ -3464,9 +4597,29 @@ namespace Org.Openfeed {
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
+        #endif
         }
 
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Currency1.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Currency1);
+          }
+          if (Currency2.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Currency2);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
           if (Currency1.Length != 0) {
@@ -3482,6 +4635,7 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(CurrencyPair other) {
           if (other == null) {
             return;
@@ -3496,7 +4650,11 @@ namespace Org.Openfeed {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
             switch(tag) {
@@ -3513,7 +4671,31 @@ namespace Org.Openfeed {
               }
             }
           }
+        #endif
         }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Currency1 = input.ReadString();
+                break;
+              }
+              case 18: {
+                Currency2 = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
 
       }
 

@@ -16,6 +16,14 @@ This repository contains a solution with three projects:
 
 A good way to learn about using openfeed.net is to clone the repository and poke around the demo source code.
 
+## Updating the Dependencies
+
+To update the protobuf auto-generated files, follow the steps:
+
+1. Download the latest protoc executable from [here](https://github.com/protocolbuffers/protobuf/releases).
+2. Update to the latest [proto](https://github.com/openfeed-org/proto) repository changes.
+3. Run the following command: ```protoc.exe *.proto --csharp_out=<out-dir-name>```
+
 ## User Guide
 
 The User Guide for this project can be found in the [documentation](DOCUMENTATION.md) page.
