@@ -632,11 +632,12 @@ namespace Org.Openfeed.Client {
             return correlationId;
         }
 
-        public void Unsubscribe(long subscriptionId) {
-            var req = new SubscriptionRequest { CorrelationId = subscriptionId, Token = _token, Unsubscribe = true };
-
+		public void Unsubscribe(long subscriptionId) {
             lock (_lock) {
-                if (!_subscriptions.Remove(subscriptionId)) throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
+                if (!_subscriptions.TryGetValue(subscriptionId, out var subscription)) throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
+
+                var req = new SubscriptionRequest(subscription) { Unsubscribe = true };
+
                 if (!_disconnected) QueueRequest(new OpenfeedGatewayRequest { SubscriptionRequest = req });
             }
         }
