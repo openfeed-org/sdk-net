@@ -55,72 +55,72 @@ namespace Org.Openfeed {
             "OgoQaW5zdHJ1bWVudEFjdGlvbhgOIAEoCzIeLm9yZy5vcGVuZmVlZC5JbnN0",
             "cnVtZW50QWN0aW9uSABCBgoEZGF0YSJnCgZTdGF0dXMSJAoGcmVzdWx0GAEg",
             "ASgOMhQub3JnLm9wZW5mZWVkLlJlc3VsdBIPCgdtZXNzYWdlGAIgASgJEiYK",
-            "B3NlcnZpY2UYAyABKA4yFS5vcmcub3BlbmZlZWQuU2VydmljZSJJCgxMb2dp",
+            "B3NlcnZpY2UYAyABKA4yFS5vcmcub3BlbmZlZWQuU2VydmljZSJgCgxMb2dp",
             "blJlcXVlc3QSFQoNY29ycmVsYXRpb25JZBgBIAEoEhIQCgh1c2VybmFtZRgC",
-            "IAEoCRIQCghwYXNzd29yZBgDIAEoCSJbCg1Mb2dpblJlc3BvbnNlEhUKDWNv",
-            "cnJlbGF0aW9uSWQYASABKBISJAoGc3RhdHVzGAIgASgLMhQub3JnLm9wZW5m",
-            "ZWVkLlN0YXR1cxINCgV0b2tlbhgDIAEoCSI1Cg1Mb2dvdXRSZXF1ZXN0EhUK",
-            "DWNvcnJlbGF0aW9uSWQYASABKBISDQoFdG9rZW4YAyABKAkiTQoOTG9nb3V0",
-            "UmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiAB",
-            "KAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzIpMBChFJbnN0cnVtZW50UmVxdWVz",
-            "dBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIgASgJEhAKBnN5",
-            "bWJvbBgKIAEoCUgAEhIKCG1hcmtldElkGAsgASgSSAASEgoIZXhjaGFuZ2UY",
-            "DCABKAlIABITCgljaGFubmVsSWQYDSABKBFIAEIJCgdyZXF1ZXN0IrUBChJJ",
-            "bnN0cnVtZW50UmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZz",
-            "dGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzEhsKE251bWJlck9m",
-            "RGVmaW5pdGlvbnMYAyABKBESDgoGc3ltYm9sGAQgASgJEhAKCG1hcmtldElk",
-            "GAUgASgSEhAKCGV4Y2hhbmdlGAYgASgJEhEKCWNoYW5uZWxJZBgHIAEoESKc",
-            "AQoaSW5zdHJ1bWVudFJlZmVyZW5jZVJlcXVlc3QSFQoNY29ycmVsYXRpb25J",
-            "ZBgBIAEoEhINCgV0b2tlbhgCIAEoCRIQCgZzeW1ib2wYCiABKAlIABISCght",
-            "YXJrZXRJZBgLIAEoEkgAEhIKCGV4Y2hhbmdlGAwgASgJSAASEwoJY2hhbm5l",
-            "bElkGA0gASgRSABCCQoHcmVxdWVzdCKTAgobSW5zdHJ1bWVudFJlZmVyZW5j",
-            "ZVJlc3BvbnNlEhUKDWNvcnJlbGF0aW9uSWQYASABKBISJAoGc3RhdHVzGAIg",
-            "ASgLMhQub3JnLm9wZW5mZWVkLlN0YXR1cxIbChNudW1iZXJPZkRlZmluaXRp",
-            "b25zGAMgASgREhEKCWNoYW5uZWxJZBgEIAEoERIQCghtYXJrZXRJZBgFIAEo",
-            "EhIOCgZzeW1ib2wYBiABKAkSEAoIZXhjaGFuZ2UYByABKAkSEQoJZGRmU3lt",
-            "Ym9sGAggASgJEhMKC2RkZkV4Y2hhbmdlGAkgASgJEhMKC2RkZkJhc2VDb2Rl",
-            "GAogASgJEhYKDmV4Y2hhbmdlU3ltYm9sGAsgASgJIjcKD0V4Y2hhbmdlUmVx",
-            "dWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIgASgJIssB",
-            "ChBFeGNoYW5nZVJlc3BvbnNlEhUKDWNvcnJlbGF0aW9uSWQYASABKBISJAoG",
-            "c3RhdHVzGAIgASgLMhQub3JnLm9wZW5mZWVkLlN0YXR1cxI6CglleGNoYW5n",
-            "ZXMYAyADKAsyJy5vcmcub3BlbmZlZWQuRXhjaGFuZ2VSZXNwb25zZS5FeGNo",
-            "YW5nZRo+CghFeGNoYW5nZRIMCgRjb2RlGAEgASgJEhMKC2Rlc2NyaXB0aW9u",
-            "GAIgASgJEg8KB2FsaWFzZXMYAyADKAkivgMKE1N1YnNjcmlwdGlvblJlcXVl",
-            "c3QSFQoNY29ycmVsYXRpb25JZBgBIAEoEhINCgV0b2tlbhgCIAEoCRImCgdz",
-            "ZXJ2aWNlGAMgASgOMhUub3JnLm9wZW5mZWVkLlNlcnZpY2USEwoLdW5zdWJz",
-            "Y3JpYmUYBCABKAgSOwoIcmVxdWVzdHMYBSADKAsyKS5vcmcub3BlbmZlZWQu",
-            "U3Vic2NyaXB0aW9uUmVxdWVzdC5SZXF1ZXN0GoYCCgdSZXF1ZXN0EhAKBnN5",
-            "bWJvbBgBIAEoCUgAEhIKCG1hcmtldElkGAIgASgSSAASEgoIZXhjaGFuZ2UY",
-            "AyABKAlIABITCgljaGFubmVsSWQYBCABKBFIABI4ChBzdWJzY3JpcHRpb25U",
-            "eXBlGAogAygOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUSHwoX",
-            "c25hcHNob3RJbnRlcnZhbFNlY29uZHMYCyABKBESSQoOaW5zdHJ1bWVudFR5",
-            "cGUYDCADKA4yMS5vcmcub3BlbmZlZWQuSW5zdHJ1bWVudERlZmluaXRpb24u",
-            "SW5zdHJ1bWVudFR5cGVCBgoEZGF0YSKGAgoUU3Vic2NyaXB0aW9uUmVzcG9u",
-            "c2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5v",
-            "cmcub3BlbmZlZWQuU3RhdHVzEg4KBnN5bWJvbBgDIAEoCRIQCghtYXJrZXRJ",
-            "ZBgEIAEoEhIQCghleGNoYW5nZRgFIAEoCRIRCgljaGFubmVsSWQYBiABKBES",
-            "GwoTbnVtYmVyT2ZEZWZpbml0aW9ucxgHIAEoERI4ChBzdWJzY3JpcHRpb25U",
-            "eXBlGAggASgOMh4ub3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUSEwoL",
-            "dW5zdWJzY3JpYmUYCSABKAgq3gIKBlJlc3VsdBISCg5VTktOT1dOX1JFU1VM",
-            "VBAAEgsKB1NVQ0NFU1MQARITCg9EVVBMSUNBVEVfTE9HSU4QcxISCg5JTlZB",
-            "TElEX1NZTUJPTBB0EhUKEUlOVkFMSURfTUFSS0VUX0lEEHUSFAoQSU5WQUxJ",
-            "RF9FWENIQU5HRRB2EhYKEklOVkFMSURfQ0hBTk5FTF9JRBB3EhUKEU1BTEZP",
-            "Uk1FRF9NRVNTQUdFEHgSFgoSVU5FWFBFQ1RFRF9NRVNTQUdFEHkSEgoOTk9U",
-            "X1NVQlNDUklCRUQQehIaChZEVVBMSUNBVEVfU1VCU0NSSVBUSU9OEHsSFwoT",
-            "SU5WQUxJRF9DUkVERU5USUFMUxB8EhsKF0lOU1VGRklDSUVOVF9QUklWSUxF",
-            "R0VTEH0SGwoXQVVUSEVOVElDQVRJT05fUkVRVUlSRUQQfhITCg9HRU5FUklD",
-            "X0ZBSUxVUkUQfyqhAQoQU3Vic2NyaXB0aW9uVHlwZRIHCgNBTEwQABIJCgVR",
-            "VU9URRABEhUKEVFVT1RFX1BBUlRJQ0lQQU5UEAISDwoLREVQVEhfUFJJQ0UQ",
-            "AxIPCgtERVBUSF9PUkRFUhAEEgoKBlRSQURFUxAFEhQKEENVTUxBVElWRV9W",
-            "T0xVTUUQBhIICgRPSExDEAcSFAoQT0hMQ19OT05fUkVHVUxBUhAIQgdIAVAB",
-            "oAEBYgZwcm90bzM="));
+            "IAEoCRIQCghwYXNzd29yZBgDIAEoCRIVCg1jbGllbnRWZXJzaW9uGAQgASgJ",
+            "IlsKDUxvZ2luUmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZz",
+            "dGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzEg0KBXRva2VuGAMg",
+            "ASgJIjUKDUxvZ291dFJlcXVlc3QSFQoNY29ycmVsYXRpb25JZBgBIAEoEhIN",
+            "CgV0b2tlbhgDIAEoCSJNCg5Mb2dvdXRSZXNwb25zZRIVCg1jb3JyZWxhdGlv",
+            "bklkGAEgASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVuZmVlZC5TdGF0",
+            "dXMikwEKEUluc3RydW1lbnRSZXF1ZXN0EhUKDWNvcnJlbGF0aW9uSWQYASAB",
+            "KBISDQoFdG9rZW4YAiABKAkSEAoGc3ltYm9sGAogASgJSAASEgoIbWFya2V0",
+            "SWQYCyABKBJIABISCghleGNoYW5nZRgMIAEoCUgAEhMKCWNoYW5uZWxJZBgN",
+            "IAEoEUgAQgkKB3JlcXVlc3QitQEKEkluc3RydW1lbnRSZXNwb25zZRIVCg1j",
+            "b3JyZWxhdGlvbklkGAEgASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVu",
+            "ZmVlZC5TdGF0dXMSGwoTbnVtYmVyT2ZEZWZpbml0aW9ucxgDIAEoERIOCgZz",
+            "eW1ib2wYBCABKAkSEAoIbWFya2V0SWQYBSABKBISEAoIZXhjaGFuZ2UYBiAB",
+            "KAkSEQoJY2hhbm5lbElkGAcgASgRIpwBChpJbnN0cnVtZW50UmVmZXJlbmNl",
+            "UmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIgASgJ",
+            "EhAKBnN5bWJvbBgKIAEoCUgAEhIKCG1hcmtldElkGAsgASgSSAASEgoIZXhj",
+            "aGFuZ2UYDCABKAlIABITCgljaGFubmVsSWQYDSABKBFIAEIJCgdyZXF1ZXN0",
+            "IpMCChtJbnN0cnVtZW50UmVmZXJlbmNlUmVzcG9uc2USFQoNY29ycmVsYXRp",
+            "b25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3Rh",
+            "dHVzEhsKE251bWJlck9mRGVmaW5pdGlvbnMYAyABKBESEQoJY2hhbm5lbElk",
+            "GAQgASgREhAKCG1hcmtldElkGAUgASgSEg4KBnN5bWJvbBgGIAEoCRIQCghl",
+            "eGNoYW5nZRgHIAEoCRIRCglkZGZTeW1ib2wYCCABKAkSEwoLZGRmRXhjaGFu",
+            "Z2UYCSABKAkSEwoLZGRmQmFzZUNvZGUYCiABKAkSFgoOZXhjaGFuZ2VTeW1i",
+            "b2wYCyABKAkiNwoPRXhjaGFuZ2VSZXF1ZXN0EhUKDWNvcnJlbGF0aW9uSWQY",
+            "ASABKBISDQoFdG9rZW4YAiABKAkiywEKEEV4Y2hhbmdlUmVzcG9uc2USFQoN",
+            "Y29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5vcmcub3Bl",
+            "bmZlZWQuU3RhdHVzEjoKCWV4Y2hhbmdlcxgDIAMoCzInLm9yZy5vcGVuZmVl",
+            "ZC5FeGNoYW5nZVJlc3BvbnNlLkV4Y2hhbmdlGj4KCEV4Y2hhbmdlEgwKBGNv",
+            "ZGUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSDwoHYWxpYXNlcxgDIAMo",
+            "CSK+AwoTU3Vic2NyaXB0aW9uUmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEg",
+            "ASgSEg0KBXRva2VuGAIgASgJEiYKB3NlcnZpY2UYAyABKA4yFS5vcmcub3Bl",
+            "bmZlZWQuU2VydmljZRITCgt1bnN1YnNjcmliZRgEIAEoCBI7CghyZXF1ZXN0",
+            "cxgFIAMoCzIpLm9yZy5vcGVuZmVlZC5TdWJzY3JpcHRpb25SZXF1ZXN0LlJl",
+            "cXVlc3QahgIKB1JlcXVlc3QSEAoGc3ltYm9sGAEgASgJSAASEgoIbWFya2V0",
+            "SWQYAiABKBJIABISCghleGNoYW5nZRgDIAEoCUgAEhMKCWNoYW5uZWxJZBgE",
+            "IAEoEUgAEjgKEHN1YnNjcmlwdGlvblR5cGUYCiADKA4yHi5vcmcub3BlbmZl",
+            "ZWQuU3Vic2NyaXB0aW9uVHlwZRIfChdzbmFwc2hvdEludGVydmFsU2Vjb25k",
+            "cxgLIAEoERJJCg5pbnN0cnVtZW50VHlwZRgMIAMoDjIxLm9yZy5vcGVuZmVl",
+            "ZC5JbnN0cnVtZW50RGVmaW5pdGlvbi5JbnN0cnVtZW50VHlwZUIGCgRkYXRh",
+            "IoYCChRTdWJzY3JpcHRpb25SZXNwb25zZRIVCg1jb3JyZWxhdGlvbklkGAEg",
+            "ASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVuZmVlZC5TdGF0dXMSDgoG",
+            "c3ltYm9sGAMgASgJEhAKCG1hcmtldElkGAQgASgSEhAKCGV4Y2hhbmdlGAUg",
+            "ASgJEhEKCWNoYW5uZWxJZBgGIAEoERIbChNudW1iZXJPZkRlZmluaXRpb25z",
+            "GAcgASgREjgKEHN1YnNjcmlwdGlvblR5cGUYCCABKA4yHi5vcmcub3BlbmZl",
+            "ZWQuU3Vic2NyaXB0aW9uVHlwZRITCgt1bnN1YnNjcmliZRgJIAEoCCreAgoG",
+            "UmVzdWx0EhIKDlVOS05PV05fUkVTVUxUEAASCwoHU1VDQ0VTUxABEhMKD0RV",
+            "UExJQ0FURV9MT0dJThBzEhIKDklOVkFMSURfU1lNQk9MEHQSFQoRSU5WQUxJ",
+            "RF9NQVJLRVRfSUQQdRIUChBJTlZBTElEX0VYQ0hBTkdFEHYSFgoSSU5WQUxJ",
+            "RF9DSEFOTkVMX0lEEHcSFQoRTUFMRk9STUVEX01FU1NBR0UQeBIWChJVTkVY",
+            "UEVDVEVEX01FU1NBR0UQeRISCg5OT1RfU1VCU0NSSUJFRBB6EhoKFkRVUExJ",
+            "Q0FURV9TVUJTQ1JJUFRJT04QexIXChNJTlZBTElEX0NSRURFTlRJQUxTEHwS",
+            "GwoXSU5TVUZGSUNJRU5UX1BSSVZJTEVHRVMQfRIbChdBVVRIRU5USUNBVElP",
+            "Tl9SRVFVSVJFRBB+EhMKD0dFTkVSSUNfRkFJTFVSRRB/KqEBChBTdWJzY3Jp",
+            "cHRpb25UeXBlEgcKA0FMTBAAEgkKBVFVT1RFEAESFQoRUVVPVEVfUEFSVElD",
+            "SVBBTlQQAhIPCgtERVBUSF9QUklDRRADEg8KC0RFUFRIX09SREVSEAQSCgoG",
+            "VFJBREVTEAUSFAoQQ1VNTEFUSVZFX1ZPTFVNRRAGEggKBE9ITEMQBxIUChBP",
+            "SExDX05PTl9SRUdVTEFSEAhCB0gBUAGgAQFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Org.Openfeed.OpenfeedInstrumentReflection.Descriptor, global::Org.Openfeed.OpenfeedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayRequest), global::Org.Openfeed.OpenfeedGatewayRequest.Parser, new[]{ "LoginRequest", "LogoutRequest", "SubscriptionRequest", "InstrumentRequest", "InstrumentReferenceRequest", "ExchangeRequest" }, new[]{ "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayMessage), global::Org.Openfeed.OpenfeedGatewayMessage.Parser, new[]{ "LoginResponse", "LogoutResponse", "InstrumentResponse", "InstrumentReferenceResponse", "SubscriptionResponse", "MarketStatus", "HeartBeat", "InstrumentDefinition", "MarketSnapshot", "MarketUpdate", "VolumeAtPrice", "Ohlc", "ExchangeResponse", "InstrumentAction" }, new[]{ "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.Status), global::Org.Openfeed.Status.Parser, new[]{ "Result", "Message", "Service" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password", "ClientVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginResponse), global::Org.Openfeed.LoginResponse.Parser, new[]{ "CorrelationId", "Status", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutRequest), global::Org.Openfeed.LogoutRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutResponse), global::Org.Openfeed.LogoutResponse.Parser, new[]{ "CorrelationId", "Status" }, null, null, null, null),
@@ -1903,6 +1903,7 @@ namespace Org.Openfeed {
       correlationId_ = other.correlationId_;
       username_ = other.username_;
       password_ = other.password_;
+      clientVersion_ = other.clientVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1948,6 +1949,18 @@ namespace Org.Openfeed {
       }
     }
 
+    /// <summary>Field number for the "clientVersion" field.</summary>
+    public const int ClientVersionFieldNumber = 4;
+    private string clientVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientVersion {
+      get { return clientVersion_; }
+      set {
+        clientVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1966,6 +1979,7 @@ namespace Org.Openfeed {
       if (CorrelationId != other.CorrelationId) return false;
       if (Username != other.Username) return false;
       if (Password != other.Password) return false;
+      if (ClientVersion != other.ClientVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1976,6 +1990,7 @@ namespace Org.Openfeed {
       if (CorrelationId != 0L) hash ^= CorrelationId.GetHashCode();
       if (Username.Length != 0) hash ^= Username.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2006,6 +2021,10 @@ namespace Org.Openfeed {
         output.WriteRawTag(26);
         output.WriteString(Password);
       }
+      if (ClientVersion.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ClientVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2028,6 +2047,10 @@ namespace Org.Openfeed {
         output.WriteRawTag(26);
         output.WriteString(Password);
       }
+      if (ClientVersion.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ClientVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2046,6 +2069,9 @@ namespace Org.Openfeed {
       }
       if (Password.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      if (ClientVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2067,6 +2093,9 @@ namespace Org.Openfeed {
       }
       if (other.Password.Length != 0) {
         Password = other.Password;
+      }
+      if (other.ClientVersion.Length != 0) {
+        ClientVersion = other.ClientVersion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2095,6 +2124,10 @@ namespace Org.Openfeed {
             Password = input.ReadString();
             break;
           }
+          case 34: {
+            ClientVersion = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2120,6 +2153,10 @@ namespace Org.Openfeed {
           }
           case 26: {
             Password = input.ReadString();
+            break;
+          }
+          case 34: {
+            ClientVersion = input.ReadString();
             break;
           }
         }
