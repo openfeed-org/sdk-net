@@ -18,8 +18,8 @@ namespace Org.Openfeed.Client {
         /// <param name="password">Password.</param>
         /// <param name="listeners">Collection of listeners.</param>
         /// <returns></returns>
-        public static IOpenfeedClient CreateClient(Uri uri, string username, string password, OpenfeedListeners listeners) =>
-            new Client(uri, username, password, listeners);
+        public static IOpenfeedClient CreateClient(Uri uri, string username, string password, OpenfeedListeners listeners, string clientId = null) =>
+            new Client(uri, username, password, listeners, clientId);
     }
 
 }

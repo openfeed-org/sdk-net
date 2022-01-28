@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.WebSockets;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -79,6 +80,7 @@ namespace Org.Openfeed.Client {
     class Client : IOpenfeedClient {
         private readonly Uri _uri;
         private readonly string _username, _password;
+        private readonly string? _clientId;
         private readonly OpenfeedListeners _listeners;
         private readonly CancellationTokenSource _disposedSource = new CancellationTokenSource();
 
@@ -94,11 +96,12 @@ namespace Org.Openfeed.Client {
             ExchangeRequest
         }
 
-        public Client(Uri uri, string username, string password, OpenfeedListeners listeners) {
+        public Client(Uri uri, string username, string password, OpenfeedListeners listeners, string? clientId) {
             _uri = uri;
             _username = username;
             _password = password;
             _listeners = listeners;
+            _clientId = clientId;
 
             RunConnectionLoop();
         }
@@ -147,10 +150,13 @@ namespace Org.Openfeed.Client {
             }
         }
 
+        private string GetClientVersion() => 
+            $"sdk-net:{Assembly.GetExecutingAssembly().GetName().Version};client-id:{_clientId ?? "default"};os:{Environment.OSVersion};64-bit-os:{Environment.Is64BitOperatingSystem};64-bit-process:{Environment.Is64BitProcess}";
+        
         private async Task<(bool AuthenticationFailed, string Token)> LoginAsync(ClientWebSocket socket, MessageFramer messageFramer) {
             var ct = _disposedSource.Token;
 
-            var loginRequest = new OpenfeedGatewayRequest { LoginRequest = new LoginRequest { CorrelationId = 0, Username = _username, Password = _password } };
+            var loginRequest = new OpenfeedGatewayRequest { LoginRequest = new LoginRequest { CorrelationId = 0, Username = _username, Password = _password, ClientVersion = GetClientVersion() } };
             await messageFramer.SendAsync(socket, loginRequest, ct).ConfigureAwait(false);
 
             var loginResponse = (await messageFramer.ReceiveAsync(socket, ct).ConfigureAwait(false)).LoginResponse;
