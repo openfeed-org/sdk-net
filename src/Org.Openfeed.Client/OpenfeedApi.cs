@@ -55,72 +55,77 @@ namespace Org.Openfeed {
             "OgoQaW5zdHJ1bWVudEFjdGlvbhgOIAEoCzIeLm9yZy5vcGVuZmVlZC5JbnN0",
             "cnVtZW50QWN0aW9uSABCBgoEZGF0YSJnCgZTdGF0dXMSJAoGcmVzdWx0GAEg",
             "ASgOMhQub3JnLm9wZW5mZWVkLlJlc3VsdBIPCgdtZXNzYWdlGAIgASgJEiYK",
-            "B3NlcnZpY2UYAyABKA4yFS5vcmcub3BlbmZlZWQuU2VydmljZSJgCgxMb2dp",
+            "B3NlcnZpY2UYAyABKA4yFS5vcmcub3BlbmZlZWQuU2VydmljZSJ5CgxMb2dp",
             "blJlcXVlc3QSFQoNY29ycmVsYXRpb25JZBgBIAEoEhIQCgh1c2VybmFtZRgC",
             "IAEoCRIQCghwYXNzd29yZBgDIAEoCRIVCg1jbGllbnRWZXJzaW9uGAQgASgJ",
-            "IlsKDUxvZ2luUmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZz",
-            "dGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzEg0KBXRva2VuGAMg",
-            "ASgJIjUKDUxvZ291dFJlcXVlc3QSFQoNY29ycmVsYXRpb25JZBgBIAEoEhIN",
-            "CgV0b2tlbhgDIAEoCSJNCg5Mb2dvdXRSZXNwb25zZRIVCg1jb3JyZWxhdGlv",
-            "bklkGAEgASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVuZmVlZC5TdGF0",
-            "dXMikwEKEUluc3RydW1lbnRSZXF1ZXN0EhUKDWNvcnJlbGF0aW9uSWQYASAB",
-            "KBISDQoFdG9rZW4YAiABKAkSEAoGc3ltYm9sGAogASgJSAASEgoIbWFya2V0",
-            "SWQYCyABKBJIABISCghleGNoYW5nZRgMIAEoCUgAEhMKCWNoYW5uZWxJZBgN",
-            "IAEoEUgAQgkKB3JlcXVlc3QitQEKEkluc3RydW1lbnRSZXNwb25zZRIVCg1j",
-            "b3JyZWxhdGlvbklkGAEgASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVu",
-            "ZmVlZC5TdGF0dXMSGwoTbnVtYmVyT2ZEZWZpbml0aW9ucxgDIAEoERIOCgZz",
-            "eW1ib2wYBCABKAkSEAoIbWFya2V0SWQYBSABKBISEAoIZXhjaGFuZ2UYBiAB",
-            "KAkSEQoJY2hhbm5lbElkGAcgASgRIpwBChpJbnN0cnVtZW50UmVmZXJlbmNl",
+            "EhcKD3Byb3RvY29sVmVyc2lvbhgFIAEoESJbCg1Mb2dpblJlc3BvbnNlEhUK",
+            "DWNvcnJlbGF0aW9uSWQYASABKBISJAoGc3RhdHVzGAIgASgLMhQub3JnLm9w",
+            "ZW5mZWVkLlN0YXR1cxINCgV0b2tlbhgDIAEoCSI1Cg1Mb2dvdXRSZXF1ZXN0",
+            "EhUKDWNvcnJlbGF0aW9uSWQYASABKBISDQoFdG9rZW4YAyABKAkiTQoOTG9n",
+            "b3V0UmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMY",
+            "AiABKAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzIpMBChFJbnN0cnVtZW50UmVx",
+            "dWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIgASgJEhAK",
+            "BnN5bWJvbBgKIAEoCUgAEhIKCG1hcmtldElkGAsgASgSSAASEgoIZXhjaGFu",
+            "Z2UYDCABKAlIABITCgljaGFubmVsSWQYDSABKBFIAEIJCgdyZXF1ZXN0IrUB",
+            "ChJJbnN0cnVtZW50UmVzcG9uc2USFQoNY29ycmVsYXRpb25JZBgBIAEoEhIk",
+            "CgZzdGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3RhdHVzEhsKE251bWJl",
+            "ck9mRGVmaW5pdGlvbnMYAyABKBESDgoGc3ltYm9sGAQgASgJEhAKCG1hcmtl",
+            "dElkGAUgASgSEhAKCGV4Y2hhbmdlGAYgASgJEhEKCWNoYW5uZWxJZBgHIAEo",
+            "ESKcAQoaSW5zdHJ1bWVudFJlZmVyZW5jZVJlcXVlc3QSFQoNY29ycmVsYXRp",
+            "b25JZBgBIAEoEhINCgV0b2tlbhgCIAEoCRIQCgZzeW1ib2wYCiABKAlIABIS",
+            "CghtYXJrZXRJZBgLIAEoEkgAEhIKCGV4Y2hhbmdlGAwgASgJSAASEwoJY2hh",
+            "bm5lbElkGA0gASgRSABCCQoHcmVxdWVzdCKTAgobSW5zdHJ1bWVudFJlZmVy",
+            "ZW5jZVJlc3BvbnNlEhUKDWNvcnJlbGF0aW9uSWQYASABKBISJAoGc3RhdHVz",
+            "GAIgASgLMhQub3JnLm9wZW5mZWVkLlN0YXR1cxIbChNudW1iZXJPZkRlZmlu",
+            "aXRpb25zGAMgASgREhEKCWNoYW5uZWxJZBgEIAEoERIQCghtYXJrZXRJZBgF",
+            "IAEoEhIOCgZzeW1ib2wYBiABKAkSEAoIZXhjaGFuZ2UYByABKAkSEQoJZGRm",
+            "U3ltYm9sGAggASgJEhMKC2RkZkV4Y2hhbmdlGAkgASgJEhMKC2RkZkJhc2VD",
+            "b2RlGAogASgJEhYKDmV4Y2hhbmdlU3ltYm9sGAsgASgJIjcKD0V4Y2hhbmdl",
             "UmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIgASgJ",
-            "EhAKBnN5bWJvbBgKIAEoCUgAEhIKCG1hcmtldElkGAsgASgSSAASEgoIZXhj",
-            "aGFuZ2UYDCABKAlIABITCgljaGFubmVsSWQYDSABKBFIAEIJCgdyZXF1ZXN0",
-            "IpMCChtJbnN0cnVtZW50UmVmZXJlbmNlUmVzcG9uc2USFQoNY29ycmVsYXRp",
-            "b25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQuU3Rh",
-            "dHVzEhsKE251bWJlck9mRGVmaW5pdGlvbnMYAyABKBESEQoJY2hhbm5lbElk",
-            "GAQgASgREhAKCG1hcmtldElkGAUgASgSEg4KBnN5bWJvbBgGIAEoCRIQCghl",
-            "eGNoYW5nZRgHIAEoCRIRCglkZGZTeW1ib2wYCCABKAkSEwoLZGRmRXhjaGFu",
-            "Z2UYCSABKAkSEwoLZGRmQmFzZUNvZGUYCiABKAkSFgoOZXhjaGFuZ2VTeW1i",
-            "b2wYCyABKAkiNwoPRXhjaGFuZ2VSZXF1ZXN0EhUKDWNvcnJlbGF0aW9uSWQY",
-            "ASABKBISDQoFdG9rZW4YAiABKAkiywEKEEV4Y2hhbmdlUmVzcG9uc2USFQoN",
-            "Y29ycmVsYXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5vcmcub3Bl",
-            "bmZlZWQuU3RhdHVzEjoKCWV4Y2hhbmdlcxgDIAMoCzInLm9yZy5vcGVuZmVl",
-            "ZC5FeGNoYW5nZVJlc3BvbnNlLkV4Y2hhbmdlGj4KCEV4Y2hhbmdlEgwKBGNv",
-            "ZGUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkSDwoHYWxpYXNlcxgDIAMo",
-            "CSK+AwoTU3Vic2NyaXB0aW9uUmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEg",
-            "ASgSEg0KBXRva2VuGAIgASgJEiYKB3NlcnZpY2UYAyABKA4yFS5vcmcub3Bl",
-            "bmZlZWQuU2VydmljZRITCgt1bnN1YnNjcmliZRgEIAEoCBI7CghyZXF1ZXN0",
-            "cxgFIAMoCzIpLm9yZy5vcGVuZmVlZC5TdWJzY3JpcHRpb25SZXF1ZXN0LlJl",
-            "cXVlc3QahgIKB1JlcXVlc3QSEAoGc3ltYm9sGAEgASgJSAASEgoIbWFya2V0",
-            "SWQYAiABKBJIABISCghleGNoYW5nZRgDIAEoCUgAEhMKCWNoYW5uZWxJZBgE",
-            "IAEoEUgAEjgKEHN1YnNjcmlwdGlvblR5cGUYCiADKA4yHi5vcmcub3BlbmZl",
-            "ZWQuU3Vic2NyaXB0aW9uVHlwZRIfChdzbmFwc2hvdEludGVydmFsU2Vjb25k",
-            "cxgLIAEoERJJCg5pbnN0cnVtZW50VHlwZRgMIAMoDjIxLm9yZy5vcGVuZmVl",
-            "ZC5JbnN0cnVtZW50RGVmaW5pdGlvbi5JbnN0cnVtZW50VHlwZUIGCgRkYXRh",
-            "IoYCChRTdWJzY3JpcHRpb25SZXNwb25zZRIVCg1jb3JyZWxhdGlvbklkGAEg",
-            "ASgSEiQKBnN0YXR1cxgCIAEoCzIULm9yZy5vcGVuZmVlZC5TdGF0dXMSDgoG",
-            "c3ltYm9sGAMgASgJEhAKCG1hcmtldElkGAQgASgSEhAKCGV4Y2hhbmdlGAUg",
-            "ASgJEhEKCWNoYW5uZWxJZBgGIAEoERIbChNudW1iZXJPZkRlZmluaXRpb25z",
-            "GAcgASgREjgKEHN1YnNjcmlwdGlvblR5cGUYCCABKA4yHi5vcmcub3BlbmZl",
-            "ZWQuU3Vic2NyaXB0aW9uVHlwZRITCgt1bnN1YnNjcmliZRgJIAEoCCreAgoG",
-            "UmVzdWx0EhIKDlVOS05PV05fUkVTVUxUEAASCwoHU1VDQ0VTUxABEhMKD0RV",
-            "UExJQ0FURV9MT0dJThBzEhIKDklOVkFMSURfU1lNQk9MEHQSFQoRSU5WQUxJ",
-            "RF9NQVJLRVRfSUQQdRIUChBJTlZBTElEX0VYQ0hBTkdFEHYSFgoSSU5WQUxJ",
-            "RF9DSEFOTkVMX0lEEHcSFQoRTUFMRk9STUVEX01FU1NBR0UQeBIWChJVTkVY",
-            "UEVDVEVEX01FU1NBR0UQeRISCg5OT1RfU1VCU0NSSUJFRBB6EhoKFkRVUExJ",
-            "Q0FURV9TVUJTQ1JJUFRJT04QexIXChNJTlZBTElEX0NSRURFTlRJQUxTEHwS",
-            "GwoXSU5TVUZGSUNJRU5UX1BSSVZJTEVHRVMQfRIbChdBVVRIRU5USUNBVElP",
-            "Tl9SRVFVSVJFRBB+EhMKD0dFTkVSSUNfRkFJTFVSRRB/KqEBChBTdWJzY3Jp",
-            "cHRpb25UeXBlEgcKA0FMTBAAEgkKBVFVT1RFEAESFQoRUVVPVEVfUEFSVElD",
-            "SVBBTlQQAhIPCgtERVBUSF9QUklDRRADEg8KC0RFUFRIX09SREVSEAQSCgoG",
-            "VFJBREVTEAUSFAoQQ1VNTEFUSVZFX1ZPTFVNRRAGEggKBE9ITEMQBxIUChBP",
-            "SExDX05PTl9SRUdVTEFSEAhCB0gBUAGgAQFiBnByb3RvMw=="));
+            "IssBChBFeGNoYW5nZVJlc3BvbnNlEhUKDWNvcnJlbGF0aW9uSWQYASABKBIS",
+            "JAoGc3RhdHVzGAIgASgLMhQub3JnLm9wZW5mZWVkLlN0YXR1cxI6CglleGNo",
+            "YW5nZXMYAyADKAsyJy5vcmcub3BlbmZlZWQuRXhjaGFuZ2VSZXNwb25zZS5F",
+            "eGNoYW5nZRo+CghFeGNoYW5nZRIMCgRjb2RlGAEgASgJEhMKC2Rlc2NyaXB0",
+            "aW9uGAIgASgJEg8KB2FsaWFzZXMYAyADKAkiXQoWQnVsa1N1YnNjcmlwdGlv",
+            "bkZpbHRlchIsCgpzeW1ib2xUeXBlGAEgASgOMhgub3JnLm9wZW5mZWVkLlN5",
+            "bWJvbFR5cGUSFQoNc3ltYm9sUGF0dGVybhgCIAEoCSKEBAoTU3Vic2NyaXB0",
+            "aW9uUmVxdWVzdBIVCg1jb3JyZWxhdGlvbklkGAEgASgSEg0KBXRva2VuGAIg",
+            "ASgJEiYKB3NlcnZpY2UYAyABKA4yFS5vcmcub3BlbmZlZWQuU2VydmljZRIT",
+            "Cgt1bnN1YnNjcmliZRgEIAEoCBI7CghyZXF1ZXN0cxgFIAMoCzIpLm9yZy5v",
+            "cGVuZmVlZC5TdWJzY3JpcHRpb25SZXF1ZXN0LlJlcXVlc3QazAIKB1JlcXVl",
+            "c3QSEAoGc3ltYm9sGAEgASgJSAASEgoIbWFya2V0SWQYAiABKBJIABISCghl",
+            "eGNoYW5nZRgDIAEoCUgAEhMKCWNoYW5uZWxJZBgEIAEoEUgAEjgKEHN1YnNj",
+            "cmlwdGlvblR5cGUYCiADKA4yHi5vcmcub3BlbmZlZWQuU3Vic2NyaXB0aW9u",
+            "VHlwZRIfChdzbmFwc2hvdEludGVydmFsU2Vjb25kcxgLIAEoERJJCg5pbnN0",
+            "cnVtZW50VHlwZRgMIAMoDjIxLm9yZy5vcGVuZmVlZC5JbnN0cnVtZW50RGVm",
+            "aW5pdGlvbi5JbnN0cnVtZW50VHlwZRJEChZidWxrU3Vic2NyaXB0aW9uRmls",
+            "dGVyGA0gAygLMiQub3JnLm9wZW5mZWVkLkJ1bGtTdWJzY3JpcHRpb25GaWx0",
+            "ZXJCBgoEZGF0YSKGAgoUU3Vic2NyaXB0aW9uUmVzcG9uc2USFQoNY29ycmVs",
+            "YXRpb25JZBgBIAEoEhIkCgZzdGF0dXMYAiABKAsyFC5vcmcub3BlbmZlZWQu",
+            "U3RhdHVzEg4KBnN5bWJvbBgDIAEoCRIQCghtYXJrZXRJZBgEIAEoEhIQCghl",
+            "eGNoYW5nZRgFIAEoCRIRCgljaGFubmVsSWQYBiABKBESGwoTbnVtYmVyT2ZE",
+            "ZWZpbml0aW9ucxgHIAEoERI4ChBzdWJzY3JpcHRpb25UeXBlGAggASgOMh4u",
+            "b3JnLm9wZW5mZWVkLlN1YnNjcmlwdGlvblR5cGUSEwoLdW5zdWJzY3JpYmUY",
+            "CSABKAgq3gIKBlJlc3VsdBISCg5VTktOT1dOX1JFU1VMVBAAEgsKB1NVQ0NF",
+            "U1MQARITCg9EVVBMSUNBVEVfTE9HSU4QcxISCg5JTlZBTElEX1NZTUJPTBB0",
+            "EhUKEUlOVkFMSURfTUFSS0VUX0lEEHUSFAoQSU5WQUxJRF9FWENIQU5HRRB2",
+            "EhYKEklOVkFMSURfQ0hBTk5FTF9JRBB3EhUKEU1BTEZPUk1FRF9NRVNTQUdF",
+            "EHgSFgoSVU5FWFBFQ1RFRF9NRVNTQUdFEHkSEgoOTk9UX1NVQlNDUklCRUQQ",
+            "ehIaChZEVVBMSUNBVEVfU1VCU0NSSVBUSU9OEHsSFwoTSU5WQUxJRF9DUkVE",
+            "RU5USUFMUxB8EhsKF0lOU1VGRklDSUVOVF9QUklWSUxFR0VTEH0SGwoXQVVU",
+            "SEVOVElDQVRJT05fUkVRVUlSRUQQfhITCg9HRU5FUklDX0ZBSUxVUkUQfyqh",
+            "AQoQU3Vic2NyaXB0aW9uVHlwZRIHCgNBTEwQABIJCgVRVU9URRABEhUKEVFV",
+            "T1RFX1BBUlRJQ0lQQU5UEAISDwoLREVQVEhfUFJJQ0UQAxIPCgtERVBUSF9P",
+            "UkRFUhAEEgoKBlRSQURFUxAFEhQKEENVTUxBVElWRV9WT0xVTUUQBhIICgRP",
+            "SExDEAcSFAoQT0hMQ19OT05fUkVHVUxBUhAIKigKClN5bWJvbFR5cGUSDAoI",
+            "QkFSQ0hBUlQQABIMCghFWENIQU5HRRABQgdIAVABoAEBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Org.Openfeed.OpenfeedInstrumentReflection.Descriptor, global::Org.Openfeed.OpenfeedReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Org.Openfeed.Result), typeof(global::Org.Openfeed.SubscriptionType), typeof(global::Org.Openfeed.SymbolType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayRequest), global::Org.Openfeed.OpenfeedGatewayRequest.Parser, new[]{ "LoginRequest", "LogoutRequest", "SubscriptionRequest", "InstrumentRequest", "InstrumentReferenceRequest", "ExchangeRequest" }, new[]{ "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.OpenfeedGatewayMessage), global::Org.Openfeed.OpenfeedGatewayMessage.Parser, new[]{ "LoginResponse", "LogoutResponse", "InstrumentResponse", "InstrumentReferenceResponse", "SubscriptionResponse", "MarketStatus", "HeartBeat", "InstrumentDefinition", "MarketSnapshot", "MarketUpdate", "VolumeAtPrice", "Ohlc", "ExchangeResponse", "InstrumentAction" }, new[]{ "Data" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.Status), global::Org.Openfeed.Status.Parser, new[]{ "Result", "Message", "Service" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password", "ClientVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginRequest), global::Org.Openfeed.LoginRequest.Parser, new[]{ "CorrelationId", "Username", "Password", "ClientVersion", "ProtocolVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LoginResponse), global::Org.Openfeed.LoginResponse.Parser, new[]{ "CorrelationId", "Status", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutRequest), global::Org.Openfeed.LogoutRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.LogoutResponse), global::Org.Openfeed.LogoutResponse.Parser, new[]{ "CorrelationId", "Status" }, null, null, null, null),
@@ -130,7 +135,8 @@ namespace Org.Openfeed {
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentReferenceResponse), global::Org.Openfeed.InstrumentReferenceResponse.Parser, new[]{ "CorrelationId", "Status", "NumberOfDefinitions", "ChannelId", "MarketId", "Symbol", "Exchange", "DdfSymbol", "DdfExchange", "DdfBaseCode", "ExchangeSymbol" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeRequest), global::Org.Openfeed.ExchangeRequest.Parser, new[]{ "CorrelationId", "Token" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse), global::Org.Openfeed.ExchangeResponse.Parser, new[]{ "CorrelationId", "Status", "Exchanges" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.ExchangeResponse.Types.Exchange), global::Org.Openfeed.ExchangeResponse.Types.Exchange.Parser, new[]{ "Code", "Description", "Aliases" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest), global::Org.Openfeed.SubscriptionRequest.Parser, new[]{ "CorrelationId", "Token", "Service", "Unsubscribe", "Requests" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest.Types.Request), global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser, new[]{ "Symbol", "MarketId", "Exchange", "ChannelId", "SubscriptionType", "SnapshotIntervalSeconds", "InstrumentType" }, new[]{ "Data" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.BulkSubscriptionFilter), global::Org.Openfeed.BulkSubscriptionFilter.Parser, new[]{ "SymbolType", "SymbolPattern" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest), global::Org.Openfeed.SubscriptionRequest.Parser, new[]{ "CorrelationId", "Token", "Service", "Unsubscribe", "Requests" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionRequest.Types.Request), global::Org.Openfeed.SubscriptionRequest.Types.Request.Parser, new[]{ "Symbol", "MarketId", "Exchange", "ChannelId", "SubscriptionType", "SnapshotIntervalSeconds", "InstrumentType", "BulkSubscriptionFilter" }, new[]{ "Data" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.SubscriptionResponse), global::Org.Openfeed.SubscriptionResponse.Parser, new[]{ "CorrelationId", "Status", "Symbol", "MarketId", "Exchange", "ChannelId", "NumberOfDefinitions", "SubscriptionType", "Unsubscribe" }, null, null, null, null)
           }));
     }
@@ -166,6 +172,14 @@ namespace Org.Openfeed {
     [pbr::OriginalName("CUMLATIVE_VOLUME")] CumlativeVolume = 6,
     [pbr::OriginalName("OHLC")] Ohlc = 7,
     [pbr::OriginalName("OHLC_NON_REGULAR")] OhlcNonRegular = 8,
+  }
+
+  /// <summary>
+  //// Symbol type for the subscription filter.
+  /// </summary>
+  public enum SymbolType {
+    [pbr::OriginalName("BARCHART")] Barchart = 0,
+    [pbr::OriginalName("EXCHANGE")] Exchange = 1,
   }
 
   #endregion
@@ -1904,6 +1918,7 @@ namespace Org.Openfeed {
       username_ = other.username_;
       password_ = other.password_;
       clientVersion_ = other.clientVersion_;
+      protocolVersion_ = other.protocolVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1961,6 +1976,18 @@ namespace Org.Openfeed {
       }
     }
 
+    /// <summary>Field number for the "protocolVersion" field.</summary>
+    public const int ProtocolVersionFieldNumber = 5;
+    private int protocolVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ProtocolVersion {
+      get { return protocolVersion_; }
+      set {
+        protocolVersion_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1980,6 +2007,7 @@ namespace Org.Openfeed {
       if (Username != other.Username) return false;
       if (Password != other.Password) return false;
       if (ClientVersion != other.ClientVersion) return false;
+      if (ProtocolVersion != other.ProtocolVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1991,6 +2019,7 @@ namespace Org.Openfeed {
       if (Username.Length != 0) hash ^= Username.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
+      if (ProtocolVersion != 0) hash ^= ProtocolVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2025,6 +2054,10 @@ namespace Org.Openfeed {
         output.WriteRawTag(34);
         output.WriteString(ClientVersion);
       }
+      if (ProtocolVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteSInt32(ProtocolVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2051,6 +2084,10 @@ namespace Org.Openfeed {
         output.WriteRawTag(34);
         output.WriteString(ClientVersion);
       }
+      if (ProtocolVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteSInt32(ProtocolVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2072,6 +2109,9 @@ namespace Org.Openfeed {
       }
       if (ClientVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientVersion);
+      }
+      if (ProtocolVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeSInt32Size(ProtocolVersion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2096,6 +2136,9 @@ namespace Org.Openfeed {
       }
       if (other.ClientVersion.Length != 0) {
         ClientVersion = other.ClientVersion;
+      }
+      if (other.ProtocolVersion != 0) {
+        ProtocolVersion = other.ProtocolVersion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2128,6 +2171,10 @@ namespace Org.Openfeed {
             ClientVersion = input.ReadString();
             break;
           }
+          case 40: {
+            ProtocolVersion = input.ReadSInt32();
+            break;
+          }
         }
       }
     #endif
@@ -2157,6 +2204,10 @@ namespace Org.Openfeed {
           }
           case 34: {
             ClientVersion = input.ReadString();
+            break;
+          }
+          case 40: {
+            ProtocolVersion = input.ReadSInt32();
             break;
           }
         }
@@ -5477,6 +5528,241 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
+  //// Bulk subscription filter.
+  /// </summary>
+  public sealed partial class BulkSubscriptionFilter : pb::IMessage<BulkSubscriptionFilter>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BulkSubscriptionFilter> _parser = new pb::MessageParser<BulkSubscriptionFilter>(() => new BulkSubscriptionFilter());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BulkSubscriptionFilter> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BulkSubscriptionFilter() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BulkSubscriptionFilter(BulkSubscriptionFilter other) : this() {
+      symbolType_ = other.symbolType_;
+      symbolPattern_ = other.symbolPattern_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BulkSubscriptionFilter Clone() {
+      return new BulkSubscriptionFilter(this);
+    }
+
+    /// <summary>Field number for the "symbolType" field.</summary>
+    public const int SymbolTypeFieldNumber = 1;
+    private global::Org.Openfeed.SymbolType symbolType_ = global::Org.Openfeed.SymbolType.Barchart;
+    /// <summary>
+    //// Type of the symbol: Barchart or Exchange. Barchart is the default.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Org.Openfeed.SymbolType SymbolType {
+      get { return symbolType_; }
+      set {
+        symbolType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "symbolPattern" field.</summary>
+    public const int SymbolPatternFieldNumber = 2;
+    private string symbolPattern_ = "";
+    /// <summary>
+    //// regular expression pattern for the symbol
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SymbolPattern {
+      get { return symbolPattern_; }
+      set {
+        symbolPattern_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BulkSubscriptionFilter);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BulkSubscriptionFilter other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SymbolType != other.SymbolType) return false;
+      if (SymbolPattern != other.SymbolPattern) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SymbolType != global::Org.Openfeed.SymbolType.Barchart) hash ^= SymbolType.GetHashCode();
+      if (SymbolPattern.Length != 0) hash ^= SymbolPattern.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SymbolType != global::Org.Openfeed.SymbolType.Barchart) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) SymbolType);
+      }
+      if (SymbolPattern.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SymbolPattern);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SymbolType != global::Org.Openfeed.SymbolType.Barchart) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) SymbolType);
+      }
+      if (SymbolPattern.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(SymbolPattern);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SymbolType != global::Org.Openfeed.SymbolType.Barchart) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SymbolType);
+      }
+      if (SymbolPattern.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SymbolPattern);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BulkSubscriptionFilter other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SymbolType != global::Org.Openfeed.SymbolType.Barchart) {
+        SymbolType = other.SymbolType;
+      }
+      if (other.SymbolPattern.Length != 0) {
+        SymbolPattern = other.SymbolPattern;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SymbolType = (global::Org.Openfeed.SymbolType) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            SymbolPattern = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            SymbolType = (global::Org.Openfeed.SymbolType) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            SymbolPattern = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   //// Subscription Request
   /// </summary>
   public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest>
@@ -5493,7 +5779,7 @@ namespace Org.Openfeed {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5851,6 +6137,7 @@ namespace Org.Openfeed {
           subscriptionType_ = other.subscriptionType_.Clone();
           snapshotIntervalSeconds_ = other.snapshotIntervalSeconds_;
           instrumentType_ = other.instrumentType_.Clone();
+          bulkSubscriptionFilter_ = other.bulkSubscriptionFilter_.Clone();
           switch (other.DataCase) {
             case DataOneofCase.Symbol:
               Symbol = other.Symbol;
@@ -5963,6 +6250,20 @@ namespace Org.Openfeed {
           get { return instrumentType_; }
         }
 
+        /// <summary>Field number for the "bulkSubscriptionFilter" field.</summary>
+        public const int BulkSubscriptionFilterFieldNumber = 13;
+        private static readonly pb::FieldCodec<global::Org.Openfeed.BulkSubscriptionFilter> _repeated_bulkSubscriptionFilter_codec
+            = pb::FieldCodec.ForMessage(106, global::Org.Openfeed.BulkSubscriptionFilter.Parser);
+        private readonly pbc::RepeatedField<global::Org.Openfeed.BulkSubscriptionFilter> bulkSubscriptionFilter_ = new pbc::RepeatedField<global::Org.Openfeed.BulkSubscriptionFilter>();
+        /// <summary>
+        //// Filter for the exchange and channel subscriptions.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Org.Openfeed.BulkSubscriptionFilter> BulkSubscriptionFilter {
+          get { return bulkSubscriptionFilter_; }
+        }
+
         private object data_;
         /// <summary>Enum of possible cases for the "data" oneof.</summary>
         public enum DataOneofCase {
@@ -6008,6 +6309,7 @@ namespace Org.Openfeed {
           if(!subscriptionType_.Equals(other.subscriptionType_)) return false;
           if (SnapshotIntervalSeconds != other.SnapshotIntervalSeconds) return false;
           if(!instrumentType_.Equals(other.instrumentType_)) return false;
+          if(!bulkSubscriptionFilter_.Equals(other.bulkSubscriptionFilter_)) return false;
           if (DataCase != other.DataCase) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
@@ -6023,6 +6325,7 @@ namespace Org.Openfeed {
           hash ^= subscriptionType_.GetHashCode();
           if (SnapshotIntervalSeconds != 0) hash ^= SnapshotIntervalSeconds.GetHashCode();
           hash ^= instrumentType_.GetHashCode();
+          hash ^= bulkSubscriptionFilter_.GetHashCode();
           hash ^= (int) dataCase_;
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -6064,6 +6367,7 @@ namespace Org.Openfeed {
             output.WriteSInt32(SnapshotIntervalSeconds);
           }
           instrumentType_.WriteTo(output, _repeated_instrumentType_codec);
+          bulkSubscriptionFilter_.WriteTo(output, _repeated_bulkSubscriptionFilter_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -6096,6 +6400,7 @@ namespace Org.Openfeed {
             output.WriteSInt32(SnapshotIntervalSeconds);
           }
           instrumentType_.WriteTo(ref output, _repeated_instrumentType_codec);
+          bulkSubscriptionFilter_.WriteTo(ref output, _repeated_bulkSubscriptionFilter_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -6123,6 +6428,7 @@ namespace Org.Openfeed {
             size += 1 + pb::CodedOutputStream.ComputeSInt32Size(SnapshotIntervalSeconds);
           }
           size += instrumentType_.CalculateSize(_repeated_instrumentType_codec);
+          size += bulkSubscriptionFilter_.CalculateSize(_repeated_bulkSubscriptionFilter_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -6140,6 +6446,7 @@ namespace Org.Openfeed {
             SnapshotIntervalSeconds = other.SnapshotIntervalSeconds;
           }
           instrumentType_.Add(other.instrumentType_);
+          bulkSubscriptionFilter_.Add(other.bulkSubscriptionFilter_);
           switch (other.DataCase) {
             case DataOneofCase.Symbol:
               Symbol = other.Symbol;
@@ -6200,6 +6507,10 @@ namespace Org.Openfeed {
                 instrumentType_.AddEntriesFrom(input, _repeated_instrumentType_codec);
                 break;
               }
+              case 106: {
+                bulkSubscriptionFilter_.AddEntriesFrom(input, _repeated_bulkSubscriptionFilter_codec);
+                break;
+              }
             }
           }
         #endif
@@ -6245,6 +6556,10 @@ namespace Org.Openfeed {
                 instrumentType_.AddEntriesFrom(ref input, _repeated_instrumentType_codec);
                 break;
               }
+              case 106: {
+                bulkSubscriptionFilter_.AddEntriesFrom(ref input, _repeated_bulkSubscriptionFilter_codec);
+                break;
+              }
             }
           }
         }
@@ -6271,7 +6586,7 @@ namespace Org.Openfeed {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Org.Openfeed.OpenfeedApiReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

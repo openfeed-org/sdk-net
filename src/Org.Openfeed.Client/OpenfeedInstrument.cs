@@ -24,7 +24,7 @@ namespace Org.Openfeed {
     static OpenfeedInstrumentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlvcGVuZmVlZF9pbnN0cnVtZW50LnByb3RvEgxvcmcub3BlbmZlZWQi6RoK",
+            "ChlvcGVuZmVlZF9pbnN0cnVtZW50LnByb3RvEgxvcmcub3BlbmZlZWQighsK",
             "FEluc3RydW1lbnREZWZpbml0aW9uEhAKCG1hcmtldElkGAEgASgSEkkKDmlu",
             "c3RydW1lbnRUeXBlGAIgASgOMjEub3JnLm9wZW5mZWVkLkluc3RydW1lbnRE",
             "ZWZpbml0aW9uLkluc3RydW1lbnRUeXBlEkUKEHN1cHBvcnRCb29rVHlwZXMY",
@@ -84,24 +84,25 @@ namespace Org.Openfeed {
             "Rm9ybWF0GAYgASgOMjgub3JnLm9wZW5mZWVkLkluc3RydW1lbnREZWZpbml0",
             "aW9uLlByaWNlRm9ybWF0LlN1YkZvcm1hdCIyCglTdWJGb3JtYXQSCAoERkxB",
             "VBAAEg4KCkZSQUNUSU9OQUwQARILCgdERUNJTUFMEAIaNAoMQ3VycmVuY3lQ",
-            "YWlyEhEKCWN1cnJlbmN5MRgBIAEoCRIRCgljdXJyZW5jeTIYAiABKAkimwEK",
+            "YWlyEhEKCWN1cnJlbmN5MRgBIAEoCRIRCgljdXJyZW5jeTIYAiABKAkirgEK",
             "Dkluc3RydW1lbnRUeXBlEhsKF1VOS05PV05fSU5TVFJVTUVOVF9UWVBFEAAS",
             "CQoFRk9SRVgQARIJCgVJTkRFWBACEgoKBkVRVUlUWRADEgoKBkZVVFVSRRAE",
             "EgoKBk9QVElPThAFEgoKBlNQUkVBRBAGEg8KC01VVFVBTF9GVU5EEAcSFQoR",
-            "TU9ORVlfTUFSS0VUX0ZVTkQQCCJaCghCb29rVHlwZRIVChFVTktOT1dOX0JP",
-            "T0tfVFlQRRAAEg8KC1RPUF9PRl9CT09LEAESFQoRUFJJQ0VfTEVWRUxfREVQ",
-            "VEgQAhIPCgtPUkRFUl9ERVBUSBADIjgKCk9wdGlvblR5cGUSFwoTVU5LTk9X",
-            "Tl9PUFRJT05fVFlQRRAAEggKBENBTEwQARIHCgNQVVQQAiJRCgtPcHRpb25T",
-            "dHlsZRIZChVVTktOT1dOX09QVElPTlNfU1RZTEUQABILCgdERUZBVUxUEAES",
-            "DAoIQU1FUklDQU4QAhIMCghFVVJPUEVBThADIjMKBVN0YXRlEhEKDVVOS05P",
-            "V05fU1RBVEUQABIKCgZBQ1RJVkUQARILCgdQQVNTSVZFEAIioQIKCUV2ZW50",
-            "VHlwZRIWChJVTktOT1dOX0VWRU5UX1RZUEUQABIUChBGSVJTVF9UUkFERV9E",
-            "QVRFEAESEwoPTEFTVF9UUkFERV9EQVRFEAISEwoPU0VUVExFTUVOVF9EQVRF",
-            "EAoSFwoTRklSU1RfREVMSVZFUllfREFURRALEhYKEkxBU1RfREVMSVZFUllf",
-            "REFURRAMEhUKEUZJUlNUX05PVElDRV9EQVRFEA0SFAoQTEFTVF9OT1RJQ0Vf",
-            "REFURRAOEhYKEkZJUlNUX0hPTERJTkdfREFURRAPEhUKEUxBU1RfSE9MRElO",
-            "R19EQVRFEBASFwoTRklSU1RfUE9TSVRJT05fREFURRAREhYKEkxBU1RfUE9T",
-            "SVRJT05fREFURRASQgdIAVABoAEBYgZwcm90bzM="));
+            "TU9ORVlfTUFSS0VUX0ZVTkQQCBIRCg1PUFRJT05fU1BSRUFEEAkiWgoIQm9v",
+            "a1R5cGUSFQoRVU5LTk9XTl9CT09LX1RZUEUQABIPCgtUT1BfT0ZfQk9PSxAB",
+            "EhUKEVBSSUNFX0xFVkVMX0RFUFRIEAISDwoLT1JERVJfREVQVEgQAyI4CgpP",
+            "cHRpb25UeXBlEhcKE1VOS05PV05fT1BUSU9OX1RZUEUQABIICgRDQUxMEAES",
+            "BwoDUFVUEAIiUQoLT3B0aW9uU3R5bGUSGQoVVU5LTk9XTl9PUFRJT05TX1NU",
+            "WUxFEAASCwoHREVGQVVMVBABEgwKCEFNRVJJQ0FOEAISDAoIRVVST1BFQU4Q",
+            "AyIzCgVTdGF0ZRIRCg1VTktOT1dOX1NUQVRFEAASCgoGQUNUSVZFEAESCwoH",
+            "UEFTU0lWRRACIqcCCglFdmVudFR5cGUSFgoSVU5LTk9XTl9FVkVOVF9UWVBF",
+            "EAASFAoQRklSU1RfVFJBREVfREFURRABEhMKD0xBU1RfVFJBREVfREFURRAC",
+            "EhkKFUZJTkFMX1NFVFRMRU1FTlRfREFURRAKEhcKE0ZJUlNUX0RFTElWRVJZ",
+            "X0RBVEUQCxIWChJMQVNUX0RFTElWRVJZX0RBVEUQDBIVChFGSVJTVF9OT1RJ",
+            "Q0VfREFURRANEhQKEExBU1RfTk9USUNFX0RBVEUQDhIWChJGSVJTVF9IT0xE",
+            "SU5HX0RBVEUQDxIVChFMQVNUX0hPTERJTkdfREFURRAQEhcKE0ZJUlNUX1BP",
+            "U0lUSU9OX0RBVEUQERIWChJMQVNUX1BPU0lUSU9OX0RBVEUQEkIHSAFQAaAB",
+            "AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -2485,6 +2486,7 @@ namespace Org.Openfeed {
         [pbr::OriginalName("SPREAD")] Spread = 6,
         [pbr::OriginalName("MUTUAL_FUND")] MutualFund = 7,
         [pbr::OriginalName("MONEY_MARKET_FUND")] MoneyMarketFund = 8,
+        [pbr::OriginalName("OPTION_SPREAD")] OptionSpread = 9,
       }
 
       /// <summary>
@@ -2541,7 +2543,7 @@ namespace Org.Openfeed {
         /// <summary>
         /// Futures only
         /// </summary>
-        [pbr::OriginalName("SETTLEMENT_DATE")] SettlementDate = 10,
+        [pbr::OriginalName("FINAL_SETTLEMENT_DATE")] FinalSettlementDate = 10,
         [pbr::OriginalName("FIRST_DELIVERY_DATE")] FirstDeliveryDate = 11,
         [pbr::OriginalName("LAST_DELIVERY_DATE")] LastDeliveryDate = 12,
         [pbr::OriginalName("FIRST_NOTICE_DATE")] FirstNoticeDate = 13,
