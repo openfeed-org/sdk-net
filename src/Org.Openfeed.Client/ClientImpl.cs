@@ -272,11 +272,18 @@ namespace Org.Openfeed.Client {
 
             for (; ; ) {
                 IOpenfeedConnection connection;
-                try {
+                try
+                {
                     connection = await GetConnectionAsync(combined).ConfigureAwait(false);
                 }
-                catch {
+                catch (Exception ex) when (!combined.IsCancellationRequested)
+                {
+                    Trace.TraceError("Unknown error when getting connection. Will retry after:", ex);
                     continue;
+                }
+                catch when (combined.IsCancellationRequested)
+                {
+                    return;
                 }
 
                 long? subscriptionId = null;
