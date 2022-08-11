@@ -1,0 +1,3949 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Org.Openfeed.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Org.Openfeed.Client.ContinueOnThreadPool">
+            <summary>
+            When an instance of this struct is awaited it schedules the continuation
+            to run on the tread pool.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.CancellationAwaiter">
+            <summary>
+            Given a <see cref="T:System.Threading.CancellationToken"/> provides a <see cref="F:Org.Openfeed.Client.CancellationAwaiter.Task"/> that's cancelled when the token
+            is cancelled.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedFactory">
+            <summary>
+            Static class for creating instances of <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedFactory.CreateClient(System.Uri,System.String,System.String,Org.Openfeed.Client.OpenfeedListeners,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.
+            </summary>
+            <param name="uri">Uri of the server, like ws://openfeed.aws.barchart.com/ws.</param>
+            <param name="username">Username.</param>
+            <param name="password">Password.</param>
+            <param name="listeners">Collection of listeners.</param>
+            <param name="clientId">Optional client ID.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedRequestException">
+            <summary>
+            Exception that will be thrown when a request-response type of request is sent to the server and the response result
+            is not <see cref="F:Org.Openfeed.Result.Success"/>.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedRequestException.Result">
+            <summary>
+            The <see cref="F:Org.Openfeed.Client.OpenfeedRequestException.Result"/> of the failed operation.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedRequestException.#ctor(Org.Openfeed.Status)">
+            <summary>
+            Creates a new instance of the <see cref="T:Org.Openfeed.Client.OpenfeedRequestException"/> based on the <see cref="T:Org.Openfeed.Status"/> of a response
+            message.
+            </summary>
+            <param name="status"><see cref="T:Org.Openfeed.Status"/> of the response message</param>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedRequestException.ThrowOnError(Org.Openfeed.Status)">
+            <summary>
+            Throws an <see cref="T:Org.Openfeed.Client.OpenfeedRequestException"/> in case the <see cref="P:Org.Openfeed.Status.Result"/> is different
+            from <see cref="F:Org.Openfeed.Result.Success"/>.
+            </summary>
+            <param name="status"><see cref="T:Org.Openfeed.Status"/> of the response message.</param>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedDisconnectedException">
+            <summary>
+            Exception that will be thrown when attempting to send a request through a <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> that has been
+            disconnected.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedDisconnectedException.#ctor">
+            <summary>
+            Creates a new instance of <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.Exchange">
+            <summary>
+            Small structure that contains the exchange code and exchange description.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.Exchange.Code">
+            <summary>
+            Exchange code.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.Exchange.Description">
+            <summary>
+            Exchange description.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.Exchange.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new <see cref="T:Org.Openfeed.Client.Exchange"/> structure based on the exchange code and description.
+            </summary>
+            <param name="code">Exchange code.</param>
+            <param name="description">Exchange description.</param>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedListeners">
+            <summary>
+            A collection of delegates that <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> and <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> will use to notify
+            the client application about the events that are happening.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedListeners.#ctor">
+            <summary>
+            Constructs a new instance of <see cref="T:Org.Openfeed.Client.OpenfeedListeners"/>.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedListeners.TryGetInstrumentFromSymbol(System.String)">
+            <summary>
+            Returns the <see cref="T:Org.Openfeed.InstrumentDefinition"/> based on the Openfeed symbol.
+            </summary>
+            <param name="symbol">Openfeed symbol.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentDefinition"/>  or null.</returns>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnConnectFailed">
+            <summary>
+            Function that will be called when a connection to the websocket fails.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnCredentialsRejected">
+            <summary>
+            Function that will be called when the server rejects the credentials with which the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> has been created.
+            The <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> will not attempt any more reconnects after calling this handler.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnConnected">
+            <summary>
+            Function that will be called when the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> is connected to the server.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnDisconnected">
+            <summary>
+            Function that will be called when the <see cref="T:Org.Openfeed.Client.IOpenfeedClient"/> gets disconnected from the server, either because
+            it was disposed or because the TCP connection broke.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnMessage">
+            <summary>
+            Function that will be called when a message is received from the server. By default this just adds the instrument definition
+            and forwards the call to <see cref="F:Org.Openfeed.Client.OpenfeedListeners.OnMessageWithMetadata"/>.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Client.OpenfeedListeners.OnMessageWithMetadata">
+            <summary>
+            The standard handler for OnMessage looks up the <see cref="T:Org.Openfeed.InstrumentDefinition"/> and then calls this dialog.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.Client.IOpenfeedClient">
+            <summary>
+            Instance of the client. The client will automatically connect to the specified serve and if the connection breaks it will automatically reconnect.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.GetConnectionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Returns a <see cref="T:System.Threading.Tasks.ValueTask`1"/> with the current <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>. The connection represents
+            the current TCP connection to the Openfeed Websocket server.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:System.Threading.Tasks.ValueTask`1"/> with the current <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Sends a <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server to which we are currently connected. If the client not currently
+            connected then waits for the connection to be established and then sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/>.
+            If the client gets disconnected then it waits for the reconnect and sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/>.
+            </summary>
+            <param name="service">The <see cref="T:Org.Openfeed.Service"/> to which to subscribe.</param>
+            <param name="subscriptionType"><see cref="T:Org.Openfeed.SubscriptionType"/>.</param>
+            <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+            sent once.</param>
+            <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+            <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+            <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+            <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+            <returns>The ID of the subscription which can be used in a call to <see cref="M:Org.Openfeed.Client.IOpenfeedClient.Unsubscribe(System.Int64)"/> to terminate the subscription.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedClient.Unsubscribe(System.Int64)">
+            <summary>
+            Unsubscribes from the feed for a given <paramref name="subscriptionId"/>.
+            </summary>
+            <param name="subscriptionId">Subscription ID obtained from a call to <see cref="M:Org.Openfeed.Client.IOpenfeedClient.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})"/></param>
+        </member>
+        <member name="T:Org.Openfeed.Client.IOpenfeedConnection">
+            <summary>
+            Represents an instance of a TCP connection to the server. Valid until a disconnect.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetExchangesAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of exchanges. In case the <see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/> gets disconnected it will throw <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.IReadOnlyList`1"/></returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetInstrumentAsync(Org.Openfeed.InstrumentRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends an <see cref="T:Org.Openfeed.InstrumentRequest"/> and returns an <see cref="T:Org.Openfeed.InstrumentResponse"/> or throws an <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>. The
+            individual <see cref="T:Org.Openfeed.InstrumentDefinition"/> responses will be sent to <see cref="F:Org.Openfeed.Client.OpenfeedListeners.OnMessage"/> delegates.
+            </summary>
+            <param name="request">The request to be sent.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task that will return an <see cref="T:Org.Openfeed.InstrumentResponse"/> or throw an
+            <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/> if the connection disconnects.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.GetInstrumentReferenceAsync(Org.Openfeed.InstrumentReferenceRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends an <see cref="T:Org.Openfeed.InstrumentReferenceRequest"/> and returns the first <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>
+            that the server returns.
+            </summary>
+            <param name="request"><see cref="T:Org.Openfeed.InstrumentReferenceRequest"/></param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task with the first <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/> received or throws an <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/> if the
+            connection gets broken.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Sends a <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server to which we are currently connected. If the connection is no longer
+            connected throws a <see cref="T:Org.Openfeed.Client.OpenfeedDisconnectedException"/>.
+            </summary>
+            <param name="service">The <see cref="T:Org.Openfeed.Service"/> to which to subscribe.</param>
+            <param name="subscriptionType"><see cref="T:Org.Openfeed.SubscriptionType"/>.</param>
+            <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+            sent once.</param>
+            <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+            <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+            <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+            <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+            <returns>The ID of the subscription which can be used in a call to <see cref="M:Org.Openfeed.Client.IOpenfeedConnection.Unsubscribe(System.Int64)"/> to terminate the subscription.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.Unsubscribe(System.Int64)">
+            <summary>
+            Sends the <see cref="T:Org.Openfeed.SubscriptionRequest"/> to the server with <see cref="P:Org.Openfeed.SubscriptionRequest.Unsubscribe"/> set to true.
+            </summary>
+            <param name="id">ID of the subscription request returned by the call to <see cref="M:Org.Openfeed.Client.IOpenfeedConnection.Subscribe(Org.Openfeed.Service,Org.Openfeed.SubscriptionType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Int32})"/>.</param>
+        </member>
+        <member name="M:Org.Openfeed.Client.IOpenfeedConnection.WhenDisconnectedAsync(System.Threading.CancellationToken)">
+            <summary>
+            Gets the task that will be signalled when the connection instance gets disconnected from the server.
+            </summary>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/></param>
+            <returns>A task that will be signalled when the connection instance is disconnected from the server.</returns>
+        </member>
+        <member name="T:Org.Openfeed.Client.OpenfeedExtensions">
+            <summary>
+            Extension methods with shorthands for common Openfeed tasks.
+            </summary>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetExchangesAsync(Org.Openfeed.Client.IOpenfeedClient,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of exchanges.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/></param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns>The <see cref="T:System.Collections.Generic.IReadOnlyList`1"/></returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedConnection,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="connection"><see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</param>
+            <param name="symbol">Symbol for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedConnection,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="connection"><see cref="T:Org.Openfeed.Client.IOpenfeedConnection"/>.</param>
+            <param name="marketId">Market ID for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.</param>
+            <param name="symbol">Symbol for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="M:Org.Openfeed.Client.OpenfeedExtensions.GetInstrumentReferenceAsync(Org.Openfeed.Client.IOpenfeedClient,System.Int64,System.Threading.CancellationToken)">
+            <summary>
+            Gets the list of instrument references for a symbol.
+            </summary>
+            <param name="client"><see cref="T:Org.Openfeed.Client.IOpenfeedClient"/>.</param>
+            <param name="marketId">Market ID for which to obtain the <see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</param>
+            <param name="ct"><see cref="T:System.Threading.CancellationToken"/>.</param>
+            <returns><see cref="T:Org.Openfeed.InstrumentReferenceResponse"/>.</returns>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedReflection">
+            <summary>Holder for reflection information generated from openfeed.proto</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedReflection.Descriptor">
+            <summary>File descriptor for openfeed.proto</summary>
+        </member>
+        <member name="T:Org.Openfeed.BookSide">
+            <summary>
+            Book side
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentTradingStatus.Naft">
+            <summary>
+            Not available for trading.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentTradingStatus.MocImbalanceBuy">
+            <summary>
+            Market On Close Imbalance Buy
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.ActionType">
+            <summary>
+            Instrument Actions
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedMessage">
+            <summary>
+            A wrapper for Openfeed data.  Will contain exactly one of the supported
+            message types
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.SendingTimeFieldNumber">
+            <summary>Field number for the "sendingTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedMessage.SendingTime">
+            <summary>
+            Nanoecond unix epoch at time of message transmission (UTC)
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.TotalCountFieldNumber">
+            <summary>Field number for the "totalCount" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedMessage.TotalCount">
+            <summary>
+            The total number of markets available on this channel
+            at the time the message was sent.  For UDP snapshot and definition feeds.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.SyncSequenceFieldNumber">
+            <summary>Field number for the "syncSequence" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedMessage.SyncSequence">
+            <summary>
+            The most recent packet sequence number sent on the incremental feed
+            at the time this message was sent.  For UDP snapshot and definition feeds.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.ContextFieldNumber">
+            <summary>Field number for the "context" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedMessage.Context">
+            <summary>
+            Feed specific context data
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.ChannelResetFieldNumber">
+            <summary>Field number for the "channelReset" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.HeartBeatFieldNumber">
+            <summary>Field number for the "heartBeat" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.AdminMessageFieldNumber">
+            <summary>Field number for the "adminMessage" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.InstrumentDefinitionFieldNumber">
+            <summary>Field number for the "instrumentDefinition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.InstrumentGroupStatusFieldNumber">
+            <summary>Field number for the "instrumentGroupStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.MarketSnapshotFieldNumber">
+            <summary>Field number for the "marketSnapshot" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.MarketUpdateFieldNumber">
+            <summary>Field number for the "marketUpdate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.MarketStatusFieldNumber">
+            <summary>Field number for the "marketStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.EodCommoditySummaryFieldNumber">
+            <summary>Field number for the "eodCommoditySummary" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedMessage.InstrumentActionFieldNumber">
+            <summary>Field number for the "instrumentAction" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedMessage.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ChannelReset">
+            <summary>
+            Channel Reset
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ChannelReset.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ChannelReset.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.HeartBeat">
+            <summary>
+            Heart Beat
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.HeartBeat.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.HeartBeat.TransactionTime">
+            <summary>
+            UTC timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.HeartBeat.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.HeartBeat.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.HeartBeat.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.AdminMessage">
+            <summary>
+            Administrative Message
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.OriginationTimeFieldNumber">
+            <summary>Field number for the "originationTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.AdminMessage.OriginationTime">
+            <summary>
+            Origination time = UTC timestamp nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.SourceFieldNumber">
+            <summary>Field number for the "source" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.LanguageCodeFieldNumber">
+            <summary>Field number for the "languageCode" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.HeadLineFieldNumber">
+            <summary>Field number for the "headLine" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.TextFieldNumber">
+            <summary>Field number for the "text" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AdminMessage.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.AdminMessage.Types">
+            <summary>Container for nested types declared in the AdminMessage message type.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentGroupStatus">
+            <summary>
+            Instrument Group Status
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentGroupStatus.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentGroupStatus.TransactionTime">
+            <summary>
+            UTC Timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentGroupStatus.InstrumentGroupIdFieldNumber">
+            <summary>Field number for the "instrumentGroupId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentGroupStatus.TradingStatusFieldNumber">
+            <summary>Field number for the "tradingStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentGroupStatus.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentGroupStatus.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketStatus">
+            <summary>
+            Market Status
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketStatus.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketStatus.TransactionTime">
+            <summary>
+            UTC Timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketStatus.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketStatus.MarketWideStatusFieldNumber">
+            <summary>Field number for the "marketWideStatus" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.EODCommoditySummary">
+            <summary>
+            EOD commodity summary. Used to represent consolidated total values for the group of contracts. Total volume for
+            all ES futures, for example.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.EODCommoditySummary.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.EODCommoditySummary.TradeDate">
+            <summary>
+            Trade date in the format YYYYMMDD
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.EODCommoditySummary.ContractRootFieldNumber">
+            <summary>Field number for the "contractRoot" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.EODCommoditySummary.ContractRoot">
+            <summary>
+            Contract root, for example ES.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.EODCommoditySummary.ConsolidatedVolumeFieldNumber">
+            <summary>Field number for the "consolidatedVolume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.EODCommoditySummary.ConsolidatedVolume">
+            <summary>
+            Consolidated volume.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.EODCommoditySummary.ConsolidatedOpenInterestFieldNumber">
+            <summary>Field number for the "consolidatedOpenInterest" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.EODCommoditySummary.ConsolidatedOpenInterest">
+            <summary>
+            Consolidated open interest.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.EODCommoditySummary.AuxiliaryDataFieldNumber">
+            <summary>Field number for the "auxiliaryData" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.EODCommoditySummary.AuxiliaryData">
+            <summary>
+            For internal use only.   Ignore
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSession">
+            <summary>
+            Session used in snapshot.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.Open">
+            <summary>
+            Most recent opening price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.High">
+            <summary>
+            High price for the trading session
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.Low">
+            <summary>
+            Low price for the trading session
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.LastFieldNumber">
+            <summary>Field number for the "last" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.Last">
+            <summary>
+            Most recent traded price and quantity
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.Volume">
+            <summary>
+            Total traded volume
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.SettlementFieldNumber">
+            <summary>Field number for the "settlement" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.Settlement">
+            <summary>
+            Most recent settlement price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.PrevSettlementFieldNumber">
+            <summary>Field number for the "prevSettlement" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.PrevSettlement">
+            <summary>
+            Most recent settlement price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.OpenInterestFieldNumber">
+            <summary>Field number for the "openInterest" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.OpenInterest">
+            <summary>
+            Most recent open interest
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.NumberOfTradesFieldNumber">
+            <summary>Field number for the "numberOfTrades" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.NumberOfTrades">
+            <summary>
+            Number of trades
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.MonetaryValueFieldNumber">
+            <summary>Field number for the "monetaryValue" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.MonetaryValue">
+            <summary>
+            Monetary value
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSession.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSession.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSnapshot">
+            <summary>
+            Snapshot for a market
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.MarketId">
+            <summary>
+            Unique id identifying the market
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.TransactionTime">
+            <summary>
+            UTC Timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.MarketSequenceFieldNumber">
+            <summary>Field number for the "marketSequence" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.MarketSequence">
+            <summary>
+            Instrument level sequence number
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.TotalChunksFieldNumber">
+            <summary>Field number for the "totalChunks" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.TotalChunks">
+            <summary>
+            A snapshot with market depth may exceed the maximum message size.
+             In that case, the snapshot will be broken up across multiple
+             snapshot messages.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.CurrentChunkFieldNumber">
+            <summary>Field number for the "currentChunk" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Symbol">
+            <summary>
+            Optional symbol identifier
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.PriceDenominatorFieldNumber">
+            <summary>Field number for the "priceDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.PriceDenominator">
+            <summary>
+            Divide prices by this value to get real price values.  Optional, use value
+            from InstrumentDefinition if not set.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.ServiceFieldNumber">
+            <summary>Field number for the "service" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Service">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.InstrumentStatusFieldNumber">
+            <summary>Field number for the "instrumentStatus" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.InstrumentStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.BboFieldNumber">
+            <summary>Field number for the "bbo" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Bbo">
+            <summary>
+            Best Bid Offer
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.IndexFieldNumber">
+            <summary>Field number for the "index" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Index">
+            <summary>
+            Index Value
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.PriceLevelsFieldNumber">
+            <summary>Field number for the "priceLevels" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.PriceLevels">
+            <summary>
+            Price Level Book
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.OrdersFieldNumber">
+            <summary>Field number for the "orders" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Orders">
+            <summary>
+            Order Book
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.NewsFieldNumber">
+            <summary>Field number for the "news" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Open">
+            <summary>
+            Most recent opening price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.High">
+            <summary>
+            High price for the trading session
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Low">
+            <summary>
+            Low price for the trading session
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.CloseFieldNumber">
+            <summary>Field number for the "close" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Close">
+            <summary>
+            Most recent closing price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.PrevCloseFieldNumber">
+            <summary>Field number for the "prevClose" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.PrevClose">
+            <summary>
+            Previous closing price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.LastFieldNumber">
+            <summary>Field number for the "last" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Last">
+            <summary>
+            Most recent traded price and quantity
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.YearHighFieldNumber">
+            <summary>Field number for the "yearHigh" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.YearHigh">
+            <summary>
+            Year high price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.YearLowFieldNumber">
+            <summary>Field number for the "yearLow" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.YearLow">
+            <summary>
+            Year low price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Volume">
+            <summary>
+            Total traded volume
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.SettlementFieldNumber">
+            <summary>Field number for the "settlement" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Settlement">
+            <summary>
+            Most recent settlement price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.OpenInterestFieldNumber">
+            <summary>Field number for the "openInterest" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.OpenInterest">
+            <summary>
+            Most recent open interest
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.VwapFieldNumber">
+            <summary>Field number for the "vwap" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.Vwap">
+            <summary>
+            Most recent volume weighted average price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.DividendsIncomeDistributionsFieldNumber">
+            <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.NumberOfTradesFieldNumber">
+            <summary>Field number for the "numberOfTrades" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.MonetaryValueFieldNumber">
+            <summary>Field number for the "monetaryValue" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.CapitalDistributionsFieldNumber">
+            <summary>Field number for the "capitalDistributions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.SharesOutstandingFieldNumber">
+            <summary>Field number for the "sharesOutstanding" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.NetAssetValueFieldNumber">
+            <summary>Field number for the "netAssetValue" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.PreviousSessionFieldNumber">
+            <summary>Field number for the "previousSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.PreviousSession">
+            <summary>
+            Previous session.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.TSessionFieldNumber">
+            <summary>Field number for the "tSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.TSession">
+            <summary>
+            'T' session.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.VolumeAtPriceFieldNumber">
+            <summary>Field number for the "volumeAtPrice" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.VolumeAtPrice">
+            <summary>
+            Volume at price. Used by the market state/ JERQ.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.HighRollingFieldNumber">
+            <summary>Field number for the "highRolling" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.LowRollingFieldNumber">
+            <summary>Field number for the "lowRolling" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshot.ZSessionFieldNumber">
+            <summary>Field number for the "zSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSnapshot.ZSession">
+            <summary>
+            'Z' session. Includes all trades, even the ones that do not update Last.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSnapshotResponse">
+            <summary>
+            Used by market state to return snapshot.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshotResponse.ResultFieldNumber">
+            <summary>Field number for the "result" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshotResponse.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSnapshotResponse.MarketSnapshotFieldNumber">
+            <summary>Field number for the "marketSnapshot" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketUpdate">
+             <summary>
+            
+             Market Update for an instrument
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.MarketId">
+            <summary>
+            Unique id identifying the market
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.Symbol">
+            <summary>
+            Optional symbol identifier
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.TransactionTime">
+            <summary>
+            UTC Timestamp of transaction, nano seconds since Unix epoch
+            This is usually the execution venue timestamp.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.DistributionTimeFieldNumber">
+            <summary>Field number for the "distributionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.DistributionTime">
+            <summary>
+            Distribution time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.MarketSequenceFieldNumber">
+            <summary>Field number for the "marketSequence" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.MarketSequence">
+            <summary>
+            Market level sequencing number
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.SourceSequenceFieldNumber">
+            <summary>Field number for the "sourceSequence" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.SourceSequence">
+            <summary>
+            Data source sequence number
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.OriginatorIdFieldNumber">
+            <summary>Field number for the "originatorId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.OriginatorId">
+            <summary>
+            Market participant/originator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.PriceDenominatorFieldNumber">
+            <summary>Field number for the "priceDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.PriceDenominator">
+            <summary>
+            Divide prices by this value to get real price values.  Optional, use value
+            from InstrumentDefinition if not set.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.ContextFieldNumber">
+            <summary>Field number for the "context" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.Context">
+            <summary>
+            Feed specific context data set as required.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.SessionFieldNumber">
+            <summary>Field number for the "session" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.Session">
+            <summary>
+            Current session. This is used to 'enhance' updates from the translator in the Market State
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.TSessionFieldNumber">
+            <summary>Field number for the "tSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.TSession">
+            <summary>
+            'T' session. This is used to 'enhance' updates from the translator in the Market State
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.PreviousSessionFieldNumber">
+            <summary>Field number for the "previousSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.PreviousSession">
+            <summary>
+            Previous session. This is used to 'enhance' updates from the translator in the Market State
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.RegionalFieldNumber">
+            <summary>Field number for the "regional" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.Regional">
+            <summary>
+            True if message applies to regional/participant member
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.ZSessionFieldNumber">
+            <summary>Field number for the "zSession" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketUpdate.ZSession">
+            <summary>
+            'Z' session. Includes all trades, even the ones that do not update Last.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.NewsFieldNumber">
+            <summary>Field number for the "news" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.ClearBookFieldNumber">
+            <summary>Field number for the "clearBook" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.InstrumentStatusFieldNumber">
+            <summary>Field number for the "instrumentStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.BboFieldNumber">
+            <summary>Field number for the "bbo" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.DepthPriceLevelFieldNumber">
+            <summary>Field number for the "depthPriceLevel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.DepthOrderFieldNumber">
+            <summary>Field number for the "depthOrder" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.IndexFieldNumber">
+            <summary>Field number for the "index" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.TradesFieldNumber">
+            <summary>Field number for the "trades" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.CloseFieldNumber">
+            <summary>Field number for the "close" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.PrevCloseFieldNumber">
+            <summary>Field number for the "prevClose" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.LastFieldNumber">
+            <summary>Field number for the "last" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.YearHighFieldNumber">
+            <summary>Field number for the "yearHigh" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.YearLowFieldNumber">
+            <summary>Field number for the "yearLow" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.SettlementFieldNumber">
+            <summary>Field number for the "settlement" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.OpenInterestFieldNumber">
+            <summary>Field number for the "openInterest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.VwapFieldNumber">
+            <summary>Field number for the "vwap" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.DividendsIncomeDistributionsFieldNumber">
+            <summary>Field number for the "dividendsIncomeDistributions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.NumberOfTradesFieldNumber">
+            <summary>Field number for the "numberOfTrades" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.MonetaryValueFieldNumber">
+            <summary>Field number for the "monetaryValue" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.CapitalDistributionsFieldNumber">
+            <summary>Field number for the "capitalDistributions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.SharesOutstandingFieldNumber">
+            <summary>Field number for the "sharesOutstanding" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.NetAssetValueFieldNumber">
+            <summary>Field number for the "netAssetValue" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.MarketSummaryFieldNumber">
+            <summary>Field number for the "marketSummary" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.HighRollingFieldNumber">
+            <summary>Field number for the "highRolling" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketUpdate.LowRollingFieldNumber">
+            <summary>Field number for the "lowRolling" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketUpdate.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthPriceLevel">
+            <summary>
+            Depth Price Level
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthPriceLevel.LevelsFieldNumber">
+            <summary>Field number for the "levels" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthPriceLevel.Types">
+            <summary>Container for nested types declared in the DepthPriceLevel message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthPriceLevel.Types.Entry.AddPriceLevelFieldNumber">
+            <summary>Field number for the "addPriceLevel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthPriceLevel.Types.Entry.DeletePriceLevelFieldNumber">
+            <summary>Field number for the "deletePriceLevel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthPriceLevel.Types.Entry.ModifyPriceLevelFieldNumber">
+            <summary>Field number for the "modifyPriceLevel" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthPriceLevel.Types.Entry.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthOrder">
+            <summary>
+            Depth By Order
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthOrder.OrdersFieldNumber">
+            <summary>Field number for the "orders" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthOrder.Types">
+            <summary>Container for nested types declared in the DepthOrder message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthOrder.Types.Entry.AddOrderFieldNumber">
+            <summary>Field number for the "addOrder" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthOrder.Types.Entry.DeleteOrderFieldNumber">
+            <summary>Field number for the "deleteOrder" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DepthOrder.Types.Entry.ModifyOrderFieldNumber">
+            <summary>Field number for the "modifyOrder" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DepthOrder.Types.Entry.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.News">
+            <summary>
+            News or informational message
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.News.OriginationTimeFieldNumber">
+            <summary>Field number for the "originationTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.News.OriginationTime">
+            <summary>
+            Origination time = UTC timestamp nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.News.SourceFieldNumber">
+            <summary>Field number for the "source" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.News.LanguageCodeFieldNumber">
+            <summary>Field number for the "languageCode" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.News.HeadLineFieldNumber">
+            <summary>Field number for the "headLine" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.News.TextFieldNumber">
+            <summary>Field number for the "text" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.News.SymbolsFieldNumber">
+            <summary>Field number for the "symbols" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ClearBook">
+            <summary>
+            Clear all data from the order books that are configured for this market.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ClearBook.ReservedFieldNumber">
+            <summary>Field number for the "reserved" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ClearBook.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentStatus">
+             <summary>
+            
+             Instrument Status
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentStatus.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.TradingStatusFieldNumber">
+            <summary>Field number for the "tradingStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.OpeningTimeFieldNumber">
+            <summary>Field number for the "openingTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentStatus.OpeningTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.NoteFieldNumber">
+            <summary>Field number for the "note" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentStatus.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentStatus.RegulationSHOShortSalePriceTestFieldNumber">
+            <summary>Field number for the "regulationSHOShortSalePriceTest" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.BestBidOffer">
+            <summary>
+            Best Bid and Offer.
+            If a side is not present, then that side has been deleted.
+            By default this value is the NBBO, if regional/participant quote then regional = true
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.BidPriceFieldNumber">
+            <summary>Field number for the "bidPrice" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.BidPrice">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.BidQuantityFieldNumber">
+            <summary>Field number for the "bidQuantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.BidQuantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.BidOrderCountFieldNumber">
+            <summary>Field number for the "bidOrderCount" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.BidOriginatorFieldNumber">
+            <summary>Field number for the "bidOriginator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.BidOriginator">
+            <summary>
+            Liquidity provider information
+            For Forex: BANK:CITY
+            For Equities: EXCHANGE_MIC
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.BidQuoteConditionFieldNumber">
+            <summary>Field number for the "bidQuoteCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.OfferPriceFieldNumber">
+            <summary>Field number for the "offerPrice" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.OfferPrice">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.OfferQuantityFieldNumber">
+            <summary>Field number for the "offerQuantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.OfferQuantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.OfferOrderCountFieldNumber">
+            <summary>Field number for the "offerOrderCount" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.OfferOriginatorFieldNumber">
+            <summary>Field number for the "offerOriginator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.OfferOriginator">
+            <summary>
+            Liquidity provider information
+            For Forex: BANK:CITY
+            For Equities: EXCHANGE_MIC
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.OfferQuoteConditionFieldNumber">
+            <summary>Field number for the "offerQuoteCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.QuoteConditionFieldNumber">
+            <summary>Field number for the "quoteCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.RegionalFieldNumber">
+            <summary>Field number for the "regional" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.Regional">
+            <summary>
+            True if regional/participant member quote
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BestBidOffer.TransientFieldNumber">
+            <summary>Field number for the "transient" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BestBidOffer.Transient">
+            <summary>
+            True if not persisted in the EOD database.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.AddPriceLevel">
+            <summary>
+            Insert a new price level, pushing existing levels down
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.AddPriceLevel.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.LevelFieldNumber">
+            <summary>Field number for the "level" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.AddPriceLevel.Level">
+            <summary>
+            price level index, starting at 1
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.AddPriceLevel.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.AddPriceLevel.Quantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.OrderCountFieldNumber">
+            <summary>Field number for the "orderCount" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddPriceLevel.ImpliedQuantityFieldNumber">
+            <summary>Field number for the "impliedQuantity" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DeletePriceLevel">
+            <summary>
+            Delete an existing price level, pulling existing levels up
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DeletePriceLevel.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DeletePriceLevel.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DeletePriceLevel.LevelFieldNumber">
+            <summary>Field number for the "level" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DeletePriceLevel.Level">
+            <summary>
+            price level index, starting at 1
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DeletePriceLevel.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ModifyPriceLevel">
+            <summary>
+            Modify the quantity or orderCount of an existing price level.
+            The price itself will not change.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.ModifyPriceLevel.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.LevelFieldNumber">
+            <summary>Field number for the "level" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.ModifyPriceLevel.Level">
+            <summary>
+            price level index, starting at 1
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.ModifyPriceLevel.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.ModifyPriceLevel.Quantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.OrderCountFieldNumber">
+            <summary>Field number for the "orderCount" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyPriceLevel.ImpliedQuantityFieldNumber">
+            <summary>Field number for the "impliedQuantity" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.AddOrder">
+            <summary>
+            Add an order to the order book.  Indexed by orderId, which is unique per channel
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.OrderIdFieldNumber">
+            <summary>Field number for the "orderId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.IsImpliedFieldNumber">
+            <summary>Field number for the "isImplied" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.AddOrder.PriorityFieldNumber">
+            <summary>Field number for the "priority" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DeleteOrder">
+            <summary>
+            Delete an order from the order book. Indexed by orderId, which is unique per channel
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DeleteOrder.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DeleteOrder.OrderIdFieldNumber">
+            <summary>Field number for the "orderId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DeleteOrder.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ModifyOrder">
+            <summary>
+            Modify the price or quantity of an order.  The side and implied flag cannot change 
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.OrderIdFieldNumber">
+            <summary>Field number for the "orderId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.IsImpliedFieldNumber">
+            <summary>Field number for the "isImplied" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ModifyOrder.PriorityFieldNumber">
+            <summary>Field number for the "priority" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.IndexValue">
+            <summary>
+            For non-tradable index products
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.IndexValue.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.IndexValue.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.LastFieldNumber">
+            <summary>Field number for the "last" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.SettlementOpenFieldNumber">
+            <summary>Field number for the "settlementOpen" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.SpecialOpenFieldNumber">
+            <summary>Field number for the "specialOpen" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.CloseFieldNumber">
+            <summary>Field number for the "close" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.BidFieldNumber">
+            <summary>Field number for the "bid" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.IndexValue.OfferFieldNumber">
+            <summary>Field number for the "offer" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Trades">
+            <summary>
+            Trades
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trades.Trades_FieldNumber">
+            <summary>Field number for the "trades" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Trades.Types">
+            <summary>Container for nested types declared in the Trades message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trades.Types.Entry.TradeFieldNumber">
+            <summary>Field number for the "trade" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trades.Types.Entry.TradeCorrectionFieldNumber">
+            <summary>Field number for the "tradeCorrection" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trades.Types.Entry.TradeCancelFieldNumber">
+            <summary>Field number for the "tradeCancel" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Trades.Types.Entry.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Trade">
+            <summary>
+            A live trade.  When received, update the "last" field
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.OriginatorIdFieldNumber">
+            <summary>Field number for the "originatorId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.OriginatorId">
+            <summary>
+            Market participant/originator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.Quantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.TradeIdFieldNumber">
+            <summary>Field number for the "tradeId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.Side">
+            <summary>
+            The side of the aggressing order that caused the trade
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.BuyerIdFieldNumber">
+            <summary>Field number for the "buyerId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SellerIdFieldNumber">
+            <summary>Field number for the "sellerId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.OpeningTradeFieldNumber">
+            <summary>Field number for the "openingTrade" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SystemPricedFieldNumber">
+            <summary>Field number for the "systemPriced" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.MarketOnCloseFieldNumber">
+            <summary>Field number for the "marketOnClose" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.OddLotFieldNumber">
+            <summary>Field number for the "oddLot" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SettlementTermsFieldNumber">
+            <summary>Field number for the "settlementTerms" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.CrossTypeFieldNumber">
+            <summary>Field number for the "crossType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.ByPassFieldNumber">
+            <summary>Field number for the "byPass" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.LastPriceFieldNumber">
+            <summary>Field number for the "lastPrice" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SaleConditionFieldNumber">
+            <summary>Field number for the "saleCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.DoesNotUpdateLastFieldNumber">
+            <summary>Field number for the "doesNotUpdateLast" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.DoesNotUpdateLast">
+            <summary>
+            Does not update Last
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.DoesNotUpdateVolumeFieldNumber">
+            <summary>Field number for the "doesNotUpdateVolume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.DoesNotUpdateVolume">
+            <summary>
+            Does not update Volume
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.SessionFieldNumber">
+            <summary>Field number for the "session" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.BlockTradeFieldNumber">
+            <summary>Field number for the "blockTrade" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.BlockTrade">
+            <summary>
+            Is this a block trade.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.DistributionTimeFieldNumber">
+            <summary>Field number for the "distributionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.DistributionTime">
+            <summary>
+            Distribution time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.TransactionTime2FieldNumber">
+            <summary>Field number for the "transactionTime2" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.TransactionTime2">
+            <summary>
+            time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.ConsolidatedPriceIndicatorFieldNumber">
+            <summary>Field number for the "consolidatedPriceIndicator" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.TransientFieldNumber">
+            <summary>Field number for the "transient" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.Transient">
+            <summary>
+            True if not persisted in the EOD database.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Trade.IndexShortNameFieldNumber">
+            <summary>Field number for the "indexShortName" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Trade.IndexShortName">
+            <summary>
+            Index short name used to identify index.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.TradeCorrection">
+            <summary>
+             Trade Correction
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OriginatorIdFieldNumber">
+            <summary>Field number for the "originatorId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.OriginatorId">
+            <summary>
+            Market participant/originator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.Price">
+            <summary>
+            Corrected Price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.Quantity">
+            <summary>
+            Corrected Quantity
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.TradeIdFieldNumber">
+            <summary>Field number for the "tradeId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.SideFieldNumber">
+            <summary>Field number for the "side" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.BuyerIdFieldNumber">
+            <summary>Field number for the "buyerId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.SellerIdFieldNumber">
+            <summary>Field number for the "sellerId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OpeningTradeFieldNumber">
+            <summary>Field number for the "openingTrade" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.SystemPricedFieldNumber">
+            <summary>Field number for the "systemPriced" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.MarketOnCloseFieldNumber">
+            <summary>Field number for the "marketOnClose" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OddLotFieldNumber">
+            <summary>Field number for the "oddLot" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.SettlementTermsFieldNumber">
+            <summary>Field number for the "settlementTerms" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.CrossTypeFieldNumber">
+            <summary>Field number for the "crossType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.ByPassFieldNumber">
+            <summary>Field number for the "byPass" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OriginalTradeIdFieldNumber">
+            <summary>Field number for the "originalTradeId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.SaleConditionFieldNumber">
+            <summary>Field number for the "saleCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.DistributionTimeFieldNumber">
+            <summary>Field number for the "distributionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.DistributionTime">
+            <summary>
+            Distribution time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.TransactionTime2FieldNumber">
+            <summary>Field number for the "transactionTime2" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.TransactionTime2">
+            <summary>
+            time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OriginalTradePriceFieldNumber">
+            <summary>Field number for the "originalTradePrice" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.OriginalTradePrice">
+            <summary>
+            Original Price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCorrection.OriginalTradeQuantityFieldNumber">
+            <summary>Field number for the "originalTradeQuantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCorrection.OriginalTradeQuantity">
+            <summary>
+            Original Quantity
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.TradeCancel">
+             <summary>
+            
+             Trade Cancel/Break
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.OriginatorIdFieldNumber">
+            <summary>Field number for the "originatorId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCancel.OriginatorId">
+            <summary>
+            Market participant/originator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.CorrectedTradePriceFieldNumber">
+            <summary>Field number for the "correctedTradePrice" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.CorrectedTradeQuantityFieldNumber">
+            <summary>Field number for the "correctedTradeQuantity" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.TradeIdFieldNumber">
+            <summary>Field number for the "tradeId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.SaleConditionFieldNumber">
+            <summary>Field number for the "saleCondition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.DistributionTimeFieldNumber">
+            <summary>Field number for the "distributionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCancel.DistributionTime">
+            <summary>
+            Distribution time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TradeCancel.TransactionTime2FieldNumber">
+            <summary>Field number for the "transactionTime2" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.TradeCancel.TransactionTime2">
+            <summary>
+            time in nano seconds since epoch.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Open.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Open.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Open.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Open.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Open.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Open.OpenCloseSettlementFlagFieldNumber">
+            <summary>Field number for the "OpenCloseSettlementFlag" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Open.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.High.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.High.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.High.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.High.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.High.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.High.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.HighRolling">
+            <summary>
+            24 hour rolling window
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.HighRolling.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.HighRolling.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.HighRolling.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.HighRolling.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.HighRolling.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.HighRolling.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Low.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Low.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Low.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Low.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Low.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Low.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.LowRolling">
+            <summary>
+            24 hour rolling window
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.LowRolling.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LowRolling.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.LowRolling.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.LowRolling.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.LowRolling.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.LowRolling.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Close.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Close.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Close.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Close.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Close.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Close.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.PrevClose.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.PrevClose.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.PrevClose.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.PrevClose.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.PrevClose.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.PrevClose.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Last.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Last.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.QuantityFieldNumber">
+            <summary>Field number for the "quantity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Last.Quantity">
+            <summary>
+            Divide by quantityDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Last.SessionFieldNumber">
+            <summary>Field number for the "session" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.YearHigh">
+            <summary>
+            52 week
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.YearHigh.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.YearHigh.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.YearHigh.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.YearHigh.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.YearLow">
+            <summary>
+            52 week
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.YearLow.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.YearLow.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.YearLow.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.YearLow.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Volume">
+            <summary>
+            Total volume traded
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Volume.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Volume.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Volume.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Volume.Volume_FieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Volume.Volume_">
+            <summary>
+            Total volume traded.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.NumberOfTrades">
+            <summary>
+            Total number of trades
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.NumberOfTrades.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.NumberOfTrades.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.NumberOfTrades.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.NumberOfTrades.NumberTradesFieldNumber">
+            <summary>Field number for the "numberTrades" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MonetaryValue">
+            <summary>
+            Total monetary value of trades
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MonetaryValue.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MonetaryValue.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MonetaryValue.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MonetaryValue.ValueFieldNumber">
+            <summary>Field number for the "value" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MonetaryValue.Value">
+            <summary>
+            2 decimals of precision
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MonetaryValue.ValueCurrencyCodeFieldNumber">
+            <summary>Field number for the "valueCurrencyCode" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Settlement">
+            <summary>
+            Settlement value for futures and options markets.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Settlement.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Settlement.Price">
+            <summary>
+            Divide by priceDenominator
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.PreliminarySettleFieldNumber">
+            <summary>Field number for the "preliminarySettle" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.CurrencyFieldNumber">
+            <summary>Field number for the "currency" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.SettlementSourceFieldNumber">
+            <summary>Field number for the "settlementSource" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.SessionFieldNumber">
+            <summary>Field number for the "session" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Settlement.Session">
+            <summary>
+            Used by CME ITC.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.TransientFieldNumber">
+            <summary>Field number for the "transient" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Settlement.Transient">
+            <summary>
+            True if not persisted in the EOD database.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Settlement.ReservedFieldNumber">
+            <summary>Field number for the "reserved" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Settlement.Reserved">
+            <summary>
+            Reserved
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenInterest">
+            <summary>
+            Open interest
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenInterest.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenInterest.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenInterest.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenInterest.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Vwap">
+            <summary>
+            Volume Weighted Average Price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Vwap.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Vwap.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Vwap.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Vwap.Vwap_FieldNumber">
+            <summary>Field number for the "vwap" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.DividendsIncomeDistributions">
+            <summary>
+            Dividends and Income Distributions
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.InstrumentTypeFieldNumber">
+            <summary>Field number for the "instrumentType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.CorporateActionFieldNumber">
+            <summary>Field number for the "corporateAction" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.CorporateAction">
+            <summary>
+            Corporate Action
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.DistributionTypeFieldNumber">
+            <summary>Field number for the "distributionType" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.DistributionType">
+            <summary>
+            Distribution Type
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.PayableDateFieldNumber">
+            <summary>Field number for the "payableDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.PayableDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.RecordDateFieldNumber">
+            <summary>Field number for the "recordDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.ExDividendDateFieldNumber">
+            <summary>Field number for the "exDividendDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.AmountFieldNumber">
+            <summary>Field number for the "amount" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.Amount">
+            <summary>
+            Cash amount of distribution
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.CurrencyCodeFieldNumber">
+            <summary>Field number for the "currencyCode" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.NotesFieldNumber">
+            <summary>Field number for the "notes" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.TotalCashDistributionFieldNumber">
+            <summary>Field number for the "totalCashDistribution" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.TotalCashDistribution">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.NonQualifiedCashDistributionFieldNumber">
+            <summary>Field number for the "nonQualifiedCashDistribution" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.QualifiedCashDistributionFieldNumber">
+            <summary>Field number for the "qualifiedCashDistribution" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.TaxFreeCashDistributionFieldNumber">
+            <summary>Field number for the "taxFreeCashDistribution" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.OrdinaryForeignTaxCreditFieldNumber">
+            <summary>Field number for the "ordinaryForeignTaxCredit" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.QualifiedForeignTaxCreditFieldNumber">
+            <summary>Field number for the "qualifiedForeignTaxCredit" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.StockDividendRatioFieldNumber">
+            <summary>Field number for the "stockDividendRatio" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.DividendsIncomeDistributions.ReinvestDateFieldNumber">
+            <summary>Field number for the "reinvestDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.DividendsIncomeDistributions.ReinvestDate">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.CapitalDistributions">
+            <summary>
+            Capital Distributions
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.InstrumentTypeFieldNumber">
+            <summary>Field number for the "instrumentType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.CorporateActionFieldNumber">
+            <summary>Field number for the "corporateAction" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.CapitalDistributions.CorporateAction">
+            <summary>
+            Corporate Action
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.PayableDateFieldNumber">
+            <summary>Field number for the "payableDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.CapitalDistributions.PayableDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.RecordDateFieldNumber">
+            <summary>Field number for the "recordDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.ExDateFieldNumber">
+            <summary>Field number for the "exDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.ShortTermCapitalGainFieldNumber">
+            <summary>Field number for the "shortTermCapitalGain" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.CapitalDistributions.ShortTermCapitalGain">
+            <summary>
+            Distributions
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.LongTermCapitalGainFieldNumber">
+            <summary>Field number for the "longTermCapitalGain" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.UnallocatedDistributionsFieldNumber">
+            <summary>Field number for the "unallocatedDistributions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.ReturnOfCapitalFieldNumber">
+            <summary>Field number for the "returnOfCapital" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.CurrencyCodeFieldNumber">
+            <summary>Field number for the "currencyCode" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.NotesFieldNumber">
+            <summary>Field number for the "notes" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.CapitalDistributions.ReinvestDateFieldNumber">
+            <summary>Field number for the "reinvestDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.CapitalDistributions.ReinvestDate">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.SharesOutstanding">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SharesOutstanding.SharesOutstanding_FieldNumber">
+            <summary>Field number for the "sharesOutstanding" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SharesOutstanding.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.NetAssetValue">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.NetAssetValue.NetAssetValue_FieldNumber">
+            <summary>Field number for the "netAssetValue" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.NetAssetValue.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSummary">
+            <summary>
+            Intra and EOD Market Summary
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.TradingDateFieldNumber">
+            <summary>Field number for the "tradingDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSummary.TradingDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.StartOfDayFieldNumber">
+            <summary>Field number for the "startOfDay" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.EndOfDayFieldNumber">
+            <summary>Field number for the "endOfDay" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.ClearFieldNumber">
+            <summary>Field number for the "clear" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.InstrumentStatusFieldNumber">
+            <summary>Field number for the "instrumentStatus" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSummary.InstrumentStatus">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.BboFieldNumber">
+            <summary>Field number for the "bbo" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.CloseFieldNumber">
+            <summary>Field number for the "close" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.PrevCloseFieldNumber">
+            <summary>Field number for the "prevClose" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.LastFieldNumber">
+            <summary>Field number for the "last" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.SettlementFieldNumber">
+            <summary>Field number for the "settlement" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.OpenInterestFieldNumber">
+            <summary>Field number for the "openInterest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.VwapFieldNumber">
+            <summary>Field number for the "vwap" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.SessionFieldNumber">
+            <summary>Field number for the "session" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSummary.Session">
+            <summary>
+            Used by CME ITC.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.SummaryTypeFieldNumber">
+            <summary>Field number for the "summaryType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.PrevVolumeFieldNumber">
+            <summary>Field number for the "prevVolume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSummary.PrevVolume">
+            <summary>
+            Total traded volume for the prior day.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.TransientFieldNumber">
+            <summary>Field number for the "transient" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.MarketSummary.Transient">
+            <summary>
+            True if not persisted in the EOD database.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSummary.Types">
+            <summary>Container for nested types declared in the MarketSummary message type.</summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSummary.Types.ClearSet">
+            <summary>
+            Clears sets of fields
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.MarketSummary.Types.SummaryType">
+            <summary>
+            Used to differentiate various ddf messages.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.Types.SummaryType.ExchangeRefresh">
+            <summary>
+            DDF 2/1 Exchange refresh
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.Types.SummaryType.RefreshLivePrice">
+            <summary>
+            DDF 2/6 Live Prices refresh
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.Types.SummaryType.EodCommodityPrices">
+            <summary>
+            DDF 3/C end-of-day commodity prices
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.Types.SummaryType.EodStockForexPrices">
+            <summary>
+            DDF 3/S end-of-day stock and forex prices and volume
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.MarketSummary.Types.SummaryType.EodCommodityStats">
+            <summary>
+            DDF 3/I end-of-day commodity volume and open interest message
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Context.DataFieldNumber">
+            <summary>Field number for the "data" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Context.TracePointsFieldNumber">
+            <summary>Field number for the "tracePoints" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.VstringFieldNumber">
+            <summary>Field number for the "vstring" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.VbytesFieldNumber">
+            <summary>Field number for the "vbytes" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.VboolFieldNumber">
+            <summary>Field number for the "vbool" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.Vsint32FieldNumber">
+            <summary>Field number for the "vsint32" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.Vsint64FieldNumber">
+            <summary>Field number for the "vsint64" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.VfloatFieldNumber">
+            <summary>Field number for the "vfloat" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ContextData.VdoubleFieldNumber">
+            <summary>Field number for the "vdouble" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ContextData.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.TracePoint">
+            <summary>
+            Tracing
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TracePoint.IdFieldNumber">
+            <summary>Field number for the "id" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TracePoint.ComponentIdFieldNumber">
+            <summary>Field number for the "componentId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TracePoint.TimestampNsFieldNumber">
+            <summary>Field number for the "timestampNs" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TracePoint.ComponentLatencyNsFieldNumber">
+            <summary>Field number for the "componentLatencyNs" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.TCPHistoricalReplayRequest">
+            <summary>
+            TCP replay request.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.TCPHistoricalReplayRequest.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TCPHistoricalReplayRequest.ResetNumberFieldNumber">
+            <summary>Field number for the "resetNumber" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TCPHistoricalReplayRequest.SequenceFieldNumber">
+            <summary>Field number for the "sequence" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TCPHistoricalReplayRequest.CountFieldNumber">
+            <summary>Field number for the "count" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.TCPHistoricalReplayRequest.RequestIdFieldNumber">
+            <summary>Field number for the "requestId" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.SnapshotRequest">
+            <summary>
+            Request for the snapshot to the Market state.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SnapshotRequest.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SnapshotRequest.ResetNumberFieldNumber">
+            <summary>Field number for the "resetNumber" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SnapshotRequest.RequestIdFieldNumber">
+            <summary>Field number for the "requestId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SnapshotRequest.SnapshotRequestTypesFieldNumber">
+            <summary>Field number for the "snapshotRequestTypes" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.SnapshotRequest.Types">
+            <summary>Container for nested types declared in the SnapshotRequest message type.</summary>
+        </member>
+        <member name="T:Org.Openfeed.VolumeAtPrice">
+            <summary>
+            The VolumeAtPrice class encapsulates all of the trades throughout the day,
+            and organizes a table of volume at prices.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.VolumeAtPrice.TransactionTime">
+            <summary>
+            UTC Timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.LastPriceFieldNumber">
+            <summary>Field number for the "lastPrice" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.LastQuantityFieldNumber">
+            <summary>Field number for the "lastQuantity" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.LastCumulativeVolumeFieldNumber">
+            <summary>Field number for the "lastCumulativeVolume" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.VolumeAtPrice.TradeDate">
+            <summary>
+            Date only, format 2012-07-04 -> 20120704
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.PriceVolumesFieldNumber">
+            <summary>Field number for the "priceVolumes" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.VolumeAtPrice.Types">
+            <summary>Container for nested types declared in the VolumeAtPrice message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.Types.PriceLevelVolume.PriceFieldNumber">
+            <summary>Field number for the "price" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.VolumeAtPrice.Types.PriceLevelVolume.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Ohlc">
+            <summary>
+            Open,High,Low,Close
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.OpenFieldNumber">
+            <summary>Field number for the "open" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.HighFieldNumber">
+            <summary>Field number for the "high" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.LowFieldNumber">
+            <summary>Field number for the "low" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.CloseFieldNumber">
+            <summary>Field number for the "close" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.VolumeFieldNumber">
+            <summary>Field number for the "volume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Ohlc.Volume">
+            <summary>
+            Sum of volume
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.PriceVolumeFieldNumber">
+            <summary>Field number for the "priceVolume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Ohlc.PriceVolume">
+            <summary>
+            Sum of price volume using normalized price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.NumberTradesFieldNumber">
+            <summary>Field number for the "numberTrades" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Ohlc.TransactionTime">
+            <summary>
+            UTC Timestamp, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.TradeIdsFieldNumber">
+            <summary>Field number for the "tradeIds" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.Ohlc.TradeIds">
+            <summary>
+            Trade Ids used in this OHLC
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.OpenStartTimeFieldNumber">
+            <summary>Field number for the "openStartTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Ohlc.CloseEndTimeFieldNumber">
+            <summary>Field number for the "closeEndTime" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentAction">
+            <summary>
+            Instrument Action
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.TradeDateFieldNumber">
+            <summary>Field number for the "tradeDate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.ActionFieldNumber">
+            <summary>Field number for the "action" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.InstrumentFieldNumber">
+            <summary>Field number for the "instrument" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentAction.NewInstrumentFieldNumber">
+            <summary>Field number for the "newInstrument" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedApiReflection">
+            <summary>Holder for reflection information generated from openfeed_api.proto</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedApiReflection.Descriptor">
+            <summary>File descriptor for openfeed_api.proto</summary>
+        </member>
+        <member name="T:Org.Openfeed.SymbolType">
+            <summary>
+            Symbol type for the subscription filter.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayRequest">
+            <summary>
+            Openfeed Server request
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.LoginRequestFieldNumber">
+            <summary>Field number for the "loginRequest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.LogoutRequestFieldNumber">
+            <summary>Field number for the "logoutRequest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.SubscriptionRequestFieldNumber">
+            <summary>Field number for the "subscriptionRequest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.InstrumentRequestFieldNumber">
+            <summary>Field number for the "instrumentRequest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.InstrumentReferenceRequestFieldNumber">
+            <summary>Field number for the "instrumentReferenceRequest" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayRequest.ExchangeRequestFieldNumber">
+            <summary>Field number for the "exchangeRequest" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayRequest.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayMessage">
+            <summary>
+            Openfeed Server Response
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.LoginResponseFieldNumber">
+            <summary>Field number for the "loginResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.LogoutResponseFieldNumber">
+            <summary>Field number for the "logoutResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.InstrumentResponseFieldNumber">
+            <summary>Field number for the "instrumentResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.InstrumentReferenceResponseFieldNumber">
+            <summary>Field number for the "instrumentReferenceResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.SubscriptionResponseFieldNumber">
+            <summary>Field number for the "subscriptionResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.MarketStatusFieldNumber">
+            <summary>Field number for the "marketStatus" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.HeartBeatFieldNumber">
+            <summary>Field number for the "heartBeat" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.InstrumentDefinitionFieldNumber">
+            <summary>Field number for the "instrumentDefinition" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.MarketSnapshotFieldNumber">
+            <summary>Field number for the "marketSnapshot" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.MarketUpdateFieldNumber">
+            <summary>Field number for the "marketUpdate" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.VolumeAtPriceFieldNumber">
+            <summary>Field number for the "volumeAtPrice" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.OhlcFieldNumber">
+            <summary>Field number for the "ohlc" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.ExchangeResponseFieldNumber">
+            <summary>Field number for the "exchangeResponse" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.OpenfeedGatewayMessage.InstrumentActionFieldNumber">
+            <summary>Field number for the "instrumentAction" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedGatewayMessage.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="T:Org.Openfeed.Status">
+            <summary>
+            Serivce Messages
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.Status.ResultFieldNumber">
+            <summary>Field number for the "result" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Status.MessageFieldNumber">
+            <summary>Field number for the "message" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.Status.ServiceFieldNumber">
+            <summary>Field number for the "service" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.LoginRequest">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginRequest.UsernameFieldNumber">
+            <summary>Field number for the "username" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginRequest.PasswordFieldNumber">
+            <summary>Field number for the "password" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginRequest.ClientVersionFieldNumber">
+            <summary>Field number for the "clientVersion" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginRequest.ProtocolVersionFieldNumber">
+            <summary>Field number for the "protocolVersion" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LoginResponse.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.LogoutRequest">
+            <summary>
+            Logout
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.LogoutRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LogoutRequest.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LogoutResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.LogoutResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentRequest">
+            <summary>
+            Instrument Definition(s), will stream InstrumentDefinition(s)
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentRequest.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentRequest.RequestOneofCase">
+            <summary>Enum of possible cases for the "request" oneof.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.NumberOfDefinitionsFieldNumber">
+            <summary>Field number for the "numberOfDefinitions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentResponse.Symbol">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentResponse.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentReferenceRequest">
+            <summary>
+            Instrument References, returns InstrumentReferenceResponse(s)
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceRequest.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentReferenceRequest.RequestOneofCase">
+            <summary>Enum of possible cases for the "request" oneof.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.NumberOfDefinitionsFieldNumber">
+            <summary>Field number for the "numberOfDefinitions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentReferenceResponse.ChannelId">
+            <summary>
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.DdfSymbolFieldNumber">
+            <summary>Field number for the "ddfSymbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.DdfExchangeFieldNumber">
+            <summary>Field number for the "ddfExchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.DdfBaseCodeFieldNumber">
+            <summary>Field number for the "ddfBaseCode" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentReferenceResponse.ExchangeSymbolFieldNumber">
+            <summary>Field number for the "exchangeSymbol" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ExchangeRequest">
+            <summary>
+            Exchange Request, returns ExchangeResponse.  Gives available exchanges.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeRequest.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.ExchangesFieldNumber">
+            <summary>Field number for the "exchanges" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.ExchangeResponse.Types">
+            <summary>Container for nested types declared in the ExchangeResponse message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.Types.Exchange.CodeFieldNumber">
+            <summary>Field number for the "code" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.Types.Exchange.DescriptionFieldNumber">
+            <summary>Field number for the "description" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.ExchangeResponse.Types.Exchange.AliasesFieldNumber">
+            <summary>Field number for the "aliases" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.BulkSubscriptionFilter">
+            <summary>
+            Bulk subscription filter.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BulkSubscriptionFilter.SymbolTypeFieldNumber">
+            <summary>Field number for the "symbolType" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BulkSubscriptionFilter.SymbolType">
+            <summary>
+            Type of the symbol: Barchart of Exchange. Barchart is the default.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.BulkSubscriptionFilter.SymbolPatternFieldNumber">
+            <summary>Field number for the "symbolPattern" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.BulkSubscriptionFilter.SymbolPattern">
+            <summary>
+            regular expression pattern for the symbol
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.SubscriptionRequest">
+            <summary>
+            Subscription Request
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.CorrelationId">
+            <summary>
+            Client-assigned id for this request.  Response will include same id
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.TokenFieldNumber">
+            <summary>Field number for the "token" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.ServiceFieldNumber">
+            <summary>Field number for the "service" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Service">
+            <summary>
+            Preferred service (realtime or delayed).
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.UnsubscribeFieldNumber">
+            <summary>Field number for the "unsubscribe" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.RequestsFieldNumber">
+            <summary>Field number for the "requests" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.SubscriptionRequest.Types">
+            <summary>Container for nested types declared in the SubscriptionRequest message type.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.SubscriptionTypeFieldNumber">
+            <summary>Field number for the "subscriptionType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.SnapshotIntervalSecondsFieldNumber">
+            <summary>Field number for the "snapshotIntervalSeconds" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Types.Request.SnapshotIntervalSeconds">
+            <summary>
+            0 = send only current snapshot once, else send at interval seconds 
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.InstrumentTypeFieldNumber">
+            <summary>Field number for the "instrumentType" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Types.Request.InstrumentType">
+            <summary>
+            Spreads and Options must be explicitly requested.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionRequest.Types.Request.BulkSubscriptionFilterFieldNumber">
+            <summary>Field number for the "bulkSubscriptionFilter" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.SubscriptionRequest.Types.Request.BulkSubscriptionFilter">
+            <summary>
+            Filter for the exchange and channel subscriptions.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.SubscriptionRequest.Types.Request.DataOneofCase">
+            <summary>Enum of possible cases for the "data" oneof.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.CorrelationIdFieldNumber">
+            <summary>Field number for the "correlationId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.StatusFieldNumber">
+            <summary>Field number for the "status" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.ExchangeFieldNumber">
+            <summary>Field number for the "exchange" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.ChannelIdFieldNumber">
+            <summary>Field number for the "channelId" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.NumberOfDefinitionsFieldNumber">
+            <summary>Field number for the "numberOfDefinitions" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.SubscriptionTypeFieldNumber">
+            <summary>Field number for the "subscriptionType" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.UnsubscribeFieldNumber">
+            <summary>Field number for the "unsubscribe" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.SubscriptionResponse.SnapshotIntervalSecondsFieldNumber">
+            <summary>Field number for the "snapshotIntervalSeconds" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.OpenfeedInstrumentReflection">
+            <summary>Holder for reflection information generated from openfeed_instrument.proto</summary>
+        </member>
+        <member name="P:Org.Openfeed.OpenfeedInstrumentReflection.Descriptor">
+            <summary>File descriptor for openfeed_instrument.proto</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.MarketId">
+            <summary>
+            Unique ID used in the data feed.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.InstrumentTypeFieldNumber">
+            <summary>Field number for the "instrumentType" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.InstrumentType">
+            <summary>
+            Instrument type as enum...
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SupportBookTypesFieldNumber">
+            <summary>Field number for the "supportBookTypes" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SupportBookTypes">
+            <summary>
+            Supported Book Types
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.BookDepthFieldNumber">
+            <summary>Field number for the "bookDepth" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.BookDepth">
+            <summary>
+            Maximum depth of market-by-price order book
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.VendorIdFieldNumber">
+            <summary>Field number for the "vendorId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.VendorId">
+            <summary>
+            The name of the market data vendor
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Symbol">
+            <summary>
+            Human readable market symbol, assigned by the exchange or venue.
+            Not necessarily unique as the exchange or vendor could assign the same symbol to different
+            instruments, for example if the instruments trade on different exchanges.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.DescriptionFieldNumber">
+            <summary>Field number for the "description" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Description">
+            <summary>
+            Human readable market description.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.CfiCodeFieldNumber">
+            <summary>Field number for the "cfiCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.CfiCode">
+            <summary>
+            Market CFI code: http://en.wikipedia.org/wiki/ISO_10962
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.CurrencyCodeFieldNumber">
+            <summary>Field number for the "currencyCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.CurrencyCode">
+            <summary>
+            Market currency code: http://en.wikipedia.org/wiki/ISO_4217
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ExchangeCodeFieldNumber">
+            <summary>Field number for the "exchangeCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ExchangeCode">
+            <summary>
+            Market exchange code: http://en.wikipedia.org/wiki/ISO_10383
+            For inter-exchange spreads, use the leg MICs separated by a hyphen
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.MinimumPriceIncrementFieldNumber">
+            <summary>Field number for the "minimumPriceIncrement" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.MinimumPriceIncrement">
+            <summary>
+            Minimum price increment in market currency.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ContractPointValueFieldNumber">
+            <summary>Field number for the "contractPointValue" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ContractPointValue">
+            <summary>
+            Contract point value in market currency.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ScheduleFieldNumber">
+            <summary>Field number for the "schedule" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Schedule">
+            <summary>
+            Trading schedule for a typical week
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.CalendarFieldNumber">
+            <summary>Field number for the "calendar" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Calendar">
+            <summary>
+            Trading calendar (expiration, notice days, holidays?, etc)
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.RecordCreateTimeFieldNumber">
+            <summary>Field number for the "recordCreateTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.RecordCreateTime">
+            <summary>
+            UTC Timestamp of creation, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.RecordUpdateTimeFieldNumber">
+            <summary>Field number for the "recordUpdateTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.RecordUpdateTime">
+            <summary>
+            UTC Timestamp of update, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.TimeZoneNameFieldNumber">
+            <summary>Field number for the "timeZoneName" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.TimeZoneName">
+            <summary>
+            Market time zone TZ database name.
+            Permanent. Can be resolved into timeZoneOffset for given date/time.
+            See http://joda-time.sourceforge.net/timezones.html
+            See http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.InstrumentGroupFieldNumber">
+            <summary>Field number for the "instrumentGroup" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.InstrumentGroup">
+            <summary>
+            Identifies a logical grouping of instruments. By product, for example.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SymbolExpirationFieldNumber">
+            <summary>Field number for the "symbolExpiration" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SymbolExpiration">
+            <summary>
+            The Date of expiration for futures and options.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.StateFieldNumber">
+            <summary>Field number for the "state" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.State">
+            <summary>
+            active: can have market state updates, can have historical data
+            passive: can NOT have market state updates, but can have historical data
+            normally "active" means newly listed or currently non expired markets
+            normally "passive" means expired options, de-listed equities, etc.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ChannelFieldNumber">
+            <summary>Field number for the "channel" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Channel">
+            <summary>
+            The channel that updates for this instrument will appear on.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.UnderlyingMarketIdFieldNumber">
+            <summary>Field number for the "underlyingMarketId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.UnderlyingMarketId">
+            <summary>
+            The marketId of the underlying asset.
+            Used by Futures and Options when the underlying instrument is defined by the vendor
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.PriceFormatFieldNumber">
+            <summary>Field number for the "priceFormat" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.PriceFormat">
+            <summary>
+            Display format
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OptionStrikePriceFormatFieldNumber">
+            <summary>Field number for the "optionStrikePriceFormat" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OptionStrikePriceFormat">
+            <summary>
+            Strike price display format
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.PriceDenominatorFieldNumber">
+            <summary>Field number for the "priceDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.PriceDenominator">
+            <summary>
+            Divide prices by this value to get real price values
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.QuantityDenominatorFieldNumber">
+            <summary>Field number for the "quantityDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.QuantityDenominator">
+            <summary>
+            Divide trade quantities by this value to get real quantities 
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.IsTradableFieldNumber">
+            <summary>Field number for the "isTradable" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.IsTradable">
+            <summary>
+            true if this is a tradable instrument
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.TransactionTimeFieldNumber">
+            <summary>Field number for the "transactionTime" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.TransactionTime">
+            <summary>
+            UTC timestamp of transaction, nano seconds since Unix epoch
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.AuxiliaryDataFieldNumber">
+            <summary>Field number for the "auxiliaryData" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.AuxiliaryData">
+            <summary>
+            For internal use only.   Ignore
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SymbolsFieldNumber">
+            <summary>Field number for the "symbols" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Symbols">
+            <summary>
+            List of alternate symbols for this instrument.  A single instrument
+            may be provided by many different market data vendors, each with
+            their own unique symbology. Allows this instrument to be tagged
+            with as many vendor symbols as necessary.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OptionStrikeFieldNumber">
+            <summary>Field number for the "optionStrike" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OptionStrike">
+            <summary>
+            Option strike price in market currency.  Multiply by
+            factorOptionsStrike to get actual strike
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OptionTypeFieldNumber">
+            <summary>Field number for the "optionType" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OptionType">
+            <summary>
+            Option type: call vs put.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OptionStyleFieldNumber">
+            <summary>Field number for the "optionStyle" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OptionStyle">
+            <summary>
+            Option style : American vs European.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OptionStrikeDenominatorFieldNumber">
+            <summary>Field number for the "optionStrikeDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OptionStrikeDenominator">
+            <summary>
+            Divide optionStrike by this value to get real strike price
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SpreadCodeFieldNumber">
+            <summary>Field number for the "spreadCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SpreadCode">
+            <summary>
+            Spread type, can be vendor specific
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SpreadLegFieldNumber">
+            <summary>Field number for the "spreadLeg" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SpreadLeg">
+            <summary>
+            Ordered list of underlying legs in a spread.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.UserDefinedSpreadFieldNumber">
+            <summary>Field number for the "userDefinedSpread" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.UserDefinedSpread">
+            <summary>
+            true if user defined spread
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.MarketTierFieldNumber">
+            <summary>Field number for the "marketTier" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.MarketTier">
+            <summary>
+            Listing market classification
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.FinancialStatusIndicatorFieldNumber">
+            <summary>Field number for the "financialStatusIndicator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.FinancialStatusIndicator">
+            <summary>
+            Current financial status of the issuer
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.IsinFieldNumber">
+            <summary>Field number for the "isin" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Isin">
+            <summary>
+            ISIN: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.CurrencyPairFieldNumber">
+            <summary>Field number for the "currencyPair" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.CurrencyPair">
+            <summary>
+            Break out of currency pair
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ExchangeSendsVolumeFieldNumber">
+            <summary>Field number for the "exchangeSendsVolume" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ExchangeSendsVolume">
+            <summary>
+            true if exchange sends volume.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ExchangeSendsHighFieldNumber">
+            <summary>Field number for the "exchangeSendsHigh" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ExchangeSendsHigh">
+            <summary>
+            true if exchange sends high.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ExchangeSendsLowFieldNumber">
+            <summary>Field number for the "exchangeSendsLow" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ExchangeSendsLow">
+            <summary>
+            true if exchange sends low.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ExchangeSendsOpenFieldNumber">
+            <summary>Field number for the "exchangeSendsOpen" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ExchangeSendsOpen">
+            <summary>
+            true if exchange sends open.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ConsolidatedFeedInstrumentFieldNumber">
+            <summary>Field number for the "consolidatedFeedInstrument" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ConsolidatedFeedInstrument">
+            <summary>
+            true if this instrument represents consolidated NBBO.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.OpenOutcryInstrumentFieldNumber">
+            <summary>Field number for the "openOutcryInstrument" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.OpenOutcryInstrument">
+            <summary>
+            true if this instrument represents Pit symbol.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SyntheticAmericanOptionInstrumentFieldNumber">
+            <summary>Field number for the "syntheticAmericanOptionInstrument" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SyntheticAmericanOptionInstrument">
+            <summary>
+            true if this instrument generated FX option.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.BarchartExchangeCodeFieldNumber">
+            <summary>Field number for the "barchartExchangeCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.BarchartExchangeCode">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.BarchartBaseCodeFieldNumber">
+            <summary>Field number for the "barchartBaseCode" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.BarchartBaseCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.VolumeDenominatorFieldNumber">
+            <summary>Field number for the "volumeDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.VolumeDenominator">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.BidOfferQuantityDenominatorFieldNumber">
+            <summary>Field number for the "bidOfferQuantityDenominator" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.BidOfferQuantityDenominator">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.PrimaryListingMarketParticipantIdFieldNumber">
+            <summary>Field number for the "primaryListingMarketParticipantId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.PrimaryListingMarketParticipantId">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.SubscriptionSymbolFieldNumber">
+            <summary>Field number for the "subscriptionSymbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.SubscriptionSymbol">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.ContractMaturityFieldNumber">
+            <summary>Field number for the "contractMaturity" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.ContractMaturity">
+            <summary>
+            The Month/ Day of expiration for futures and options. Corresponds to the expiration month.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types">
+            <summary>Container for nested types declared in the InstrumentDefinition message type.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.InstrumentType">
+            <summary>
+            #############################################
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.BookType">
+            <summary>
+            Market depth implementation type
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.BookType.TopOfBook">
+            <summary>
+            BBO
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.BookType.PriceLevelDepth">
+            <summary>
+            Book uses price level
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.BookType.OrderDepth">
+            <summary>
+            Book uses order-id
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.OptionType">
+            <summary>
+            Option type.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.OptionStyle">
+            <summary>
+            Option style.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.EventType.FirstTradeDate">
+            <summary>
+            All instruments
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.EventType.MaturityDate">
+            <summary>
+            Futures only
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.Schedule">
+            <summary>
+            Typical trading week schedule
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Schedule.SessionsFieldNumber">
+            <summary>Field number for the "sessions" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.TimeSpan">
+            <summary>
+            Trading session
+            Times are in nanos since midnight UTC on the Sunday starting a given trading week
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.TimeSpan.TimeStartFieldNumber">
+            <summary>Field number for the "timeStart" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.TimeSpan.TimeFinishFieldNumber">
+            <summary>Field number for the "timeFinish" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Calendar.EventsFieldNumber">
+            <summary>Field number for the "events" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Event.TypeFieldNumber">
+            <summary>Field number for the "type" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Event.DateFieldNumber">
+            <summary>Field number for the "date" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.MarketIdFieldNumber">
+            <summary>Field number for the "marketId" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.MarketId">
+            <summary>
+            The marketId of the leg
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.RatioFieldNumber">
+            <summary>Field number for the "ratio" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.Ratio">
+            <summary>
+            The ratio of the this leg with respect to the spread.
+            Negative means short the absolute value, positive means long the absolute value.
+            FIXME? Alternatively, we could have separate LONG/SHORT indicator in the message
+            and use this field as only the absolute value
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.SymbolFieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.LongSymbolFieldNumber">
+            <summary>Field number for the "longSymbol" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.LegOptionDeltaFieldNumber">
+            <summary>Field number for the "legOptionDelta" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.LegPriceFieldNumber">
+            <summary>Field number for the "legPrice" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.LegPrice">
+            <summary>
+            Additional information about the leg will be found in the instrument definition
+            for the leg.  It is not included here to reduce duplication.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.MaturityDate">
+            <summary>
+            Date and time with time zone.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.YearFieldNumber">
+            <summary>Field number for the "year" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.Year">
+            <summary>
+            Year of century.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.MonthFieldNumber">
+            <summary>Field number for the "month" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.Month">
+            <summary>
+            Month of year.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.DayFieldNumber">
+            <summary>Field number for the "day" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.MaturityDate.Day">
+            <summary>
+            Day of month.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.Symbol">
+            <summary>
+            A vendor's symbol for an instrument
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Symbol.VendorFieldNumber">
+            <summary>Field number for the "vendor" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.Symbol.Vendor">
+            <summary>
+            The vendor that provides this symbol.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Symbol.Symbol_FieldNumber">
+            <summary>Field number for the "symbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.Symbol.Symbol_">
+            <summary>
+            The symbol assigned by the vendor.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.Symbol.LongSymbolFieldNumber">
+            <summary>Field number for the "longSymbol" field.</summary>
+        </member>
+        <member name="P:Org.Openfeed.InstrumentDefinition.Types.Symbol.LongSymbol">
+            <summary>
+            The long symbol assigned by the vendor. Includes 2 char year for futures.
+            </summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.PriceFormat">
+            <summary>
+            Recommended display format for prices.
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.PriceFormat.IsFractionalFieldNumber">
+            <summary>Field number for the "isFractional" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.PriceFormat.DenominatorFieldNumber">
+            <summary>Field number for the "denominator" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.PriceFormat.SubDenominatorFieldNumber">
+            <summary>Field number for the "subDenominator" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.PriceFormat.SubFormatFieldNumber">
+            <summary>Field number for the "subFormat" field.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.PriceFormat.Types">
+            <summary>Container for nested types declared in the PriceFormat message type.</summary>
+        </member>
+        <member name="T:Org.Openfeed.InstrumentDefinition.Types.CurrencyPair">
+            <summary>
+            Currency Pair
+            </summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.CurrencyPair.Currency1FieldNumber">
+            <summary>Field number for the "currency1" field.</summary>
+        </member>
+        <member name="F:Org.Openfeed.InstrumentDefinition.Types.CurrencyPair.Currency2FieldNumber">
+            <summary>Field number for the "currency2" field.</summary>
+        </member>
+    </members>
+</doc>
