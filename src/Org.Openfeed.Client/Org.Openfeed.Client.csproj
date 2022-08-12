@@ -5,7 +5,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
-    <Version>1.0.12</Version>
+    <Version>1.0.13-prerelease</Version>
     <PackageId>openfeed.net</PackageId>
     <Authors>Barchart.com, Inc.</Authors>
     <Product>openfeed.net</Product>
@@ -25,7 +25,6 @@
     <AssemblyOriginatorKeyFile>../Org.Openfeed.Client.snk</AssemblyOriginatorKeyFile>
     <Configurations>Debug;Release;Publish</Configurations>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <ReleaseVersion>1.0.13</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
