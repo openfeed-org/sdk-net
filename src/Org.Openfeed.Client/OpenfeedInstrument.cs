@@ -24,7 +24,7 @@ namespace Org.Openfeed {
     static OpenfeedInstrumentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChlvcGVuZmVlZF9pbnN0cnVtZW50LnByb3RvEgxvcmcub3BlbmZlZWQinhwK",
+            "ChlvcGVuZmVlZF9pbnN0cnVtZW50LnByb3RvEgxvcmcub3BlbmZlZWQiih0K",
             "FEluc3RydW1lbnREZWZpbml0aW9uEhAKCG1hcmtldElkGAEgASgSEkkKDmlu",
             "c3RydW1lbnRUeXBlGAIgASgOMjEub3JnLm9wZW5mZWVkLkluc3RydW1lbnRE",
             "ZWZpbml0aW9uLkluc3RydW1lbnRUeXBlEkUKEHN1cHBvcnRCb29rVHlwZXMY",
@@ -70,46 +70,49 @@ namespace Org.Openfeed {
             "UXVhbnRpdHlEZW5vbWluYXRvchjjASABKBESKgohcHJpbWFyeUxpc3RpbmdN",
             "YXJrZXRQYXJ0aWNpcGFudElkGOQBIAEoCRIbChJzdWJzY3JpcHRpb25TeW1i",
             "b2wY5QEgASgJEkoKEGNvbnRyYWN0TWF0dXJpdHkY5gEgASgLMi8ub3JnLm9w",
-            "ZW5mZWVkLkluc3RydW1lbnREZWZpbml0aW9uLk1hdHVyaXR5RGF0ZRpJCghT",
-            "Y2hlZHVsZRI9CghzZXNzaW9ucxgBIAMoCzIrLm9yZy5vcGVuZmVlZC5JbnN0",
-            "cnVtZW50RGVmaW5pdGlvbi5UaW1lU3BhbhoxCghUaW1lU3BhbhIRCgl0aW1l",
-            "U3RhcnQYASABKBISEgoKdGltZUZpbmlzaBgCIAEoEhpECghDYWxlbmRhchI4",
-            "CgZldmVudHMYASADKAsyKC5vcmcub3BlbmZlZWQuSW5zdHJ1bWVudERlZmlu",
-            "aXRpb24uRXZlbnQaUQoFRXZlbnQSOgoEdHlwZRgBIAEoDjIsLm9yZy5vcGVu",
-            "ZmVlZC5JbnN0cnVtZW50RGVmaW5pdGlvbi5FdmVudFR5cGUSDAoEZGF0ZRgC",
-            "IAEoEhp6CglTcHJlYWRMZWcSEAoIbWFya2V0SWQYASABKBISDQoFcmF0aW8Y",
-            "AiABKBESDgoGc3ltYm9sGAMgASgJEhIKCmxvbmdTeW1ib2wYBCABKAkSFgoO",
-            "bGVnT3B0aW9uRGVsdGEYBSABKAISEAoIbGVnUHJpY2UYBiABKAIaOAoMTWF0",
-            "dXJpdHlEYXRlEgwKBHllYXIYASABKBESDQoFbW9udGgYAiABKBESCwoDZGF5",
-            "GAMgASgRGjwKBlN5bWJvbBIOCgZ2ZW5kb3IYASABKAkSDgoGc3ltYm9sGAIg",
-            "ASgJEhIKCmxvbmdTeW1ib2wYAyABKAka0QEKC1ByaWNlRm9ybWF0EhQKDGlz",
-            "RnJhY3Rpb25hbBgBIAEoCBITCgtkZW5vbWluYXRvchgCIAEoERIWCg5zdWJE",
-            "ZW5vbWluYXRvchgEIAEoERJLCglzdWJGb3JtYXQYBiABKA4yOC5vcmcub3Bl",
-            "bmZlZWQuSW5zdHJ1bWVudERlZmluaXRpb24uUHJpY2VGb3JtYXQuU3ViRm9y",
-            "bWF0IjIKCVN1YkZvcm1hdBIICgRGTEFUEAASDgoKRlJBQ1RJT05BTBABEgsK",
-            "B0RFQ0lNQUwQAho0CgxDdXJyZW5jeVBhaXISEQoJY3VycmVuY3kxGAEgASgJ",
-            "EhEKCWN1cnJlbmN5MhgCIAEoCSK0AQoOSW5zdHJ1bWVudFR5cGUSGwoXVU5L",
-            "Tk9XTl9JTlNUUlVNRU5UX1RZUEUQABIJCgVGT1JFWBABEgkKBUlOREVYEAIS",
-            "CgoGRVFVSVRZEAMSCgoGRlVUVVJFEAQSCgoGT1BUSU9OEAUSCgoGU1BSRUFE",
-            "EAYSDwoLTVVUVUFMX0ZVTkQQBxIVChFNT05FWV9NQVJLRVRfRlVORBAIEhcK",
-            "E1VTRVJfREVGSU5FRF9TUFJFQUQQCSJaCghCb29rVHlwZRIVChFVTktOT1dO",
-            "X0JPT0tfVFlQRRAAEg8KC1RPUF9PRl9CT09LEAESFQoRUFJJQ0VfTEVWRUxf",
-            "REVQVEgQAhIPCgtPUkRFUl9ERVBUSBADIjgKCk9wdGlvblR5cGUSFwoTVU5L",
-            "Tk9XTl9PUFRJT05fVFlQRRAAEggKBENBTEwQARIHCgNQVVQQAiJRCgtPcHRp",
-            "b25TdHlsZRIZChVVTktOT1dOX09QVElPTlNfU1RZTEUQABILCgdERUZBVUxU",
-            "EAESDAoIQU1FUklDQU4QAhIMCghFVVJPUEVBThADIjMKBVN0YXRlEhEKDVVO",
-            "S05PV05fU1RBVEUQABIKCgZBQ1RJVkUQARILCgdQQVNTSVZFEAIinwIKCUV2",
-            "ZW50VHlwZRIWChJVTktOT1dOX0VWRU5UX1RZUEUQABIUChBGSVJTVF9UUkFE",
-            "RV9EQVRFEAESEwoPTEFTVF9UUkFERV9EQVRFEAISEQoNTUFUVVJJVFlfREFU",
-            "RRAKEhcKE0ZJUlNUX0RFTElWRVJZX0RBVEUQCxIWChJMQVNUX0RFTElWRVJZ",
-            "X0RBVEUQDBIVChFGSVJTVF9OT1RJQ0VfREFURRANEhQKEExBU1RfTk9USUNF",
-            "X0RBVEUQDhIWChJGSVJTVF9IT0xESU5HX0RBVEUQDxIVChFMQVNUX0hPTERJ",
-            "TkdfREFURRAQEhcKE0ZJUlNUX1BPU0lUSU9OX0RBVEUQERIWChJMQVNUX1BP",
-            "U0lUSU9OX0RBVEUQEkIHSAFQAaABAWIGcHJvdG8z"));
+            "ZW5mZWVkLkluc3RydW1lbnREZWZpbml0aW9uLk1hdHVyaXR5RGF0ZRITCgp1",
+            "bmRlcmx5aW5nGOcBIAEoCRISCgljb21tb2RpdHkY6AEgASgJGkkKCFNjaGVk",
+            "dWxlEj0KCHNlc3Npb25zGAEgAygLMisub3JnLm9wZW5mZWVkLkluc3RydW1l",
+            "bnREZWZpbml0aW9uLlRpbWVTcGFuGjEKCFRpbWVTcGFuEhEKCXRpbWVTdGFy",
+            "dBgBIAEoEhISCgp0aW1lRmluaXNoGAIgASgSGkQKCENhbGVuZGFyEjgKBmV2",
+            "ZW50cxgBIAMoCzIoLm9yZy5vcGVuZmVlZC5JbnN0cnVtZW50RGVmaW5pdGlv",
+            "bi5FdmVudBpRCgVFdmVudBI6CgR0eXBlGAEgASgOMiwub3JnLm9wZW5mZWVk",
+            "Lkluc3RydW1lbnREZWZpbml0aW9uLkV2ZW50VHlwZRIMCgRkYXRlGAIgASgS",
+            "GnoKCVNwcmVhZExlZxIQCghtYXJrZXRJZBgBIAEoEhINCgVyYXRpbxgCIAEo",
+            "ERIOCgZzeW1ib2wYAyABKAkSEgoKbG9uZ1N5bWJvbBgEIAEoCRIWCg5sZWdP",
+            "cHRpb25EZWx0YRgFIAEoAhIQCghsZWdQcmljZRgGIAEoAho4CgxNYXR1cml0",
+            "eURhdGUSDAoEeWVhchgBIAEoERINCgVtb250aBgCIAEoERILCgNkYXkYAyAB",
+            "KBEaPAoGU3ltYm9sEg4KBnZlbmRvchgBIAEoCRIOCgZzeW1ib2wYAiABKAkS",
+            "EgoKbG9uZ1N5bWJvbBgDIAEoCRrRAQoLUHJpY2VGb3JtYXQSFAoMaXNGcmFj",
+            "dGlvbmFsGAEgASgIEhMKC2Rlbm9taW5hdG9yGAIgASgREhYKDnN1YkRlbm9t",
+            "aW5hdG9yGAQgASgREksKCXN1YkZvcm1hdBgGIAEoDjI4Lm9yZy5vcGVuZmVl",
+            "ZC5JbnN0cnVtZW50RGVmaW5pdGlvbi5QcmljZUZvcm1hdC5TdWJGb3JtYXQi",
+            "MgoJU3ViRm9ybWF0EggKBEZMQVQQABIOCgpGUkFDVElPTkFMEAESCwoHREVD",
+            "SU1BTBACGjQKDEN1cnJlbmN5UGFpchIRCgljdXJyZW5jeTEYASABKAkSEQoJ",
+            "Y3VycmVuY3kyGAIgASgJIscBCg5JbnN0cnVtZW50VHlwZRIbChdVTktOT1dO",
+            "X0lOU1RSVU1FTlRfVFlQRRAAEgkKBUZPUkVYEAESCQoFSU5ERVgQAhIKCgZF",
+            "UVVJVFkQAxIKCgZGVVRVUkUQBBIKCgZPUFRJT04QBRIKCgZTUFJFQUQQBhIP",
+            "CgtNVVRVQUxfRlVORBAHEhUKEU1PTkVZX01BUktFVF9GVU5EEAgSFwoTVVNF",
+            "Ul9ERUZJTkVEX1NQUkVBRBAJEhEKDUVRVUlUWV9PUFRJT04QCiJaCghCb29r",
+            "VHlwZRIVChFVTktOT1dOX0JPT0tfVFlQRRAAEg8KC1RPUF9PRl9CT09LEAES",
+            "FQoRUFJJQ0VfTEVWRUxfREVQVEgQAhIPCgtPUkRFUl9ERVBUSBADIjgKCk9w",
+            "dGlvblR5cGUSFwoTVU5LTk9XTl9PUFRJT05fVFlQRRAAEggKBENBTEwQARIH",
+            "CgNQVVQQAiJRCgtPcHRpb25TdHlsZRIZChVVTktOT1dOX09QVElPTlNfU1RZ",
+            "TEUQABILCgdERUZBVUxUEAESDAoIQU1FUklDQU4QAhIMCghFVVJPUEVBThAD",
+            "IjMKBVN0YXRlEhEKDVVOS05PV05fU1RBVEUQABIKCgZBQ1RJVkUQARILCgdQ",
+            "QVNTSVZFEAIizwIKCUV2ZW50VHlwZRIWChJVTktOT1dOX0VWRU5UX1RZUEUQ",
+            "ABIUChBGSVJTVF9UUkFERV9EQVRFEAESEwoPTEFTVF9UUkFERV9EQVRFEAIS",
+            "EQoNTUFUVVJJVFlfREFURRAKEhcKE0ZJUlNUX0RFTElWRVJZX0RBVEUQCxIW",
+            "ChJMQVNUX0RFTElWRVJZX0RBVEUQDBIVChFGSVJTVF9OT1RJQ0VfREFURRAN",
+            "EhQKEExBU1RfTk9USUNFX0RBVEUQDhIWChJGSVJTVF9IT0xESU5HX0RBVEUQ",
+            "DxIVChFMQVNUX0hPTERJTkdfREFURRAQEhcKE0ZJUlNUX1BPU0lUSU9OX0RB",
+            "VEUQERIWChJMQVNUX1BPU0lUSU9OX0RBVEUQEhIXChNERUxJVkVSWV9TVEFS",
+            "VF9EQVRFEB4SFQoRREVMSVZFUllfRU5EX0RBVEUQH0IHSAFQAaABAWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition), global::Org.Openfeed.InstrumentDefinition.Parser, new[]{ "MarketId", "InstrumentType", "SupportBookTypes", "BookDepth", "VendorId", "Symbol", "Description", "CfiCode", "CurrencyCode", "ExchangeCode", "MinimumPriceIncrement", "ContractPointValue", "Schedule", "Calendar", "RecordCreateTime", "RecordUpdateTime", "TimeZoneName", "InstrumentGroup", "SymbolExpiration", "State", "Channel", "UnderlyingMarketId", "PriceFormat", "OptionStrikePriceFormat", "PriceDenominator", "QuantityDenominator", "IsTradable", "TransactionTime", "AuxiliaryData", "Symbols", "OptionStrike", "OptionType", "OptionStyle", "OptionStrikeDenominator", "SpreadCode", "SpreadLeg", "UserDefinedSpread", "MarketTier", "FinancialStatusIndicator", "Isin", "CurrencyPair", "ExchangeSendsVolume", "ExchangeSendsHigh", "ExchangeSendsLow", "ExchangeSendsOpen", "ConsolidatedFeedInstrument", "OpenOutcryInstrument", "SyntheticAmericanOptionInstrument", "BarchartExchangeCode", "BarchartBaseCode", "VolumeDenominator", "BidOfferQuantityDenominator", "PrimaryListingMarketParticipantId", "SubscriptionSymbol", "ContractMaturity" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.BookType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle), typeof(global::Org.Openfeed.InstrumentDefinition.Types.State), typeof(global::Org.Openfeed.InstrumentDefinition.Types.EventType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Schedule), global::Org.Openfeed.InstrumentDefinition.Types.Schedule.Parser, new[]{ "Sessions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition), global::Org.Openfeed.InstrumentDefinition.Parser, new[]{ "MarketId", "InstrumentType", "SupportBookTypes", "BookDepth", "VendorId", "Symbol", "Description", "CfiCode", "CurrencyCode", "ExchangeCode", "MinimumPriceIncrement", "ContractPointValue", "Schedule", "Calendar", "RecordCreateTime", "RecordUpdateTime", "TimeZoneName", "InstrumentGroup", "SymbolExpiration", "State", "Channel", "UnderlyingMarketId", "PriceFormat", "OptionStrikePriceFormat", "PriceDenominator", "QuantityDenominator", "IsTradable", "TransactionTime", "AuxiliaryData", "Symbols", "OptionStrike", "OptionType", "OptionStyle", "OptionStrikeDenominator", "SpreadCode", "SpreadLeg", "UserDefinedSpread", "MarketTier", "FinancialStatusIndicator", "Isin", "CurrencyPair", "ExchangeSendsVolume", "ExchangeSendsHigh", "ExchangeSendsLow", "ExchangeSendsOpen", "ConsolidatedFeedInstrument", "OpenOutcryInstrument", "SyntheticAmericanOptionInstrument", "BarchartExchangeCode", "BarchartBaseCode", "VolumeDenominator", "BidOfferQuantityDenominator", "PrimaryListingMarketParticipantId", "SubscriptionSymbol", "ContractMaturity", "Underlying", "Commodity" }, null, new[]{ typeof(global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.BookType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionType), typeof(global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle), typeof(global::Org.Openfeed.InstrumentDefinition.Types.State), typeof(global::Org.Openfeed.InstrumentDefinition.Types.EventType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Schedule), global::Org.Openfeed.InstrumentDefinition.Types.Schedule.Parser, new[]{ "Sessions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan), global::Org.Openfeed.InstrumentDefinition.Types.TimeSpan.Parser, new[]{ "TimeStart", "TimeFinish" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Calendar), global::Org.Openfeed.InstrumentDefinition.Types.Calendar.Parser, new[]{ "Events" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Org.Openfeed.InstrumentDefinition.Types.Event), global::Org.Openfeed.InstrumentDefinition.Types.Event.Parser, new[]{ "Type", "Date" }, null, null, null, null),
@@ -213,6 +216,8 @@ namespace Org.Openfeed {
       primaryListingMarketParticipantId_ = other.primaryListingMarketParticipantId_;
       subscriptionSymbol_ = other.subscriptionSymbol_;
       contractMaturity_ = other.contractMaturity_ != null ? other.contractMaturity_.Clone() : null;
+      underlying_ = other.underlying_;
+      commodity_ = other.commodity_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -226,7 +231,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     /// <summary>
-    /// Unique ID used in the data feed.
+    //// Unique ID used in the data feed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -241,7 +246,7 @@ namespace Org.Openfeed {
     public const int InstrumentTypeFieldNumber = 2;
     private global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType instrumentType_ = global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType.UnknownInstrumentType;
     /// <summary>
-    /// Instrument type as enum...
+    //// Instrument type as enum...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -258,7 +263,7 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::Org.Openfeed.InstrumentDefinition.Types.BookType) x);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.BookType> supportBookTypes_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.BookType>();
     /// <summary>
-    /// Supported Book Types
+    //// Supported Book Types
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -270,7 +275,7 @@ namespace Org.Openfeed {
     public const int BookDepthFieldNumber = 4;
     private int bookDepth_;
     /// <summary>
-    /// Maximum depth of market-by-price order book
+    //// Maximum depth of market-by-price order book
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -285,7 +290,7 @@ namespace Org.Openfeed {
     public const int VendorIdFieldNumber = 5;
     private string vendorId_ = "";
     /// <summary>
-    /// The name of the market data vendor
+    //// The name of the market data vendor
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -300,7 +305,7 @@ namespace Org.Openfeed {
     public const int SymbolFieldNumber = 6;
     private string symbol_ = "";
     /// <summary>
-    /// Human readable market symbol, assigned by the exchange or venue.
+    //// Human readable market symbol, assigned by the exchange or venue.
     /// Not necessarily unique as the exchange or vendor could assign the same symbol to different
     /// instruments, for example if the instruments trade on different exchanges.
     /// </summary>
@@ -317,7 +322,7 @@ namespace Org.Openfeed {
     public const int DescriptionFieldNumber = 7;
     private string description_ = "";
     /// <summary>
-    /// Human readable market description.
+    //// Human readable market description.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -332,7 +337,7 @@ namespace Org.Openfeed {
     public const int CfiCodeFieldNumber = 8;
     private string cfiCode_ = "";
     /// <summary>
-    /// Market CFI code: http://en.wikipedia.org/wiki/ISO_10962
+    //// Market CFI code: http://en.wikipedia.org/wiki/ISO_10962
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -347,7 +352,7 @@ namespace Org.Openfeed {
     public const int CurrencyCodeFieldNumber = 9;
     private string currencyCode_ = "";
     /// <summary>
-    /// Market currency code: http://en.wikipedia.org/wiki/ISO_4217
+    //// Market currency code: http://en.wikipedia.org/wiki/ISO_4217
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -378,7 +383,7 @@ namespace Org.Openfeed {
     public const int MinimumPriceIncrementFieldNumber = 11;
     private float minimumPriceIncrement_;
     /// <summary>
-    /// Minimum price increment in market currency.
+    //// Minimum price increment in market currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -393,7 +398,7 @@ namespace Org.Openfeed {
     public const int ContractPointValueFieldNumber = 12;
     private float contractPointValue_;
     /// <summary>
-    /// Contract point value in market currency.
+    //// Contract point value in market currency.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -408,7 +413,7 @@ namespace Org.Openfeed {
     public const int ScheduleFieldNumber = 13;
     private global::Org.Openfeed.InstrumentDefinition.Types.Schedule schedule_;
     /// <summary>
-    /// Trading schedule for a typical week
+    //// Trading schedule for a typical week
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -423,7 +428,7 @@ namespace Org.Openfeed {
     public const int CalendarFieldNumber = 14;
     private global::Org.Openfeed.InstrumentDefinition.Types.Calendar calendar_;
     /// <summary>
-    /// Trading calendar (expiration, notice days, holidays?, etc)
+    //// Trading calendar (expiration, notice days, holidays?, etc)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -438,7 +443,7 @@ namespace Org.Openfeed {
     public const int RecordCreateTimeFieldNumber = 15;
     private long recordCreateTime_;
     /// <summary>
-    /// UTC Timestamp of creation, nano seconds since Unix epoch
+    //// UTC Timestamp of creation, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -453,7 +458,7 @@ namespace Org.Openfeed {
     public const int RecordUpdateTimeFieldNumber = 16;
     private long recordUpdateTime_;
     /// <summary>
-    /// UTC Timestamp of update, nano seconds since Unix epoch
+    //// UTC Timestamp of update, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -468,7 +473,7 @@ namespace Org.Openfeed {
     public const int TimeZoneNameFieldNumber = 17;
     private string timeZoneName_ = "";
     /// <summary>
-    /// Market time zone TZ database name.
+    //// Market time zone TZ database name.
     /// Permanent. Can be resolved into timeZoneOffset for given date/time.
     /// See http://joda-time.sourceforge.net/timezones.html
     /// See http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -486,7 +491,7 @@ namespace Org.Openfeed {
     public const int InstrumentGroupFieldNumber = 18;
     private string instrumentGroup_ = "";
     /// <summary>
-    /// Identifies a logical grouping of instruments. By product, for example.
+    //// Identifies a logical grouping of instruments. By product, for example.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -501,7 +506,7 @@ namespace Org.Openfeed {
     public const int SymbolExpirationFieldNumber = 19;
     private global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate symbolExpiration_;
     /// <summary>
-    /// The Date of expiration for futures and options.
+    //// The Date of expiration for futures and options.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -516,7 +521,7 @@ namespace Org.Openfeed {
     public const int StateFieldNumber = 20;
     private global::Org.Openfeed.InstrumentDefinition.Types.State state_ = global::Org.Openfeed.InstrumentDefinition.Types.State.UnknownState;
     /// <summary>
-    /// active: can have market state updates, can have historical data
+    //// active: can have market state updates, can have historical data
     /// passive: can NOT have market state updates, but can have historical data
     /// normally "active" means newly listed or currently non expired markets
     /// normally "passive" means expired options, de-listed equities, etc.
@@ -534,7 +539,7 @@ namespace Org.Openfeed {
     public const int ChannelFieldNumber = 21;
     private int channel_;
     /// <summary>
-    /// The channel that updates for this instrument will appear on.
+    //// The channel that updates for this instrument will appear on.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -549,7 +554,7 @@ namespace Org.Openfeed {
     public const int UnderlyingMarketIdFieldNumber = 22;
     private long underlyingMarketId_;
     /// <summary>
-    /// The marketId of the underlying asset.
+    //// The marketId of the underlying asset.
     /// Used by Futures and Options when the underlying instrument is defined by the vendor
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -565,7 +570,7 @@ namespace Org.Openfeed {
     public const int PriceFormatFieldNumber = 23;
     private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat priceFormat_;
     /// <summary>
-    /// Display format
+    //// Display format
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -580,7 +585,7 @@ namespace Org.Openfeed {
     public const int OptionStrikePriceFormatFieldNumber = 24;
     private global::Org.Openfeed.InstrumentDefinition.Types.PriceFormat optionStrikePriceFormat_;
     /// <summary>
-    /// Strike price display format
+    //// Strike price display format
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -595,7 +600,7 @@ namespace Org.Openfeed {
     public const int PriceDenominatorFieldNumber = 28;
     private int priceDenominator_;
     /// <summary>
-    /// Divide prices by this value to get real price values
+    //// Divide prices by this value to get real price values
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -610,7 +615,7 @@ namespace Org.Openfeed {
     public const int QuantityDenominatorFieldNumber = 29;
     private int quantityDenominator_;
     /// <summary>
-    /// Divide trade quantities by this value to get real quantities 
+    //// Divide trade quantities by this value to get real quantities 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -625,7 +630,7 @@ namespace Org.Openfeed {
     public const int IsTradableFieldNumber = 30;
     private bool isTradable_;
     /// <summary>
-    /// true if this is a tradable instrument
+    //// true if this is a tradable instrument
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -640,7 +645,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 50;
     private long transactionTime_;
     /// <summary>
-    /// UTC timestamp of transaction, nano seconds since Unix epoch
+    //// UTC timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -655,7 +660,7 @@ namespace Org.Openfeed {
     public const int AuxiliaryDataFieldNumber = 99;
     private pb::ByteString auxiliaryData_ = pb::ByteString.Empty;
     /// <summary>
-    /// For internal use only.   Ignore
+    //// For internal use only.   Ignore
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -672,7 +677,7 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(802, global::Org.Openfeed.InstrumentDefinition.Types.Symbol.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Symbol> symbols_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.Symbol>();
     /// <summary>
-    /// List of alternate symbols for this instrument.  A single instrument
+    //// List of alternate symbols for this instrument.  A single instrument
     /// may be provided by many different market data vendors, each with
     /// their own unique symbology. Allows this instrument to be tagged
     /// with as many vendor symbols as necessary.
@@ -687,8 +692,8 @@ namespace Org.Openfeed {
     public const int OptionStrikeFieldNumber = 200;
     private long optionStrike_;
     /// <summary>
-    /// Option strike price in market currency.  Multiply by
-    /// factorOptionsStrike to get actual strike
+    //// Option strike price in market currency.  Multiply by
+    //// factorOptionsStrike to get actual strike
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -703,7 +708,7 @@ namespace Org.Openfeed {
     public const int OptionTypeFieldNumber = 202;
     private global::Org.Openfeed.InstrumentDefinition.Types.OptionType optionType_ = global::Org.Openfeed.InstrumentDefinition.Types.OptionType.UnknownOptionType;
     /// <summary>
-    /// Option type: call vs put.
+    //// Option type: call vs put.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -718,7 +723,7 @@ namespace Org.Openfeed {
     public const int OptionStyleFieldNumber = 203;
     private global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle optionStyle_ = global::Org.Openfeed.InstrumentDefinition.Types.OptionStyle.UnknownOptionsStyle;
     /// <summary>
-    /// Option style : American vs European.
+    //// Option style : American vs European.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -733,7 +738,7 @@ namespace Org.Openfeed {
     public const int OptionStrikeDenominatorFieldNumber = 204;
     private int optionStrikeDenominator_;
     /// <summary>
-    /// Divide optionStrike by this value to get real strike price
+    //// Divide optionStrike by this value to get real strike price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -748,7 +753,7 @@ namespace Org.Openfeed {
     public const int SpreadCodeFieldNumber = 210;
     private string spreadCode_ = "";
     /// <summary>
-    /// Spread type, can be vendor specific
+    //// Spread type, can be vendor specific
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -765,7 +770,7 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForMessage(1690, global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg.Parser);
     private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg> spreadLeg_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.SpreadLeg>();
     /// <summary>
-    /// Ordered list of underlying legs in a spread.
+    //// Ordered list of underlying legs in a spread.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -777,7 +782,7 @@ namespace Org.Openfeed {
     public const int UserDefinedSpreadFieldNumber = 212;
     private bool userDefinedSpread_;
     /// <summary>
-    /// true if user defined spread
+    //// true if user defined spread
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -792,7 +797,7 @@ namespace Org.Openfeed {
     public const int MarketTierFieldNumber = 213;
     private string marketTier_ = "";
     /// <summary>
-    /// Listing market classification
+    //// Listing market classification
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -807,7 +812,7 @@ namespace Org.Openfeed {
     public const int FinancialStatusIndicatorFieldNumber = 214;
     private string financialStatusIndicator_ = "";
     /// <summary>
-    /// Current financial status of the issuer
+    //// Current financial status of the issuer
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -822,7 +827,7 @@ namespace Org.Openfeed {
     public const int IsinFieldNumber = 215;
     private string isin_ = "";
     /// <summary>
-    /// ISIN: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
+    //// ISIN: https://en.wikipedia.org/wiki/International_Securities_Identification_Number
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -837,7 +842,7 @@ namespace Org.Openfeed {
     public const int CurrencyPairFieldNumber = 216;
     private global::Org.Openfeed.InstrumentDefinition.Types.CurrencyPair currencyPair_;
     /// <summary>
-    /// Break out of currency pair
+    //// Break out of currency pair
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -852,7 +857,7 @@ namespace Org.Openfeed {
     public const int ExchangeSendsVolumeFieldNumber = 217;
     private bool exchangeSendsVolume_;
     /// <summary>
-    /// true if exchange sends volume.
+    //// true if exchange sends volume.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -867,7 +872,7 @@ namespace Org.Openfeed {
     public const int ExchangeSendsHighFieldNumber = 218;
     private bool exchangeSendsHigh_;
     /// <summary>
-    /// true if exchange sends high.
+    //// true if exchange sends high.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -882,7 +887,7 @@ namespace Org.Openfeed {
     public const int ExchangeSendsLowFieldNumber = 219;
     private bool exchangeSendsLow_;
     /// <summary>
-    /// true if exchange sends low.
+    //// true if exchange sends low.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -897,7 +902,7 @@ namespace Org.Openfeed {
     public const int ExchangeSendsOpenFieldNumber = 220;
     private bool exchangeSendsOpen_;
     /// <summary>
-    /// true if exchange sends open.
+    //// true if exchange sends open.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -912,7 +917,7 @@ namespace Org.Openfeed {
     public const int ConsolidatedFeedInstrumentFieldNumber = 221;
     private bool consolidatedFeedInstrument_;
     /// <summary>
-    /// true if this instrument represents consolidated NBBO.
+    //// true if this instrument represents consolidated NBBO.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -927,7 +932,7 @@ namespace Org.Openfeed {
     public const int OpenOutcryInstrumentFieldNumber = 222;
     private bool openOutcryInstrument_;
     /// <summary>
-    /// true if this instrument represents Pit symbol.
+    //// true if this instrument represents Pit symbol.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -942,7 +947,7 @@ namespace Org.Openfeed {
     public const int SyntheticAmericanOptionInstrumentFieldNumber = 223;
     private bool syntheticAmericanOptionInstrument_;
     /// <summary>
-    /// true if this instrument generated FX option.
+    //// true if this instrument generated FX option.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -957,7 +962,7 @@ namespace Org.Openfeed {
     public const int BarchartExchangeCodeFieldNumber = 224;
     private string barchartExchangeCode_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -972,7 +977,7 @@ namespace Org.Openfeed {
     public const int BarchartBaseCodeFieldNumber = 225;
     private string barchartBaseCode_ = "";
     /// <summary>
-    /// 
+    //// 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -987,7 +992,7 @@ namespace Org.Openfeed {
     public const int VolumeDenominatorFieldNumber = 226;
     private int volumeDenominator_;
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1002,7 +1007,7 @@ namespace Org.Openfeed {
     public const int BidOfferQuantityDenominatorFieldNumber = 227;
     private int bidOfferQuantityDenominator_;
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1017,7 +1022,7 @@ namespace Org.Openfeed {
     public const int PrimaryListingMarketParticipantIdFieldNumber = 228;
     private string primaryListingMarketParticipantId_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1032,7 +1037,7 @@ namespace Org.Openfeed {
     public const int SubscriptionSymbolFieldNumber = 229;
     private string subscriptionSymbol_ = "";
     /// <summary>
-    ///
+    ////
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1047,7 +1052,7 @@ namespace Org.Openfeed {
     public const int ContractMaturityFieldNumber = 230;
     private global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate contractMaturity_;
     /// <summary>
-    /// The Month/ Day of expiration for futures and options. Corresponds to the expiration month.
+    //// The Month/ Day of expiration for futures and options. Corresponds to the expiration month.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1055,6 +1060,30 @@ namespace Org.Openfeed {
       get { return contractMaturity_; }
       set {
         contractMaturity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "underlying" field.</summary>
+    public const int UnderlyingFieldNumber = 231;
+    private string underlying_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Underlying {
+      get { return underlying_; }
+      set {
+        underlying_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "commodity" field.</summary>
+    public const int CommodityFieldNumber = 232;
+    private string commodity_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Commodity {
+      get { return commodity_; }
+      set {
+        commodity_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1128,6 +1157,8 @@ namespace Org.Openfeed {
       if (PrimaryListingMarketParticipantId != other.PrimaryListingMarketParticipantId) return false;
       if (SubscriptionSymbol != other.SubscriptionSymbol) return false;
       if (!object.Equals(ContractMaturity, other.ContractMaturity)) return false;
+      if (Underlying != other.Underlying) return false;
+      if (Commodity != other.Commodity) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1190,6 +1221,8 @@ namespace Org.Openfeed {
       if (PrimaryListingMarketParticipantId.Length != 0) hash ^= PrimaryListingMarketParticipantId.GetHashCode();
       if (SubscriptionSymbol.Length != 0) hash ^= SubscriptionSymbol.GetHashCode();
       if (contractMaturity_ != null) hash ^= ContractMaturity.GetHashCode();
+      if (Underlying.Length != 0) hash ^= Underlying.GetHashCode();
+      if (Commodity.Length != 0) hash ^= Commodity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1419,6 +1452,14 @@ namespace Org.Openfeed {
         output.WriteRawTag(178, 14);
         output.WriteMessage(ContractMaturity);
       }
+      if (Underlying.Length != 0) {
+        output.WriteRawTag(186, 14);
+        output.WriteString(Underlying);
+      }
+      if (Commodity.Length != 0) {
+        output.WriteRawTag(194, 14);
+        output.WriteString(Commodity);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1640,6 +1681,14 @@ namespace Org.Openfeed {
         output.WriteRawTag(178, 14);
         output.WriteMessage(ContractMaturity);
       }
+      if (Underlying.Length != 0) {
+        output.WriteRawTag(186, 14);
+        output.WriteString(Underlying);
+      }
+      if (Commodity.Length != 0) {
+        output.WriteRawTag(194, 14);
+        output.WriteString(Commodity);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1808,6 +1857,12 @@ namespace Org.Openfeed {
       }
       if (contractMaturity_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(ContractMaturity);
+      }
+      if (Underlying.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Underlying);
+      }
+      if (Commodity.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Commodity);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2000,6 +2055,12 @@ namespace Org.Openfeed {
           ContractMaturity = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
         }
         ContractMaturity.MergeFrom(other.ContractMaturity);
+      }
+      if (other.Underlying.Length != 0) {
+        Underlying = other.Underlying;
+      }
+      if (other.Commodity.Length != 0) {
+        Commodity = other.Commodity;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2256,6 +2317,14 @@ namespace Org.Openfeed {
               ContractMaturity = new global::Org.Openfeed.InstrumentDefinition.Types.MaturityDate();
             }
             input.ReadMessage(ContractMaturity);
+            break;
+          }
+          case 1850: {
+            Underlying = input.ReadString();
+            break;
+          }
+          case 1858: {
+            Commodity = input.ReadString();
             break;
           }
         }
@@ -2515,6 +2584,14 @@ namespace Org.Openfeed {
             input.ReadMessage(ContractMaturity);
             break;
           }
+          case 1850: {
+            Underlying = input.ReadString();
+            break;
+          }
+          case 1858: {
+            Commodity = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -2539,10 +2616,11 @@ namespace Org.Openfeed {
         [pbr::OriginalName("MUTUAL_FUND")] MutualFund = 7,
         [pbr::OriginalName("MONEY_MARKET_FUND")] MoneyMarketFund = 8,
         [pbr::OriginalName("USER_DEFINED_SPREAD")] UserDefinedSpread = 9,
+        [pbr::OriginalName("EQUITY_OPTION")] EquityOption = 10,
       }
 
       /// <summary>
-      /// Market depth implementation type
+      //// Market depth implementation type
       /// </summary>
       public enum BookType {
         [pbr::OriginalName("UNKNOWN_BOOK_TYPE")] UnknownBookType = 0,
@@ -2561,7 +2639,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Option type.
+      //// Option type.
       /// </summary>
       public enum OptionType {
         [pbr::OriginalName("UNKNOWN_OPTION_TYPE")] UnknownOptionType = 0,
@@ -2570,7 +2648,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Option style.
+      //// Option style.
       /// </summary>
       public enum OptionStyle {
         [pbr::OriginalName("UNKNOWN_OPTIONS_STYLE")] UnknownOptionsStyle = 0,
@@ -2604,10 +2682,15 @@ namespace Org.Openfeed {
         [pbr::OriginalName("LAST_HOLDING_DATE")] LastHoldingDate = 16,
         [pbr::OriginalName("FIRST_POSITION_DATE")] FirstPositionDate = 17,
         [pbr::OriginalName("LAST_POSITION_DATE")] LastPositionDate = 18,
+        /// <summary>
+        /// Grain Bids
+        /// </summary>
+        [pbr::OriginalName("DELIVERY_START_DATE")] DeliveryStartDate = 30,
+        [pbr::OriginalName("DELIVERY_END_DATE")] DeliveryEndDate = 31,
       }
 
       /// <summary>
-      /// Typical trading week schedule
+      //// Typical trading week schedule
       /// </summary>
       public sealed partial class Schedule : pb::IMessage<Schedule>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2788,7 +2871,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Trading session
+      //// Trading session
       /// Times are in nanos since midnight UTC on the Sunday starting a given trading week
       /// </summary>
       public sealed partial class TimeSpan : pb::IMessage<TimeSpan>
@@ -3809,7 +3892,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Date and time with time zone.
+      //// Date and time with time zone.
       /// </summary>
       public sealed partial class MaturityDate : pb::IMessage<MaturityDate>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4084,7 +4167,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// A vendor's symbol for an instrument
+      //// A vendor's symbol for an instrument
       /// </summary>
       public sealed partial class Symbol : pb::IMessage<Symbol>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4359,7 +4442,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Recommended display format for prices.
+      //// Recommended display format for prices.
       /// </summary>
       public sealed partial class PriceFormat : pb::IMessage<PriceFormat>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4676,7 +4759,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Currency Pair
+      //// Currency Pair
       /// </summary>
       public sealed partial class CurrencyPair : pb::IMessage<CurrencyPair>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

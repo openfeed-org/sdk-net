@@ -462,7 +462,7 @@ namespace Org.Openfeed {
   }
   #region Enums
   /// <summary>
-  /// Book side
+  //// Book side
   /// </summary>
   public enum BookSide {
     [pbr::OriginalName("UNKNOWN_BOOK_SIDE")] UnknownBookSide = 0,
@@ -577,7 +577,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Instrument Actions
+  //// Instrument Actions
   /// </summary>
   public enum ActionType {
     [pbr::OriginalName("UNKNOWN_ACTION")] UnknownAction = 0,
@@ -590,7 +590,7 @@ namespace Org.Openfeed {
 
   #region Messages
   /// <summary>
-  /// A wrapper for Openfeed data.  Will contain exactly one of the supported
+  //// A wrapper for Openfeed data.  Will contain exactly one of the supported
   /// message types
   /// </summary>
   public sealed partial class OpenfeedMessage : pb::IMessage<OpenfeedMessage>
@@ -677,7 +677,7 @@ namespace Org.Openfeed {
     public const int SendingTimeFieldNumber = 1;
     private long sendingTime_;
     /// <summary>
-    /// Nanoecond unix epoch at time of message transmission (UTC)
+    //// Nanoecond unix epoch at time of message transmission (UTC)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -692,7 +692,7 @@ namespace Org.Openfeed {
     public const int TotalCountFieldNumber = 2;
     private int totalCount_;
     /// <summary>
-    /// The total number of markets available on this channel
+    //// The total number of markets available on this channel
     /// at the time the message was sent.  For UDP snapshot and definition feeds.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -708,7 +708,7 @@ namespace Org.Openfeed {
     public const int SyncSequenceFieldNumber = 3;
     private long syncSequence_;
     /// <summary>
-    /// The most recent packet sequence number sent on the incremental feed
+    //// The most recent packet sequence number sent on the incremental feed
     /// at the time this message was sent.  For UDP snapshot and definition feeds.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1703,7 +1703,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Heart Beat
+  //// Heart Beat
   /// </summary>
   public sealed partial class HeartBeat : pb::IMessage<HeartBeat>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1756,7 +1756,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
     /// <summary>
-    /// UTC timestamp of transaction, nano seconds since Unix epoch
+    //// UTC timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2438,7 +2438,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Instrument Group Status
+  //// Instrument Group Status
   /// </summary>
   public sealed partial class InstrumentGroupStatus : pb::IMessage<InstrumentGroupStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2492,7 +2492,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
     /// <summary>
-    /// UTC Timestamp of transaction, nano seconds since Unix epoch
+    //// UTC Timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2781,7 +2781,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Market Status
+  //// Market Status
   /// </summary>
   public sealed partial class MarketStatus : pb::IMessage<MarketStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2833,7 +2833,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 1;
     private long transactionTime_;
     /// <summary>
-    /// UTC Timestamp of transaction, nano seconds since Unix epoch
+    //// UTC Timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3050,8 +3050,8 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// EOD commodity summary. Used to represent consolidated total values for the group of contracts. Total volume for
-  /// all ES futures, for example.
+  //// EOD commodity summary. Used to represent consolidated total values for the group of contracts. Total volume for
+  //// all ES futures, for example.
   /// </summary>
   public sealed partial class EODCommoditySummary : pb::IMessage<EODCommoditySummary>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3105,7 +3105,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 1;
     private int tradeDate_;
     /// <summary>
-    /// Trade date in the format YYYYMMDD
+    //// Trade date in the format YYYYMMDD
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3120,7 +3120,7 @@ namespace Org.Openfeed {
     public const int ContractRootFieldNumber = 2;
     private string contractRoot_ = "";
     /// <summary>
-    /// Contract root, for example ES.
+    //// Contract root, for example ES.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3135,7 +3135,7 @@ namespace Org.Openfeed {
     public const int ConsolidatedVolumeFieldNumber = 3;
     private long consolidatedVolume_;
     /// <summary>
-    /// Consolidated volume.
+    //// Consolidated volume.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3165,7 +3165,7 @@ namespace Org.Openfeed {
     public const int AuxiliaryDataFieldNumber = 99;
     private pb::ByteString auxiliaryData_ = pb::ByteString.Empty;
     /// <summary>
-    /// For internal use only.   Ignore
+    //// For internal use only.   Ignore
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3406,7 +3406,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Session used in snapshot.
+  //// Session used in snapshot.
   /// </summary>
   public sealed partial class MarketSession : pb::IMessage<MarketSession>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3467,7 +3467,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 4;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3482,7 +3482,7 @@ namespace Org.Openfeed {
     public const int OpenFieldNumber = 30;
     private global::Org.Openfeed.Open open_;
     /// <summary>
-    /// Most recent opening price
+    //// Most recent opening price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3497,7 +3497,7 @@ namespace Org.Openfeed {
     public const int HighFieldNumber = 31;
     private global::Org.Openfeed.High high_;
     /// <summary>
-    /// High price for the trading session
+    //// High price for the trading session
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3512,7 +3512,7 @@ namespace Org.Openfeed {
     public const int LowFieldNumber = 32;
     private global::Org.Openfeed.Low low_;
     /// <summary>
-    /// Low price for the trading session
+    //// Low price for the trading session
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3527,7 +3527,7 @@ namespace Org.Openfeed {
     public const int LastFieldNumber = 35;
     private global::Org.Openfeed.Last last_;
     /// <summary>
-    /// Most recent traded price and quantity
+    //// Most recent traded price and quantity
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3542,7 +3542,7 @@ namespace Org.Openfeed {
     public const int VolumeFieldNumber = 38;
     private global::Org.Openfeed.Volume volume_;
     /// <summary>
-    /// Total traded volume
+    //// Total traded volume
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3557,7 +3557,7 @@ namespace Org.Openfeed {
     public const int SettlementFieldNumber = 39;
     private global::Org.Openfeed.Settlement settlement_;
     /// <summary>
-    /// Most recent settlement price
+    //// Most recent settlement price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3572,7 +3572,7 @@ namespace Org.Openfeed {
     public const int PrevSettlementFieldNumber = 44;
     private global::Org.Openfeed.Settlement prevSettlement_;
     /// <summary>
-    /// Most recent settlement price
+    //// Most recent settlement price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3587,7 +3587,7 @@ namespace Org.Openfeed {
     public const int OpenInterestFieldNumber = 40;
     private global::Org.Openfeed.OpenInterest openInterest_;
     /// <summary>
-    /// Most recent open interest
+    //// Most recent open interest
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3602,7 +3602,7 @@ namespace Org.Openfeed {
     public const int NumberOfTradesFieldNumber = 41;
     private global::Org.Openfeed.NumberOfTrades numberOfTrades_;
     /// <summary>
-    /// Number of trades
+    //// Number of trades
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3617,7 +3617,7 @@ namespace Org.Openfeed {
     public const int MonetaryValueFieldNumber = 42;
     private global::Org.Openfeed.MonetaryValue monetaryValue_;
     /// <summary>
-    /// Monetary value
+    //// Monetary value
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4131,7 +4131,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Snapshot for a market
+  //// Snapshot for a market
   /// </summary>
   public sealed partial class MarketSnapshot : pb::IMessage<MarketSnapshot>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4219,7 +4219,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     /// <summary>
-    /// Unique id identifying the market
+    //// Unique id identifying the market
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4264,7 +4264,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 4;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4279,7 +4279,7 @@ namespace Org.Openfeed {
     public const int TotalChunksFieldNumber = 5;
     private int totalChunks_;
     /// <summary>
-    /// A snapshot with market depth may exceed the maximum message size.
+    //// A snapshot with market depth may exceed the maximum message size.
     ///  In that case, the snapshot will be broken up across multiple
     ///  snapshot messages.
     /// </summary>
@@ -4323,8 +4323,8 @@ namespace Org.Openfeed {
     public const int PriceDenominatorFieldNumber = 8;
     private int priceDenominator_;
     /// <summary>
-    /// Divide prices by this value to get real price values.  Optional, use value
-    /// from InstrumentDefinition if not set.
+    //// Divide prices by this value to get real price values.  Optional, use value
+    //// from InstrumentDefinition if not set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4439,7 +4439,7 @@ namespace Org.Openfeed {
     public const int OpenFieldNumber = 30;
     private global::Org.Openfeed.Open open_;
     /// <summary>
-    /// Most recent opening price
+    //// Most recent opening price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4454,7 +4454,7 @@ namespace Org.Openfeed {
     public const int HighFieldNumber = 31;
     private global::Org.Openfeed.High high_;
     /// <summary>
-    /// High price for the trading session
+    //// High price for the trading session
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4469,7 +4469,7 @@ namespace Org.Openfeed {
     public const int LowFieldNumber = 32;
     private global::Org.Openfeed.Low low_;
     /// <summary>
-    /// Low price for the trading session
+    //// Low price for the trading session
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4484,7 +4484,7 @@ namespace Org.Openfeed {
     public const int CloseFieldNumber = 33;
     private global::Org.Openfeed.Close close_;
     /// <summary>
-    /// Most recent closing price
+    //// Most recent closing price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4499,7 +4499,7 @@ namespace Org.Openfeed {
     public const int PrevCloseFieldNumber = 34;
     private global::Org.Openfeed.PrevClose prevClose_;
     /// <summary>
-    /// Previous closing price
+    //// Previous closing price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4514,7 +4514,7 @@ namespace Org.Openfeed {
     public const int LastFieldNumber = 35;
     private global::Org.Openfeed.Last last_;
     /// <summary>
-    /// Most recent traded price and quantity
+    //// Most recent traded price and quantity
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4529,7 +4529,7 @@ namespace Org.Openfeed {
     public const int YearHighFieldNumber = 36;
     private global::Org.Openfeed.YearHigh yearHigh_;
     /// <summary>
-    /// Year high price
+    //// Year high price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4544,7 +4544,7 @@ namespace Org.Openfeed {
     public const int YearLowFieldNumber = 37;
     private global::Org.Openfeed.YearLow yearLow_;
     /// <summary>
-    /// Year low price
+    //// Year low price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4559,7 +4559,7 @@ namespace Org.Openfeed {
     public const int VolumeFieldNumber = 38;
     private global::Org.Openfeed.Volume volume_;
     /// <summary>
-    /// Total traded volume
+    //// Total traded volume
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4574,7 +4574,7 @@ namespace Org.Openfeed {
     public const int SettlementFieldNumber = 39;
     private global::Org.Openfeed.Settlement settlement_;
     /// <summary>
-    /// Most recent settlement price
+    //// Most recent settlement price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4589,7 +4589,7 @@ namespace Org.Openfeed {
     public const int OpenInterestFieldNumber = 40;
     private global::Org.Openfeed.OpenInterest openInterest_;
     /// <summary>
-    /// Most recent open interest
+    //// Most recent open interest
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4604,7 +4604,7 @@ namespace Org.Openfeed {
     public const int VwapFieldNumber = 41;
     private global::Org.Openfeed.Vwap vwap_;
     /// <summary>
-    /// Most recent volume weighted average price
+    //// Most recent volume weighted average price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4691,7 +4691,7 @@ namespace Org.Openfeed {
     public const int PreviousSessionFieldNumber = 48;
     private global::Org.Openfeed.MarketSession previousSession_;
     /// <summary>
-    /// Previous session.
+    //// Previous session.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4706,7 +4706,7 @@ namespace Org.Openfeed {
     public const int TSessionFieldNumber = 49;
     private global::Org.Openfeed.MarketSession tSession_;
     /// <summary>
-    /// 'T' session.
+    //// 'T' session.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4721,7 +4721,7 @@ namespace Org.Openfeed {
     public const int VolumeAtPriceFieldNumber = 50;
     private global::Org.Openfeed.VolumeAtPrice volumeAtPrice_;
     /// <summary>
-    /// Volume at price. Used by the market state/ JERQ.
+    //// Volume at price. Used by the market state/ JERQ.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4760,7 +4760,7 @@ namespace Org.Openfeed {
     public const int ZSessionFieldNumber = 53;
     private global::Org.Openfeed.MarketSession zSession_;
     /// <summary>
-    /// 'Z' session. Includes all trades, even the ones that do not update Last.
+    //// 'Z' session. Includes all trades, even the ones that do not update Last.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6478,7 +6478,7 @@ namespace Org.Openfeed {
     public const int MarketIdFieldNumber = 1;
     private long marketId_;
     /// <summary>
-    /// Unique id identifying the market
+    //// Unique id identifying the market
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6508,8 +6508,8 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 3;
     private long transactionTime_;
     /// <summary>
-    /// UTC Timestamp of transaction, nano seconds since Unix epoch
-    /// This is usually the execution venue timestamp.
+    //// UTC Timestamp of transaction, nano seconds since Unix epoch
+    //// This is usually the execution venue timestamp.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6524,7 +6524,7 @@ namespace Org.Openfeed {
     public const int DistributionTimeFieldNumber = 4;
     private long distributionTime_;
     /// <summary>
-    /// Distribution time in nano seconds since epoch.
+    //// Distribution time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6539,7 +6539,7 @@ namespace Org.Openfeed {
     public const int MarketSequenceFieldNumber = 5;
     private long marketSequence_;
     /// <summary>
-    /// Market level sequencing number
+    //// Market level sequencing number
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6554,7 +6554,7 @@ namespace Org.Openfeed {
     public const int SourceSequenceFieldNumber = 6;
     private long sourceSequence_;
     /// <summary>
-    /// Data source sequence number
+    //// Data source sequence number
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6584,8 +6584,8 @@ namespace Org.Openfeed {
     public const int PriceDenominatorFieldNumber = 9;
     private int priceDenominator_;
     /// <summary>
-    /// Divide prices by this value to get real price values.  Optional, use value
-    /// from InstrumentDefinition if not set.
+    //// Divide prices by this value to get real price values.  Optional, use value
+    //// from InstrumentDefinition if not set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6615,7 +6615,7 @@ namespace Org.Openfeed {
     public const int SessionFieldNumber = 11;
     private global::Org.Openfeed.MarketSession session_;
     /// <summary>
-    /// Current session. This is used to 'enhance' updates from the translator in the Market State
+    //// Current session. This is used to 'enhance' updates from the translator in the Market State
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6630,7 +6630,7 @@ namespace Org.Openfeed {
     public const int TSessionFieldNumber = 12;
     private global::Org.Openfeed.MarketSession tSession_;
     /// <summary>
-    /// 'T' session. This is used to 'enhance' updates from the translator in the Market State
+    //// 'T' session. This is used to 'enhance' updates from the translator in the Market State
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6645,7 +6645,7 @@ namespace Org.Openfeed {
     public const int PreviousSessionFieldNumber = 13;
     private global::Org.Openfeed.MarketSession previousSession_;
     /// <summary>
-    /// Previous session. This is used to 'enhance' updates from the translator in the Market State
+    //// Previous session. This is used to 'enhance' updates from the translator in the Market State
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6660,7 +6660,7 @@ namespace Org.Openfeed {
     public const int RegionalFieldNumber = 14;
     private bool regional_;
     /// <summary>
-    /// True if message applies to regional/participant member
+    //// True if message applies to regional/participant member
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6675,7 +6675,7 @@ namespace Org.Openfeed {
     public const int ZSessionFieldNumber = 15;
     private global::Org.Openfeed.MarketSession zSession_;
     /// <summary>
-    /// 'Z' session. Includes all trades, even the ones that do not update Last.
+    //// 'Z' session. Includes all trades, even the ones that do not update Last.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8651,7 +8651,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Depth Price Level
+  //// Depth Price Level
   /// </summary>
   public sealed partial class DepthPriceLevel : pb::IMessage<DepthPriceLevel>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9178,7 +9178,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Depth By Order
+  //// Depth By Order
   /// </summary>
   public sealed partial class DepthOrder : pb::IMessage<DepthOrder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -9705,7 +9705,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// News or informational message
+  //// News or informational message
   /// </summary>
   public sealed partial class News : pb::IMessage<News>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10074,7 +10074,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Clear all data from the order books that are configured for this market.
+  //// Clear all data from the order books that are configured for this market.
   /// </summary>
   public sealed partial class ClearBook : pb::IMessage<ClearBook>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10413,7 +10413,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 13;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10690,9 +10690,9 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Best Bid and Offer.
-  /// If a side is not present, then that side has been deleted.
-  /// By default this value is the NBBO, if regional/participant quote then regional = true
+  //// Best Bid and Offer.
+  //// If a side is not present, then that side has been deleted.
+  //// By default this value is the NBBO, if regional/participant quote then regional = true
   /// </summary>
   public sealed partial class BestBidOffer : pb::IMessage<BestBidOffer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -10770,7 +10770,7 @@ namespace Org.Openfeed {
     public const int BidPriceFieldNumber = 10;
     private long bidPrice_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10785,7 +10785,7 @@ namespace Org.Openfeed {
     public const int BidQuantityFieldNumber = 11;
     private long bidQuantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10812,7 +10812,7 @@ namespace Org.Openfeed {
     public const int BidOriginatorFieldNumber = 13;
     private pb::ByteString bidOriginator_ = pb::ByteString.Empty;
     /// <summary>
-    /// Liquidity provider information
+    //// Liquidity provider information
     /// For Forex: BANK:CITY
     /// For Equities: EXCHANGE_MIC
     /// </summary>
@@ -10841,7 +10841,7 @@ namespace Org.Openfeed {
     public const int OfferPriceFieldNumber = 20;
     private long offerPrice_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10856,7 +10856,7 @@ namespace Org.Openfeed {
     public const int OfferQuantityFieldNumber = 21;
     private long offerQuantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10883,7 +10883,7 @@ namespace Org.Openfeed {
     public const int OfferOriginatorFieldNumber = 23;
     private pb::ByteString offerOriginator_ = pb::ByteString.Empty;
     /// <summary>
-    /// Liquidity provider information
+    //// Liquidity provider information
     /// For Forex: BANK:CITY
     /// For Equities: EXCHANGE_MIC
     /// </summary>
@@ -10924,7 +10924,7 @@ namespace Org.Openfeed {
     public const int RegionalFieldNumber = 32;
     private bool regional_;
     /// <summary>
-    /// True if regional/participant member quote
+    //// True if regional/participant member quote
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10939,7 +10939,7 @@ namespace Org.Openfeed {
     public const int TransientFieldNumber = 33;
     private bool transient_;
     /// <summary>
-    /// True if not persisted in the EOD database.
+    //// True if not persisted in the EOD database.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11396,7 +11396,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Insert a new price level, pushing existing levels down
+  //// Insert a new price level, pushing existing levels down
   /// </summary>
   public sealed partial class AddPriceLevel : pb::IMessage<AddPriceLevel>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -11467,7 +11467,7 @@ namespace Org.Openfeed {
     public const int LevelFieldNumber = 10;
     private int level_;
     /// <summary>
-    /// price level index, starting at 1
+    //// price level index, starting at 1
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11494,7 +11494,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 12;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11509,7 +11509,7 @@ namespace Org.Openfeed {
     public const int QuantityFieldNumber = 13;
     private long quantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11822,7 +11822,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Delete an existing price level, pulling existing levels up
+  //// Delete an existing price level, pulling existing levels up
   /// </summary>
   public sealed partial class DeletePriceLevel : pb::IMessage<DeletePriceLevel>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -11889,7 +11889,7 @@ namespace Org.Openfeed {
     public const int LevelFieldNumber = 10;
     private int level_;
     /// <summary>
-    /// price level index, starting at 1
+    //// price level index, starting at 1
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12094,8 +12094,8 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Modify the quantity or orderCount of an existing price level.
-  /// The price itself will not change.
+  //// Modify the quantity or orderCount of an existing price level.
+  //// The price itself will not change.
   /// </summary>
   public sealed partial class ModifyPriceLevel : pb::IMessage<ModifyPriceLevel>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -12166,7 +12166,7 @@ namespace Org.Openfeed {
     public const int LevelFieldNumber = 10;
     private int level_;
     /// <summary>
-    /// price level index, starting at 1
+    //// price level index, starting at 1
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12193,7 +12193,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 12;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12208,7 +12208,7 @@ namespace Org.Openfeed {
     public const int QuantityFieldNumber = 13;
     private long quantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12935,7 +12935,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Delete an order from the order book. Indexed by orderId, which is unique per channel
+  //// Delete an order from the order book. Indexed by orderId, which is unique per channel
   /// </summary>
   public sealed partial class DeleteOrder : pb::IMessage<DeleteOrder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -13201,7 +13201,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Modify the price or quantity of an order.  The side and implied flag cannot change 
+  //// Modify the price or quantity of an order.  The side and implied flag cannot change 
   /// </summary>
   public sealed partial class ModifyOrder : pb::IMessage<ModifyOrder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -13615,7 +13615,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// For non-tradable index products
+  //// For non-tradable index products
   /// </summary>
   public sealed partial class IndexValue : pb::IMessage<IndexValue>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -14220,7 +14220,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Trades
+  //// Trades
   /// </summary>
   public sealed partial class Trades : pb::IMessage<Trades>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -14747,7 +14747,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// A live trade.  When received, update the "last" field
+  //// A live trade.  When received, update the "last" field
   /// </summary>
   public sealed partial class Trade : pb::IMessage<Trade>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -14854,7 +14854,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 10;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14869,7 +14869,7 @@ namespace Org.Openfeed {
     public const int QuantityFieldNumber = 11;
     private long quantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14896,7 +14896,7 @@ namespace Org.Openfeed {
     public const int SideFieldNumber = 13;
     private global::Org.Openfeed.BookSide side_ = global::Org.Openfeed.BookSide.UnknownBookSide;
     /// <summary>
-    /// The side of the aggressing order that caused the trade
+    //// The side of the aggressing order that caused the trade
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14911,7 +14911,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 14;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15127,7 +15127,7 @@ namespace Org.Openfeed {
     public const int DistributionTimeFieldNumber = 32;
     private long distributionTime_;
     /// <summary>
-    /// Distribution time in nano seconds since epoch.
+    //// Distribution time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15142,7 +15142,7 @@ namespace Org.Openfeed {
     public const int TransactionTime2FieldNumber = 33;
     private long transactionTime2_;
     /// <summary>
-    /// time in nano seconds since epoch.
+    //// time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15169,7 +15169,7 @@ namespace Org.Openfeed {
     public const int TransientFieldNumber = 35;
     private bool transient_;
     /// <summary>
-    /// True if not persisted in the EOD database.
+    //// True if not persisted in the EOD database.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15184,7 +15184,7 @@ namespace Org.Openfeed {
     public const int IndexShortNameFieldNumber = 36;
     private string indexShortName_ = "";
     /// <summary>
-    /// Index short name used to identify index.
+    //// Index short name used to identify index.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15977,7 +15977,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  ///  Trade Correction
+  ////  Trade Correction
   /// </summary>
   public sealed partial class TradeCorrection : pb::IMessage<TradeCorrection>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -16289,7 +16289,7 @@ namespace Org.Openfeed {
     public const int DistributionTimeFieldNumber = 27;
     private long distributionTime_;
     /// <summary>
-    /// Distribution time in nano seconds since epoch.
+    //// Distribution time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -16304,7 +16304,7 @@ namespace Org.Openfeed {
     public const int TransactionTime2FieldNumber = 28;
     private long transactionTime2_;
     /// <summary>
-    /// time in nano seconds since epoch.
+    //// time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17153,7 +17153,7 @@ namespace Org.Openfeed {
     public const int DistributionTimeFieldNumber = 15;
     private long distributionTime_;
     /// <summary>
-    /// Distribution time in nano seconds since epoch.
+    //// Distribution time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17168,7 +17168,7 @@ namespace Org.Openfeed {
     public const int TransactionTime2FieldNumber = 16;
     private long transactionTime2_;
     /// <summary>
-    /// time in nano seconds since epoch.
+    //// time in nano seconds since epoch.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17568,7 +17568,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17583,7 +17583,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17910,7 +17910,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -17925,7 +17925,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18219,7 +18219,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18234,7 +18234,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18525,7 +18525,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18540,7 +18540,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18834,7 +18834,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -18849,7 +18849,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19140,7 +19140,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19155,7 +19155,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19446,7 +19446,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19461,7 +19461,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19754,7 +19754,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19769,7 +19769,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -19784,7 +19784,7 @@ namespace Org.Openfeed {
     public const int QuantityFieldNumber = 12;
     private long quantity_;
     /// <summary>
-    /// Divide by quantityDenominator
+    //// Divide by quantityDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20073,7 +20073,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// 52 week
+  //// 52 week
   /// </summary>
   public sealed partial class YearHigh : pb::IMessage<YearHigh>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -20137,7 +20137,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 10;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20342,7 +20342,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// 52 week
+  //// 52 week
   /// </summary>
   public sealed partial class YearLow : pb::IMessage<YearLow>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -20406,7 +20406,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 10;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20611,7 +20611,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Total volume traded
+  //// Total volume traded
   /// </summary>
   public sealed partial class Volume : pb::IMessage<Volume>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -20675,7 +20675,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -20883,7 +20883,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Total number of trades
+  //// Total number of trades
   /// </summary>
   public sealed partial class NumberOfTrades : pb::IMessage<NumberOfTrades>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -20947,7 +20947,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21152,7 +21152,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Total monetary value of trades
+  //// Total monetary value of trades
   /// </summary>
   public sealed partial class MonetaryValue : pb::IMessage<MonetaryValue>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -21217,7 +21217,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21232,7 +21232,7 @@ namespace Org.Openfeed {
     public const int ValueFieldNumber = 11;
     private long value_;
     /// <summary>
-    /// 2 decimals of precision
+    //// 2 decimals of precision
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21461,7 +21461,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Settlement value for futures and options markets.
+  ///// Settlement value for futures and options markets.
   /// </summary>
   public sealed partial class Settlement : pb::IMessage<Settlement>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -21531,7 +21531,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 10;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21546,7 +21546,7 @@ namespace Org.Openfeed {
     public const int PriceFieldNumber = 11;
     private long price_;
     /// <summary>
-    /// Divide by priceDenominator
+    //// Divide by priceDenominator
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21597,7 +21597,7 @@ namespace Org.Openfeed {
     public const int SessionFieldNumber = 15;
     private string session_ = "";
     /// <summary>
-    /// Used by CME ITC.
+    //// Used by CME ITC.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21612,7 +21612,7 @@ namespace Org.Openfeed {
     public const int TransientFieldNumber = 16;
     private bool transient_;
     /// <summary>
-    /// True if not persisted in the EOD database.
+    //// True if not persisted in the EOD database.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21627,7 +21627,7 @@ namespace Org.Openfeed {
     public const int ReservedFieldNumber = 127;
     private bool reserved_;
     /// <summary>
-    /// Reserved
+    //// Reserved
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -21964,7 +21964,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Open interest
+  //// Open interest
   /// </summary>
   public sealed partial class OpenInterest : pb::IMessage<OpenInterest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -22233,7 +22233,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Volume Weighted Average Price
+  //// Volume Weighted Average Price
   /// </summary>
   public sealed partial class Vwap : pb::IMessage<Vwap>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -22502,7 +22502,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Dividends and Income Distributions
+  //// Dividends and Income Distributions
   /// </summary>
   public sealed partial class DividendsIncomeDistributions : pb::IMessage<DividendsIncomeDistributions>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -23328,7 +23328,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Capital Distributions
+  //// Capital Distributions
   /// </summary>
   public sealed partial class CapitalDistributions : pb::IMessage<CapitalDistributions>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -24420,7 +24420,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Intra and EOD Market Summary
+  //// Intra and EOD Market Summary
   /// </summary>
   public sealed partial class MarketSummary : pb::IMessage<MarketSummary>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -24502,7 +24502,7 @@ namespace Org.Openfeed {
     public const int TradingDateFieldNumber = 2;
     private int tradingDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -24699,7 +24699,7 @@ namespace Org.Openfeed {
     public const int SessionFieldNumber = 21;
     private string session_ = "";
     /// <summary>
-    /// Used by CME ITC.
+    //// Used by CME ITC.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -24726,7 +24726,7 @@ namespace Org.Openfeed {
     public const int PrevVolumeFieldNumber = 23;
     private global::Org.Openfeed.Volume prevVolume_;
     /// <summary>
-    /// Total traded volume for the prior day.
+    //// Total traded volume for the prior day.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -24741,7 +24741,7 @@ namespace Org.Openfeed {
     public const int TransientFieldNumber = 24;
     private bool transient_;
     /// <summary>
-    /// True if not persisted in the EOD database.
+    //// True if not persisted in the EOD database.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -25496,7 +25496,7 @@ namespace Org.Openfeed {
       }
 
       /// <summary>
-      /// Used to differentiate various ddf messages.
+      //// Used to differentiate various ddf messages.
       /// </summary>
       public enum SummaryType {
         /// <summary>
@@ -26870,7 +26870,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Request for the snapshot to the Market state.
+  //// Request for the snapshot to the Market state.
   /// </summary>
   public sealed partial class SnapshotRequest : pb::IMessage<SnapshotRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -27179,8 +27179,8 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// The VolumeAtPrice class encapsulates all of the trades throughout the day,
-  /// and organizes a table of volume at prices.
+  //// The VolumeAtPrice class encapsulates all of the trades throughout the day,
+  //// and organizes a table of volume at prices.
   /// </summary>
   public sealed partial class VolumeAtPrice : pb::IMessage<VolumeAtPrice>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -27261,7 +27261,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 3;
     private long transactionTime_;
     /// <summary>
-    /// UTC Timestamp of transaction, nano seconds since Unix epoch
+    //// UTC Timestamp of transaction, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -27312,7 +27312,7 @@ namespace Org.Openfeed {
     public const int TradeDateFieldNumber = 7;
     private int tradeDate_;
     /// <summary>
-    /// Date only, format 2012-07-04 -> 20120704
+    //// Date only, format 2012-07-04 -> 20120704
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -27860,7 +27860,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Open,High,Low,Close
+  //// Open,High,Low,Close
   /// </summary>
   public sealed partial class Ohlc : pb::IMessage<Ohlc>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -27995,7 +27995,7 @@ namespace Org.Openfeed {
     public const int VolumeFieldNumber = 7;
     private long volume_;
     /// <summary>
-    /// Sum of volume
+    //// Sum of volume
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -28010,7 +28010,7 @@ namespace Org.Openfeed {
     public const int PriceVolumeFieldNumber = 8;
     private double priceVolume_;
     /// <summary>
-    /// Sum of price volume using normalized price
+    //// Sum of price volume using normalized price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -28049,7 +28049,7 @@ namespace Org.Openfeed {
     public const int TransactionTimeFieldNumber = 11;
     private long transactionTime_;
     /// <summary>
-    /// UTC Timestamp, nano seconds since Unix epoch
+    //// UTC Timestamp, nano seconds since Unix epoch
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -28066,7 +28066,7 @@ namespace Org.Openfeed {
         = pb::FieldCodec.ForString(98);
     private readonly pbc::RepeatedField<string> tradeIds_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Trade Ids used in this OHLC
+    //// Trade Ids used in this OHLC
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -28570,7 +28570,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Instrument Action
+  //// Instrument Action
   /// </summary>
   public sealed partial class InstrumentAction : pb::IMessage<InstrumentAction>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

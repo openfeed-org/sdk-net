@@ -176,7 +176,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Symbol type for the subscription filter.
+  //// Symbol type for the subscription filter.
   /// </summary>
   public enum SymbolType {
     [pbr::OriginalName("BARCHART")] Barchart = 0,
@@ -187,7 +187,7 @@ namespace Org.Openfeed {
 
   #region Messages
   /// <summary>
-  /// Openfeed Server request
+  //// Openfeed Server request
   /// </summary>
   public sealed partial class OpenfeedGatewayRequest : pb::IMessage<OpenfeedGatewayRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -687,7 +687,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Openfeed Server Response
+  //// Openfeed Server Response
   /// </summary>
   public sealed partial class OpenfeedGatewayMessage : pb::IMessage<OpenfeedGatewayMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1611,7 +1611,9 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
+  /////////////////////
   /// Serivce Messages
+  ////////////////////
   /// </summary>
   public sealed partial class Status : pb::IMessage<Status>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1877,7 +1879,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Login
+  //// Login
   /// </summary>
   public sealed partial class LoginRequest : pb::IMessage<LoginRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2489,7 +2491,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Logout
+  //// Logout
   /// </summary>
   public sealed partial class LogoutRequest : pb::IMessage<LogoutRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2953,7 +2955,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Instrument Definition(s), will stream InstrumentDefinition(s)
+  //// Instrument Definition(s), will stream InstrumentDefinition(s)
   /// </summary>
   public sealed partial class InstrumentRequest : pb::IMessage<InstrumentRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3791,7 +3793,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Instrument References, returns InstrumentReferenceResponse(s)
+  //// Instrument References, returns InstrumentReferenceResponse(s)
   /// </summary>
   public sealed partial class InstrumentReferenceRequest : pb::IMessage<InstrumentReferenceRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4777,7 +4779,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
+  //// Exchange Request, returns ExchangeResponse.  Gives available exchanges.
   /// </summary>
   public sealed partial class ExchangeRequest : pb::IMessage<ExchangeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5527,7 +5529,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Bulk subscription filter.
+  //// Bulk subscription filter.
   /// </summary>
   public sealed partial class BulkSubscriptionFilter : pb::IMessage<BulkSubscriptionFilter>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5578,7 +5580,7 @@ namespace Org.Openfeed {
     public const int SymbolTypeFieldNumber = 1;
     private global::Org.Openfeed.SymbolType symbolType_ = global::Org.Openfeed.SymbolType.Barchart;
     /// <summary>
-    /// Type of the symbol: Barchart of Exchange. Barchart is the default.
+    //// Type of the symbol: Barchart of Exchange. Barchart is the default.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5593,7 +5595,7 @@ namespace Org.Openfeed {
     public const int SymbolPatternFieldNumber = 2;
     private string symbolPattern_ = "";
     /// <summary>
-    /// regular expression pattern for the symbol
+    //// regular expression pattern for the symbol
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5762,7 +5764,7 @@ namespace Org.Openfeed {
   }
 
   /// <summary>
-  /// Subscription Request
+  //// Subscription Request
   /// </summary>
   public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -5816,7 +5818,7 @@ namespace Org.Openfeed {
     public const int CorrelationIdFieldNumber = 1;
     private long correlationId_;
     /// <summary>
-    /// Client-assigned id for this request.  Response will include same id
+    //// Client-assigned id for this request.  Response will include same id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5843,7 +5845,7 @@ namespace Org.Openfeed {
     public const int ServiceFieldNumber = 3;
     private global::Org.Openfeed.Service service_ = global::Org.Openfeed.Service.UnknownService;
     /// <summary>
-    /// Preferred service (realtime or delayed).
+    //// Preferred service (realtime or delayed).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6224,7 +6226,7 @@ namespace Org.Openfeed {
         public const int SnapshotIntervalSecondsFieldNumber = 11;
         private int snapshotIntervalSeconds_;
         /// <summary>
-        /// 0 = send only current snapshot once, else send at interval seconds 
+        //// 0 = send only current snapshot once, else send at interval seconds 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6241,7 +6243,7 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForEnum(98, x => (int) x, x => (global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType) x);
         private readonly pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType> instrumentType_ = new pbc::RepeatedField<global::Org.Openfeed.InstrumentDefinition.Types.InstrumentType>();
         /// <summary>
-        /// Spreads and Options must be explicitly requested.
+        //// Spreads and Options must be explicitly requested.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6255,7 +6257,7 @@ namespace Org.Openfeed {
             = pb::FieldCodec.ForMessage(106, global::Org.Openfeed.BulkSubscriptionFilter.Parser);
         private readonly pbc::RepeatedField<global::Org.Openfeed.BulkSubscriptionFilter> bulkSubscriptionFilter_ = new pbc::RepeatedField<global::Org.Openfeed.BulkSubscriptionFilter>();
         /// <summary>
-        /// Filter for the exchange and channel subscriptions.
+        //// Filter for the exchange and channel subscriptions.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
