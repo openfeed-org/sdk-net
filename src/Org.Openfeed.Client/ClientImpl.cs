@@ -236,6 +236,15 @@ namespace Org.Openfeed.Client {
             }
         }
 
+        private async void SwallowException(Task task) {
+            try {
+                await task;
+            }
+            catch (Exception e) {
+                Trace.TraceError("Discarding unobserved error", e);
+            }
+        }
+
         public async ValueTask<IOpenfeedConnection> GetConnectionAsync(CancellationToken ct) {
             ct.ThrowIfCancellationRequested();
 
@@ -258,7 +267,12 @@ namespace Org.Openfeed.Client {
                 _currentConnectionWaiters.Remove(retSource);
             }
 
-            ct.ThrowIfCancellationRequested();
+            if(ct.IsCancellationRequested)
+            {
+                // This is done to prevent unobserved exceptions. We do not care about this task anymore.
+                SwallowException(retSource.Task);
+                ct.ThrowIfCancellationRequested();
+            }
 
             return await retSource.Task.ConfigureAwait(false);
         }
