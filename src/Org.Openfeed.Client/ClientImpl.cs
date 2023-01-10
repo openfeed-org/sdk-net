@@ -236,15 +236,6 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        private async void SwallowException(Task task) {
-            try {
-                await task;
-            }
-            catch (Exception e) {
-                Trace.TraceError("Discarding unobserved error", e);
-            }
-        }
-
         public async ValueTask<IOpenfeedConnection> GetConnectionAsync(CancellationToken ct) {
             ct.ThrowIfCancellationRequested();
 
@@ -255,26 +246,27 @@ namespace Org.Openfeed.Client {
                 }
                 else {
                     retSource = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
+                    // This is done to prevent unobserved exceptions and instead of the code that around below before.
+                    //using (var caw = new CancellationAwaiter(ct, false))
+                    //{
+                    //    await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
+                    //}
+                    ct.Register(() =>
+                    {
+                        retSource.TrySetCanceled();
+                    });
                     _currentConnectionWaiters.Add(retSource);
                 }
             }
 
-            using (var caw = new CancellationAwaiter(ct, false)) {
-                await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
-            }
-
-            lock (_currentConnectionLock) {
-                _currentConnectionWaiters.Remove(retSource);
-            }
-
-            if(ct.IsCancellationRequested)
+            try
             {
-                // This is done to prevent unobserved exceptions. We do not care about this task anymore.
-                SwallowException(retSource.Task);
-                ct.ThrowIfCancellationRequested();
+                return await retSource.Task.ConfigureAwait(false);
+            } finally { 
+                lock (_currentConnectionLock) {
+                    _currentConnectionWaiters.Remove(retSource);
+                }
             }
-
-            return await retSource.Task.ConfigureAwait(false);
         }
 
         private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new Dictionary<long, CancellationTokenSource>();
