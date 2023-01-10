@@ -172,6 +172,10 @@ namespace Org.Openfeed.Client {
                     (def, symbols) = GetInstrumentDefinition(msg.Ohlc.MarketId);
                     break;
                 }
+                case OpenfeedGatewayMessage.DataOneofCase.VolumeAtPrice: {
+                    (def, symbols) = GetInstrumentDefinition(msg.VolumeAtPrice.MarketId);
+                    break;
+                }
             }
 
             return OnMessageWithMetadata(msg, def, symbols ?? Array.Empty<string>());
