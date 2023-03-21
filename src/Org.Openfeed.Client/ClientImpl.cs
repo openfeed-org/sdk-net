@@ -45,7 +45,10 @@ namespace Org.Openfeed.Client {
 
         private byte[] _inputBuffer = new byte[4096];
 
-        public async ValueTask<OpenfeedGatewayMessage> ReceiveAsync(ClientWebSocket socket, CancellationToken ct) {
+        private static short GetShort(byte a, byte b) { 
+            return (short)((a << 8) | (b << 0));
+        }
+        public async ValueTask<List<OpenfeedGatewayMessage>> ReceiveAsync(ClientWebSocket socket, CancellationToken ct) {
             int messageLength = 0;
             WebSocketMessageType messageType;
             for (; ; ) {
@@ -65,10 +68,21 @@ namespace Org.Openfeed.Client {
 
             if (messageType == WebSocketMessageType.Text) {
                 var json = Encoding.UTF8.GetString(_inputBuffer, 0, messageLength);
-                return OpenfeedGatewayMessage.Parser.ParseJson(json);
+                return new List<OpenfeedGatewayMessage>() { OpenfeedGatewayMessage.Parser.ParseJson(json) };
             }
             else {
-                return OpenfeedGatewayMessage.Parser.ParseFrom(_inputBuffer, 0, messageLength);
+                int currentIndex = 0;
+                var messages = new List<OpenfeedGatewayMessage>();
+                while (true)
+                { 
+                    if (currentIndex >= messageLength) { break; }
+
+                    int currentSubarrayLength = GetShort(_inputBuffer[currentIndex], _inputBuffer[currentIndex + 1]);
+                    messages.Add(OpenfeedGatewayMessage.Parser.ParseFrom(_inputBuffer, currentIndex + 2, currentSubarrayLength));
+
+                    currentIndex += currentSubarrayLength + 2;
+                }
+                return messages;
             }
         }
     }
@@ -156,10 +170,16 @@ namespace Org.Openfeed.Client {
         private async Task<(bool AuthenticationFailed, string Token)> LoginAsync(ClientWebSocket socket, MessageFramer messageFramer) {
             var ct = _disposedSource.Token;
 
-            var loginRequest = new OpenfeedGatewayRequest { LoginRequest = new LoginRequest { CorrelationId = 0, Username = _username, Password = _password, ClientVersion = GetClientVersion() } };
+            var loginRequest = new OpenfeedGatewayRequest { LoginRequest = new LoginRequest { 
+                CorrelationId = 0, 
+                Username = _username, 
+                Password = _password, 
+                ClientVersion = GetClientVersion(),
+                ProtocolVersion = 1
+            } };
             await messageFramer.SendAsync(socket, loginRequest, ct).ConfigureAwait(false);
 
-            var loginResponse = (await messageFramer.ReceiveAsync(socket, ct).ConfigureAwait(false)).LoginResponse;
+            var loginResponse = (await messageFramer.ReceiveAsync(socket, ct).ConfigureAwait(false)).FirstOrDefault()?.LoginResponse;
             if (loginResponse == null) throw new InvalidDataException("Expected a LoginResponse message in response to our LoginRequest.");
             if (loginResponse.CorrelationId != 0) throw new InvalidDataException($"Received LoginResponse message has an incorrect correlation ID. Expected 0, received {loginResponse.CorrelationId}.");
 
@@ -382,7 +402,7 @@ namespace Org.Openfeed.Client {
             lock (_lock) {
                 pendingRequestTask = _hasPendingRequests.Task;
             }
-            Task<OpenfeedGatewayMessage>? receiveTaskTask = null;
+            Task<List<OpenfeedGatewayMessage>>? receiveTaskTask = null;
 
             try {
                 for (; ; ) {
@@ -409,10 +429,14 @@ namespace Org.Openfeed.Client {
 
                     if (receiveTaskTask != null) {
                         if (receiveTaskTask.IsCompleted) {
-                            var msg = await receiveTaskTask.ConfigureAwait(false);
-                            await DispatchMessage(msg);
-                            if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse) {
-                                return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                            var msgs = await receiveTaskTask.ConfigureAwait(false);
+                            foreach (var msg in msgs)
+                            {
+                                await DispatchMessage(msg);
+                                if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse)
+                                {
+                                    return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                                }
                             }
 
                             receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
@@ -420,10 +444,14 @@ namespace Org.Openfeed.Client {
                         }
                     }
                     else if (receiveTask.IsCompleted) {
-                        var msg = await receiveTask.ConfigureAwait(false);
-                        await DispatchMessage(msg);
-                        if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse) {
-                            return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                        var msgs = await receiveTask.ConfigureAwait(false);
+                        foreach (var msg in msgs)
+                        {
+                            await DispatchMessage(msg);
+                            if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse)
+                            {
+                                return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
+                            }
                         }
                         receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                     }
