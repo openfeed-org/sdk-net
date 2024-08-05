@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
+using InstrumentType = Org.Openfeed.InstrumentDefinition.Types.InstrumentType;
+
 namespace Org.Openfeed.Client {
 
     /// <summary>
@@ -211,6 +213,24 @@ namespace Org.Openfeed.Client {
         long Subscribe(Service service, SubscriptionType subscriptionType, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null);
 
         /// <summary>
+        /// Sends a <see cref="SubscriptionRequest"/> to the server to which we are currently connected. If the client not currently
+        /// connected then waits for the connection to be established and then sends the <see cref="SubscriptionRequest"/>.
+        /// If the client gets disconnected then it waits for the reconnect and sends the <see cref="SubscriptionRequest"/>.
+        /// </summary>
+        /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
+        /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
+        /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// sent once.</param>
+        /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+        /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+        /// <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+        /// <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+        /// <returns>The ID of the subscription which can be used in a call to <see cref="IOpenfeedClient.Unsubscribe(long)"/> to terminate the subscription.</returns>
+        long Subscribe(Service service, SubscriptionType subscriptionType, InstrumentType instrumentType, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null);
+
+
+        /// <summary>
         /// Unsubscribes from the feed for a given <paramref name="subscriptionId"/>.
         /// </summary>
         /// <param name="subscriptionId">Subscription ID obtained from a call to <see cref="IOpenfeedClient.Subscribe(Service, SubscriptionType, int, IEnumerable{string}, IEnumerable{long}, IEnumerable{string}, IEnumerable{int})"/></param>
@@ -262,6 +282,22 @@ namespace Org.Openfeed.Client {
         /// <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
         /// <returns>The ID of the subscription which can be used in a call to <see cref="IOpenfeedConnection.Unsubscribe(long)"/> to terminate the subscription.</returns>
         long Subscribe(Service service, SubscriptionType subscriptionType, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null);
+
+        /// <summary>
+        /// Sends a <see cref="SubscriptionRequest"/> to the server to which we are currently connected. If the connection is no longer
+        /// connected throws a <see cref="OpenfeedDisconnectedException"/>.
+        /// </summary>
+        /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
+        /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
+        /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// sent once.</param>
+        /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
+        /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
+        /// <param name="exchanges">A collection of exchanges to which to subscribe, or null if no subscription by exchange is to be made.</param>
+        /// <param name="channels">A collection of channels to which to subscribe, or null if no subscription by channel is to be made.</param>
+        /// <returns>The ID of the subscription which can be used in a call to <see cref="IOpenfeedConnection.Unsubscribe(long)"/> to terminate the subscription.</returns>
+        long Subscribe(Service service, SubscriptionType subscriptionType, InstrumentType instrumentType, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null);
 
         /// <summary>
         /// Sends the <see cref="SubscriptionRequest"/> to the server with <see cref="SubscriptionRequest.Unsubscribe"/> set to true.
