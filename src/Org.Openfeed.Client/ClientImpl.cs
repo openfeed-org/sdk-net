@@ -292,7 +292,7 @@ namespace Org.Openfeed.Client {
 
         private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new Dictionary<long, CancellationTokenSource>();
 
-        private async void RunSubscribeLoop(Service service, SubscriptionType subscriptionType, InstrumentType? instrumentType, int snapshotIntervalSeconds, List<string>? symbols, List<long>? marketIds, List<string>? exchanges, List<int>? channels, CancellationToken ct) {
+        private async void RunSubscribeLoop(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, List<string>? symbols, List<long>? marketIds, List<string>? exchanges, List<int>? channels, CancellationToken ct) {
             var combined = CancellationTokenSource.CreateLinkedTokenSource(ct, _disposedSource.Token).Token;
 
             if (combined.IsCancellationRequested) return;
@@ -315,9 +315,8 @@ namespace Org.Openfeed.Client {
 
                 long? subscriptionId = null;
                 try {
-                    subscriptionId = instrumentType.HasValue ? 
-                        connection.Subscribe(service, subscriptionType, instrumentType.Value, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels) :
-                        connection.Subscribe(service, subscriptionType, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
+                    subscriptionId = connection.Subscribe(service, subscriptionTypes, instrumentTypes, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
+                        
                     await connection.WhenDisconnectedAsync(ct);
                 }
                 catch (OperationCanceledException) when (ct.IsCancellationRequested) {
@@ -339,7 +338,7 @@ namespace Org.Openfeed.Client {
                 _subscriptions.Add(id, cts);
             }
 
-            RunSubscribeLoop(service, subscriptionType, null, snapshotIntervalSeconds, symbols?.ToList(), marketIds?.ToList(), exchanges?.ToList(), channels?.ToList(), cts.Token);
+            RunSubscribeLoop(service, Enumerable.Repeat(subscriptionType, 1), Enumerable.Empty<InstrumentType>(), snapshotIntervalSeconds, symbols?.ToList(), marketIds?.ToList(), exchanges?.ToList(), channels?.ToList(), cts.Token);
 
             return id;
         }
@@ -352,7 +351,21 @@ namespace Org.Openfeed.Client {
                 _subscriptions.Add(id, cts);
             }
 
-            RunSubscribeLoop(service, subscriptionType, instrumentType, snapshotIntervalSeconds, symbols?.ToList(), marketIds?.ToList(), exchanges?.ToList(), channels?.ToList(), cts.Token);
+            RunSubscribeLoop(service, Enumerable.Repeat(subscriptionType, 1), Enumerable.Repeat(instrumentType, 1), snapshotIntervalSeconds, symbols?.ToList(), marketIds?.ToList(), exchanges?.ToList(), channels?.ToList(), cts.Token);
+
+            return id;
+        }
+
+        public long Subscribe(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, IEnumerable<string>? symbols, IEnumerable<long>? marketIds, IEnumerable<string>? exchanges, IEnumerable<int>? channels) {
+            long id = CorrelationId.Create();
+            var cts = new CancellationTokenSource();
+
+            lock (_subscriptions)
+            {
+                _subscriptions.Add(id, cts);
+            }
+
+            RunSubscribeLoop(service, subscriptionTypes, instrumentTypes, snapshotIntervalSeconds, symbols?.ToList(), marketIds?.ToList(), exchanges?.ToList(), channels?.ToList(), cts.Token);
 
             return id;
         }
@@ -651,99 +664,78 @@ namespace Org.Openfeed.Client {
             return tcs.Task;
         }
 
-        public long Subscribe(Service service, SubscriptionType subscriptionType, int snapshotIntervalSeconds, IEnumerable<string>? symbols, IEnumerable<long>? marketIds, IEnumerable<string>? exchanges, IEnumerable<int>? channels) {
+        private long SubscribeImpl(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, IEnumerable<string>? symbols, IEnumerable<long>? marketIds, IEnumerable<string>? exchanges, IEnumerable<int>? channels)
+        {
             _disposedToken.ThrowIfCancellationRequested();
 
             long correlationId = CorrelationId.Create();
 
             var subReq = new SubscriptionRequest { Service = service, CorrelationId = correlationId, Token = _token };
-            if (symbols != null) {
-                foreach (var symbol in symbols) {
+            if (symbols != null)
+            {
+                foreach (var symbol in symbols)
+                {
                     var req = new SubscriptionRequest.Types.Request { Symbol = symbol, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
+                    req.SubscriptionType.AddRange(subscriptionTypes);
+                    req.InstrumentType.AddRange(instrumentTypes);
                     subReq.Requests.Add(req);
                 }
             }
-            if (marketIds != null) {
-                foreach (var marketId in marketIds) {
+            if (marketIds != null)
+            {
+                foreach (var marketId in marketIds)
+                {
                     var req = new SubscriptionRequest.Types.Request { MarketId = marketId, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
+                    req.SubscriptionType.AddRange(subscriptionTypes);
+                    req.InstrumentType.AddRange(instrumentTypes);
                     subReq.Requests.Add(req);
                 }
             }
-            if (exchanges != null) {
-                foreach (var exchange in exchanges) {
+            if (exchanges != null)
+            {
+                foreach (var exchange in exchanges)
+                {
                     var req = new SubscriptionRequest.Types.Request { Exchange = exchange, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
+                    req.SubscriptionType.AddRange(subscriptionTypes);
+                    req.InstrumentType.AddRange(instrumentTypes);
                     subReq.Requests.Add(req);
                 }
             }
-            if (channels != null) {
-                foreach (var channel in channels) {
+            if (channels != null)
+            {
+                foreach (var channel in channels)
+                {
                     var req = new SubscriptionRequest.Types.Request { ChannelId = channel, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
+                    req.SubscriptionType.AddRange(subscriptionTypes);
+                    req.InstrumentType.AddRange(instrumentTypes);
                     subReq.Requests.Add(req);
                 }
             }
 
-            lock (_lock) {
+            lock (_lock)
+            {
                 if (_disconnected) throw new OpenfeedDisconnectedException();
                 _subscriptions.Add(correlationId, subReq);
                 QueueRequest(new OpenfeedGatewayRequest { SubscriptionRequest = subReq });
             }
 
             return correlationId;
+        }
+
+        public long Subscribe(Service service, SubscriptionType subscriptionType, int snapshotIntervalSeconds, IEnumerable<string>? symbols, IEnumerable<long>? marketIds, IEnumerable<string>? exchanges, IEnumerable<int>? channels) {
+            return SubscribeImpl(service, Enumerable.Repeat(subscriptionType, 1), Enumerable.Empty<InstrumentType>(), snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
         }
 
         public long Subscribe(Service service, SubscriptionType subscriptionType, InstrumentType instrumentType, int snapshotIntervalSeconds, IEnumerable<string>? symbols, IEnumerable<long>? marketIds, IEnumerable<string>? exchanges, IEnumerable<int>? channels) {
-            _disposedToken.ThrowIfCancellationRequested();
-
-            long correlationId = CorrelationId.Create();
-
-            var subReq = new SubscriptionRequest { Service = service, CorrelationId = correlationId, Token = _token };
-            if (symbols != null) {
-                foreach (var symbol in symbols) {
-                    var req = new SubscriptionRequest.Types.Request { Symbol = symbol, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
-                    req.InstrumentType.Add(instrumentType);
-                    subReq.Requests.Add(req);
-                }
-            }
-            if (marketIds != null) {
-                foreach (var marketId in marketIds) {
-                    var req = new SubscriptionRequest.Types.Request { MarketId = marketId, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
-                    req.InstrumentType.Add(instrumentType);
-                    subReq.Requests.Add(req);
-                }
-            }
-            if (exchanges != null) {
-                foreach (var exchange in exchanges) {
-                    var req = new SubscriptionRequest.Types.Request { Exchange = exchange, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
-                    req.InstrumentType.Add(instrumentType);
-                    subReq.Requests.Add(req);
-                }
-            }
-            if (channels != null) {
-                foreach (var channel in channels) {
-                    var req = new SubscriptionRequest.Types.Request { ChannelId = channel, SnapshotIntervalSeconds = snapshotIntervalSeconds };
-                    req.SubscriptionType.Add(subscriptionType);
-                    req.InstrumentType.Add(instrumentType);
-                    subReq.Requests.Add(req);
-                }
-            }
-
-            lock (_lock) {
-                if (_disconnected) throw new OpenfeedDisconnectedException();
-                _subscriptions.Add(correlationId, subReq);
-                QueueRequest(new OpenfeedGatewayRequest { SubscriptionRequest = subReq });
-            }
-
-            return correlationId;
+            return SubscribeImpl(service, Enumerable.Repeat(subscriptionType, 1), Enumerable.Repeat(instrumentType, 1), snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
         }
 
-		public void Unsubscribe(long subscriptionId) {
+        public long Subscribe(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, IEnumerable<string>? symbols = null, IEnumerable<long>? marketIds = null, IEnumerable<string>? exchanges = null, IEnumerable<int>? channels = null) { 
+            return SubscribeImpl(service, subscriptionTypes, instrumentTypes, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
+        }
+
+
+        public void Unsubscribe(long subscriptionId) {
             lock (_lock) {
                 if (!_subscriptions.TryGetValue(subscriptionId, out var subscription)) throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
 
