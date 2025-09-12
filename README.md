@@ -4,7 +4,7 @@ The .NET SDK for Barchart Openfeed is a library that can be used to subscribe to
 
 ## Obtaining the Library
 
-The easiest way to get started is to add the openfeed.net package from [NuGet](https://www.nuget.org/packages/openfeed.net/). The latest version is 1.0.20.
+The easiest way to get started is to add the openfeed.net package from [NuGet](https://www.nuget.org/packages/openfeed.net/). The latest version is 1.0.21.
 
 ## This Repository
 
@@ -22,7 +22,7 @@ To update the protobuf auto-generated files, follow the steps:
 
 1. Download the latest protoc executable from [here](https://github.com/protocolbuffers/protobuf/releases).
 2. Update to the latest [proto](https://github.com/openfeed-org/proto) repository changes.
-3. Run the following command: ```protoc.exe *.proto --csharp_out=<out-dir-name>```
+3. Run the following command: `protoc.exe *.proto --csharp_out=<out-dir-name>`
 
 ## User Guide
 
