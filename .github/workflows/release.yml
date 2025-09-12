@@ -1,0 +1,88 @@
+name: Package and publish nupkg
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build app
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Restore NuGet packages
+        run: cd src && nuget restore && cd ..
+
+      - name: Build
+        run: msbuild .\src\Org.Openfeed.Client\Org.Openfeed.Client.csproj /t:Pack /p:Configuration=Release /p:PackageOutputPath=..\..\publish
+
+      - name: List files in publish directory
+        run: dir .\publish
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: BuildArtifacts
+          path: ./publish/*.nupkg
+
+  sign:
+    name: Sign files with Trusted Signing
+    needs: build
+    runs-on: windows-latest
+    permissions:
+      id-token: write # Required for requesting the JWT
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: BuildArtifacts
+          path: BuildArtifacts
+
+      # .NET is required on the agent for the tool to run
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "9.x"
+
+      # Install the code signing tool
+      - name: Install Sign CLI tool
+        run: dotnet tool install --tool-path . --prerelease sign
+
+      # Login to Azure using a ServicePrincipal configured to authenticate agaist a GitHub Action
+      - name: "Az CLI login"
+        uses: azure/login@v1
+        with:
+          allow-no-subscriptions: true
+          enable-AzPSSession: true
+          creds: ${{ secrets.AZURE_CREDS }}
+
+      # Run the signing command
+      - name: Sign artifacts
+        uses: azure/powershell@v1
+        with:
+          azPSVersion: "latest"
+          inlineScript: |
+            ./sign code trusted-signing *.nupkg -tse ${{ secrets.AZURE_ENDPOINT }} -tsa ${{secrets.AZURE_CODE_SIGNING_NAME}} -tscp ${{secrets.AZURE_CERT_PROFILE_NAME}} -act azure-powershell --base-directory "${{ github.workspace }}/BuildArtifacts"
+
+      - name: Extract Certificates For NuGet
+        run: |
+          $files = Get-ChildItem -Path ./BuildArtifacts -Filter *.nupkg
+          if ($files.Count -ne 1) {
+              Write-Error "Expected exactly one .nupkg file, but found $($files.Count)."
+              exit 1
+          }
+          dotnet tool install Knapcode.CertificateExtractor --global
+          $file = $files[0].FullName
+          nuget-cert-extractor --file $file --output ./BuildArtifacts --author --code-signing --leaf
+
+      # Publish the signed packages
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: NugetReleaseArtifacts
+          path: ./BuildArtifacts/*

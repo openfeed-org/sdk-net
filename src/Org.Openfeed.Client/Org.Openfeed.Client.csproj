@@ -46,21 +46,4 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
-  <PropertyGroup>
-    <TargetsTriggeredByCompilation>Sign</TargetsTriggeredByCompilation>
-  </PropertyGroup>
-
-  <Target Name="Sign" Condition="'$(Configuration)' == 'Publish'">
-    <SignFile CertificateThumbprint="$(CertificateThumbprint)" SigningTarget="@(IntermediateAssembly)" TimestampUrl="$(TimestampUrl)" />
-  </Target>
-
-  <Target Name="SignAfterPack" DependsOnTargets="Pack" Condition="'$(Configuration)' == 'Publish'">
-    <Exec Command="nuget sign $(OutputPath)..\$(PackageId).$(PackageVersion).nupkg -CertificateFingerprint $(CertificateThumbprint) -Timestamper $(TimestampUrl)" />
-    <Exec Command="nuget sign $(OutputPath)..\$(PackageId).$(PackageVersion).snupkg -CertificateFingerprint $(CertificateThumbprint) -Timestamper $(TimestampUrl)" />
-  </Target>
-
-  <Target Name="PublishToNuGet" DependsOnTargets="SignAfterPack" Condition="'$(Configuration)' == 'Publish'">
-    <Exec Command="nuget push $(OutputPath)..\$(PackageId).$(PackageVersion).nupkg -ApiKey $(NuGetApiKey) -Source https://api.nuget.org/v3/index.json" />
-  </Target>
 </Project>
