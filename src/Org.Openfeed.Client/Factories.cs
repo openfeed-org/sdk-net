@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Org.Openfeed.Client {
 
@@ -18,9 +14,7 @@ namespace Org.Openfeed.Client {
         /// <param name="password">Password.</param>
         /// <param name="listeners">Collection of listeners.</param>
         /// <param name="clientId">Optional client ID.</param>
-        /// <returns></returns>
-        public static IOpenfeedClient CreateClient(Uri uri, string username, string password, OpenfeedListeners listeners, string? clientId = null) =>
-            new Client(uri, username, password, listeners, clientId);
+        /// <returns>A new instance of <see cref="IOpenfeedClient"/>.</returns>
+        public static IOpenfeedClient CreateClient(Uri uri, string username, string password, OpenfeedListeners listeners, string? clientId = null) => new Client(uri, username, password, listeners, clientId);
     }
-
 }
