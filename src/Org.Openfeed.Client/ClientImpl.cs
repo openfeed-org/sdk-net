@@ -267,6 +267,7 @@ namespace Org.Openfeed.Client {
                         }
                         _currentConnectionWaiters.Clear();
                     }
+            var connection = new ConnectionImpl(token, _listeners, ct);
                     
                     try {
                         return await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
@@ -413,13 +414,14 @@ namespace Org.Openfeed.Client {
         private readonly CancellationToken _disposedToken;
         private readonly Func<OpenfeedGatewayMessage, ValueTask> _onMessage;
         private readonly List<TaskCompletionSource<bool>> _disconnectWaiters = new List<TaskCompletionSource<bool>>();
+        private readonly OpenfeedListeners _listeners;
 
         private bool _disconnected;
 
-        public ConnectionImpl(string connectionToken, Func<OpenfeedGatewayMessage, ValueTask> onMessage, CancellationToken cancellationToken) {
+        public ConnectionImpl(string connectionToken, OpenfeedListeners listeners, CancellationToken cancellationToken) {
             _token = connectionToken;
             _disposedToken = cancellationToken;
-            _onMessage = onMessage;
+            _listeners = listeners;
         }
 
         private readonly object _lock = new object();
@@ -558,17 +560,21 @@ namespace Org.Openfeed.Client {
 
             switch (msg.DataCase) {
                 case OpenfeedGatewayMessage.DataOneofCase.HeartBeat: {
+                    await _listeners.OnHeartBeat(msg.HeartBeat).ConfigureAwait(false);
+                  
+                    break;
+                }
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentResponse: {
-                    await _onMessage(msg).ConfigureAwait(false);
+                    await _listeners.OnMessage(msg).ConfigureAwait(false);
                     var resp = msg.InstrumentResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentRequests);
 
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentReferenceResponse: {
-                    await _onMessage(msg).ConfigureAwait(false);
+                    await _listeners.OnMessage(msg).ConfigureAwait(false);
 
                     var resp = msg.InstrumentReferenceResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentReferenceRequests);
@@ -576,7 +582,7 @@ namespace Org.Openfeed.Client {
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.ExchangeResponse: {
-                    await _onMessage(msg).ConfigureAwait(false);
+                    await _listeners.OnMessage(msg).ConfigureAwait(false);
 
                     var resp = msg.ExchangeResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _exchangeRequests);
@@ -584,7 +590,8 @@ namespace Org.Openfeed.Client {
                     break;
                 }
                 default: {
-                    await _onMessage(msg).ConfigureAwait(false);
+                    await _listeners.OnMessage(msg).ConfigureAwait(false);
+                   
                     break;
                 }
             }

@@ -156,7 +156,12 @@ namespace Org.Openfeed.Client {
         public Func<ValueTask> OnDisconnected = () => default;
 
         /// <summary>
-        /// Function that will be called when a message is received from the server. By default this just adds the instrument definition
+        /// Function that will be called when a heartbeat is received from the server.
+        /// </summary>
+        public Func<HeartBeat, ValueTask> OnHeartBeat = heartBeat => default;
+
+        /// <summary>
+        /// Function that will be called when a message is received from the server. By default, this just adds the instrument definition
         /// and forwards the call to <see cref="OnMessageWithMetadata"/>.
         /// </summary>
         public Func<OpenfeedGatewayMessage, ValueTask> OnMessage;
