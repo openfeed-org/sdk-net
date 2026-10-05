@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -74,8 +76,23 @@ namespace Org.Openfeed.Client {
     /// the client application about the events that are happening.
     /// </summary>
     public sealed class OpenfeedListeners {
-        private readonly Dictionary<long, (InstrumentDefinition?, string[]?)> _instrumentDefinitions = new Dictionary<long, (InstrumentDefinition?, string[]?)>();
-        private readonly Dictionary<string, InstrumentDefinition> _instrumentsBySymbol = new Dictionary<string, InstrumentDefinition>();
+        private readonly struct MarketMetadata {
+            public InstrumentDefinition? Definition { get; }
+            public (string Symbol, long CorrelationId)[]? Subscriptions { get; }
+
+            public MarketMetadata(InstrumentDefinition? definition, (string Symbol, long CorrelationId)[]? subscriptions) {
+                Definition = definition;
+                Subscriptions = subscriptions;
+            }
+
+            public void Deconstruct(out InstrumentDefinition? definition, out (string Symbol, long CorrelationId)[]? subscriptions) {
+                definition = Definition;
+                subscriptions = Subscriptions;
+            }
+        }
+
+        private readonly ConcurrentDictionary<long, MarketMetadata> _instrumentDefinitions = new();
+        private readonly Dictionary<string, InstrumentDefinition> _instrumentsBySymbol = new();
 
         /// <summary>
         /// Constructs a new instance of <see cref="OpenfeedListeners"/>.
@@ -130,52 +147,80 @@ namespace Org.Openfeed.Client {
         public Func<OpenfeedGatewayMessage, InstrumentDefinition?, string[], ValueTask> OnMessageWithMetadata = (msg, def, symbols) => default;
 
         private ValueTask OnAddDetails(OpenfeedGatewayMessage msg) {
-            (InstrumentDefinition?, string[]?) GetInstrumentDefinition(long marketId) =>
-                _instrumentDefinitions.TryGetValue(marketId, out var def) ? def : (null, null);
+            MarketMetadata GetInstrumentDefinition(long marketId) => _instrumentDefinitions.TryGetValue(marketId, out var metadata) ? metadata : default;
 
             InstrumentDefinition? def = null;
-            string[]? symbols = null;
+       
+            (string Symbol, long CorrelationId)[]? subscriptions = null;
+
             switch (msg.DataCase) {
                 case OpenfeedGatewayMessage.DataOneofCase.SubscriptionResponse: {
                     if (msg.SubscriptionResponse.Symbol != null && msg.SubscriptionResponse.MarketId != 0) {
-                        (def, symbols) = GetInstrumentDefinition(msg.SubscriptionResponse.MarketId);
-                        if (symbols == null) {
-                            symbols = new string[1];
-                            symbols[0] = msg.SubscriptionResponse.Symbol;
-                        }
-                        else {
-                            if (Array.IndexOf(symbols, msg.SubscriptionResponse.Symbol) < 0) {
-                                Array.Resize(ref symbols, symbols.Length + 1);
-                                symbols[symbols.Length - 1] = msg.SubscriptionResponse.Symbol;
+                        var response = msg.SubscriptionResponse;
+                       
+                        (def, subscriptions) = GetInstrumentDefinition(response.MarketId);
+                       
+                        if (response.Status?.Result == Result.Success) {
+                            if (response.Unsubscribe) {
+                                var remaining = Array.FindAll(subscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != response.Symbol || entry.CorrelationId != response.CorrelationId);
+                               
+                                if (remaining.Length == 0)
+                                {
+                                    _instrumentDefinitions.TryRemove(response.MarketId, out _);
+                                }
+                                else
+                                {
+                                    _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, remaining);
+                                }
+                            }
+                            else if (subscriptions == null) {
+                                subscriptions = new[] { (response.Symbol, response.CorrelationId) };
+                              
+                                _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, subscriptions);
+                            }
+                            else if (Array.FindIndex(subscriptions, entry => entry.Symbol == response.Symbol && entry.CorrelationId == response.CorrelationId) < 0) {
+                                Array.Resize(ref subscriptions, subscriptions.Length + 1);
+                              
+                                subscriptions[subscriptions.Length - 1] = (response.Symbol, response.CorrelationId);
+                            
+                                _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, subscriptions);
                             }
                         }
-                        _instrumentDefinitions[msg.SubscriptionResponse.MarketId] = (def, symbols);
                     }
 
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentDefinition: {
-                    (def, symbols) = GetInstrumentDefinition(msg.InstrumentDefinition.MarketId);
-                    _instrumentDefinitions[msg.InstrumentDefinition.MarketId] = (msg.InstrumentDefinition, symbols);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.InstrumentDefinition.MarketId);
+                 
+                    _instrumentDefinitions[msg.InstrumentDefinition.MarketId] = new MarketMetadata(msg.InstrumentDefinition, subscriptions);
+                 
                     lock(_instrumentsBySymbol) {
                         _instrumentsBySymbol[msg.InstrumentDefinition.Symbol] = msg.InstrumentDefinition;
                     }
+                 
+                    break;
+                }
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketSnapshot: {
-                    (def, symbols) = GetInstrumentDefinition(msg.MarketSnapshot.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.MarketSnapshot.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketUpdate: {
-                    (def, symbols) = GetInstrumentDefinition(msg.MarketUpdate.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.MarketUpdate.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.Ohlc: {
-                    (def, symbols) = GetInstrumentDefinition(msg.Ohlc.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.Ohlc.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.VolumeAtPrice: {
-                    (def, symbols) = GetInstrumentDefinition(msg.VolumeAtPrice.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.VolumeAtPrice.MarketId);
+                   
                     break;
                 }
             }
