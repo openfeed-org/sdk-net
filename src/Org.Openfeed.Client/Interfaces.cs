@@ -34,7 +34,10 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="status"><see cref="Status"/> of the response message.</param>
         public static void ThrowOnError(Status status) {
-            if (status.Result != Result.Success) throw new OpenfeedRequestException(status);
+            if (status.Result != Result.Success)
+            {
+                throw new OpenfeedRequestException(status);
+            }
         }
     }
 
@@ -101,7 +104,6 @@ namespace Org.Openfeed.Client {
             OnMessage = OnAddDetails;
         }
 
-
         /// <summary>
         /// Returns the <see cref="InstrumentDefinition"/> based on the Openfeed symbol.
         /// </summary>
@@ -140,14 +142,14 @@ namespace Org.Openfeed.Client {
 
         /// <summary>
         /// Function that will be called when the server rejects the credentials with which the <see cref="IOpenfeedClient"/> has been created.
-        /// The <see cref="IOpenfeedClient"/> will not attempt any more reconnects after calling this handler.
+        /// The <see cref="IOpenfeedClient"/> will not attempt anymore reconnects after calling this handler.
         /// </summary>
         public Func<ValueTask> OnCredentialsRejected = () => default;
 
         /// <summary>
         /// Function that will be called when the <see cref="IOpenfeedClient"/> is connected to the server.
         /// </summary>
-        public Func<IOpenfeedConnection, ValueTask> OnConnected = connecton => default;
+        public Func<IOpenfeedConnection, ValueTask> OnConnected = connection => default;
 
         /// <summary>
         /// Function that will be called when the <see cref="IOpenfeedClient"/> gets disconnected from the server, either because
@@ -325,7 +327,7 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -342,7 +344,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -359,7 +361,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionTypes">A collection of <see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentTypes">A collection of <see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -387,12 +389,12 @@ namespace Org.Openfeed.Client {
         ValueTask<IReadOnlyList<Exchange>> GetExchangesAsync(CancellationToken ct);
 
         /// <summary>
-        /// Sends an <see cref="InstrumentRequest"/> and returns an <see cref="InstrumentResponse"/> or throws an <see cref="OpenfeedDisconnectedException"/>. The
-        /// individual <see cref="InstrumentDefinition"/> responses will be sent to <see cref="OpenfeedListeners.OnMessage"/> delegates.
+        /// Sends an <see cref="InstrumentRequest"/> and returns all <see cref="InstrumentDefinition"/> responses, or throws an <see cref="OpenfeedDisconnectedException"/>.
+        /// The individual responses are also sent to <see cref="OpenfeedListeners.OnMessage"/> delegates.
         /// </summary>
         /// <param name="request">The request to be sent.</param>
         /// <param name="ct"><see cref="CancellationToken"/></param>
-        /// <returns>A task that will return an <see cref="InstrumentResponse"/> or throw an
+        /// <returns>A task that will return the instrument definitions or throw an
         /// <see cref="OpenfeedDisconnectedException"/> if the connection disconnects.</returns>
         Task<InstrumentResponse> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct);
 
@@ -412,7 +414,7 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -428,7 +430,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -444,7 +446,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionTypes">A collection of <see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentTypes">A collection of <see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -460,10 +462,10 @@ namespace Org.Openfeed.Client {
         void Unsubscribe(long id);
 
         /// <summary>
-        /// Gets the task that will be signalled when the connection instance gets disconnected from the server.
+        /// Gets the task that will be signaled when the connection instance gets disconnected from the server.
         /// </summary>
         /// <param name="ct"><see cref="CancellationToken"/></param>
-        /// <returns>A task that will be signalled when the connection instance is disconnected from the server.</returns>
+        /// <returns>A task that will be signaled when the connection instance is disconnected from the server.</returns>
         Task WhenDisconnectedAsync(CancellationToken ct);
     }
 
@@ -481,6 +483,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+                   
                     return await connection.GetExchangesAsync(ct).ConfigureAwait(false);
                 }
                 catch (OpenfeedDisconnectedException) {
@@ -519,6 +522,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+               
                     return await connection.GetInstrumentReferenceAsync(new InstrumentReferenceRequest { Symbol = symbol }, ct);
                 }
                 catch (OpenfeedDisconnectedException) {
@@ -537,6 +541,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+                  
                     return await connection.GetInstrumentReferenceAsync(new InstrumentReferenceRequest { MarketId = marketId }, ct);
                 }
                 catch (OpenfeedDisconnectedException) {

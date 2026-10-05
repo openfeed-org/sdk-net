@@ -31,6 +31,7 @@ namespace Org.Openfeed.Client {
 
         public async ValueTask SendAsync(ClientWebSocket socket, OpenfeedGatewayRequest request, CancellationToken ct) {
             var size = request.CalculateSize();
+          
             if (size > _outputStream.Capacity) {
                 _outputStreamBuffer = new byte[size];
                 _outputStream = new MemoryStream(_outputStreamBuffer);
@@ -38,6 +39,7 @@ namespace Org.Openfeed.Client {
             else {
                 _outputStream.Position = 0;
             }
+            
             request.WriteTo(_outputStream);
             _outputStream.Flush();
 
@@ -49,16 +51,25 @@ namespace Org.Openfeed.Client {
         private static int GetFrameLength(byte a, byte b) {
             return (a << 8) | b;
         }
+        
         public async ValueTask<List<OpenfeedGatewayMessage>> ReceiveAsync(ClientWebSocket socket, CancellationToken ct) {
             int messageLength = 0;
+            
             WebSocketMessageType messageType;
+           
             for (; ; ) {
                 var receiveResult = await socket.ReceiveAsync(new ArraySegment<byte>(_inputBuffer, messageLength, _inputBuffer.Length - messageLength), ct).ConfigureAwait(false);
-                if (receiveResult.CloseStatus != null || receiveResult.MessageType == WebSocketMessageType.Close) throw new Exception($"WebSocket closed {receiveResult.CloseStatus}: {receiveResult.CloseStatusDescription}");
+                
+                if (receiveResult.CloseStatus != null || receiveResult.MessageType == WebSocketMessageType.Close)
+                {
+                    throw new Exception($"WebSocket closed {receiveResult.CloseStatus}: {receiveResult.CloseStatusDescription}");
+                }
+                
                 messageLength += receiveResult.Count;
 
                 if (receiveResult.EndOfMessage) {
                     messageType = receiveResult.MessageType;
+                  
                     break;
                 }
 
@@ -69,14 +80,9 @@ namespace Org.Openfeed.Client {
 
             if (messageType == WebSocketMessageType.Text) {
                 var json = Encoding.UTF8.GetString(_inputBuffer, 0, messageLength);
+                
                 return new List<OpenfeedGatewayMessage>() { OpenfeedGatewayMessage.Parser.ParseJson(json) };
             }
-            else {
-                int currentIndex = 0;
-                var messages = new List<OpenfeedGatewayMessage>();
-                while (true)
-                { 
-                    if (currentIndex >= messageLength) { break; }
 
             int currentIndex = 0;
             var messages = new List<OpenfeedGatewayMessage>();
@@ -123,12 +129,12 @@ namespace Org.Openfeed.Client {
         private readonly string _username, _password;
         private readonly string? _clientId;
         private readonly OpenfeedListeners _listeners;
-        private readonly CancellationTokenSource _disposedSource = new CancellationTokenSource();
+        private readonly CancellationTokenSource _disposedSource = new();
 
-        private readonly MessageFramer _messageFramer = new MessageFramer();
+        private readonly MessageFramer _messageFramer = new();
 
-        private object _currentConnectionLock = new object();
-        private readonly List<TaskCompletionSource<ConnectionImpl>> _currentConnectionWaiters = new List<TaskCompletionSource<ConnectionImpl>>();
+        private readonly object _currentConnectionLock = new();
+        private readonly List<TaskCompletionSource<ConnectionImpl>> _currentConnectionWaiters = new();
         private ConnectionImpl? _currentConnection;
 
         private enum RequestType {
@@ -162,6 +168,7 @@ namespace Org.Openfeed.Client {
 
                     if (connectAgain != ConnectAgain.ConnectAgain) {
                         Trace.TraceInformation($"Terminating the connect loop: " + connectAgain);
+                        
                         break;
                     }
                 }
@@ -191,8 +198,7 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        private string GetClientVersion() => 
-            $"sdk-net:{Assembly.GetExecutingAssembly().GetName().Version};client-id:{_clientId ?? "default"};os:{Environment.OSVersion};64-bit-os:{Environment.Is64BitOperatingSystem};64-bit-process:{Environment.Is64BitProcess}";
+        private string GetClientVersion() => $"sdk-net:{Assembly.GetExecutingAssembly().GetName().Version};client-id:{_clientId ?? "default"};os:{Environment.OSVersion};64-bit-os:{Environment.Is64BitOperatingSystem};64-bit-process:{Environment.Is64BitProcess}";
         
         private async Task<(bool AuthenticationFailed, string Token)> LoginAsync(ClientWebSocket socket, MessageFramer messageFramer) {
             var ct = _disposedSource.Token;
@@ -204,11 +210,20 @@ namespace Org.Openfeed.Client {
                 ClientVersion = GetClientVersion(),
                 ProtocolVersion = 1
             } };
+            
             await messageFramer.SendAsync(socket, loginRequest, ct).ConfigureAwait(false);
 
             var loginResponse = (await messageFramer.ReceiveAsync(socket, ct).ConfigureAwait(false)).FirstOrDefault()?.LoginResponse;
-            if (loginResponse == null) throw new InvalidDataException("Expected a LoginResponse message in response to our LoginRequest.");
-            if (loginResponse.CorrelationId != 0) throw new InvalidDataException($"Received LoginResponse message has an incorrect correlation ID. Expected 0, received {loginResponse.CorrelationId}.");
+            
+            if (loginResponse == null)
+            {
+                throw new InvalidDataException("Expected a LoginResponse message in response to our LoginRequest.");
+            }
+            
+            if (loginResponse.CorrelationId != 0)
+            {
+                throw new InvalidDataException($"Received LoginResponse message has an incorrect correlation ID. Expected 0, received {loginResponse.CorrelationId}.");
+            }
 
             var token = loginResponse.Token;
 
@@ -317,7 +332,7 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new Dictionary<long, CancellationTokenSource>();
+        private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new();
 
         private async void RunSubscribeLoop(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, List<string>? symbols, List<long>? marketIds, List<string>? exchanges, List<int>? channels, CancellationToken ct) {
             var combined = CancellationTokenSource.CreateLinkedTokenSource(ct, _disposedSource.Token).Token;
@@ -568,6 +583,7 @@ namespace Org.Openfeed.Client {
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentResponse: {
                     await _listeners.OnMessage(msg).ConfigureAwait(false);
+                   
                     var resp = msg.InstrumentResponse;
                     if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentRequests);
 
@@ -577,7 +593,11 @@ namespace Org.Openfeed.Client {
                     await _listeners.OnMessage(msg).ConfigureAwait(false);
 
                     var resp = msg.InstrumentReferenceResponse;
-                    if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentReferenceRequests);
+                 
+                    if (resp != null)
+                    {
+                        DispatchResponseResult(resp.CorrelationId, resp, _instrumentReferenceRequests);
+                    }
 
                     break;
                 }
@@ -585,7 +605,11 @@ namespace Org.Openfeed.Client {
                     await _listeners.OnMessage(msg).ConfigureAwait(false);
 
                     var resp = msg.ExchangeResponse;
-                    if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _exchangeRequests);
+               
+                    if (resp != null)
+                    {
+                        DispatchResponseResult(resp.CorrelationId, resp, _exchangeRequests);
+                    }
 
                     break;
                 }
@@ -599,7 +623,9 @@ namespace Org.Openfeed.Client {
 
         private void QueueRequest(OpenfeedGatewayRequest request) {
             bool wasEmpty = _pendingRequests.Count == 0;
+            
             _pendingRequests.Add(request);
+          
             if (wasEmpty) {
                 _hasPendingRequests.SetResult(false);
             }
@@ -608,12 +634,20 @@ namespace Org.Openfeed.Client {
         private void OnRequestCancelled<T>(Dictionary<long, RequestData<T>> dict, long correlationId)  {
             RequestData<T> record;
             bool found;
+           
             lock (_lock) {
                 found = dict.TryGetValue(correlationId, out record);
-                if (found) dict.Remove(correlationId);
+              
+                if (found)
+                {
+                    dict.Remove(correlationId);
+                }
             }
 
-            if (found) record.Cancel();
+            if (found)
+            {
+                record.Cancel();
+            }
         }
 
         private void OnExchangeRequestCancelled(object obj) => OnRequestCancelled(_exchangeRequests, (long)obj);
@@ -623,6 +657,7 @@ namespace Org.Openfeed.Client {
             _disposedToken.ThrowIfCancellationRequested();
 
             long correlationId = CorrelationId.Create();
+            
             var req = new ExchangeRequest { CorrelationId = correlationId, Token = _token };
             var tcs = new TaskCompletionSource<ExchangeResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
 
@@ -639,7 +674,9 @@ namespace Org.Openfeed.Client {
             OpenfeedRequestException.ThrowOnError(response.Status);
 
             var exch = response.Exchanges;
+            
             var ret = new Exchange[exch.Count];
+            
             for (int x = 0; x < ret.Length; ++x) {
                 ret[x] = new Exchange(exch[x].Code, exch[x].Description);
             }
@@ -654,6 +691,7 @@ namespace Org.Openfeed.Client {
             _disposedToken.ThrowIfCancellationRequested();
 
             long correlationId = CorrelationId.Create();
+            
             request.CorrelationId = correlationId;
             request.Token = _token;
 
@@ -671,8 +709,7 @@ namespace Org.Openfeed.Client {
             return tcs.Task;
         }
 
-        private void OnInstrumentReferenceRequestCancelled(object obj) =>
-            OnRequestCancelled(_instrumentReferenceRequests, (long)obj);
+        private void OnInstrumentReferenceRequestCancelled(object obj) => OnRequestCancelled(_instrumentReferenceRequests, (long)obj);
 
         public Task<InstrumentReferenceResponse> GetInstrumentReferenceAsync(InstrumentReferenceRequest request, CancellationToken ct) {
             ct.ThrowIfCancellationRequested();
@@ -686,7 +723,10 @@ namespace Org.Openfeed.Client {
             var tcs = new TaskCompletionSource<InstrumentReferenceResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
 
             lock (_lock) {
-                if (_disconnected) throw new OpenfeedDisconnectedException();
+                if (_disconnected)
+                {
+                    throw new OpenfeedDisconnectedException();
+                }
 
                 var reg = ct.Register(OnInstrumentReferenceRequestCancelled, correlationId, false);
                 _instrumentReferenceRequests.Add(correlationId, new RequestData<InstrumentReferenceResponse>(tcs, reg));
@@ -704,13 +744,16 @@ namespace Org.Openfeed.Client {
             long correlationId = CorrelationId.Create();
 
             var subReq = new SubscriptionRequest { Service = service, CorrelationId = correlationId, Token = _token };
+            
             if (symbols != null)
             {
                 foreach (var symbol in symbols)
                 {
                     var req = new SubscriptionRequest.Types.Request { Symbol = symbol, SnapshotIntervalSeconds = snapshotIntervalSeconds };
+                   
                     req.SubscriptionType.AddRange(subscriptionTypes);
                     req.InstrumentType.AddRange(instrumentTypes);
+                    
                     subReq.Requests.Add(req);
                 }
             }
@@ -719,8 +762,10 @@ namespace Org.Openfeed.Client {
                 foreach (var marketId in marketIds)
                 {
                     var req = new SubscriptionRequest.Types.Request { MarketId = marketId, SnapshotIntervalSeconds = snapshotIntervalSeconds };
+                 
                     req.SubscriptionType.AddRange(subscriptionTypes);
                     req.InstrumentType.AddRange(instrumentTypes);
+                    
                     subReq.Requests.Add(req);
                 }
             }
@@ -729,8 +774,10 @@ namespace Org.Openfeed.Client {
                 foreach (var exchange in exchanges)
                 {
                     var req = new SubscriptionRequest.Types.Request { Exchange = exchange, SnapshotIntervalSeconds = snapshotIntervalSeconds };
+                  
                     req.SubscriptionType.AddRange(subscriptionTypes);
                     req.InstrumentType.AddRange(instrumentTypes);
+                  
                     subReq.Requests.Add(req);
                 }
             }
@@ -739,8 +786,10 @@ namespace Org.Openfeed.Client {
                 foreach (var channel in channels)
                 {
                     var req = new SubscriptionRequest.Types.Request { ChannelId = channel, SnapshotIntervalSeconds = snapshotIntervalSeconds };
+                  
                     req.SubscriptionType.AddRange(subscriptionTypes);
                     req.InstrumentType.AddRange(instrumentTypes);
+                    
                     subReq.Requests.Add(req);
                 }
             }
@@ -784,8 +833,13 @@ namespace Org.Openfeed.Client {
             TaskCompletionSource<bool> retSource;
 
             lock (_lock) {
-                if (_disconnected) return;
+                if (_disconnected)
+                {
+                    return;
+                }
+                
                 retSource = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+             
                 _disconnectWaiters.Add(retSource);
             }
 
