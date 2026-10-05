@@ -304,7 +304,18 @@ namespace Org.Openfeed.Client {
                 }
             }
 
-            return OnMessageWithMetadata(msg, def, symbols ?? Array.Empty<string>());
+            return OnMessageWithMetadata(msg, def, subscriptions?.Select(entry => entry.Symbol).Distinct().ToArray() ?? Array.Empty<string>());
+        }
+
+        /// <summary>
+        ///     Clears the cached metadata.
+        /// </summary>
+        internal void ClearCache() {
+            _instrumentDefinitions.Clear();
+
+            lock (_instrumentsBySymbol) {
+                _instrumentsBySymbol.Clear();
+            }
         }
     }
 
