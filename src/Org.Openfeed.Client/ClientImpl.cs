@@ -46,8 +46,8 @@ namespace Org.Openfeed.Client {
 
         private byte[] _inputBuffer = new byte[4096];
 
-        private static short GetShort(byte a, byte b) { 
-            return (short)((a << 8) | (b << 0));
+        private static int GetFrameLength(byte a, byte b) {
+            return (a << 8) | b;
         }
         public async ValueTask<List<OpenfeedGatewayMessage>> ReceiveAsync(ClientWebSocket socket, CancellationToken ct) {
             int messageLength = 0;
@@ -78,13 +78,39 @@ namespace Org.Openfeed.Client {
                 { 
                     if (currentIndex >= messageLength) { break; }
 
-                    int currentSubarrayLength = GetShort(_inputBuffer[currentIndex], _inputBuffer[currentIndex + 1]);
-                    messages.Add(OpenfeedGatewayMessage.Parser.ParseFrom(_inputBuffer, currentIndex + 2, currentSubarrayLength));
-
-                    currentIndex += currentSubarrayLength + 2;
+            int currentIndex = 0;
+            var messages = new List<OpenfeedGatewayMessage>();
+           
+            while (true)
+            {
+                if (currentIndex >= messageLength)
+                {
+                    break;
                 }
-                return messages;
+
+                if (currentIndex + 2 > messageLength)
+                {
+                    throw new InvalidDataException("Incomplete message length.");
+                }
+                
+                int currentSubarrayLength = GetFrameLength(_inputBuffer[currentIndex], _inputBuffer[currentIndex + 1]);
+               
+                if (currentSubarrayLength == 0)
+                {
+                    break;
+                }
+                
+                if (currentIndex + currentSubarrayLength + 2 > messageLength)
+                {
+                    throw new InvalidDataException("Incomplete message payload.");
+                }
+                
+                messages.Add(OpenfeedGatewayMessage.Parser.ParseFrom(_inputBuffer, currentIndex + 2, currentSubarrayLength));
+
+                currentIndex += currentSubarrayLength + 2;
             }
+            
+            return messages;
         }
     }
 
