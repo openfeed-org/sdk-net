@@ -114,6 +114,26 @@ namespace Org.Openfeed.Client {
         }
 
         /// <summary>
+        /// Returns the latest instrument definition for a market ID, if present.
+        /// </summary>
+        /// <param name="marketId">Market ID.</param>
+        /// <returns>The instrument definition or null.</returns>
+        public InstrumentDefinition? TryGetInstrumentFromMarketId(long marketId) => _instrumentDefinitions.TryGetValue(marketId, out var entry) ? entry.Definition : null;
+
+        /// <summary>
+        /// Returns the symbols associated with subscriptions to a market ID.
+        /// </summary>
+        /// <param name="marketId">Market ID.</param>
+        /// <returns>The subscribed symbols, including one entry per subscription.</returns>
+        public string[] GetSymbolsFromMarketId(long marketId) {
+            if (!_instrumentDefinitions.TryGetValue(marketId, out var entry) || entry.Subscriptions == null) {
+                return Array.Empty<string>();
+            }
+
+            return entry.Subscriptions.Select(subscription => subscription.Symbol).ToArray();
+        }
+
+        /// <summary>
         /// Function that will be called when a connection to the websocket fails.
         /// </summary>
         public Func<Exception, ValueTask> OnConnectFailed = ex => default;
