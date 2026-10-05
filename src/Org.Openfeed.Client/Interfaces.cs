@@ -201,6 +201,46 @@ namespace Org.Openfeed.Client {
                  
                     break;
                 }
+                case OpenfeedGatewayMessage.DataOneofCase.InstrumentAction: {
+                    var action = msg.InstrumentAction;
+
+                    if (action.Action == ActionType.AliasChanged && action.Instrument != null && action.Instrument.MarketId != 0) {
+                        var marketId = action.Instrument.MarketId;
+
+                        (def, subscriptions) = GetInstrumentDefinition(marketId);
+
+                        var remaining = Array.FindAll(subscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != action.OldAlias);
+
+                        if (remaining.Length == 0)
+                        {
+                            _instrumentDefinitions.TryRemove(marketId, out _);
+                        }
+                        else
+                        {
+                            _instrumentDefinitions[marketId] = new MarketMetadata(def, remaining);
+                        }
+
+                        if (action.NewInstrument != null && action.NewInstrument.MarketId != 0) {
+                            var parts = action.OldAlias.Split('*');
+
+                            if (parts.Length > 1 && int.TryParse(parts[1], out var number)) {
+                                var newMarketId = action.NewInstrument.MarketId;
+                                var (newDef, newSubscriptions) = GetInstrumentDefinition(newMarketId);
+                              
+                                var newAlias = $"{parts[0]}*{(action.OldAlias.EndsWith("*0", StringComparison.Ordinal) ? 0 : number + 1)}";
+                                var newRemaining = newAlias == action.OldAlias ? newSubscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>() : Array.FindAll(newSubscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != newAlias);
+
+                                if (newRemaining.Length == 0)
+                                {
+                                    _instrumentDefinitions.TryRemove(newMarketId, out _);
+                                }
+                                else
+                                {
+                                    _instrumentDefinitions[newMarketId] = new MarketMetadata(newDef, newRemaining);
+                                }
+                            }
+                        }
+                    }
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketSnapshot: {
