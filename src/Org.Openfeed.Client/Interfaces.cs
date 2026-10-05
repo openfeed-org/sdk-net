@@ -407,7 +407,7 @@ namespace Org.Openfeed.Client {
         /// <param name="ct"><see cref="CancellationToken"/></param>
         /// <returns>A task that will return the instrument definitions or throw an
         /// <see cref="OpenfeedDisconnectedException"/> if the connection disconnects.</returns>
-        Task<InstrumentResponse> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct);
+        Task<IReadOnlyList<InstrumentDefinition>> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct);
 
         /// <summary>
         /// Sends an <see cref="InstrumentReferenceRequest"/> and returns the first <see cref="InstrumentReferenceResponse"/>

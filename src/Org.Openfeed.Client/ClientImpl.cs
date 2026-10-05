@@ -494,9 +494,8 @@ namespace Org.Openfeed.Client {
     class ConnectionImpl : IOpenfeedConnection {
         private readonly string _token;
         private readonly CancellationToken _disposedToken;
-        private readonly Func<OpenfeedGatewayMessage, ValueTask> _onMessage;
-        private readonly List<TaskCompletionSource<bool>> _disconnectWaiters = new List<TaskCompletionSource<bool>>();
         private readonly OpenfeedListeners _listeners;
+        private readonly List<TaskCompletionSource<bool>> _disconnectWaiters = new();
 
         private bool _disconnected;
 
@@ -506,9 +505,9 @@ namespace Org.Openfeed.Client {
             _listeners = listeners;
         }
 
-        private readonly object _lock = new object();
-        private List<OpenfeedGatewayRequest> _pendingRequests = new List<OpenfeedGatewayRequest>();
-        private TaskCompletionSource<bool> _hasPendingRequests = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+        private readonly object _lock = new();
+        private List<OpenfeedGatewayRequest> _pendingRequests = new();
+        private TaskCompletionSource<bool> _hasPendingRequests = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
         // request bookkeeping
 
@@ -516,8 +515,7 @@ namespace Org.Openfeed.Client {
             public readonly TaskCompletionSource<T> ResultSlot;
             public readonly CancellationTokenRegistration CancellationRegistration;
 
-            public RequestData(TaskCompletionSource<T> resultSlot, CancellationTokenRegistration cancellationRegistration) =>
-                (ResultSlot, CancellationRegistration) = (resultSlot, cancellationRegistration);
+            public RequestData(TaskCompletionSource<T> resultSlot, CancellationTokenRegistration cancellationRegistration) => (ResultSlot, CancellationRegistration) = (resultSlot, cancellationRegistration);
 
             public readonly void Cancel() {
                 CancellationRegistration.Dispose();
@@ -525,36 +523,54 @@ namespace Org.Openfeed.Client {
             }
         }
 
-        private readonly Dictionary<long, RequestData<ExchangeResponse>> _exchangeRequests = new Dictionary<long, RequestData<ExchangeResponse>>();
-        private readonly Dictionary<long, RequestData<InstrumentResponse>> _instrumentRequests = new Dictionary<long, RequestData<InstrumentResponse>>();
-        private readonly Dictionary<long, RequestData<InstrumentReferenceResponse>> _instrumentReferenceRequests = new Dictionary<long, RequestData<InstrumentReferenceResponse>>();
+        private readonly Dictionary<long, RequestData<ExchangeResponse>> _exchangeRequests = new();
+        private readonly Dictionary<long, RequestData<IReadOnlyList<InstrumentDefinition>>> _instrumentRequests = new();
+        private readonly Dictionary<long, List<InstrumentDefinition>> _definitionsInFlight = new();
+        private readonly Dictionary<long, RequestData<InstrumentReferenceResponse>> _instrumentReferenceRequests = new();
 
-        private readonly Dictionary<long, SubscriptionRequest> _subscriptions = new Dictionary<long, SubscriptionRequest>();
+        private readonly Dictionary<long, (SubscriptionRequest Request, bool Acknowledged, bool UnsubscribePending)> _subscriptions = new();
 
         // communication
 
         public async Task<ConnectAgain> RunSocketLoop (ClientWebSocket socket, MessageFramer messageFramer) {
             var requests = new List<OpenfeedGatewayRequest>();
-
+            
+            var silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
+         
+            Task silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
             var receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
             Task pendingRequestTask;
+           
             lock (_lock) {
                 pendingRequestTask = _hasPendingRequests.Task;
             }
+            
             Task<List<OpenfeedGatewayMessage>>? receiveTaskTask = null;
 
             try {
                 for (; ; ) {
-                    bool hasData = (receiveTaskTask != null ? receiveTaskTask.IsCompleted : receiveTask.IsCompleted) || pendingRequestTask.IsCompleted;
+                    if (silenceTask.IsCompleted)
+                    {
+                        throw new TimeoutException("Connection silent.");
+                    }
+                    
+                    bool hasData = (receiveTaskTask?.IsCompleted ?? receiveTask.IsCompleted) || pendingRequestTask.IsCompleted;
+                    
                     if (!hasData) {
-                        if (receiveTaskTask == null) receiveTaskTask = receiveTask.AsTask();
-                        await Task.WhenAny(receiveTaskTask, pendingRequestTask).ConfigureAwait(false);
+                        if (receiveTaskTask == null)
+                        {
+                            receiveTaskTask = receiveTask.AsTask();
+                        }
+                        
+                        await Task.WhenAny(receiveTaskTask, pendingRequestTask, silenceTask).ConfigureAwait(false);
                     }
 
                     if (pendingRequestTask.IsCompleted) {
                         lock (_lock) {
                             requests.Clear();
+                           
                             (requests, _pendingRequests) = (_pendingRequests, requests);
+                            
                             _hasPendingRequests = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
                             pendingRequestTask = _hasPendingRequests.Task;
                         }
@@ -569,9 +585,17 @@ namespace Org.Openfeed.Client {
                     if (receiveTaskTask != null) {
                         if (receiveTaskTask.IsCompleted) {
                             var msgs = await receiveTaskTask.ConfigureAwait(false);
+                            
+                            silenceSource.Cancel();
+                            silenceSource.Dispose();
+                            silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
+                            
+                            silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
+                            
                             foreach (var msg in msgs)
                             {
                                 await DispatchMessage(msg);
+                               
                                 if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse)
                                 {
                                     return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
@@ -584,59 +608,84 @@ namespace Org.Openfeed.Client {
                     }
                     else if (receiveTask.IsCompleted) {
                         var msgs = await receiveTask.ConfigureAwait(false);
+                        
+                        silenceSource.Cancel();
+                        silenceSource.Dispose();
+                        silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
+                        silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
+                        
                         foreach (var msg in msgs)
                         {
                             await DispatchMessage(msg);
+                          
                             if (msg.DataCase == OpenfeedGatewayMessage.DataOneofCase.LogoutResponse)
                             {
                                 return msg.LogoutResponse.Status.Result == Result.DuplicateLogin ? ConnectAgain.DuplicateLoginKickedOut : ConnectAgain.ConnectAgain;
                             }
                         }
+                        
                         receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
                     }
                 }
             }
             finally {
-                Exception ex = new OpenfeedDisconnectedException();
+                silenceSource.Cancel();
+                silenceSource.Dispose();
+                MarkDisconnected();
+            }
+        }
 
-                lock (_lock) {
-                    _disconnected = true;
+        public void MarkDisconnected() {
+            Exception ex = new OpenfeedDisconnectedException();
 
-                    void CancelOutstandingRequests<T>(Dictionary<long, RequestData<T>> dict) {
-                        foreach (var data in dict.Values) {
-                            data.CancellationRegistration.Dispose();
-                            if (_disposedToken.IsCancellationRequested) {
-                                data.ResultSlot.SetCanceled();
-                            }
-                            else {
-                                data.ResultSlot.SetException(ex);
-                            }
+            lock (_lock) {
+                if (_disconnected)
+                {
+                    return;
+                }
+                
+                _disconnected = true;
+
+                void CancelOutstandingRequests<T>(Dictionary<long, RequestData<T>> dict) {
+                    foreach (var data in dict.Values) {
+                        data.CancellationRegistration.Dispose();
+                       
+                        if (_disposedToken.IsCancellationRequested) {
+                            data.ResultSlot.SetCanceled();
                         }
-
-                        dict.Clear();
+                        else {
+                            data.ResultSlot.SetException(ex);
+                        }
                     }
 
-                    CancelOutstandingRequests(_exchangeRequests);
-                    CancelOutstandingRequests(_instrumentRequests);
-                    CancelOutstandingRequests(_instrumentReferenceRequests);
+                    dict.Clear();
+                }
 
-                    _subscriptions.Clear();
+                CancelOutstandingRequests(_exchangeRequests);
+                CancelOutstandingRequests(_instrumentRequests);
+                _definitionsInFlight.Clear();
+                CancelOutstandingRequests(_instrumentReferenceRequests);
 
-                    foreach (var x in _disconnectWaiters) {
-                        x.SetResult(true);
-                    }
+                _subscriptions.Clear();
+
+                foreach (var x in _disconnectWaiters) {
+                    x.SetResult(true);
                 }
             }
         }
 
         private async ValueTask DispatchMessage(OpenfeedGatewayMessage msg) {
             void DispatchResponseResult<T> (long correlationId, T response, Dictionary<long, RequestData<T>> dict) {
-                lock (_lock) {
-                    if (dict.TryGetValue(correlationId, out var data)) {
-                        dict.Remove(correlationId);
-                        data.CancellationRegistration.Dispose();
-                        data.ResultSlot.SetResult(response);
+                lock (_lock)
+                {
+                    if (!dict.TryGetValue(correlationId, out var data))
+                    {
+                        return;
                     }
+                    
+                    dict.Remove(correlationId);
+                    data.CancellationRegistration.Dispose();
+                    data.ResultSlot.SetResult(response);
                 }
             }
 
@@ -646,13 +695,69 @@ namespace Org.Openfeed.Client {
                   
                     break;
                 }
+                case OpenfeedGatewayMessage.DataOneofCase.SubscriptionResponse: {
+                    var response = msg.SubscriptionResponse;
+                   
+                    if (!response.Unsubscribe) {
+                        lock (_lock) {
+                            if (_subscriptions.TryGetValue(response.CorrelationId, out var subscription)) {
+                                if (subscription.UnsubscribePending) {
+                                    _subscriptions.Remove(response.CorrelationId);
+                                    
+                                    QueueRequest(new OpenfeedGatewayRequest {
+                                        SubscriptionRequest = new SubscriptionRequest(subscription.Request) { Unsubscribe = true }
+                                    });
+                                }
+                                else {
+                                    _subscriptions[response.CorrelationId] = (subscription.Request, true, false);
+                                }
+                            }
+                        }
+                    }
+                   
+                    await _listeners.OnMessage(msg).ConfigureAwait(false);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentResponse: {
                     await _listeners.OnMessage(msg).ConfigureAwait(false);
                    
                     var resp = msg.InstrumentResponse;
-                    if (resp != null) DispatchResponseResult(resp.CorrelationId, resp, _instrumentRequests);
+                  
+                    lock (_lock) {
+                        if (_instrumentRequests.TryGetValue(resp.CorrelationId, out var data)) {
+                            if (resp.Status != null && resp.Status.Result != Result.Success) {
+                                _instrumentRequests.Remove(resp.CorrelationId);
+                                _definitionsInFlight.Remove(resp.CorrelationId);
+                             
+                                data.CancellationRegistration.Dispose();
+                                data.ResultSlot.SetException(new OpenfeedRequestException(resp.Status));
+                            }
+                            else if (resp.InstrumentDefinition == null) {
+                                _instrumentRequests.Remove(resp.CorrelationId);
+                                _definitionsInFlight.Remove(resp.CorrelationId);
+
+                                data.CancellationRegistration.Dispose();
+                                data.ResultSlot.SetException(new InvalidDataException($"Instrument definition not found in response ID {resp.CorrelationId}."));
+                            }
+                            else {
+                                if (!_definitionsInFlight.TryGetValue(resp.CorrelationId, out var definitions)) {
+                                    definitions = new List<InstrumentDefinition>();
+                                    _definitionsInFlight.Add(resp.CorrelationId, definitions);
+                                }
+                                
+                                definitions.Add(resp.InstrumentDefinition);
+                                
+                                if (definitions.Count >= resp.NumberOfDefinitions) {
+                                    _instrumentRequests.Remove(resp.CorrelationId);
+                                    _definitionsInFlight.Remove(resp.CorrelationId);
+                                   
+                                    data.CancellationRegistration.Dispose();
+                                    data.ResultSlot.SetResult(definitions);
+                                }
+                            }
+                        }
+                    }
 
                     break;
                 }
@@ -751,9 +856,18 @@ namespace Org.Openfeed.Client {
             return ret;
         }
 
-        private void OnInstrumentsRequestCancelled(object obj) => OnRequestCancelled(_instrumentRequests, (long)obj);
+        private void OnInstrumentsRequestCancelled(object obj) {
+            var correlationId = (long)obj;
+            
+            OnRequestCancelled(_instrumentRequests, correlationId);
+            
+            lock (_lock)
+            {
+                _definitionsInFlight.Remove(correlationId);
+            }
+        }
 
-        public Task<InstrumentResponse> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct) {
+        public Task<IReadOnlyList<InstrumentDefinition>> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct) {
             ct.ThrowIfCancellationRequested();
             _disposedToken.ThrowIfCancellationRequested();
 
@@ -761,14 +875,15 @@ namespace Org.Openfeed.Client {
             
             request.CorrelationId = correlationId;
             request.Token = _token;
+            request.Version = 1;
 
-            var tcs = new TaskCompletionSource<InstrumentResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
+            var tcs = new TaskCompletionSource<IReadOnlyList<InstrumentDefinition>>(TaskCreationOptions.RunContinuationsAsynchronously);
 
             lock (_lock) {
                 if (_disconnected) throw new OpenfeedDisconnectedException();
 
                 var reg = ct.Register(OnInstrumentsRequestCancelled, correlationId, false);
-                _instrumentRequests.Add(correlationId, new RequestData<InstrumentResponse>(tcs, reg));
+                _instrumentRequests.Add(correlationId, new RequestData<IReadOnlyList<InstrumentDefinition>>(tcs, reg));
 
                 QueueRequest(new OpenfeedGatewayRequest { InstrumentRequest = request });
             }
@@ -863,8 +978,12 @@ namespace Org.Openfeed.Client {
 
             lock (_lock)
             {
-                if (_disconnected) throw new OpenfeedDisconnectedException();
-                _subscriptions.Add(correlationId, subReq);
+                if (_disconnected)
+                {
+                    throw new OpenfeedDisconnectedException();
+                }
+                
+                _subscriptions.Add(correlationId, (subReq, false, false));
                 QueueRequest(new OpenfeedGatewayRequest { SubscriptionRequest = subReq });
             }
 
@@ -883,14 +1002,28 @@ namespace Org.Openfeed.Client {
             return SubscribeImpl(service, subscriptionTypes, instrumentTypes, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
         }
 
-
         public void Unsubscribe(long subscriptionId) {
             lock (_lock) {
-                if (!_subscriptions.TryGetValue(subscriptionId, out var subscription)) throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
+                if (!_subscriptions.TryGetValue(subscriptionId, out var subscription))
+                {
+                    throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
+                }
+                
+                if (_disconnected)
+                {
+                    throw new OpenfeedDisconnectedException();
+                }
 
-                var req = new SubscriptionRequest(subscription) { Unsubscribe = true };
-
-                if (!_disconnected) QueueRequest(new OpenfeedGatewayRequest { SubscriptionRequest = req });
+                if (subscription.Acknowledged) {
+                    _subscriptions.Remove(subscriptionId);
+                  
+                    QueueRequest(new OpenfeedGatewayRequest {
+                        SubscriptionRequest = new SubscriptionRequest(subscription.Request) { Unsubscribe = true }
+                    });
+                }
+                else {
+                    _subscriptions[subscriptionId] = (subscription.Request, false, true);
+                }
             }
         }
 
