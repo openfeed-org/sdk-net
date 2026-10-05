@@ -241,6 +241,18 @@ namespace Org.Openfeed.Client {
                             }
                         }
                     }
+                    else if (action is { Action: ActionType.ExchangeMove, Instrument: not null } && action.Instrument.MarketId != 0) {
+                        var marketId = action.Instrument.MarketId;
+                       
+                        (def, subscriptions) = GetInstrumentDefinition(marketId);
+                       
+                        _instrumentDefinitions.TryRemove(marketId, out _);
+                       
+                        if (action.NewInstrument != null && action.NewInstrument.MarketId != 0) {
+                            _instrumentDefinitions[action.NewInstrument.MarketId] = new MarketMetadata(def, subscriptions);
+                        }
+                    }
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketSnapshot: {
