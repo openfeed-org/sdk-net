@@ -41,7 +41,8 @@ namespace Org.Openfeed.Client {
             }
             
             request.WriteTo(_outputStream);
-            _outputStream.Flush();
+         
+            await _outputStream.FlushAsync(ct);
 
             await socket.SendAsync(new ArraySegment<byte>(_outputStreamBuffer, 0, size), WebSocketMessageType.Binary, true, ct).ConfigureAwait(false);
         }
@@ -190,10 +191,13 @@ namespace Org.Openfeed.Client {
                 }
             }
 
+            _disposedSource.Cancel();
+            
             lock (_currentConnectionLock) {
                 var disp = new ObjectDisposedException("Openfeed Client");
+               
                 foreach (var x in _currentConnectionWaiters) {
-                    x.SetException(disp);
+                    x.TrySetException(disp);
                 }
             }
         }
@@ -244,58 +248,71 @@ namespace Org.Openfeed.Client {
         private async Task<ConnectAgain> ConnectAndShuffleMessages() {
             var ct = _disposedSource.Token;
 
-            using (var socket = new ClientWebSocket()) {
-                socket.Options.UseDefaultCredentials = true;
-                var proxy = WebRequest.GetSystemWebProxy();
-                if (proxy != null) {
-                    socket.Options.Proxy = proxy;
-                }
-                socket.Options.KeepAliveInterval = TimeSpan.FromSeconds(10);
+            using var socket = new ClientWebSocket();
+            
+            socket.Options.UseDefaultCredentials = true;
+            
+            var proxy = WebRequest.GetSystemWebProxy();
+            
+            socket.Options.Proxy = proxy;
+            socket.Options.KeepAliveInterval = TimeSpan.FromSeconds(10);
 
-                Trace.TraceInformation($"WebSocket connecting to {_uri}...");
-                try {
-                    await socket.ConnectAsync(_uri, ct).ConfigureAwait(false);
-                }
-                catch (Exception e) {
-                    Trace.TraceWarning($"WebSocket connection to {_uri} failed with exception: {e.ToString()}");
-                    await _listeners.OnConnectFailed(e);
-                    return ConnectAgain.ConnectAgain;
-                }
+            Trace.TraceInformation($"WebSocket connecting to {_uri}...");
+            
+            try {
+                await socket.ConnectAsync(_uri, ct).ConfigureAwait(false);
+            }
+            catch (Exception e) {
+                Trace.TraceWarning($"WebSocket connection to {_uri} failed with exception: {e.ToString()}");
+                
+                await _listeners.OnConnectFailed(e);
+                
+                return ConnectAgain.ConnectAgain;
+            }
 
-                Trace.TraceInformation($"WebSocket connected to {_uri}, logging in...");
-                var (loginFailed, token) = await LoginAsync(socket, _messageFramer).ConfigureAwait(false);
-                if (loginFailed) {
-                    Trace.TraceError($"WebSocket connected to {_uri}, log in failed.");
-                    await _listeners.OnCredentialsRejected().ConfigureAwait(false);
-                    return ConnectAgain.CredentialsRejected;
-                }
-                else {
-                    Trace.TraceInformation($"WebSocket connected to {_uri}, logged in.");
+            Trace.TraceInformation($"WebSocket connected to {_uri}, logging in...");
+       
+            var (loginFailed, token) = await LoginAsync(socket, _messageFramer).ConfigureAwait(false);
+            
+            if (loginFailed) {
+                Trace.TraceError($"WebSocket connected to {_uri}, log in failed.");
+             
+                await _listeners.OnCredentialsRejected().ConfigureAwait(false);
+                
+                return ConnectAgain.CredentialsRejected;
+            }
 
-                    var connection = new ConnectionImpl(token, _listeners.OnMessage, ct);
-                    await _listeners.OnConnected(connection).ConfigureAwait(false);
+            Trace.TraceInformation($"WebSocket connected to {_uri}, logged in.");
 
-                    lock (_currentConnectionLock) {
-                        _currentConnection = connection;
-                        foreach (var x in _currentConnectionWaiters) {
-                            x.SetResult(connection);
-                        }
-                        _currentConnectionWaiters.Clear();
-                    }
             var connection = new ConnectionImpl(token, _listeners, ct);
-                    
-                    try {
-                        return await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
-                    }
-                    finally {
-                        lock (_currentConnectionLock) {
-                            Debug.Assert(_currentConnectionWaiters.Count == 0);
-                            _currentConnection = null;
-                        }
-
-                        await _listeners.OnDisconnected().ConfigureAwait(false);
-                    }
+           
+            lock (_currentConnectionLock) {
+                _currentConnection = connection;
+              
+                foreach (var x in _currentConnectionWaiters) {
+                    x.SetResult(connection);
                 }
+                
+                _currentConnectionWaiters.Clear();
+            }
+                    
+            try {
+                await _listeners.OnConnected(connection).ConfigureAwait(false);
+                      
+                return await connection.RunSocketLoop(socket, _messageFramer).ConfigureAwait(false);
+            }
+            finally {
+                connection.MarkDisconnected();
+                      
+                lock (_currentConnectionLock) {
+                    Debug.Assert(_currentConnectionWaiters.Count == 0);
+                   
+                    _currentConnection = null;
+                }
+
+                _listeners.ClearCache();
+                      
+                await _listeners.OnDisconnected().ConfigureAwait(false);
             }
         }
 
@@ -303,23 +320,30 @@ namespace Org.Openfeed.Client {
             ct.ThrowIfCancellationRequested();
 
             TaskCompletionSource<ConnectionImpl> retSource;
-            lock (_currentConnectionLock) {
+            lock (_currentConnectionLock)
+            {
                 if (_currentConnection != null) {
                     return _currentConnection;
                 }
-                else {
-                    retSource = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
-                    // This is done to prevent unobserved exceptions and instead of the code that around below before.
-                    //using (var caw = new CancellationAwaiter(ct, false))
-                    //{
-                    //    await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
-                    //}
-                    ct.Register(() =>
-                    {
-                        retSource.TrySetCanceled();
-                    });
-                    _currentConnectionWaiters.Add(retSource);
+
+                if (_disposedSource.IsCancellationRequested)
+                {
+                    throw new ObjectDisposedException("Openfeed Client");
                 }
+                
+                retSource = new TaskCompletionSource<ConnectionImpl>(TaskCreationOptions.RunContinuationsAsynchronously);
+                // This is done to prevent unobserved exceptions and instead of the code that around below before.
+                //using (var caw = new CancellationAwaiter(ct, false))
+                //{
+                //    await Task.WhenAny(retSource.Task, caw.Task).ConfigureAwait(false);
+                //}
+                
+                ct.Register(() =>
+                {
+                    retSource.TrySetCanceled();
+                });
+                
+                _currentConnectionWaiters.Add(retSource);
             }
 
             try
@@ -335,12 +359,18 @@ namespace Org.Openfeed.Client {
         private readonly Dictionary<long, CancellationTokenSource> _subscriptions = new();
 
         private async void RunSubscribeLoop(Service service, IEnumerable<SubscriptionType> subscriptionTypes, IEnumerable<InstrumentType> instrumentTypes, int snapshotIntervalSeconds, List<string>? symbols, List<long>? marketIds, List<string>? exchanges, List<int>? channels, CancellationToken ct) {
-            var combined = CancellationTokenSource.CreateLinkedTokenSource(ct, _disposedSource.Token).Token;
+            using var combinedSource = CancellationTokenSource.CreateLinkedTokenSource(ct, _disposedSource.Token);
+            
+            var combined = combinedSource.Token;
 
-            if (combined.IsCancellationRequested) return;
+            if (combined.IsCancellationRequested)
+            {
+                return;
+            }
 
             for (; ; ) {
                 IOpenfeedConnection connection;
+                
                 try
                 {
                     connection = await GetConnectionAsync(combined).ConfigureAwait(false);
@@ -348,6 +378,16 @@ namespace Org.Openfeed.Client {
                 catch (Exception ex) when (!combined.IsCancellationRequested)
                 {
                     Trace.TraceError("Unknown error when getting connection. Will retry after:", ex);
+                    
+                    try
+                    {
+                        await Task.Delay(100, combined).ConfigureAwait(false);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        return;
+                    }
+                    
                     continue;
                 }
                 catch when (combined.IsCancellationRequested)
@@ -356,6 +396,7 @@ namespace Org.Openfeed.Client {
                 }
 
                 long? subscriptionId = null;
+               
                 try {
                     subscriptionId = connection.Subscribe(service, subscriptionTypes, instrumentTypes, snapshotIntervalSeconds, symbols, marketIds, exchanges, channels);
                         
@@ -363,11 +404,33 @@ namespace Org.Openfeed.Client {
                 }
                 catch (OperationCanceledException) when (ct.IsCancellationRequested) {
                     if (subscriptionId != null) {
-                        connection.Unsubscribe(subscriptionId.Value);
+                        try
+                        {
+                            connection.Unsubscribe(subscriptionId.Value);
+                        }
+                        catch (OpenfeedDisconnectedException)
+                        {
+                            
+                        }
                     }
                     break;
                 }
+                catch (OperationCanceledException) when (combined.IsCancellationRequested) {
+                    return;
+                }
                 catch (OpenfeedDisconnectedException) {
+                }
+                catch (Exception ex) when (!combined.IsCancellationRequested) {
+                    Trace.TraceError($"Subscription error: {ex}");
+
+                    try
+                    {
+                        await Task.Delay(100, combined).ConfigureAwait(false);
+                    }
+                    catch (OperationCanceledException)
+                    {
+                        return;
+                    }
                 }
             }
         }
@@ -416,7 +479,11 @@ namespace Org.Openfeed.Client {
             CancellationTokenSource cts;
 
             lock (_subscriptions) {
-                if (!_subscriptions.TryGetValue(subscriptionId, out cts)) throw new ArgumentException($"Subscription with id {subscriptionId} does not exist.", nameof(subscriptionId));
+                if (!_subscriptions.TryGetValue(subscriptionId, out cts))
+                {
+                    throw new ArgumentException($"Subscription with id {subscriptionId} does not exist.", nameof(subscriptionId));
+                }
+                
                 _subscriptions.Remove(subscriptionId);
             }
 
