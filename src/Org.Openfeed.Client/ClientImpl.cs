@@ -14,6 +14,16 @@ using System.Threading.Tasks;
 using InstrumentType = Org.Openfeed.InstrumentDefinition.Types.InstrumentType;
 
 namespace Org.Openfeed.Client {
+    static class ConnectionTiming {
+        private static readonly Random _random = new();
+
+        public static int WithJitter(int milliseconds) {
+            lock (_random) {
+                return milliseconds + _random.Next(5_000);
+            }
+        }
+    }
+
     static class CorrelationId {
         private static long _next;
 
@@ -42,8 +52,6 @@ namespace Org.Openfeed.Client {
             
             request.WriteTo(_outputStream);
          
-            await _outputStream.FlushAsync(ct);
-
             await socket.SendAsync(new ArraySegment<byte>(_outputStreamBuffer, 0, size), WebSocketMessageType.Binary, true, ct).ConfigureAwait(false);
         }
 
@@ -184,7 +192,7 @@ namespace Org.Openfeed.Client {
                 }
 
                 try {
-                    await Task.Delay(5_000, ct);
+                    await Task.Delay(ConnectionTiming.WithJitter(5_000), ct);
                 }
                 catch (Exception) when (ct.IsCancellationRequested) {
                     break;
@@ -537,7 +545,7 @@ namespace Org.Openfeed.Client {
             
             var silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
          
-            Task silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
+            Task silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
             var receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
             Task pendingRequestTask;
            
@@ -590,7 +598,7 @@ namespace Org.Openfeed.Client {
                             silenceSource.Dispose();
                             silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
                             
-                            silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
+                            silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
                             
                             foreach (var msg in msgs)
                             {
@@ -612,7 +620,7 @@ namespace Org.Openfeed.Client {
                         silenceSource.Cancel();
                         silenceSource.Dispose();
                         silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
-                        silenceTask = Task.Delay(TimeSpan.FromSeconds(20), silenceSource.Token);
+                        silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
                         
                         foreach (var msg in msgs)
                         {
@@ -1004,14 +1012,14 @@ namespace Org.Openfeed.Client {
 
         public void Unsubscribe(long subscriptionId) {
             lock (_lock) {
-                if (!_subscriptions.TryGetValue(subscriptionId, out var subscription))
-                {
-                    throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
-                }
-                
                 if (_disconnected)
                 {
                     throw new OpenfeedDisconnectedException();
+                }
+
+                if (!_subscriptions.TryGetValue(subscriptionId, out var subscription))
+                {
+                    throw new ArgumentException($"Subscription ID {subscriptionId} does not exist.");
                 }
 
                 if (subscription.Acknowledged) {
