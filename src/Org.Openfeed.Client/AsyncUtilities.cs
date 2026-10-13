@@ -16,7 +16,11 @@ namespace Org.Openfeed.Client {
         public void GetResult() { }
 
         public void OnCompleted(Action continuation) {
-            if (_waitCallbackDelegate == null) _waitCallbackDelegate = OnWaitCallback;
+            if (_waitCallbackDelegate == null)
+            {
+                _waitCallbackDelegate = OnWaitCallback;
+            }
+            
             ThreadPool.QueueUserWorkItem(_waitCallbackDelegate, continuation);
         }
 
@@ -28,8 +32,8 @@ namespace Org.Openfeed.Client {
     }
 
     /// <summary>
-    /// Given a <see cref="CancellationToken"/> provides a <see cref="Task"/> that's cancelled when the token
-    /// is cancelled.
+    /// Given a <see cref="CancellationToken"/> provides a <see cref="Task"/> that's canceled when the token
+    /// is canceled.
     /// </summary>
     struct CancellationAwaiter : IDisposable {
         private readonly CancellationTokenRegistration _registration;
@@ -38,16 +42,19 @@ namespace Org.Openfeed.Client {
         public readonly Task Task;
 
         public CancellationAwaiter(CancellationToken ct, bool useSynchronizationContext) {
-            if (_onCancellationDelegate == null) _onCancellationDelegate = OnCancellation;
+            if (_onCancellationDelegate == null)
+            {
+                _onCancellationDelegate = OnCancellation;
+            }
 
             var source = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
+            
             _registration = ct.Register(_onCancellationDelegate, source, useSynchronizationContext);
             Task = source.Task;
         }
 
         public void Dispose() => _registration.Dispose();
 
-        private static void OnCancellation(object state) =>
-            ((TaskCompletionSource<int>)state).SetCanceled();
+        private static void OnCancellation(object state) => ((TaskCompletionSource<int>)state).SetCanceled();
     }
 }
