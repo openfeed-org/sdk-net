@@ -14,14 +14,21 @@ using System.Threading.Tasks;
 using InstrumentType = Org.Openfeed.InstrumentDefinition.Types.InstrumentType;
 
 namespace Org.Openfeed.Client {
-    static class ConnectionTiming {
-        private static readonly Random _random = new();
-
-        public static int WithJitter(int milliseconds) {
-            lock (_random) {
-                return milliseconds + _random.Next(5_000);
-            }
+    class ReconnectBackoff {
+        private const int InitialDelayMilliseconds = 5_000;
+        private const int MaxDelayMilliseconds = 60_000;
+       
+        private readonly Random _random = new(Guid.NewGuid().GetHashCode());
+        
+        private int _delayMilliseconds = InitialDelayMilliseconds;
+        
+        public int NextDelay() {
+            _delayMilliseconds = Math.Min(_delayMilliseconds * 2, MaxDelayMilliseconds);
+        
+            return _random.Next(_delayMilliseconds / 2, _delayMilliseconds);
         }
+        
+        public void Reset() => _delayMilliseconds = InitialDelayMilliseconds;
     }
 
     static class CorrelationId {
@@ -139,6 +146,7 @@ namespace Org.Openfeed.Client {
         private readonly string? _clientId;
         private readonly OpenfeedListeners _listeners;
         private readonly CancellationTokenSource _disposedSource = new();
+        private readonly ReconnectBackoff _reconnectBackoff = new();
 
         private readonly MessageFramer _messageFramer = new();
 
@@ -192,7 +200,7 @@ namespace Org.Openfeed.Client {
                 }
 
                 try {
-                    await Task.Delay(ConnectionTiming.WithJitter(5_000), ct);
+                    await Task.Delay(_reconnectBackoff.NextDelay(), ct);
                 }
                 catch (Exception) when (ct.IsCancellationRequested) {
                     break;
@@ -252,7 +260,6 @@ namespace Org.Openfeed.Client {
             return (false, token);
         }
 
-        // Returns true if the login failed.
         private async Task<ConnectAgain> ConnectAndShuffleMessages() {
             var ct = _disposedSource.Token;
 
@@ -290,6 +297,7 @@ namespace Org.Openfeed.Client {
                 return ConnectAgain.CredentialsRejected;
             }
 
+            _reconnectBackoff.Reset();
             Trace.TraceInformation($"WebSocket connected to {_uri}, logged in.");
 
             var connection = new ConnectionImpl(token, _listeners, ct);
@@ -500,6 +508,8 @@ namespace Org.Openfeed.Client {
     }
 
     class ConnectionImpl : IOpenfeedConnection {
+        private const int SilenceTimeoutMilliseconds = 20_000;
+
         private readonly string _token;
         private readonly CancellationToken _disposedToken;
         private readonly OpenfeedListeners _listeners;
@@ -545,7 +555,7 @@ namespace Org.Openfeed.Client {
             
             var silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
          
-            Task silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
+            Task silenceTask = Task.Delay(SilenceTimeoutMilliseconds, silenceSource.Token);
             var receiveTask = messageFramer.ReceiveAsync(socket, _disposedToken);
             Task pendingRequestTask;
            
@@ -598,7 +608,7 @@ namespace Org.Openfeed.Client {
                             silenceSource.Dispose();
                             silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
                             
-                            silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
+                            silenceTask = Task.Delay(SilenceTimeoutMilliseconds, silenceSource.Token);
                             
                             foreach (var msg in msgs)
                             {
@@ -620,7 +630,7 @@ namespace Org.Openfeed.Client {
                         silenceSource.Cancel();
                         silenceSource.Dispose();
                         silenceSource = CancellationTokenSource.CreateLinkedTokenSource(_disposedToken);
-                        silenceTask = Task.Delay(ConnectionTiming.WithJitter(15_000), silenceSource.Token);
+                        silenceTask = Task.Delay(SilenceTimeoutMilliseconds, silenceSource.Token);
                         
                         foreach (var msg in msgs)
                         {
