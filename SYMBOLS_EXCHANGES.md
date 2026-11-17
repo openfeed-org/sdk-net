@@ -10,7 +10,7 @@ To subscribe to just a few symbols, all you need is to pass the list of symbols 
 client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: new[] { "MSFT", "GOOG" });
 ```
 
-To subscribe to a data coming from an exchange wholesale, pass the list of exchanges you are interested in in the call to Subscribe:
+To subscribe to a data coming from an exchange wholesale, pass the list of exchanges you are interested in the call to Subscribe:
 
 ```C#
 client.Subscribe(Service.RealTime, SubscriptionType.All, 1, exchanges: new[] { "CME" });

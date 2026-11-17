@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -32,7 +34,10 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="status"><see cref="Status"/> of the response message.</param>
         public static void ThrowOnError(Status status) {
-            if (status.Result != Result.Success) throw new OpenfeedRequestException(status);
+            if (status.Result != Result.Success)
+            {
+                throw new OpenfeedRequestException(status);
+            }
         }
     }
 
@@ -74,8 +79,23 @@ namespace Org.Openfeed.Client {
     /// the client application about the events that are happening.
     /// </summary>
     public sealed class OpenfeedListeners {
-        private readonly Dictionary<long, (InstrumentDefinition?, string[]?)> _instrumentDefinitions = new Dictionary<long, (InstrumentDefinition?, string[]?)>();
-        private readonly Dictionary<string, InstrumentDefinition> _instrumentsBySymbol = new Dictionary<string, InstrumentDefinition>();
+        private readonly struct MarketMetadata {
+            public InstrumentDefinition? Definition { get; }
+            public (string Symbol, long CorrelationId)[]? Subscriptions { get; }
+
+            public MarketMetadata(InstrumentDefinition? definition, (string Symbol, long CorrelationId)[]? subscriptions) {
+                Definition = definition;
+                Subscriptions = subscriptions;
+            }
+
+            public void Deconstruct(out InstrumentDefinition? definition, out (string Symbol, long CorrelationId)[]? subscriptions) {
+                definition = Definition;
+                subscriptions = Subscriptions;
+            }
+        }
+
+        private readonly ConcurrentDictionary<long, MarketMetadata> _instrumentDefinitions = new();
+        private readonly Dictionary<string, InstrumentDefinition> _instrumentsBySymbol = new();
 
         /// <summary>
         /// Constructs a new instance of <see cref="OpenfeedListeners"/>.
@@ -83,7 +103,6 @@ namespace Org.Openfeed.Client {
         public OpenfeedListeners() {
             OnMessage = OnAddDetails;
         }
-
 
         /// <summary>
         /// Returns the <see cref="InstrumentDefinition"/> based on the Openfeed symbol.
@@ -97,20 +116,40 @@ namespace Org.Openfeed.Client {
         }
 
         /// <summary>
+        /// Returns the latest instrument definition for a market ID, if present.
+        /// </summary>
+        /// <param name="marketId">Market ID.</param>
+        /// <returns>The instrument definition or null.</returns>
+        public InstrumentDefinition? TryGetInstrumentFromMarketId(long marketId) => _instrumentDefinitions.TryGetValue(marketId, out var entry) ? entry.Definition : null;
+
+        /// <summary>
+        /// Returns the symbols associated with subscriptions to a market ID.
+        /// </summary>
+        /// <param name="marketId">Market ID.</param>
+        /// <returns>The subscribed symbols, including one entry per subscription.</returns>
+        public string[] GetSymbolsFromMarketId(long marketId) {
+            if (!_instrumentDefinitions.TryGetValue(marketId, out var entry) || entry.Subscriptions == null) {
+                return Array.Empty<string>();
+            }
+
+            return entry.Subscriptions.Select(subscription => subscription.Symbol).ToArray();
+        }
+
+        /// <summary>
         /// Function that will be called when a connection to the websocket fails.
         /// </summary>
         public Func<Exception, ValueTask> OnConnectFailed = ex => default;
 
         /// <summary>
         /// Function that will be called when the server rejects the credentials with which the <see cref="IOpenfeedClient"/> has been created.
-        /// The <see cref="IOpenfeedClient"/> will not attempt any more reconnects after calling this handler.
+        /// The <see cref="IOpenfeedClient"/> will not attempt anymore reconnects after calling this handler.
         /// </summary>
         public Func<ValueTask> OnCredentialsRejected = () => default;
 
         /// <summary>
         /// Function that will be called when the <see cref="IOpenfeedClient"/> is connected to the server.
         /// </summary>
-        public Func<IOpenfeedConnection, ValueTask> OnConnected = connecton => default;
+        public Func<IOpenfeedConnection, ValueTask> OnConnected = connection => default;
 
         /// <summary>
         /// Function that will be called when the <see cref="IOpenfeedClient"/> gets disconnected from the server, either because
@@ -119,7 +158,12 @@ namespace Org.Openfeed.Client {
         public Func<ValueTask> OnDisconnected = () => default;
 
         /// <summary>
-        /// Function that will be called when a message is received from the server. By default this just adds the instrument definition
+        /// Function that will be called when a heartbeat is received from the server.
+        /// </summary>
+        public Func<HeartBeat, ValueTask> OnHeartBeat = heartBeat => default;
+
+        /// <summary>
+        /// Function that will be called when a message is received from the server. By default, this just adds the instrument definition
         /// and forwards the call to <see cref="OnMessageWithMetadata"/>.
         /// </summary>
         public Func<OpenfeedGatewayMessage, ValueTask> OnMessage;
@@ -130,57 +174,148 @@ namespace Org.Openfeed.Client {
         public Func<OpenfeedGatewayMessage, InstrumentDefinition?, string[], ValueTask> OnMessageWithMetadata = (msg, def, symbols) => default;
 
         private ValueTask OnAddDetails(OpenfeedGatewayMessage msg) {
-            (InstrumentDefinition?, string[]?) GetInstrumentDefinition(long marketId) =>
-                _instrumentDefinitions.TryGetValue(marketId, out var def) ? def : (null, null);
+            MarketMetadata GetInstrumentDefinition(long marketId) => _instrumentDefinitions.TryGetValue(marketId, out var metadata) ? metadata : default;
 
             InstrumentDefinition? def = null;
-            string[]? symbols = null;
+       
+            (string Symbol, long CorrelationId)[]? subscriptions = null;
+
             switch (msg.DataCase) {
                 case OpenfeedGatewayMessage.DataOneofCase.SubscriptionResponse: {
                     if (msg.SubscriptionResponse.Symbol != null && msg.SubscriptionResponse.MarketId != 0) {
-                        (def, symbols) = GetInstrumentDefinition(msg.SubscriptionResponse.MarketId);
-                        if (symbols == null) {
-                            symbols = new string[1];
-                            symbols[0] = msg.SubscriptionResponse.Symbol;
-                        }
-                        else {
-                            if (Array.IndexOf(symbols, msg.SubscriptionResponse.Symbol) < 0) {
-                                Array.Resize(ref symbols, symbols.Length + 1);
-                                symbols[symbols.Length - 1] = msg.SubscriptionResponse.Symbol;
+                        var response = msg.SubscriptionResponse;
+                       
+                        (def, subscriptions) = GetInstrumentDefinition(response.MarketId);
+                       
+                        if (response.Status?.Result == Result.Success) {
+                            if (response.Unsubscribe) {
+                                var remaining = Array.FindAll(subscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != response.Symbol || entry.CorrelationId != response.CorrelationId);
+                               
+                                if (remaining.Length == 0)
+                                {
+                                    _instrumentDefinitions.TryRemove(response.MarketId, out _);
+                                }
+                                else
+                                {
+                                    _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, remaining);
+                                }
+                            }
+                            else if (subscriptions == null) {
+                                subscriptions = new[] { (response.Symbol, response.CorrelationId) };
+                              
+                                _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, subscriptions);
+                            }
+                            else if (Array.FindIndex(subscriptions, entry => entry.Symbol == response.Symbol && entry.CorrelationId == response.CorrelationId) < 0) {
+                                Array.Resize(ref subscriptions, subscriptions.Length + 1);
+                              
+                                subscriptions[subscriptions.Length - 1] = (response.Symbol, response.CorrelationId);
+                            
+                                _instrumentDefinitions[response.MarketId] = new MarketMetadata(def, subscriptions);
                             }
                         }
-                        _instrumentDefinitions[msg.SubscriptionResponse.MarketId] = (def, symbols);
                     }
 
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.InstrumentDefinition: {
-                    (def, symbols) = GetInstrumentDefinition(msg.InstrumentDefinition.MarketId);
-                    _instrumentDefinitions[msg.InstrumentDefinition.MarketId] = (msg.InstrumentDefinition, symbols);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.InstrumentDefinition.MarketId);
+                 
+                    _instrumentDefinitions[msg.InstrumentDefinition.MarketId] = new MarketMetadata(msg.InstrumentDefinition, subscriptions);
+                 
                     lock(_instrumentsBySymbol) {
                         _instrumentsBySymbol[msg.InstrumentDefinition.Symbol] = msg.InstrumentDefinition;
                     }
+                 
+                    break;
+                }
+                case OpenfeedGatewayMessage.DataOneofCase.InstrumentAction: {
+                    var action = msg.InstrumentAction;
+
+                    if (action.Action == ActionType.AliasChanged && action.Instrument != null && action.Instrument.MarketId != 0) {
+                        var marketId = action.Instrument.MarketId;
+
+                        (def, subscriptions) = GetInstrumentDefinition(marketId);
+
+                        var remaining = Array.FindAll(subscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != action.OldAlias);
+
+                        if (remaining.Length == 0)
+                        {
+                            _instrumentDefinitions.TryRemove(marketId, out _);
+                        }
+                        else
+                        {
+                            _instrumentDefinitions[marketId] = new MarketMetadata(def, remaining);
+                        }
+
+                        if (action.NewInstrument != null && action.NewInstrument.MarketId != 0) {
+                            var parts = action.OldAlias.Split('*');
+
+                            if (parts.Length > 1 && int.TryParse(parts[1], out var number)) {
+                                var newMarketId = action.NewInstrument.MarketId;
+                                var (newDef, newSubscriptions) = GetInstrumentDefinition(newMarketId);
+                              
+                                var newAlias = $"{parts[0]}*{(action.OldAlias.EndsWith("*0", StringComparison.Ordinal) ? 0 : number + 1)}";
+                                var newRemaining = newAlias == action.OldAlias ? newSubscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>() : Array.FindAll(newSubscriptions ?? Array.Empty<(string Symbol, long CorrelationId)>(), entry => entry.Symbol != newAlias);
+
+                                if (newRemaining.Length == 0)
+                                {
+                                    _instrumentDefinitions.TryRemove(newMarketId, out _);
+                                }
+                                else
+                                {
+                                    _instrumentDefinitions[newMarketId] = new MarketMetadata(newDef, newRemaining);
+                                }
+                            }
+                        }
+                    }
+                    else if (action is { Action: ActionType.ExchangeMove, Instrument: not null } && action.Instrument.MarketId != 0) {
+                        var marketId = action.Instrument.MarketId;
+                       
+                        (def, subscriptions) = GetInstrumentDefinition(marketId);
+                       
+                        _instrumentDefinitions.TryRemove(marketId, out _);
+                       
+                        if (action.NewInstrument != null && action.NewInstrument.MarketId != 0) {
+                            _instrumentDefinitions[action.NewInstrument.MarketId] = new MarketMetadata(def, subscriptions);
+                        }
+                    }
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketSnapshot: {
-                    (def, symbols) = GetInstrumentDefinition(msg.MarketSnapshot.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.MarketSnapshot.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.MarketUpdate: {
-                    (def, symbols) = GetInstrumentDefinition(msg.MarketUpdate.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.MarketUpdate.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.Ohlc: {
-                    (def, symbols) = GetInstrumentDefinition(msg.Ohlc.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.Ohlc.MarketId);
+                  
                     break;
                 }
                 case OpenfeedGatewayMessage.DataOneofCase.VolumeAtPrice: {
-                    (def, symbols) = GetInstrumentDefinition(msg.VolumeAtPrice.MarketId);
+                    (def, subscriptions) = GetInstrumentDefinition(msg.VolumeAtPrice.MarketId);
+                   
                     break;
                 }
             }
 
-            return OnMessageWithMetadata(msg, def, symbols ?? Array.Empty<string>());
+            return OnMessageWithMetadata(msg, def, subscriptions?.Select(entry => entry.Symbol).Distinct().ToArray() ?? Array.Empty<string>());
+        }
+
+        /// <summary>
+        ///     Clears the cached metadata.
+        /// </summary>
+        internal void ClearCache() {
+            _instrumentDefinitions.Clear();
+
+            lock (_instrumentsBySymbol) {
+                _instrumentsBySymbol.Clear();
+            }
         }
     }
 
@@ -203,7 +338,7 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -220,7 +355,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -237,7 +372,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionTypes">A collection of <see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentTypes">A collection of <see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -265,14 +400,14 @@ namespace Org.Openfeed.Client {
         ValueTask<IReadOnlyList<Exchange>> GetExchangesAsync(CancellationToken ct);
 
         /// <summary>
-        /// Sends an <see cref="InstrumentRequest"/> and returns an <see cref="InstrumentResponse"/> or throws an <see cref="OpenfeedDisconnectedException"/>. The
-        /// individual <see cref="InstrumentDefinition"/> responses will be sent to <see cref="OpenfeedListeners.OnMessage"/> delegates.
+        /// Sends an <see cref="InstrumentRequest"/> and returns all <see cref="InstrumentDefinition"/> responses, or throws an <see cref="OpenfeedDisconnectedException"/>.
+        /// The individual responses are also sent to <see cref="OpenfeedListeners.OnMessage"/> delegates.
         /// </summary>
         /// <param name="request">The request to be sent.</param>
         /// <param name="ct"><see cref="CancellationToken"/></param>
-        /// <returns>A task that will return an <see cref="InstrumentResponse"/> or throw an
+        /// <returns>A task that will return the instrument definitions or throw an
         /// <see cref="OpenfeedDisconnectedException"/> if the connection disconnects.</returns>
-        Task<InstrumentResponse> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct);
+        Task<IReadOnlyList<InstrumentDefinition>> GetInstrumentAsync(InstrumentRequest request, CancellationToken ct);
 
         /// <summary>
         /// Sends an <see cref="InstrumentReferenceRequest"/> and returns the first <see cref="InstrumentReferenceResponse"/>
@@ -290,7 +425,7 @@ namespace Org.Openfeed.Client {
         /// </summary>
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -306,7 +441,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionType"><see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentType"><see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -322,7 +457,7 @@ namespace Org.Openfeed.Client {
         /// <param name="service">The <see cref="Service"/> to which to subscribe.</param>
         /// <param name="subscriptionTypes">A collection of <see cref="SubscriptionType"/>.</param>
         /// <param name="instrumentTypes">A collection of <see cref="InstrumentType"/>.</param>
-        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the the snapshot is only
+        /// <param name="snapshotIntervalSeconds">Setting of the cadence at which the snapshots will be sent. If zero the snapshot is only
         /// sent once.</param>
         /// <param name="symbols">A collection of symbols to which to subscribe, or null if no symbol subscription is to be made.</param>
         /// <param name="marketIds">A collection of market ID's to which to subscribe, or null if no subscription by market ID's is to be made.</param>
@@ -338,10 +473,10 @@ namespace Org.Openfeed.Client {
         void Unsubscribe(long id);
 
         /// <summary>
-        /// Gets the task that will be signalled when the connection instance gets disconnected from the server.
+        /// Gets the task that will be signaled when the connection instance gets disconnected from the server.
         /// </summary>
         /// <param name="ct"><see cref="CancellationToken"/></param>
-        /// <returns>A task that will be signalled when the connection instance is disconnected from the server.</returns>
+        /// <returns>A task that will be signaled when the connection instance is disconnected from the server.</returns>
         Task WhenDisconnectedAsync(CancellationToken ct);
     }
 
@@ -359,6 +494,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+                   
                     return await connection.GetExchangesAsync(ct).ConfigureAwait(false);
                 }
                 catch (OpenfeedDisconnectedException) {
@@ -397,6 +533,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+               
                     return await connection.GetInstrumentReferenceAsync(new InstrumentReferenceRequest { Symbol = symbol }, ct);
                 }
                 catch (OpenfeedDisconnectedException) {
@@ -415,6 +552,7 @@ namespace Org.Openfeed.Client {
             for (; ; ) {
                 try {
                     var connection = await client.GetConnectionAsync(ct).ConfigureAwait(false);
+                  
                     return await connection.GetInstrumentReferenceAsync(new InstrumentReferenceRequest { MarketId = marketId }, ct);
                 }
                 catch (OpenfeedDisconnectedException) {

@@ -130,13 +130,13 @@ This would result in a subscriptionResponse message, followed by an instrumentDe
 
 ## OHLC Subscription
 
-The Ohlc susbscription type will give you periodic Open + High + Low + Close messages:
+The `Ohlc` subscription type will give you periodic Open + High + Low + Close messages:
 
 ```C#
 client.Subscribe(Service.RealTime, SubscriptionType.Ohlc, 1, symbols: new[] { "MSFT" });
 ```
 
-Just like the trades subscription above, this would result in a subscriptionResponse message, followed by an instrumentDefinition message, followed by by periodic OHLC messages:
+Just like the trades subscription above, this would result in a subscriptionResponse message, followed by an instrumentDefinition message, followed by periodic OHLC messages:
 
 ```json
 ...
@@ -163,7 +163,7 @@ Just like the trades subscription above, this would result in a subscriptionResp
 ...
 ```
 
-## Quote Subscrition
+## Quote Subscription
 
 ```C#
 client.Subscribe(Service.RealTime, SubscriptionType.Quote, 1, symbols: new[] { "MSFT" });
@@ -197,4 +197,4 @@ Again, we first received the subscription response and the instrumentDefinition 
 client.Subscribe(Service.RealTime, SubscriptionType.All, 1, symbols: new[] { "MSFT" });
 ```
 
-The All subscription type will give you all the messages (quotes, trades, book, depth, etc.) that you are permissioned for.
+The `All` subscription type will give you all the messages (quotes, trades, book, depth, etc.) that you are permission for.

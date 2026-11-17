@@ -4,7 +4,7 @@
 
 There are only two objects that you will need in order to work with Openfeed: a connection client (represented by the IOpenFeedClient interface) and a listener.
 
-The connecton client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols and exchanges.
+The connection client object will connect to the OpenFeed servers and maintain that connection until disposed. It can be used to send requests to subscribe to symbols and exchanges.
 
 The listener object (represented by the OpenfeedListener class) contains five callback delegates that you can wire to your own callback functions in order to process messages coming from the connection.
 
@@ -53,13 +53,13 @@ listeners.OnCredentialsRejected = () => {
 ```
 The first callback we wired was OnConnected. It simply outputs "Connected." to the console. It then returns a default ValueTask (same as saying 'return new ValueTask') to signal that it has completed its work synchronously.
 
-The OnDisconnected callback is similar, it simply outputs "Disconnected.".
+The OnDisconnected callback is similar, it simply outputs "Disconnected."
 
 The OnMessage callback will be called when a new message is received from the OpenFeed servers. In this case it simply prints the message to the console, and again returns just a default ValueTask.
 
 The OnConnectFailed callback will be called when a connection attempt to the Openfeed servers fails. This typically happens when there are network problems, and in rarer cases, when the certificate negotiation fails for the secure connection.
 
-The last callback we wired is OnCredentialsRejected, which will be called if you attempt to connect with wrong credentials. This is a terminal state - if you receive this callbacks no other callbacks will be called and no other connection attempts will be made. The only sensible thing to do in this case is to dispose the connection client object and then create a new one with the correct credentials.
+The last callback we wired is OnCredentialsRejected, which will be called if you attempt to connect with wrong credentials. This is a terminal state - if you receive these callbacks no other callbacks will be called and no other connection attempts will be made. The only sensible thing to do in this case is to dispose the connection client object and then create a new one with the correct credentials.
 
 It is OK not to implement all these callbacks as they all have an existing null implementation.
 
@@ -108,7 +108,7 @@ The first argument is the URL of the OpenFeed server, which is typically "ws://o
 
 As soon as you create this object it will attempt to connect to the Openfeed servers and issue the necessary callbacks to the listener.
 
-When you are done with this object simply Dispose it and it will disconnect and stop calling the callback listeners.
+When you are done with this object simply Dispose it, and it will disconnect and stop calling the callback listeners.
 
 Once the object is created, you can simply subscribe to what you need and the listener's OnMessage will be called with the received messages as they arrive. For example:
 
@@ -202,7 +202,7 @@ class Program {
 }
 ```
 
-This program is a simple amalgamation of what we learned before. We first set up a listener and connect the callbacks that simply print everything that's happening to the console. Next, we prompt the user for their credentials, and then finally we create a client, subscibe to all messages for the symbol MSFT, and then pause the thread while the client continues to run on the thread pool.
+This program is a simple amalgamation of what we learned before. We first set up a listener and connect the callbacks that simply print everything that's happening to the console. Next, we prompt the user for their credentials, and then finally we create a client, subscribe to all messages for the symbol MSFT, and then pause the thread while the client continues to run on the thread pool.
 
 ## More Information
 

@@ -30,4 +30,4 @@ The User Guide for this project can be found in the [documentation](DOCUMENTATIO
 
 ## Release Guide
 
-Since we moved to GitHub actions, releasing to NuGet will require additional steps as seen [here](RELEASE_GUIDE.md).
+Since we moved to GitHub Actions, releasing to NuGet will require additional steps as seen [here](RELEASE_GUIDE.md).
